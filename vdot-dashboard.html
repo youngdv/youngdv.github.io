@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VDOT MRP Dashboard | UX Design Case Study</title>
+    <style>
+      :root {
+        --cream: #f7f5f0;
+        --stone: #4a4a4a;
+        --clay: #9a796f;
+        --border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: var(--cream);
+        color: var(--stone);
+        line-height: 1.6;
+        padding-top: 80px;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--cream);
+        z-index: 1000;
+        padding: 1rem 5%;
+        border-bottom: var(--border);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .back-button {
+        background: var(--clay);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+      }
+
+      .back-button:hover {
+        opacity: 0.9;
+      }
+
+      .hero {
+        padding: 4rem 5% 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      section {
+        padding: 4rem 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-bottom: var(--border);
+      }
+
+      .section-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-bottom: 2rem;
+        color: var(--stone);
+      }
+
+      .section-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      .case-study-image {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        margin: 2rem auto;
+        display: block;
+      }
+
+      .video-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 2rem auto;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .video-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .prototype-button {
+        display: inline-block;
+        background: var(--clay);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .prototype-button:hover {
+        opacity: 0.9;
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .showcase-item {
+        background: #f7f5f0;
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .showcase-item video {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 4px;
+        margin: 0 auto 1rem;
+        display: block;
+        background: transparent;
+      }
+
+      ul {
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      li {
+        margin-bottom: 1rem;
+      }
+
+      /* Updated Competitive Analysis Images Styling */
+      .competitive-analysis-images {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .competitive-analysis-images img {
+        width: 30%; /* Smaller width for horizontal layout */
+        max-width: 300px; /* Optional: Limit maximum width */
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 2rem 5%;
+        }
+
+        section {
+          padding: 2rem 5%;
+        }
+
+        .case-study-image {
+          margin: 1rem auto;
+        }
+
+        .competitive-analysis-images {
+          flex-direction: column; /* Stack images vertically on smaller screens */
+          align-items: center;
+        }
+
+        .competitive-analysis-images img {
+          width: 80%; /* Larger width for smaller screens */
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <button class="back-button" onclick="window.location.href='index.html'">
+          ← Back
+        </button>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>VDOT MRP Dashboard</h1>
+      <p>UX Design Case Study</p>
+    </div>
+
+    <section class="overview">
+      <h2 class="section-title">Project Overview</h2>
+      <div class="section-content">
+        <p>
+          The <strong>Virginia Department of Transportation (VDOT)</strong> is
+          responsible for building, maintaining, and operating the third-largest
+          state-maintained highway system in the country. The
+          <strong>Maintenance Rating Program (MRP) Dashboard</strong> is a
+          centralized platform designed to streamline maintenance operations,
+          improve decision-making, and enhance the efficiency of VDOT's
+          maintenance teams.
+        </p>
+        <img
+          src="imgs/dashboard1.png"
+          alt="VDOT MRP Dashboard"
+          class="case-study-image"
+        />
+      </div>
+    </section>
+
+    <section class="goals">
+      <h2 class="section-title">Goals of the Dashboard</h2>
+      <div class="section-content">
+        <ul>
+          <li>Streamline maintenance task management for VDOT teams</li>
+          <li>Provide real-time updates on maintenance activities</li>
+          <li>Improve resource allocation and tracking</li>
+          <li>Enhance communication between teams and stakeholders</li>
+          <li>Reduce manual data entry and errors</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 class="section-title">Key Features</h2>
+      <div class="section-content">
+        <ul>
+          <li>
+            <strong>Task Tracking Dashboard:</strong> Centralized view of all
+            maintenance tasks and their statuses
+          </li>
+          <li>
+            <strong>Resource Allocation:</strong> Visual overview of resources
+            and their distribution across projects
+          </li>
+          <li>
+            <strong>Real-Time Updates:</strong> Instant notifications for task
+            changes and updates
+          </li>
+          <li>
+            <strong>Interactive Map:</strong> Real-time map for tracking
+            maintenance locations and progress
+          </li>
+          <li>
+            <strong>User-Friendly Interface:</strong> Intuitive design for
+            seamless navigation
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Competitive Analysis Section -->
+    <section class="competitive-analysis">
+      <h2 class="section-title">Competitive Analysis</h2>
+      <div class="section-content">
+        <p>
+          A competitive analysis was conducted to compare the VDOT MRP Dashboard
+          with similar platforms, including:
+        </p>
+        <ul>
+          <li>
+            <strong
+              ><a href="https://511.vdot.virginia.gov/" target="_blank"
+                >511 Virginia</a
+              >:</strong
+            >
+            <ul>
+              <li>Provides real-time traffic and road condition updates.</li>
+              <li>
+                Focuses on public-facing information rather than internal
+                maintenance tasks.
+              </li>
+              <li>
+                Lacks advanced resource allocation and task tracking features.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              ><a href="https://wv511.org/" target="_blank">WV 511</a>:</strong
+            >
+            <ul>
+              <li>
+                Offers traffic cameras, road conditions, and weather updates.
+              </li>
+              <li>
+                Primarily designed for public use, not internal maintenance
+                operations.
+              </li>
+              <li>
+                Does not include task management or resource tracking tools.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              ><a href="https://511ny.org/" target="_blank">511 NY</a>:</strong
+            >
+            <ul>
+              <li>Provides comprehensive traffic and transit information.</li>
+              <li>Focuses on public transportation and road conditions.</li>
+              <li>
+                Lacks features for internal maintenance task management and
+                resource allocation.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          The <strong>VDOT MRP Dashboard</strong> stands out by offering a
+          centralized platform for internal maintenance teams, with features
+          like task tracking, resource allocation, and real-time updates, which
+          are not available in the public-facing 511 systems.
+        </p>
+
+        <!-- Competitive Analysis Images -->
+        <div class="competitive-analysis-images">
+          <img
+            src="imgs/comanalysisdashboard1.png"
+            alt="Competitive Analysis Dashboard 1"
+            class="case-study-image"
+          />
+          <img
+            src="imgs/comanalysisdashboard2.png"
+            alt="Competitive Analysis Dashboard 2"
+            class="case-study-image"
+          />
+          <img
+            src="imgs/comanalysisdashboard3.png"
+            alt="Competitive Analysis Dashboard 3"
+            class="case-study-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <h2 class="section-title">Design Process</h2>
+      <div class="section-content">
+        <p>The design process involved the following steps:</p>
+        <ul>
+          <li>
+            <strong>Research:</strong> Conducted user research to understand the
+            needs of VDOT maintenance teams
+          </li>
+          <li>
+            <strong>Wireframing:</strong> Created low-fidelity wireframes to map
+            out the dashboard's structure
+          </li>
+          <li>
+            <strong>Prototyping:</strong> Developed interactive prototypes for
+            demonstration and feedback
+          </li>
+          <li>
+            <strong>High-Fidelity Design:</strong> Finalized the UI with
+            polished visuals and interactions
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="lofi-prototype">
+      <h2 class="section-title">Lo-Fi Prototype</h2>
+      <div class="section-content">
+        <p>
+          Initial wireframes were created to establish the dashboard's structure
+          and flow:
+        </p>
+        <img
+          src="imgs/lofi-wireframesdashboard.png"
+          alt="Lo-Fi Wireframes"
+          class="case-study-image"
+        />
+      </div>
+    </section>
+
+    <section class="ui-showcase">
+      <h2 class="section-title">UI Elements</h2>
+      <div class="showcase-grid">
+        <div class="showcase-item">
+          <h3>Task Tracking Dashboard</h3>
+          <video controls>
+            <source src="imgs/dashboarduielement1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Centralized task management interface for VDOT teams</p>
+        </div>
+        <div class="showcase-item">
+          <h3>Interactive Map</h3>
+          <video controls>
+            <source src="imgs/dashboarduielement2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Real-time map for tracking maintenance locations and progress</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="prototype">
+      <h2 class="section-title">Prototype Showcase</h2>
+      <div class="video-container">
+        <video controls>
+          <source src="imgs/Dashboardvdotshowcase.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div style="text-align: center; margin-top: 1.5rem">
+        <a
+          href="https://www.figma.com/proto/your-figma-link"
+          class="prototype-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Prototype
+        </a>
+      </div>
+    </section>
+
+    <section class="outcomes">
+      <h2 class="section-title">Outcomes</h2>
+      <div class="section-content">
+        <ul>
+          <li>30% improvement in task completion speed</li>
+          <li>Centralized dashboard reduced navigation time</li>
+          <li>45% reduction in data entry errors</li>
+          <li>Improved communication between teams and stakeholders</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="conclusion">
+      <h2 class="section-title">Conclusion</h2>
+      <div class="section-content">
+        <p>
+          The VDOT MRP Dashboard successfully addresses the challenges of
+          maintenance operations by providing a user-centric, role-specific
+          interface. Its real-time updates, seamless data integration, and
+          intuitive design make it a standout solution for improving maintenance
+          workflows and stakeholder communication.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

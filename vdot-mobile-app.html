@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VDOT MRP UX Design</title>
+    <style>
+      :root {
+        --cream: #f7f5f0;
+        --stone: #4a4a4a;
+        --clay: #9a796f;
+        --border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: var(--cream);
+        color: var(--stone);
+        line-height: 1.6;
+        padding-top: 80px;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--cream);
+        z-index: 1000;
+        padding: 1rem 5%;
+        border-bottom: var(--border);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .back-button {
+        background: var(--clay);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+      }
+
+      .back-button:hover {
+        opacity: 0.9;
+      }
+
+      .hero {
+        padding: 4rem 5% 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      section {
+        padding: 4rem 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-bottom: var(--border);
+      }
+
+      .section-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-bottom: 2rem;
+        color: var(--stone);
+      }
+
+      .section-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      .case-study-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 2rem auto;
+        display: block;
+      }
+
+      .video-container {
+        width: 100%;
+        max-width: 300px; /* Smaller video size */
+        margin: 2rem auto;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .video-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .prototype-button {
+        display: inline-block;
+        background: var(--clay);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .prototype-button:hover {
+        opacity: 0.9;
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .showcase-item {
+        background: #f7f5f0;
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px;
+        text-align: center; /* Center text and video */
+      }
+
+      .showcase-item video {
+        width: 100%; /* Full width of the container */
+        max-width: 300px; /* Limit video width */
+        height: auto;
+        border-radius: 4px;
+        margin: 0 auto 1rem; /* Center video horizontally */
+        display: block;
+        background: transparent; /* Remove any background color */
+      }
+
+      ul {
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      li {
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 2rem 5%;
+        }
+
+        section {
+          padding: 2rem 5%;
+        }
+
+        .case-study-image {
+          margin: 1rem auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <button class="back-button" onclick="window.location.href='index.html'">
+          ← Back
+        </button>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>VDOT Maintenance Rating Program (MRP)</h1>
+      <p>UI/UX Design Case Study</p>
+    </div>
+
+    <section class="overview">
+      <h2 class="section-title">Project Overview</h2>
+      <div class="section-content">
+        <p>
+          The <strong>Virginia Department of Transportation (VDOT)</strong> is
+          responsible for building, maintaining, and operating the third-largest
+          state-maintained highway system in the country. VDOT's
+          <strong>Maintenance Rating Program (MRP)</strong> is designed to
+          provide vital information for making maintenance decisions based on
+          facts and sound judgment.
+        </p>
+        <p>
+          The <strong>VDOT MRP App</strong> is a crowdsourcing tool developed to
+          gather condition information of roadway assets from active VDOT
+          maintenance personnel and Virginia roadway network users. The app aims
+          to streamline data collection, improve decision-making, and enhance
+          the overall efficiency of VDOT's maintenance operations.
+        </p>
+        <img
+          src="imgs/moblieapp1.png"
+          alt="VDOT MRP Interface"
+          class="case-study-image"
+        />
+      </div>
+    </section>
+
+    <section class="goals">
+      <h2 class="section-title">Goals of the App</h2>
+      <div class="section-content">
+        <ul>
+          <li>Streamline task management for VDOT inspectors</li>
+          <li>Reduce manual data entry and errors</li>
+          <li>Provide real-time updates on maintenance tasks</li>
+          <li>Improve resource allocation and tracking</li>
+          <li>Enhance overall operational efficiency</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 class="section-title">Key Features</h2>
+      <div class="section-content">
+        <ul>
+          <li>
+            <strong>Task Tracking Dashboard:</strong> Centralized view of all
+            tasks and their statuses
+          </li>
+          <li>
+            <strong>Resource Allocation:</strong> Visual overview of resources
+            and their distribution
+          </li>
+          <li>
+            <strong>Real-Time Updates:</strong> Instant notifications for task
+            changes and updates
+          </li>
+          <li>
+            <strong>Interactive Map:</strong> Real-time map for tracking
+            maintenance locations and progress
+          </li>
+          <li>
+            <strong>User-Friendly Interface:</strong> Intuitive design for
+            seamless navigation
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="process">
+      <h2 class="section-title">UI Design Process</h2>
+      <div class="section-content">
+        <p>The design process involved the following steps:</p>
+        <ul>
+          <li>
+            <strong>Wireframing:</strong> Created low-fidelity wireframes to map
+            out the app's structure
+          </li>
+          <li>
+            <strong>Prototyping:</strong> Developed interactive prototypes for
+            demonstration and feedback
+          </li>
+          <li>
+            <strong>High-Fidelity Design:</strong> Finalized the UI with
+            polished visuals and interactions
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="lofi-prototype">
+      <h2 class="section-title">Lo-Fi Prototype</h2>
+      <div class="section-content">
+        <p>
+          Initial wireframes were created to establish the app's structure and
+          flow:
+        </p>
+        <img
+          src="imgs/lofi-wireframesmoblie.png"
+          alt="Lo-Fi Wireframes"
+          class="case-study-image"
+        />
+      </div>
+    </section>
+
+    <section class="ui-showcase">
+      <h2 class="section-title">UI Elements</h2>
+      <div class="showcase-grid">
+        <div class="showcase-item">
+          <h3>Task Tracking Dashboard</h3>
+          <video controls>
+            <source src="imgs/Inspectionhistoryvid3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Centralized task management interface for inspectors</p>
+        </div>
+        <div class="showcase-item">
+          <h3>Interactive Map</h3>
+          <video controls>
+            <source src="imgs/Inspectionhistoryvid4.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Real-time map for tracking maintenance locations and progress</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="prototype">
+      <h2 class="section-title">Prototype Showcase</h2>
+      <div class="video-container">
+        <video controls>
+          <source src="imgs/apprecording.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div style="text-align: center; margin-top: 1.5rem">
+        <a
+          href="https://www.figma.com/proto/5L8LsRFEwt2RS9DDYknlph/MRP-Application?node-id=101-2&starting-point-node-id=101%3A2&t=0plxgkLMcTw9p6oi-1"
+          class="prototype-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Prototype
+        </a>
+      </div>
+    </section>
+
+    <section class="outcomes">
+      <h2 class="section-title">Outcomes</h2>
+      <div class="section-content">
+        <ul>
+          <li>30% improvement in task completion speed</li>
+          <li>Centralized dashboard reduced navigation time</li>
+          <li>45% reduction in data entry errors</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="conclusion">
+      <h2 class="section-title">Conclusion</h2>
+      <div class="section-content">
+        <p>
+          The redesigned interface significantly improved operational efficiency
+          through streamlined workflows and enhanced visibility of critical
+          maintenance data. The VDOT MRP App has become an essential tool for
+          VDOT personnel, enabling them to make data-driven decisions and
+          maintain Virginia's highway system more effectively.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
