@@ -131,10 +131,11 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       }
 
-      .video-container video {
+      .video-container iframe {
         width: 100%;
-        height: auto;
-        display: block;
+        height: 100%;
+        border: none;
+        border-radius: 8px;
       }
 
       .prototype-button {
@@ -415,13 +416,27 @@
       </div>
     </section>
 
+    <!-- Prototype Showcase Section with Vimeo Embed -->
     <section class="prototype">
       <h2 class="section-title">Prototype Showcase</h2>
       <div class="video-container">
-        <video controls>
-          <source src="imgs/Prototypepcis.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div style="padding: 70.98% 0 0 0; position: relative">
+          <iframe
+            src="https://player.vimeo.com/video/1062612244?h=a6acbd63e0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            title="Prototypepcis"
+          >
+          </iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
       <div style="text-align: center; margin-top: 1.5rem">
         <a
