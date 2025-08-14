@@ -3,512 +3,565 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VDOT MRP Dashboard | UX Design Case Study</title>
+    <title>VDOT MRP Dashboard — Case Study | Destinee Young</title>
+    <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
+
     <style>
       :root {
-        --cream: #f7f5f0;
-        --stone: #4a4a4a;
-        --clay: #9a796f;
-        --border: 1px solid rgba(0, 0, 0, 0.08);
+        /* Match the site-wide white theme */
+        --bg: #ffffff;
+        --text: #0b0b0b;
+        --muted: #6b7280; /* gray-500 */
+        --line: rgba(0, 0, 0, 0.08);
+        --card: #ffffff;
+        --accent: #111111;
       }
 
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
-
+      html,
+      body {
+        height: 100%;
+      }
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
-        background: var(--cream);
-        color: var(--stone);
+          Inter, system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
         line-height: 1.6;
-        padding-top: 80px;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 2px;
       }
 
+      /* Nav (same structure as other pages) */
       nav {
-        position: fixed;
+        position: sticky;
         top: 0;
-        width: 100%;
-        background: var(--cream);
-        z-index: 1000;
-        padding: 1rem 5%;
-        border-bottom: var(--border);
+        z-index: 50;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
       }
-
       .nav-inner {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 14px 20px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        height: 36px;
+        width: auto;
+      }
+      .name {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
         align-items: center;
       }
-
-      .back-button {
-        background: var(--clay);
-        color: white;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 4px;
+      .nav-links a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--text);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 1px;
+        width: 0;
+        background: var(--text);
+        transition: width 0.2s ease;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--text);
+        color: #fff;
+        border: 1px solid var(--text);
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
         cursor: pointer;
-        transition: opacity 0.3s ease;
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--text);
+        padding: 10px 14px;
       }
 
-      .back-button:hover {
-        opacity: 0.9;
+      /* Layout */
+      .section {
+        padding: 56px 5%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
+      /* Hero */
       .hero {
-        padding: 4rem 5% 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
+        padding: 36px 5% 8px;
       }
-
       .hero h1 {
-        font-size: clamp(2rem, 6vw, 3rem);
-        margin-bottom: 1rem;
-        line-height: 1.2;
+        font-size: clamp(28px, 5vw, 40px);
+        line-height: 1.15;
+        font-weight: 800;
+        margin-bottom: 8px;
       }
-
       .hero p {
-        font-size: 1.25rem;
-        color: rgba(0, 0, 0, 0.7);
+        color: var(--muted);
+        font-size: clamp(16px, 2.2vw, 18px);
       }
 
-      section {
-        padding: 4rem 5%;
+      /* Meta bar (tags) */
+      .meta-bar {
+        padding: 16px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: #fafafa;
+      }
+      .meta-row {
         max-width: 1200px;
         margin: 0 auto;
-        border-bottom: var(--border);
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .tag {
+        font-size: 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: #fff;
+        color: #111;
       }
 
-      .section-title {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        margin-bottom: 2rem;
-        color: var(--stone);
-      }
-
-      .section-content {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: rgba(0, 0, 0, 0.7);
-      }
-
-      .case-study-image {
+      /* Media wells for images & videos */
+      .media-well {
         width: 100%;
-        max-width: 800px;
-        height: auto;
-        margin: 2rem auto;
-        display: block;
-      }
-
-      .video-container {
-        width: 100%;
-        max-width: 600px;
-        margin: 2rem auto;
-        border-radius: 8px;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #f8f8f8;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
+        padding: 10px;
+        margin: 14px 0 0;
       }
-
-      .video-container iframe {
+      .media-well img,
+      .media-well iframe {
         width: 100%;
         height: 100%;
-        display: block;
+        object-fit: contain;
+        border: 0;
+        border-radius: 8px;
+      }
+      .media-well.center {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+      } /* centered, modest width */
+
+      /* Section titles + content */
+      h2.section-title {
+        font-size: clamp(22px, 3.6vw, 26px);
+        margin-bottom: 12px;
+      }
+      .lead {
+        color: var(--muted);
+        max-width: 900px;
       }
 
-      .prototype-button {
-        display: inline-block;
-        background: var(--clay);
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: opacity 0.3s ease;
-        margin-top: 1rem;
+      /* Card blocks */
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 16px;
+        margin-top: 16px;
       }
 
-      .prototype-button:hover {
-        opacity: 0.9;
+      /* Lists */
+      ul {
+        padding-left: 1.25rem;
+        margin: 12px 0;
+      }
+      li {
+        margin-bottom: 10px;
       }
 
+      /* Showcase grid */
       .showcase-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+        margin-top: 12px;
       }
-
       .showcase-item {
-        background: #f7f5f0;
-        padding: 1rem;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        text-align: center;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        background: var(--card);
+      }
+      .showcase-item h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
       }
 
-      .showcase-item iframe {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        border-radius: 4px;
-        margin: 0 auto 1rem;
-        display: block;
-        background: transparent;
+      /* Competitive analysis gallery */
+      .comp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .comp-card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 12px;
+      }
+      .comp-card .media-well {
+        aspect-ratio: 16/9;
+        margin: 0;
+      }
+      .comp-card figcaption {
+        font-size: 14px;
+        color: var(--muted);
+        margin-top: 8px;
+        line-height: 1.5;
       }
 
-      ul {
-        padding-left: 1.5rem;
-        margin: 1.5rem 0;
-      }
-
-      li {
-        margin-bottom: 1rem;
-      }
-
-      /* Updated Competitive Analysis Images Styling */
-      .competitive-analysis-images {
+      /* Footer nav */
+      .case-nav {
         display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 2rem;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .case-nav a {
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+      .case-nav a.primary {
+        background: var(--text);
+        color: #fff;
+      }
+      .case-nav a.secondary {
+        background: transparent;
+        color: var(--text);
       }
 
-      .competitive-analysis-images img {
-        width: 30%; /* Smaller width for horizontal layout */
-        max-width: 300px; /* Optional: Limit maximum width */
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      @media (max-width: 768px) {
+      @media (max-width: 900px) {
         .hero {
-          padding: 2rem 5%;
-        }
-
-        section {
-          padding: 2rem 5%;
-        }
-
-        .case-study-image {
-          margin: 1rem auto;
-        }
-
-        .competitive-analysis-images {
-          flex-direction: column; /* Stack images vertically on smaller screens */
-          align-items: center;
-        }
-
-        .competitive-analysis-images img {
-          width: 80%; /* Larger width for smaller screens */
-          max-width: 100%;
+          padding-bottom: 0;
         }
       }
     </style>
   </head>
   <body>
-    <nav>
+    <!-- Nav -->
+    <nav aria-label="Primary">
       <div class="nav-inner">
-        <button class="back-button" onclick="window.location.href='index.html'">
-          ← Back
-        </button>
+        <div class="brand">
+          <a
+            href="index.html"
+            style="display: flex; align-items: center; gap: 12px"
+          >
+            <img src="logo/logo1.png" alt="DY monogram" />
+            <div class="name">Destinee Young</div>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html#capabilities">Capabilities</a>
+          <a href="index.html#work">Work</a>
+          <a
+            href="mailto:destinee.young99@gmail.com?subject=Portfolio%20Inquiry"
+            >Contact</a
+          >
+          <a
+            class="btn ghost"
+            href="imgs/DestineeResume2025new.pdf"
+            aria-label="Download resume"
+            >Resume</a
+          >
+        </div>
       </div>
     </nav>
 
-    <div class="hero">
+    <!-- Hero -->
+    <header class="hero">
       <h1>VDOT MRP Dashboard</h1>
-      <p>UX Design Case Study</p>
+      <p>Analytics and tracking that make backlog signals and actions clear.</p>
+    </header>
+
+    <!-- Meta tags -->
+    <div class="meta-bar" aria-label="Project tags and quick facts">
+      <div class="meta-row">
+        <span class="tag">Ops analytics</span>
+        <span class="tag">Web</span>
+        <span class="tag">WCAG</span>
+        <span class="tag">Figma</span>
+        <span class="tag">POC</span>
+      </div>
     </div>
 
-    <section class="overview">
-      <h2 class="section-title">Project Overview</h2>
-      <div class="section-content">
-        <p>
-          The <strong>Virginia Department of Transportation (VDOT)</strong> is
-          responsible for building, maintaining, and operating the third-largest
-          state-maintained highway system in the country. The
-          <strong>Maintenance Rating Program (MRP) Dashboard</strong> is a
-          centralized platform designed to streamline maintenance operations,
-          improve decision-making, and enhance the efficiency of VDOT's
-          maintenance teams.
+    <!-- Overview -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Project overview</h2>
+        <p class="lead">
+          The <strong>Maintenance Rating Program (MRP) Dashboard</strong> is a
+          centralized view for VDOT managers to prioritize work, and spot
+          blockers early. It brings booking status, inspection results, and
+          location context into one place so teams can move from signal to
+          action faster.
         </p>
-        <img
-          src="imgs/dashboard1.png"
-          alt="VDOT MRP Dashboard"
-          class="case-study-image"
-        />
+        <div class="media-well center" style="margin-top: 16px">
+          <img src="imgs/dashboard1.png" alt="VDOT MRP dashboard overview" />
+        </div>
       </div>
     </section>
 
-    <section class="goals">
-      <h2 class="section-title">Goals of the Dashboard</h2>
-      <div class="section-content">
-        <ul>
-          <li>Streamline maintenance task management for VDOT teams</li>
-          <li>Provide real-time updates on maintenance activities</li>
-          <li>Improve resource allocation and tracking</li>
-          <li>Enhance communication between teams and stakeholders</li>
-          <li>Reduce manual data entry and errors</li>
-        </ul>
+    <!-- Goals -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Goals</h2>
+        <div class="card">
+          <ul>
+            <li>
+              Give district managers a single place to triage and assign work.
+            </li>
+            <li>Surface real-time status.</li>
+            <li>Reduce manual data pulls across systems.</li>
+            <li>Improve communication paths between field and office.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="features">
-      <h2 class="section-title">Key Features</h2>
-      <div class="section-content">
-        <ul>
-          <li>
-            <strong>Task Tracking Dashboard:</strong> Centralized view of all
-            maintenance tasks and their statuses
-          </li>
-          <li>
-            <strong>Resource Allocation:</strong> Visual overview of resources
-            and their distribution across projects
-          </li>
-          <li>
-            <strong>Real-Time Updates:</strong> Instant notifications for task
-            changes and updates
-          </li>
-          <li>
-            <strong>Interactive Map:</strong> Real-time map for tracking
-            maintenance locations and progress
-          </li>
-          <li>
-            <strong>User-Friendly Interface:</strong> Intuitive design for
-            seamless navigation
-          </li>
-        </ul>
+    <!-- Features -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Key features</h2>
+        <div class="card">
+          <ul>
+            <li>
+              <strong>Worklist</strong> clear states and due-soon highlights.
+            </li>
+            <li>
+              <strong>Role-aware panels:</strong> views tailored for ops leads
+              and coordinators.
+            </li>
+            <li>
+              <strong>Interactive map context:</strong> location and cluster
+              signals for routing.
+            </li>
+            <li>
+              <strong>Notification stream:</strong> centralized updates with
+              deep links.
+            </li>
+            <li>
+              <strong>Accessible UI:</strong> WCAG-aligned contrast and spacing
+              for long sessions.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- Competitive Analysis Section -->
-    <section class="competitive-analysis">
-      <h2 class="section-title">Competitive Analysis</h2>
-      <div class="section-content">
-        <p>
-          A competitive analysis was conducted to compare the VDOT MRP Dashboard
-          with similar platforms, including:
-        </p>
-        <ul>
-          <li>
-            <strong
-              ><a href="https://511.vdot.virginia.gov/" target="_blank"
-                >511 Virginia</a
-              >:</strong
-            >
-            <ul>
-              <li>Provides real-time traffic and road condition updates.</li>
-              <li>
-                Focuses on public-facing information rather than internal
-                maintenance tasks.
-              </li>
-              <li>
-                Lacks advanced resource allocation and task tracking features.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong
-              ><a href="https://wv511.org/" target="_blank">WV 511</a>:</strong
-            >
-            <ul>
-              <li>
-                Offers traffic cameras, road conditions, and weather updates.
-              </li>
-              <li>
-                Primarily designed for public use, not internal maintenance
-                operations.
-              </li>
-              <li>
-                Does not include task management or resource tracking tools.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong
-              ><a href="https://511ny.org/" target="_blank">511 NY</a>:</strong
-            >
-            <ul>
-              <li>Provides comprehensive traffic and transit information.</li>
-              <li>Focuses on public transportation and road conditions.</li>
-              <li>
-                Lacks features for internal maintenance task management and
-                resource allocation.
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <p>
-          The <strong>VDOT MRP Dashboard</strong> stands out by offering a
-          centralized platform for internal maintenance teams, with features
-          like task tracking, resource allocation, and real-time updates, which
-          are not available in the public-facing 511 systems.
-        </p>
+    <!-- Competitive Analysis -->
+    <section class="section" id="competitive-analysis">
+      <div class="container">
+        <h2 class="section-title">Competitive analysis</h2>
+        <p class="lead">What we borrowed—and what we improved for MRP:</p>
 
-        <!-- Competitive Analysis Images -->
-        <div class="competitive-analysis-images">
+        <div class="card">
+          <ul>
+            <li>
+              <strong>At-a-glance dashboards</strong> help users prioritize; we
+              added color.
+            </li>
+            <li>
+              <strong>Maps in context</strong> are powerful; we balanced map
+              size with actionable tables.
+            </li>
+            <li>
+              <strong>Notifications</strong> reduce inbox hopping; ours
+              deep-link into the exact record and filter state.
+            </li>
+          </ul>
+        </div>
+
+        <div class="comp-grid">
+          <figure class="comp-card">
+            <div class="media-well">
+              <img
+                src="imgs/comanalysisdashboard1.png"
+                alt="Comparable dashboard: at-a-glance overview"
+              />
+            </div>
+            <figcaption>
+              Strong homepage overview patterns informed our “Today” strip and
+              summary tiles.
+            </figcaption>
+          </figure>
+          <figure class="comp-card">
+            <div class="media-well">
+              <img
+                src="imgs/comanalysisdashboard2.png"
+                alt="Comparable dashboard: list + map pattern"
+              />
+            </div>
+            <figcaption>
+              List + map layouts shaped our split view and cluster interactions.
+            </figcaption>
+          </figure>
+          <figure class="comp-card">
+            <div class="media-well">
+              <img
+                src="imgs/comanalysisdashboard3.png"
+                alt="Comparable dashboard: notifications stream"
+              />
+            </div>
+            <figcaption>
+              Notification streams inspired our inline updates with deep links.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lo-fi -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Lo-fi prototype</h2>
+        <div class="media-well center" style="aspect-ratio: 16/10">
           <img
-            src="imgs/comanalysisdashboard1.png"
-            alt="Competitive Analysis Dashboard 1"
-            class="case-study-image"
-          />
-          <img
-            src="imgs/comanalysisdashboard2.png"
-            alt="Competitive Analysis Dashboard 2"
-            class="case-study-image"
-          />
-          <img
-            src="imgs/comanalysisdashboard3.png"
-            alt="Competitive Analysis Dashboard 3"
-            class="case-study-image"
+            src="imgs/lofi-wireframesdashboard.png"
+            alt="Lo-fi dashboard wireframes"
           />
         </div>
       </div>
     </section>
 
-    <section class="process">
-      <h2 class="section-title">Design Process</h2>
-      <div class="section-content">
-        <p>The design process involved the following steps:</p>
-        <ul>
-          <li>
-            <strong>Research:</strong> Conducted user research to understand the
-            needs of VDOT maintenance teams
-          </li>
-          <li>
-            <strong>Wireframing:</strong> Created low-fidelity wireframes to map
-            out the dashboard's structure
-          </li>
-          <li>
-            <strong>Prototyping:</strong> Developed interactive prototypes for
-            demonstration and feedback
-          </li>
-          <li>
-            <strong>High-Fidelity Design:</strong> Finalized the UI with
-            polished visuals and interactions
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="lofi-prototype">
-      <h2 class="section-title">Lo-Fi Prototype</h2>
-      <div class="section-content">
-        <p>
-          Initial wireframes were created to establish the dashboard's structure
-          and flow:
-        </p>
-        <img
-          src="imgs/lofi-wireframesdashboard.png"
-          alt="Lo-Fi Wireframes"
-          class="case-study-image"
-        />
-      </div>
-    </section>
-
-    <section class="ui-showcase">
-      <h2 class="section-title">UI Elements</h2>
-      <div class="showcase-grid">
-        <div class="showcase-item">
-          <h3>Task Tracking Dashboard</h3>
-          <div style="padding: 71.45% 0 0 0; position: relative">
-            <iframe
-              src="https://player.vimeo.com/video/1062612121?h=a178c4364b&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479?mute=1"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              "
-              title="dashboarduielement1"
-            ></iframe>
-          </div>
-          <script src="https://player.vimeo.com/api/player.js"></script>
-          <p>Centralized task management interface for VDOT teams</p>
-        </div>
-        <div class="showcase-item">
-          <h3>Interactive Map</h3>
-          <div style="padding: 71.45% 0 0 0; position: relative">
-            <iframe
-              src="https://player.vimeo.com/video/1062612141?h=b7c11c798e&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479?mute=1"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              "
-              title="dashboarduielement2"
-            ></iframe>
-          </div>
-          <script src="https://player.vimeo.com/api/player.js"></script>
-          <p>Real-time map for tracking maintenance locations and progress</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="prototype">
-      <h2 class="section-title">Prototype Showcase</h2>
-      <div class="video-container">
-        <div style="padding: 71.45% 0 0 0; position: relative">
+    <!-- Prototype Showcase (smaller, centered) -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Prototype showcase</h2>
+        <div class="media-well center" style="padding: 0">
           <iframe
-            src="https://player.vimeo.com/video/1062612168?h=dc99a167ef&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479?mute=1"
-            frameborder="0"
+            title="MRP dashboard prototype video"
+            src="https://player.vimeo.com/video/1062612168?h=dc99a167ef&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-            "
-            title="Dashboardvdotshowcase"
+            frameborder="0"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
           ></iframe>
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
-      </div>
-      <div style="text-align: center; margin-top: 1.5rem">
-        <a
-          href="https://www.figma.com/proto/your-figma-link"
-          class="prototype-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Prototype
-        </a>
-      </div>
-    </section>
-
-    <section class="outcomes">
-      <h2 class="section-title">Outcomes</h2>
-      <div class="section-content">
-        <ul>
-          <li>30% improvement in task completion speed</li>
-          <li>Centralized dashboard reduced navigation time</li>
-          <li>45% reduction in data entry errors</li>
-          <li>Improved communication between teams and stakeholders</li>
-        </ul>
+        <div class="case-nav" style="margin-top: 14px">
+          <a
+            class="primary"
+            href="https://www.figma.com/proto/your-figma-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open interactive prototype →
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="conclusion">
-      <h2 class="section-title">Conclusion</h2>
-      <div class="section-content">
-        <p>
-          The VDOT MRP Dashboard successfully addresses the challenges of
-          maintenance operations by providing a user-centric, role-specific
-          interface. Its real-time updates, seamless data integration, and
-          intuitive design make it a standout solution for improving maintenance
-          workflows and stakeholder communication.
-        </p>
+    <!-- UI elements (two quick videos/images) -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">UI elements</h2>
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <h3>Worklist</h3>
+            <div class="media-well" style="padding: 0">
+              <iframe
+                src="https://player.vimeo.com/video/1062612121?h=a178c4364b&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                title="dashboard UI element 1"
+              ></iframe>
+            </div>
+            <p style="color: var(--muted); margin-top: 8px">
+              Prioritize by due-soon and status at a glance.
+            </p>
+          </div>
+
+          <div class="showcase-item">
+            <h3>Map context</h3>
+            <div class="media-well" style="padding: 0">
+              <iframe
+                src="https://player.vimeo.com/video/1062612141?h=b7c11c798e&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                title="dashboard UI element 2"
+              ></iframe>
+            </div>
+            <p style="color: var(--muted); margin-top: 8px">
+              Clustered pins and selection sync with the table.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcomes -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Outcomes</h2>
+        <div class="card">
+          <ul>
+            <li>
+              Clearer prioritization and visibility reduced coordination cycles.
+            </li>
+            <li>Fewer manual exports by centralizing operational data.</li>
+            <li>
+              Consistent, accessible UI improved scan speed for long sessions.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Footer CTAs consistent with site -->
+        <div class="case-nav">
+          <a class="secondary" href="work.html">← Back to work</a>
+        </div>
       </div>
     </section>
   </body>

@@ -3,402 +3,425 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VDOT MRP UX Design</title>
+    <title>VDOT MRP — Case Study | Destinee Young</title>
+    <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
+
     <style>
       :root {
-        --cream: #f7f5f0;
-        --stone: #4a4a4a;
-        --clay: #9a796f;
-        --border: 1px solid rgba(0, 0, 0, 0.08);
+        --bg: #ffffff;
+        --text: #0b0b0b;
+        --muted: #6b7280;
+        --line: rgba(0, 0, 0, 0.08);
+        --card: #ffffff;
+        --accent: #111111;
       }
-
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
-
+      html,
+      body {
+        height: 100%;
+      }
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
-        background: var(--cream);
-        color: var(--stone);
+          Inter, system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
         line-height: 1.6;
-        padding-top: 80px;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 2px;
       }
 
+      /* Nav (matches index/work) */
       nav {
-        position: fixed;
+        position: sticky;
         top: 0;
-        width: 100%;
-        background: var(--cream);
-        z-index: 1000;
-        padding: 1rem 5%;
-        border-bottom: var(--border);
+        z-index: 50;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
       }
-
       .nav-inner {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 14px 20px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        height: 36px;
+      }
+      .name {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
         align-items: center;
       }
-
-      .back-button {
-        background: var(--clay);
-        color: white;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
+      .nav-links a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--text);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 1px;
+        width: 0;
+        background: var(--text);
+        transition: width 0.2s ease;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--text);
+        color: #fff;
+        border: 1px solid var(--text);
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--text);
+        padding: 10px 14px;
       }
 
-      .back-button:hover {
-        opacity: 0.9;
+      /* Layout */
+      .section {
+        padding: 50px 5%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
+      /* Hero */
       .hero {
-        padding: 4rem 5% 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
+        padding: 36px 5% 8px;
       }
-
       .hero h1 {
-        font-size: clamp(2rem, 6vw, 3rem);
-        margin-bottom: 1rem;
-        line-height: 1.2;
+        font-size: clamp(28px, 5vw, 40px);
+        line-height: 1.15;
+        font-weight: 800;
+        margin-bottom: 8px;
       }
-
       .hero p {
-        font-size: 1.25rem;
-        color: rgba(0, 0, 0, 0.7);
+        color: var(--muted);
+        font-size: clamp(16px, 2.2vw, 18px);
       }
 
-      section {
-        padding: 4rem 5%;
+      /* Meta tags */
+      .meta-bar {
+        padding: 16px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: #fafafa;
+      }
+      .meta-row {
         max-width: 1200px;
         margin: 0 auto;
-        border-bottom: var(--border);
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .tag {
+        font-size: 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: #fff;
+        color: #111;
       }
 
-      .section-title {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        margin-bottom: 2rem;
-        color: var(--stone);
-      }
-
-      .section-content {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: rgba(0, 0, 0, 0.7);
-      }
-
-      .case-study-image {
+      /* Media wells */
+      .media-well {
         width: 100%;
-        max-width: 600px;
-        height: auto;
-        margin: 2rem auto;
-        display: block;
-      }
-
-      .video-container {
-        width: 100%;
-        max-width: 300px; /* Smaller video size */
-        margin: 2rem auto;
-        border-radius: 8px;
+        max-width: 800px; /* keep media modestly sized */
+        aspect-ratio: 16/9;
+        background: #f8f8f8;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
+        padding: 10px;
+        margin: 14px auto 0;
       }
-
-      .video-container video {
+      .media-well.tall {
+        aspect-ratio: 9/19;
+      } /* for portrait phone videos */
+      .media-well img,
+      .media-well iframe {
         width: 100%;
-        height: auto;
-        display: block;
+        height: 100%;
+        object-fit: contain;
+        border: 0;
+        border-radius: 8px;
       }
 
-      .prototype-button {
-        display: inline-block;
-        background: var(--clay);
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: opacity 0.3s ease;
-        margin-top: 1rem;
+      /* Section titles & cards */
+      h2.section-title {
+        font-size: clamp(22px, 3.6vw, 26px);
+        margin-bottom: 12px;
       }
-
-      .prototype-button:hover {
-        opacity: 0.9;
+      .lead {
+        color: var(--muted);
+        max-width: 900px;
       }
-
-      .showcase-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .showcase-item {
-        background: #f7f5f0;
-        padding: 1rem;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px;
-        text-align: center; /* Center text and video */
-      }
-
-      .showcase-item video {
-        width: 100%; /* Full width of the container */
-        max-width: 300px; /* Limit video width */
-        height: auto;
-        border-radius: 4px;
-        margin: 0 auto 1rem; /* Center video horizontally */
-        display: block;
-        background: transparent; /* Remove any background color */
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 16px;
+        margin-top: 16px;
       }
 
       ul {
-        padding-left: 1.5rem;
-        margin: 1.5rem 0;
+        padding-left: 1.25rem;
+        margin: 12px 0;
       }
-
       li {
-        margin-bottom: 1rem;
+        margin-bottom: 10px;
       }
 
-      @media (max-width: 768px) {
-        .hero {
-          padding: 2rem 5%;
-        }
+      /* Two-up showcase (optional if you re-add later) */
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+        margin-top: 12px;
+      }
+      .showcase-item {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        background: var(--card);
+      }
+      .showcase-item h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+      .showcase-item .media-well {
+        aspect-ratio: 9/19;
+      }
 
-        section {
-          padding: 2rem 5%;
-        }
-
-        .case-study-image {
-          margin: 1rem auto;
-        }
+      /* Footer nav */
+      .case-nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .case-nav a {
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+      .case-nav a.primary {
+        background: var(--text);
+        color: #fff;
+      }
+      .case-nav a.secondary {
+        background: transparent;
+        color: var(--text);
       }
     </style>
   </head>
   <body>
-    <nav>
+    <!-- Nav -->
+    <nav aria-label="Primary">
       <div class="nav-inner">
-        <button class="back-button" onclick="window.location.href='index.html'">
-          ← Back
-        </button>
+        <div class="brand">
+          <a
+            href="index.html"
+            style="display: flex; align-items: center; gap: 12px"
+          >
+            <img src="logo/logo1.png" alt="DY monogram" />
+            <div class="name">Destinee Young</div>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html#capabilities">Capabilities</a>
+          <a href="index.html#work">Work</a>
+          <a
+            href="mailto:destinee.young99@gmail.com?subject=Portfolio%20Inquiry"
+            >Contact</a
+          >
+          <a
+            class="btn ghost"
+            href="imgs/DestineeResume2025new.pdf"
+            aria-label="Download resume"
+            >Resume</a
+          >
+        </div>
       </div>
     </nav>
 
-    <div class="hero">
-      <h1>VDOT Maintenance Rating Program (MRP)</h1>
-      <p>UI/UX Design Case Study</p>
+    <!-- Hero -->
+    <header class="hero">
+      <h1>Maintenance Rating Program (MRP)</h1>
+      <p>End-to-end responsive app for field inspections at VDOT.</p>
+    </header>
+
+    <!-- Meta tags -->
+    <div class="meta-bar" aria-label="Project tags and quick facts">
+      <div class="meta-row">
+        <span class="tag">Field inspections</span>
+        <span class="tag">Mobile-first</span>
+        <span class="tag">Accessibility (WCAG)</span>
+        <span class="tag">Figma</span>
+      </div>
     </div>
 
-    <section class="overview">
-      <h2 class="section-title">Project Overview</h2>
-      <div class="section-content">
-        <p>
-          The <strong>Virginia Department of Transportation (VDOT)</strong> is
-          responsible for building, maintaining, and operating the third-largest
-          state-maintained highway system in the country. VDOT's
-          <strong>Maintenance Rating Program (MRP)</strong> is designed to
-          provide vital information for making maintenance decisions based on
-          facts and sound judgment.
+    <!-- Project facts (from your reference slide) -->
+    <!-- Project overview -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Project overview</h2>
+        <p class="lead">
+          The Maintenance Rating Program (MRP) is a mobile-first application
+          designed for field inspectors at the Virginia Department of
+          Transportation (VDOT) to log, track, and report maintenance operations
+          efficiently. As the sole UI/UX designer, I created a responsive,
+          accessible design system that supports fast data entry and clear
+          reporting in challenging on-site conditions.
         </p>
-        <p>
-          The <strong>VDOT MRP App</strong> is a crowdsourcing tool developed to
-          gather condition information of roadway assets from active VDOT
-          maintenance personnel and Virginia roadway network users. The app aims
-          to streamline data collection, improve decision-making, and enhance
-          the overall efficiency of VDOT's maintenance operations.
-        </p>
-        <img
-          src="imgs/moblieapp1.png"
-          alt="VDOT MRP Interface"
-          class="case-study-image"
-        />
-      </div>
-    </section>
 
-    <section class="goals">
-      <h2 class="section-title">Goals of the App</h2>
-      <div class="section-content">
-        <ul>
-          <li>Streamline task management for VDOT inspectors</li>
-          <li>Reduce manual data entry and errors</li>
-          <li>Provide real-time updates on maintenance tasks</li>
-          <li>Improve resource allocation and tracking</li>
-          <li>Enhance overall operational efficiency</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="features">
-      <h2 class="section-title">Key Features</h2>
-      <div class="section-content">
         <ul>
           <li>
-            <strong>Task Tracking Dashboard:</strong> Centralized view of all
-            tasks and their statuses
+            <strong>Challenge:</strong> Enable quick, accessible inspection
+            reporting in the field, replacing a slow, manual process.
           </li>
           <li>
-            <strong>Resource Allocation:</strong> Visual overview of resources
-            and their distribution
+            <strong>Approach:</strong> Designed wireframes, built a Figma
+            prototype, and validated for accessibility compliance (WCAG).
           </li>
           <li>
-            <strong>Real-Time Updates:</strong> Instant notifications for task
-            changes and updates
-          </li>
-          <li>
-            <strong>Interactive Map:</strong> Real-time map for tracking
-            maintenance locations and progress
-          </li>
-          <li>
-            <strong>User-Friendly Interface:</strong> Intuitive design for
-            seamless navigation
+            <strong>Impact:</strong> Streamlined reporting process and improved
+            usability for inspectors, reducing operational bottlenecks.
           </li>
         </ul>
-      </div>
-    </section>
 
-    <section class="process">
-      <h2 class="section-title">UI Design Process</h2>
-      <div class="section-content">
-        <p>The design process involved the following steps:</p>
-        <ul>
-          <li>
-            <strong>Wireframing:</strong> Created low-fidelity wireframes to map
-            out the app's structure
-          </li>
-          <li>
-            <strong>Prototyping:</strong> Developed interactive prototypes for
-            demonstration and feedback
-          </li>
-          <li>
-            <strong>High-Fidelity Design:</strong> Finalized the UI with
-            polished visuals and interactions
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="lofi-prototype">
-      <h2 class="section-title">Lo-Fi Prototype</h2>
-      <div class="section-content">
-        <p>
-          Initial wireframes were created to establish the app's structure and
-          flow:
-        </p>
-        <img
-          src="imgs/lofi-wireframesmoblie.png"
-          alt="Lo-Fi Wireframes"
-          class="case-study-image"
-        />
-      </div>
-    </section>
-
-    <section class="ui-showcase">
-      <h2 class="section-title">UI Elements</h2>
-      <div class="showcase-grid">
-        <div class="showcase-item">
-          <h3>Task Tracking Dashboard</h3>
-          <div style="padding: 200.98% 0 0 0; position: relative">
-            <iframe
-              src="https://player.vimeo.com/video/1062612219?h=8188bbd06f&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479?mute=1"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              "
-              title="Inspectionhistoryvid3"
-            ></iframe>
-          </div>
-          <script src="https://player.vimeo.com/api/player.js"></script>
-          <p>Centralized task management interface for inspectors</p>
-        </div>
-        <div class="showcase-item">
-          <h3>Interactive Map</h3>
-          <div style="padding: 200.98% 0 0 0; position: relative">
-            <iframe
-              src="https://player.vimeo.com/video/1062612232?h=4bd0846d15&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479?mute=1"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              "
-              title="Inspectionhistoryvid4"
-            ></iframe>
-          </div>
-          <script src="https://player.vimeo.com/api/player.js"></script>
-          <p>Real-time map for tracking maintenance locations and progress</p>
+        <div class="media-well" style="margin-top: 16px">
+          <img
+            src="imgs/moblieapp1.png"
+            alt="MRP app screens – login and requirements"
+          />
         </div>
       </div>
     </section>
 
-    <section class="prototype">
-      <h2 class="section-title">Prototype Showcase</h2>
-      <div class="video-container">
-        <div style="padding: 217.73% 0 0 0; position: relative">
+    <!-- From wireframe to framework (from your second slide) -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">From wireframe to framework</h2>
+        <p class="lead">
+          Purpose: translate raw structural ideas into a scalable design system
+          supporting VDOT’s mobile inspection workflow.
+        </p>
+
+        <div class="card">
+          <h3 style="font-size: 16px; margin-bottom: 8px">
+            Design framework in action
+          </h3>
+          <ul>
+            <li>Used consistent layout patterns and component hierarchy.</li>
+            <li>
+              Created a visual system with spacing, font, and color variables.
+            </li>
+            <li>Defined interaction states (active, default, disabled).</li>
+            <li>Ensured WCAG-compliant contrast with browser-based testing.</li>
+          </ul>
+
+          <h3 style="font-size: 16px; margin: 12px 0 8px">Tools</h3>
+          <ul>
+            <li>Figma (wireframes → prototypes)</li>
+            <li>Browser contrast checker</li>
+            <li>Internal component library</li>
+          </ul>
+        </div>
+
+        <div class="media-well" style="margin-top: 16px">
+          <img
+            src="imgs/lofi-wireframesmoblie.png"
+            alt="Wireframes evolving to hi-fi mobile screens"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Prototype showcase (smaller, centered, portrait ratio) -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Prototype showcase</h2>
+        <div
+          class="media-well"
+          style="aspect-ratio: 16/10; max-width: 800px; margin: 0 auto"
+        >
           <iframe
-            src="https://player.vimeo.com/video/1062612099?h=a17cd0cc51&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479?mute=1"
-            frameborder="0"
+            title="MRP prototype video"
+            src="https://player.vimeo.com/video/1062612099?h=a17cd0cc51&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-            "
-            title="apprecording"
+            frameborder="0"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
           ></iframe>
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
-      </div>
-      <div style="text-align: center; margin-top: 1.5rem">
-        <a
-          href="https://www.figma.com/proto/5L8LsRFEwt2RS9DDYknlph/MRP-Application?node-id=101-2&starting-point-node-id=101%3A2&t=0plxgkLMcTw9p6oi-1"
-          class="prototype-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Prototype
-        </a>
+        <div class="case-nav" style="margin-top: 14px">
+          <a
+            class="primary"
+            href="https://www.figma.com/proto/5L8LsRFEwt2RS9DDYknlph/MRP-Application?node-id=101-2&starting-point-node-id=101%3A2"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open interactive prototype →</a
+          >
+        </div>
       </div>
     </section>
 
-    <section class="outcomes">
-      <h2 class="section-title">Outcomes</h2>
-      <div class="section-content">
-        <ul>
-          <li>30% improvement in task completion speed</li>
-          <li>Centralized dashboard reduced navigation time</li>
-          <li>45% reduction in data entry errors</li>
-        </ul>
-      </div>
-    </section>
+    <!-- Outcomes (kept truthful to your slide) -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Outcomes</h2>
+        <div class="card">
+          <ul>
+            <li>
+              Streamlined field reporting and improved usability through
+              accessible UI patterns.
+            </li>
+          </ul>
+        </div>
 
-    <section class="conclusion">
-      <h2 class="section-title">Conclusion</h2>
-      <div class="section-content">
-        <p>
-          The redesigned interface significantly improved operational efficiency
-          through streamlined workflows and enhanced visibility of critical
-          maintenance data. The VDOT MRP App has become an essential tool for
-          VDOT personnel, enabling them to make data-driven decisions and
-          maintain Virginia's highway system more effectively.
-        </p>
+        <div class="case-nav">
+          <a class="secondary" href="work.html">← Back to work</a>
+        </div>
       </div>
     </section>
   </body>

@@ -3,371 +3,530 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Destinee Young | UX/UI Designer</title>
+    <title>Destinee Young | UI/UX Designer</title>
+    <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
+
     <style>
       :root {
-        --cream: #f7f5f0;
-        --stone: #4a4a4a;
-        --clay: #9a796f;
-        --border: 1px solid rgba(0, 0, 0, 0.08);
+        --bg: #ffffff;
+        --text: #0b0b0b;
+        --muted: #6b7280;
+        --line: rgba(0, 0, 0, 0.08);
+        --card: #ffffff;
+        --accent: #111111;
       }
 
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
-
+      html,
+      body {
+        height: 100%;
+      }
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
-        background: var(--cream);
-        color: var(--stone);
+          Inter, system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
         line-height: 1.6;
-        padding-top: 80px; /* Space for fixed header */
       }
 
-      /* Sticky Header */
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 2px;
+      }
+
+      /* Header */
       nav {
-        position: fixed;
+        position: sticky;
         top: 0;
-        width: 100%;
-        background: var(--cream);
-        z-index: 1000;
-        padding: 1rem 5%;
-        border-bottom: var(--border);
-        transition: all 0.3s ease;
+        z-index: 50;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
       }
-
       .nav-inner {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 14px 20px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+        gap: 16px;
       }
-
-      .logo img {
-        height: 40px;
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
       }
-
+      .brand img {
+        height: 36px;
+        width: auto;
+      }
+      .brand .name {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
       .nav-links {
         display: flex;
-        gap: 2rem;
+        gap: 22px;
+        align-items: center;
       }
-
       .nav-links a {
-        text-decoration: none;
-        color: var(--stone);
         position: relative;
-        padding: 0.5rem 0;
+        padding: 6px 0;
+        color: var(--text);
       }
-
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background: var(--stone);
-        transition: width 0.3s ease;
-      }
-
       .nav-links a:hover::after {
         width: 100%;
       }
-
-      /* Hero Section */
-      .hero {
-        padding: 5vh 5%;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: clamp(2rem, 6vw, 3.5rem);
-        font-weight: 500;
-        margin-bottom: 1.5rem;
-        line-height: 1.1;
-      }
-
-      .hero p {
-        font-size: 1.25rem;
-        color: rgba(0, 0, 0, 0.7);
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      /* Intro Section */
-      .intro {
-        padding: 2rem 5%;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .intro h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .intro p {
-        font-size: 1.1rem;
-        color: rgba(0, 0, 0, 0.7);
-        line-height: 1.8;
-      }
-
-      /* Case Studies Section */
-      #work {
-        padding: 3rem 5%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .case-study {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        margin-bottom: 4rem;
-        align-items: center;
-      }
-
-      .case-study img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      }
-
-      .case-study-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .case-study h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .case-study p {
-        font-size: 1rem;
-        color: rgba(0, 0, 0, 0.7);
-        margin-bottom: 1.5rem;
-      }
-
-      .case-study a {
-        text-decoration: none;
-        color: var(--clay);
-        font-weight: 500;
-        position: relative;
-      }
-
-      .case-study a::after {
+      .nav-links a::after {
         content: "";
         position: absolute;
-        bottom: -2px;
         left: 0;
-        width: 100%;
+        bottom: -2px;
         height: 1px;
-        background: var(--clay);
-        transition: transform 0.3s ease;
-        transform-origin: right;
+        width: 0;
+        background: var(--text);
+        transition: width 0.2s ease;
       }
-
-      .case-study a:hover::after {
-        transform: scaleX(0);
-      }
-
-      /* Contact Section */
-      #contact {
-        padding: 3rem 5%;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      #contact h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .contact-form {
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        max-width: 500px;
-        margin: 0 auto;
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-        text-align: left;
-      }
-
-      .form-group label {
-        display: block;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
-      }
-
-      .form-group input,
-      .form-group textarea {
-        width: 100%;
-        padding: 0.8rem;
-        border: var(--border);
-        border-radius: 4px;
-        font-family: inherit;
-        font-size: 1rem;
-      }
-
-      .form-group textarea {
-        resize: vertical;
-        min-height: 150px;
-      }
-
-      button {
-        background: var(--stone);
-        color: white;
-        border: none;
-        padding: 0.8rem 2rem;
-        border-radius: 4px;
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--text);
+        color: #fff;
+        border: 1px solid var(--text);
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
         cursor: pointer;
-        transition: background 0.3s ease;
-        font-size: 1rem;
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--text);
+        padding: 10px 14px;
       }
 
-      button:hover {
-        background: #333;
+      /* Sections */
+      .section {
+        padding: 56px 5%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
-      @media (max-width: 768px) {
-        .case-study {
+      /* Hero */
+      .hero {
+        padding: 36px 0;
+      }
+      .hero h1 {
+        font-size: clamp(28px, 5vw, 44px);
+        line-height: 1.15;
+        font-weight: 800;
+        margin-bottom: 14px;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: clamp(16px, 2.2vw, 18px);
+        max-width: 820px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 10px;
+        margin-top: 18px;
+        flex-wrap: wrap;
+      }
+
+      /* Credibility strip */
+      .cred {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: #fafafa;
+      }
+      .cred .row {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 18px;
+        align-items: center;
+      }
+      .cred p {
+        color: var(--muted);
+      }
+      .logo-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 22px;
+        align-items: center;
+      }
+      .logo-pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #111;
+        background: #fff;
+      }
+
+      /* Capabilities */
+      .caps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .cap {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .cap h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      .cap p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      @media (max-width: 900px) {
+        .caps-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 640px) {
+        .caps-grid {
           grid-template-columns: 1fr;
-          gap: 2rem;
         }
+      }
 
-        .case-study img {
-          height: 200px;
+      /* Work cards */
+      #work .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .card {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 24px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+      }
+
+      /* Media well */
+      .media-well {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: #f8f8f8;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 10px;
+      }
+      .media-well img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .card h3 {
+        font-size: 20px;
+        margin-bottom: 6px;
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      .meta {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 8px 0 12px;
+      }
+      .tag {
+        font-size: 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 4px 10px;
+        color: #111;
+        background: #fff;
+      }
+
+      .outcomes,
+      .stat {
+        font-size: 14px;
+        color: #111;
+        margin-bottom: 14px;
+      } /* more space before buttons */
+
+      /* CTA rows — add space ABOVE buttons */
+      .actions,
+      .action-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px !important; /* ensure we beat any inline styles */
+      }
+
+      .actions a,
+      .action-row a {
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        padding: 8px 12px;
+        font-weight: 600;
+      }
+      .actions a.primary,
+      .action-row .primary {
+        background: var(--text);
+        color: #fff;
+      }
+      .actions a.secondary {
+        background: transparent;
+        color: var(--text);
+      }
+
+      @media (max-width: 900px) {
+        .card {
+          grid-template-columns: 1fr;
         }
+      }
+
+      /* Contact */
+      #contact .form {
+        max-width: 560px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px;
+        background: var(--card);
+      }
+      .field {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 10px 12px;
+        font: inherit;
+        background: #fff;
+      }
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+      button {
+        border-radius: 10px;
+        border: 1px solid var(--text);
+        background: var(--text);
+        color: #fff;
+        padding: 10px 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      footer {
+        padding: 32px 5%;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
       }
     </style>
   </head>
   <body>
-    <nav>
+    <!-- Nav -->
+    <nav aria-label="Primary">
       <div class="nav-inner">
-        <div class="logo">
-          <img src="logo/Y (1).png" alt="Destinee Young Logo" />
+        <div class="brand">
+          <img src="logo/logo1.png" alt="DY monogram" />
+          <div class="name">Destinee Young</div>
         </div>
         <div class="nav-links">
+          <a href="#capabilities">Capabilities</a>
           <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
+          <a
+            href="mailto:destinee.young99@gmail.com?subject=Portfolio%20Inquiry"
+            >Contact</a
+          >
+          <a
+            class="btn ghost"
+            href="imgs/DestineeResume2025new.pdf"
+            aria-label="Download resume"
+            >Resume</a
+          >
         </div>
       </div>
     </nav>
 
-    <section class="hero">
-      <h1>UX/UI Designer & Researcher</h1>
-      <p>Creating Human-Centered Experiences</p>
-    </section>
-
-    <section class="intro">
-      <h2>Hi, I'm Destinee 😊</h2>
-      <p>
-        I'm a UX/UI Designer and Researcher with a passion for creating
-        intuitive and impactful digital experiences.
-      </p>
-    </section>
-
-    <section id="work">
-      <div class="case-study">
-        <img src="imgs/moblieapp1.png" alt="VDOT Mobile App" />
-        <div class="case-study-content">
-          <h3>VDOT Inspection Mobile App</h3>
-          <p>
-            Designed a user-friendly interface for the VDOT MRP application,
-            streamlining task management and improving operational efficiency
-            for the Virginia Department of Transportation.
-          </p>
-          <a href="vdot-mobile-app.html">View Case Study →</a>
-        </div>
-      </div>
-
-      <div class="case-study">
-        <img src="imgs/dashboard1.png" alt="VDOT Dashboard" />
-        <div class="case-study-content">
-          <h3>VDOT Inspection Dashboard</h3>
-          <p>
-            Designed a user-friendly interface for the VDOT MRP dashboard,
-            streamlining task management and improving operational efficiency
-            for the Virginia Department of Transportation.
-          </p>
-          <a href="vdot-dashboard.html">View Case Study →</a>
-        </div>
-      </div>
-
-      <div class="case-study">
-        <img src="imgs/pcis-dashboard.png" alt="PCIS Dashboard" />
-        <div class="case-study-content">
-          <h3>PCIS Dashboard Design</h3>
-          <p>
-            Designed a multi-persona desktop interface for port stakeholders, including Terminal Operators, Transportation Operators, and Beneficial Cargo Owners (BCOs). The dashboard streamlines cargo management, provides real-time updates, and enhances communication across roles.
-          </p>
-          <a href="pcis-dashboard.html">View Case Study →</a>
+    <section class="section hero">
+      <div class="container">
+        <h1>
+          UI/UX Designer focusing on creating intuitive, user-centered designs
+          by combining research insights with creative problem-solving.
+        </h1>
+        <p>
+          I build resilient UI foundations. Strong in wireframing, prototyping
+          (Figma, HTML/CSS), accessibility, and cross-functional collaboration.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#work">See selected work</a>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div class="contact-form">
-        <form action="https://formspree.io/f/manewyyq" method="POST">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit">Send</button>
-        </form>
+    <section class="section cred" aria-label="Experience">
+      <div class="container row">
+        <p><strong>Selected orgs & domains</strong></p>
+        <div class="logo-list" label="Previous organizations">
+          <span class="logo-pill"
+            >Leidos (Surface Transportation Solutions)</span
+          >
+          <span class="logo-pill">Virginia DOT</span>
+          <span class="logo-pill">Federal / Transportation</span>
+          <span class="logo-pill">GovTech</span>
+        </div>
       </div>
     </section>
 
-    <script>
-      // Smooth scroll functionality
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
+    <section id="capabilities" class="section">
+      <div class="container">
+        <h2 style="font-size: 24px; margin-bottom: 10px">What I bring</h2>
+        <div class="caps-grid" role="list">
+          <div class="cap" role="listitem">
+            <h3>Design Systems & UI Quality</h3>
+            <p>
+              Create scalable component libraries and usage guidelines that
+              speed delivery and improve consistency.
+            </p>
+          </div>
+          <div class="cap" role="listitem">
+            <h3>End-to-End UX</h3>
+            <p>
+              Problem framing, flows, prototyping, and validation—right-sized
+              for constraints.
+            </p>
+          </div>
+          <div class="cap" role="listitem">
+            <h3>Team Enablement</h3>
+            <p>
+              Align with PM/Eng, and introduce lightweight rituals that raise UX
+              maturity without red tape.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      // Header scroll effect
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 100) {
-          nav.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
-        } else {
-          nav.style.boxShadow = "none";
-        }
-      });
-    </script>
+    <!-- Work -->
+    <section id="work" class="section" aria-label="Selected Work">
+      <div class="container">
+        <h2 style="font-size: 24px; margin-bottom: 10px">Selected work</h2>
+
+        <!-- Featured -->
+        <article class="card" style="margin-bottom: 18px">
+          <div class="media-well">
+            <img
+              src="imgs/moblieapp1.png"
+              alt="Screens from VDOT Maintenance app"
+            />
+          </div>
+          <div>
+            <h3 style="font-size: 20px; margin-bottom: 6px">
+              VDOT Inspection Mobile App
+            </h3>
+            <div class="meta">
+              <span class="tag">Field workflows</span>
+              <span class="tag">Android/iOS</span>
+              <span class="tag">Accessibility</span>
+            </div>
+            <p>
+              Redesigned maintenance inspection flows for field techs with
+              offline use, faster inputs, and clearer status handoff.
+            </p>
+            <div class="outcomes">
+              Outcome: lower data-entry friction and improved task visibility.
+            </div>
+            <!-- removed inline margin so the class can control spacing -->
+            <div class="actions">
+              <a class="primary" href="vdot-mobile-app.html"
+                >Open case study →</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- Grid -->
+        <div class="grid">
+          <!-- Card 1 -->
+          <article class="card" data-type="dashboard">
+            <div class="media-well">
+              <img src="imgs/dashboard1.png" alt="VDOT dashboard overview" />
+            </div>
+            <div class="content">
+              <h3>VDOT Inspection Dashboard</h3>
+              <div class="meta">
+                <span class="tag">Ops analytics</span>
+                <span class="tag">Web</span>
+                <span class="tag">WCAG</span>
+              </div>
+              <p>
+                Prioritization and SLA tracking for district managers; clearer
+                backlog signals and action paths.
+              </p>
+              <div class="stat">
+                Role: sole UX designer · Tools: Figma · Partnered with PM/Eng
+              </div>
+              <div class="action-row">
+                <a class="primary" href="vdot-dashboard.html"
+                  >Open case study →</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card" data-type="dashboard">
+            <div class="media-well">
+              <img
+                src="imgs/pcis-dashboard.png"
+                alt="PCIS multi-persona dashboard"
+              />
+            </div>
+            <div class="content">
+              <h3>PCIS Multi-Persona Dashboard (POC)</h3>
+              <div class="meta">
+                <span class="tag">Stakeholder alignment</span>
+                <span class="tag">Prototyping</span>
+              </div>
+              <p>
+                Unified cargo visibility for terminals, carriers, and BCOs with
+                role-based views and clearer comms.
+              </p>
+              <div class="stat">Role: UX lead · Tools: Figma</div>
+              <div class="action-row">
+                <a class="primary" href="pcis-dashboard.html"
+                  >Open case study →</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

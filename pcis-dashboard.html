@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PCIS Dashboard | UX/UI Design Case Study</title>
+    <title>PCIS Dashboard — Case Study | Destinee Young</title>
+    <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
 
-    <!-- Favicon Configuration -->
+    <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
@@ -24,489 +25,648 @@
 
     <style>
       :root {
-        --cream: #f7f5f0;
-        --stone: #4a4a4a;
-        --clay: #9a796f;
-        --border: 1px solid rgba(0, 0, 0, 0.08);
+        /* white theme to match index/work */
+        --bg: #ffffff;
+        --text: #0b0b0b;
+        --muted: #6b7280; /* gray-500 */
+        --line: rgba(0, 0, 0, 0.08);
+        --card: #ffffff;
+        --accent: #111111;
       }
 
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
-
+      html,
+      body {
+        height: 100%;
+      }
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
-        background: var(--cream);
-        color: var(--stone);
+          Inter, system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
         line-height: 1.6;
-        padding-top: 80px;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 2px;
       }
 
+      /* Nav (same structure as index) */
       nav {
-        position: fixed;
+        position: sticky;
         top: 0;
-        width: 100%;
-        background: var(--cream);
-        z-index: 1000;
-        padding: 1rem 5%;
-        border-bottom: var(--border);
+        z-index: 50;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
       }
-
       .nav-inner {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 14px 20px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        height: 36px;
+        width: auto;
+      }
+      .brand .name {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
         align-items: center;
       }
-
-      .back-button {
-        background: var(--clay);
-        color: white;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 4px;
+      .nav-links a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--text);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 1px;
+        width: 0;
+        background: var(--text);
+        transition: width 0.2s ease;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--text);
+        color: #fff;
+        border: 1px solid var(--text);
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
         cursor: pointer;
-        transition: opacity 0.3s ease;
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--text);
+        padding: 10px 14px;
       }
 
-      .back-button:hover {
-        opacity: 0.9;
+      /* Layout */
+      .section {
+        padding: 56px 5%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
+      /* Hero */
       .hero {
-        padding: 4rem 5% 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
+        padding: 36px 5% 8px;
       }
-
       .hero h1 {
-        font-size: clamp(2rem, 6vw, 3rem);
-        margin-bottom: 1rem;
-        line-height: 1.2;
+        font-size: clamp(28px, 5vw, 40px);
+        line-height: 1.15;
+        font-weight: 800;
+        margin-bottom: 8px;
       }
-
       .hero p {
-        font-size: 1.25rem;
-        color: rgba(0, 0, 0, 0.7);
+        color: var(--muted);
+        font-size: clamp(16px, 2.2vw, 18px);
       }
 
-      section {
-        padding: 4rem 5%;
+      /* Meta bar (tags / quick facts) */
+      .meta-bar {
+        padding: 16px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: #fafafa;
+      }
+      .meta-row {
         max-width: 1200px;
         margin: 0 auto;
-        border-bottom: var(--border);
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .tag {
+        font-size: 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: #fff;
+        color: #111;
       }
 
-      .section-title {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        margin-bottom: 2rem;
-        color: var(--stone);
-      }
-
-      .section-content {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: rgba(0, 0, 0, 0.7);
-      }
-
-      .case-study-image {
+      /* Media well for images/videos (matches work cards) */
+      .media-well {
         width: 100%;
-        max-width: 700px;
-        height: auto;
-        margin: 2rem auto;
-        display: block;
-      }
-
-      .video-container {
-        width: 100%;
-        max-width: 600px;
-        margin: 2rem auto;
-        border-radius: 8px;
+        aspect-ratio: 16/9;
+        background: #f8f8f8;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 10px;
+        margin: 14px 0 0;
       }
-
-      .video-container iframe {
+      .media-well img,
+      .media-well iframe {
         width: 100%;
         height: 100%;
-        border: none;
+        object-fit: contain;
+        border: 0;
         border-radius: 8px;
       }
 
-      .prototype-button {
-        display: inline-block;
-        background: var(--clay);
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: opacity 0.3s ease;
-        margin-top: 1rem;
+      /* Section titles + content */
+      h2.section-title {
+        font-size: clamp(22px, 3.6vw, 26px);
+        margin-bottom: 12px;
+      }
+      .lead {
+        color: var(--muted);
+        max-width: 900px;
       }
 
-      .prototype-button:hover {
-        opacity: 0.9;
+      /* Cardy blocks */
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 16px;
+        margin-top: 16px;
       }
 
+      /* Lists */
+      ul {
+        padding-left: 1.25rem;
+        margin: 12px 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+
+      /* Showcase grid (UI elements) */
       .showcase-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+        margin-top: 12px;
       }
-
       .showcase-item {
-        background: #f7f5f0;
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        background: var(--card);
+      }
+      .showcase-item h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+      .showcase-item .media-well {
+        aspect-ratio: 16/10;
       }
 
-      .showcase-item img {
+      /* Competitive analysis gallery */
+      .comp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .comp-card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 12px;
+      }
+      .comp-card .media-well {
+        aspect-ratio: 16/9;
+        margin-top: 0;
+      }
+      .comp-card img {
         width: 100%;
-        height: auto;
-        border-radius: 4px;
-        margin-bottom: 1rem;
-      }
-
-      ul {
-        padding-left: 1.5rem;
-        margin: 1.5rem 0;
-      }
-
-      li {
-        margin-bottom: 1rem;
-      }
-
-      /* Flexbox for Competitive Analysis Images */
-      .competitive-analysis-images {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .competitive-analysis-images img {
-        width: 30%;
-        height: auto;
+        height: 100%;
+        object-fit: contain;
         border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .comp-card figcaption {
+        font-size: 14px;
+        color: var(--muted);
+        margin-top: 8px;
+        line-height: 1.5;
       }
 
-      @media (max-width: 768px) {
+      /* Footer nav */
+      .case-nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .case-nav a {
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+      .case-nav a.primary {
+        background: var(--text);
+        color: #fff;
+      }
+      .case-nav a.secondary {
+        background: transparent;
+        color: var(--text);
+      }
+
+      @media (max-width: 900px) {
         .hero {
-          padding: 2rem 5%;
-        }
-
-        section {
-          padding: 2rem 5%;
-        }
-
-        .case-study-image {
-          margin: 1rem auto;
-        }
-
-        /* Stack images vertically on smaller screens */
-        .competitive-analysis-images {
-          flex-direction: column;
-        }
-
-        .competitive-analysis-images img {
-          width: 100%;
+          padding-bottom: 0;
         }
       }
     </style>
   </head>
   <body>
-    <nav>
+    <!-- Nav -->
+    <nav aria-label="Primary">
       <div class="nav-inner">
-        <button class="back-button" onclick="window.location.href='index.html'">
-          ← Back
-        </button>
+        <div class="brand">
+          <a
+            href="index.html"
+            style="display: flex; align-items: center; gap: 12px"
+          >
+            <img src="logo/logo1.png" alt="DY monogram" />
+            <div class="name">Destinee Young</div>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html#capabilities">Capabilities</a>
+          <a href="index.html#work">Work</a>
+          <a
+            href="mailto:destinee.young99@gmail.com?subject=Portfolio%20Inquiry"
+            >Contact</a
+          >
+          <a
+            class="btn ghost"
+            href="imgs/DestineeResume2025new.pdf"
+            aria-label="Download resume"
+            >Resume</a
+          >
+        </div>
       </div>
     </nav>
 
-    <div class="hero">
-      <h1>PCIS Dashboard</h1>
-      <p>Multi-Persona Desktop Interface Design</p>
+    <!-- Hero -->
+    <header class="hero">
+      <h1>PCIS Multi-Persona Dashboard</h1>
+      <p>
+        Unified cargo visibility for terminals, carriers, and BCOs with
+        role-based views and clearer comms.
+      </p>
+    </header>
+
+    <!-- Meta tags -->
+    <div class="meta-bar" aria-label="Project tags and quick facts">
+      <div class="meta-row">
+        <span class="tag">Stakeholder alignment</span>
+        <span class="tag">Prototyping</span>
+        <span class="tag">Web</span>
+        <span class="tag">POC</span>
+        <span class="tag">Figma</span>
+      </div>
     </div>
 
-    <section class="overview">
-      <h2 class="section-title">Project Overview</h2>
-      <div class="section-content">
-        <p>
+    <!-- Overview -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Project overview</h2>
+        <p class="lead">
           The <strong>Port Community Information System (PCIS)</strong> is a
           multi-persona desktop interface designed to streamline port
           operations. It provides tailored dashboards for Terminal Operators,
           Transportation Operators, and Beneficial Cargo Owners (BCOs), enabling
           efficient cargo management and real-time communication.
         </p>
-        <img
-          src="imgs/pcis-dashboard.png"
-          alt="PCIS Dashboard"
-          class="case-study-image"
-        />
-      </div>
-    </section>
-
-    <section class="goals">
-      <h2 class="section-title">Goals of the Dashboard</h2>
-      <div class="section-content">
-        <ul>
-          <li>Streamline cargo booking and tracking for port stakeholders</li>
-          <li>Provide real-time updates and notifications</li>
-          <li>
-            Enhance communication between Terminal Operators, Transportation
-            Operators, and BCOs
-          </li>
-          <li>Improve operational efficiency and reduce delays</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="features">
-      <h2 class="section-title">Key Features</h2>
-      <div class="section-content">
-        <ul>
-          <li>
-            <strong>Role-Specific Dashboards:</strong> Custom interfaces for
-            Terminal Operators, Transportation Operators, and BCOs
-          </li>
-          <li>
-            <strong>Real-Time Updates:</strong> Instant notifications for
-            booking approvals, status changes, and delays
-          </li>
-          <li>
-            <strong>Interactive Map:</strong> Visual tracking of cargo locations
-            and port operations
-          </li>
-          <li>
-            <strong>Data Integration:</strong> Seamless integration with
-            external systems like COPRAR
-          </li>
-          <li>
-            <strong>User-Centric Design:</strong> Intuitive navigation and
-            accessibility for all users
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="process">
-      <h2 class="section-title">Design Process</h2>
-      <div class="section-content">
-        <p>The design process involved the following steps:</p>
-        <ul>
-          <li>
-            <strong>Competitive Analysis:</strong> Studied similar interfaces to
-            identify best practices and gaps
-          </li>
-          <li>
-            <strong>Wireframing:</strong> Created low-fidelity wireframes to map
-            out the app's structure
-          </li>
-          <li>
-            <strong>Prototyping:</strong> Developed interactive prototypes for
-            demonstration and feedback
-          </li>
-          <li>
-            <strong>High-Fidelity Design:</strong> Finalized the UI with
-            polished visuals and interactions
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Competitive Analysis Section -->
-    <section class="competitive-analysis">
-      <h2 class="section-title">Competitive Analysis</h2>
-      <div class="section-content">
-        <p>
-          A thorough competitive analysis was conducted to identify best
-          practices and gaps in existing solutions. Below are the key findings:
-        </p>
-        <ul>
-          <li>
-            <strong>Navis:</strong>
-            <ul>
-              <li>
-                <strong>Upcoming Appointments:</strong> Provides a clear view of
-                upcoming tasks and appointments, allowing users to plan their
-                schedules effectively.
-              </li>
-              <li>
-                <strong>Error Handling:</strong> Highlights errors such as
-                incorrect PINs or booking numbers, ensuring users can quickly
-                address issues.
-              </li>
-              <li>
-                <strong>Gate Busyness:</strong> Displays real-time gate
-                activity, helping users avoid delays by planning around peak
-                times.
-              </li>
-              <li>
-                <strong>Notifications:</strong> Offers a centralized
-                notification system to keep users informed about important
-                updates and changes.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Yangtai:</strong>
-            <ul>
-              <li>
-                <strong>Scheduling:</strong> Allows users to view and manage
-                schedules efficiently, with detailed time slots and task
-                assignments.
-              </li>
-              <li>
-                <strong>Task Tracking:</strong> Provides a clear breakdown of
-                tasks and their statuses, ensuring transparency in operations.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>NYTD Shanghai Trader:</strong>
-            <ul>
-              <li>
-                <strong>Integration:</strong> Seamlessly integrates with various
-                shipping lines and traders, providing a unified platform for
-                managing cargo operations.
-              </li>
-              <li>
-                <strong>Real-Time Updates:</strong> Offers real-time updates on
-                cargo status, ensuring stakeholders are always informed.
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <p>
-          These insights were instrumental in shaping the design of the PCIS
-          Dashboard, ensuring it addresses the gaps identified in existing
-          solutions while incorporating best practices to enhance user
-          experience and operational efficiency.
-        </p>
-        <!-- Horizontal Images -->
-        <div class="competitive-analysis-images">
-          <img src="imgs/comanalysis1.png" alt="Competitive Analysis 1" />
-          <img src="imgs/comanalysis2.png" alt="Competitive Analysis 2" />
-          <img src="imgs/comanalysis3.png" alt="Competitive Analysis 3" />
+        <div class="media-well" style="margin-top: 16px">
+          <img src="imgs/pcis-dashboard.png" alt="PCIS overview dashboard" />
         </div>
       </div>
     </section>
 
-    <section class="lofi-prototype">
-      <h2 class="section-title">Lo-Fi Prototype</h2>
-      <div class="section-content">
-        <p>
-          Initial wireframes were created to establish the app's structure and
-          flow:
-        </p>
-        <img
-          src="imgs/lofi-wireframes.png"
-          alt="Lo-Fi Wireframes"
-          class="case-study-image"
-        />
-      </div>
-    </section>
-
-    <!-- Prototype Showcase Section with Vimeo Embed -->
-<section class="prototype">
-  <h2 class="section-title">Prototype Showcase</h2>
-  <div class="video-container">
-    <div style="padding: 70.98% 0 0 0; position: relative">
-      <iframe
-        src="https://player.vimeo.com/video/1062612244?h=a6acbd63e0&title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&player_id=0&app_id=58479"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        "
-        title="Prototypepcis"
-      >
-      </iframe>
-    </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-  </div>
-  <div style="text-align: center; margin-top: 1.5rem">
-    <a
-      href="https://www.figma.com/proto/lyh3N5nrhMOu2oShUg3dOc/PCIS-Interface_MVP?node-id=939-33650&t=Avn7slSH1Xz810oE-1&scaling=contain&content-scaling=fixed&page-id=937%3A56300&starting-point-node-id=939%3A33650&show-proto-sidebar=1"
-      class="prototype-button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View Prototype
-    </a>
-  </div>
-</section>
-
-    <section class="ui-showcase">
-      <h2 class="section-title">UI Elements</h2>
-      <div class="showcase-grid">
-        <div class="showcase-item">
-          <h3>Terminal Operator Dashboard</h3>
-          <img
-            src="imgs/pcis-dashboard.png"
-            alt="Terminal Operator Dashboard"
-          />
-          <p>
-            Custom interface for managing bookings, cargo status, and approvals
-          </p>
-        </div>
-        <div class="showcase-item">
-          <h3>Transportation Operator Dashboard</h3>
-          <img
-            src="imgs/transport-dashboard.png"
-            alt="Transportation Operator Dashboard"
-          />
-          <p>
-            Streamlined view for tracking assigned bookings and updating
-            statuses
-          </p>
-        </div>
-        <div class="showcase-item">
-          <h3>BCO Dashboard</h3>
-          <img src="imgs/bco-dashboard.png" alt="BCO Dashboard" />
-          <p>Real-time tracking of cargo and communication with operators</p>
+    <!-- Goals -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Goals</h2>
+        <div class="card">
+          <ul>
+            <li>
+              Streamline cargo booking and tracking for port stakeholders.
+            </li>
+            <li>Provide real-time updates and notifications.</li>
+            <li>
+              Enhance communication between Terminal Operators, Transportation
+              Operators, and BCOs.
+            </li>
+            <li>Improve operational efficiency and reduce delays.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="outcomes">
-      <h2 class="section-title">Outcomes</h2>
-      <div class="section-content">
-        <ul>
-          <li>Improved operational efficiency through streamlined workflows</li>
-          <li>Enhanced communication and transparency among stakeholders</li>
-          <li>Reduced delays and errors in cargo management</li>
-          <li>
-            Positive feedback from users for the intuitive and role-specific
-            design
-          </li>
-        </ul>
+    <!-- Features -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Key features</h2>
+        <div class="card">
+          <ul>
+            <li>
+              <strong>Role-Specific Dashboards:</strong> Custom interfaces for
+              Terminal Operators, Transportation Operators, and BCOs.
+            </li>
+            <li>
+              <strong>Real-Time Updates:</strong> Instant notifications for
+              booking approvals, status changes, and delays.
+            </li>
+            <li>
+              <strong>Interactive Map:</strong> Visual tracking of cargo
+              locations and port operations.
+            </li>
+            <li>
+              <strong>Data Integration:</strong> Integration with external
+              systems like COPRAR.
+            </li>
+            <li>
+              <strong>User-Centric Design:</strong> Intuitive navigation and
+              accessible UI.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="conclusion">
-      <h2 class="section-title">Conclusion</h2>
-      <div class="section-content">
-        <p>
-          The PCIS Dashboard successfully addresses the challenges of port
-          operations by providing a user-centric, role-specific interface. Its
-          real-time updates, seamless data integration, and intuitive design
-          make it a standout solution for improving cargo flow and stakeholder
-          communication.
-        </p>
+    <!-- Process -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Design process</h2>
+        <div class="card">
+          <ul>
+            <li>
+              <strong>Competitive Analysis:</strong> Studied similar interfaces
+              to identify best practices and gaps.
+            </li>
+            <li>
+              <strong>Wireframing:</strong> Low-fi frames to map structure and
+              flows.
+            </li>
+            <li>
+              <strong>Prototyping:</strong> Interactive prototype for
+              stakeholder reviews.
+            </li>
+            <li>
+              <strong>High-Fidelity Design:</strong> Polished UI and interaction
+              details.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competitive Analysis -->
+    <section class="section" id="competitive-analysis">
+      <div class="container">
+        <h2 class="section-title">Competitive analysis</h2>
+
+        <!-- Findings summary (based on the provided screenshots) -->
+        <div class="card">
+          <h3 style="font-size: 16px; margin-bottom: 8px">Key findings</h3>
+          <ul>
+            <li>
+              <strong>“At-a-glance” works:</strong> A home view that surfaces
+              upcoming appointments, alerts and gate load helps users decide
+              what to do first.
+            </li>
+            <li>
+              <strong>Live operational signals reduce friction:</strong> Showing
+              current gate busyness and recent container events prevents wasted
+              trips and calls.
+            </li>
+            <li>
+              <strong>Role clarity matters:</strong> Tools that tailor labels
+              and KPIs to each user (ops, transport, BCO) are easier to scan.
+            </li>
+            <li>
+              <strong>Error states need guidance:</strong> Clear reasons (e.g.,
+              invalid PIN/booking) plus next steps lower support load.
+            </li>
+            <li>
+              <strong>Inline notifications beat inbox hopping:</strong>
+              Centralized notifications with deep links keep people in flow.
+            </li>
+          </ul>
+
+          <h3 style="font-size: 16px; margin: 12px 0 8px">
+            Design implications for PCIS
+          </h3>
+          <ul>
+            <li>
+              Place a concise <strong>“Today / Now” strip</strong> at the top of
+              each persona dashboard (prioritized items + quick actions).
+            </li>
+            <li>
+              Expose <strong>live gate/yard signals</strong> next to worklists
+              to inform scheduling choices.
+            </li>
+            <li>
+              Ship <strong>persona-specific views</strong> first with consistent
+              language but different KPIs per role.
+            </li>
+            <li>
+              Standardize <strong>problem → cause → fix</strong> patterns on
+              validation and error states.
+            </li>
+            <li>
+              Add a <strong>unified notifications panel</strong> with filters
+              and deep links to records.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Screenshot gallery -->
+        <div class="comp-grid">
+          <figure class="comp-card">
+            <div class="media-well">
+              <img
+                src="imgs/comanalysis1.png"
+                alt="Navis: appointments, gate busyness, notifications"
+              />
+            </div>
+            <figcaption>
+              <strong>Navis</strong> — Clear “today” view with upcoming
+              appointments, live gate busyness, and a notifications panel.
+            </figcaption>
+          </figure>
+
+          <figure class="comp-card">
+            <div class="media-well">
+              <img
+                src="imgs/comanalysis2.png"
+                alt="Yangtai: scheduling and task status views"
+              />
+            </div>
+            <figcaption>
+              <strong>Yangtai</strong> — Scheduling layout that makes task
+              status visible and easy to sequence.
+            </figcaption>
+          </figure>
+
+          <figure class="comp-card">
+            <div class="media-well">
+              <img
+                src="imgs/comanalysis3.png"
+                alt="NYTD Shanghai Trader: integrated data and live updates"
+              />
+            </div>
+            <figcaption>
+              <strong>NYTD Shanghai Trader</strong> — Broad integrations with
+              timely updates across partners.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lo-fi -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Lo-fi prototype</h2>
+        <div
+          class="media-well"
+          style="aspect-ratio: 16/10; max-width: 800px; margin: 0 auto"
+        >
+          <img src="imgs/lofi-wireframes.png" alt="Lo-fi wireframes" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Prototype Showcase (Vimeo) -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Prototype showcase</h2>
+        <div
+          class="media-well"
+          style="aspect-ratio: 16/10; max-width: 800px; margin: 0 auto"
+        >
+          <iframe
+            title="PCIS prototype video"
+            src="https://player.vimeo.com/video/1062612244?h=a6acbd63e0&title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1"
+            frameborder="0"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <div class="case-nav" style="margin-top: 14px">
+          <a
+            class="primary"
+            href="https://www.figma.com/proto/lyh3N5nrhMOu2oShUg3dOc/PCIS-Interface_MVP?node-id=939-33650&t=Avn7slSH1Xz810oE-1&scaling=contain&content-scaling=fixed&page-id=937%3A56300&starting-point-node-id=939%3A33650&show-proto-sidebar=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open interactive prototype →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- UI elements -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">UI elements</h2>
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <h3>Terminal Operator Dashboard</h3>
+            <div class="media-well">
+              <img
+                src="imgs/pcis-dashboard.png"
+                alt="Terminal Operator dashboard"
+              />
+            </div>
+            <p style="color: var(--muted); margin-top: 8px">
+              Manage bookings, status, and approvals.
+            </p>
+          </div>
+          <div class="showcase-item">
+            <h3>Transportation Operator Dashboard</h3>
+            <div class="media-well">
+              <img
+                src="imgs/transport-dashboard.png"
+                alt="Transportation Operator dashboard"
+              />
+            </div>
+            <p style="color: var(--muted); margin-top: 8px">
+              Track assigned bookings and update statuses.
+            </p>
+          </div>
+          <div class="showcase-item">
+            <h3>BCO Dashboard</h3>
+            <div class="media-well">
+              <img src="imgs/bco-dashboard.png" alt="BCO dashboard" />
+            </div>
+            <p style="color: var(--muted); margin-top: 8px">
+              Real-time cargo tracking and communications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcomes -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Outcomes</h2>
+        <div class="card">
+          <ul>
+            <li>Delivered a validated UX design grounded in user needs</li>
+            <li>Secured strong stakeholder alignment on design decisions</li>
+            <li>
+              Passed User Acceptance Testing (UAT) with no critical issues
+            </li>
+            <li>
+              Ensured final experience met usability, accessibility, and
+              business goals
+            </li>
+          </ul>
+        </div>
+
+        <!-- Footer CTAs consistent with site -->
+        <div class="case-nav">
+          <a class="secondary" href="index.html">← Back</a>
+        </div>
       </div>
     </section>
   </body>
