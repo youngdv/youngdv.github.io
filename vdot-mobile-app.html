@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,8 +36,9 @@
         height: 100%;
       }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Inter, system-ui, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+          system-ui, sans-serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
@@ -267,6 +268,7 @@
   </head>
   <body>
     <!-- Nav -->
+    <!-- Nav -->
     <nav aria-label="Primary">
       <div class="nav-inner">
         <div class="brand">
@@ -289,8 +291,9 @@
             class="btn ghost"
             href="imgs/DestineeResume2025new.pdf"
             aria-label="Download resume"
-            >Resume</a
           >
+            Resume
+          </a>
         </div>
       </div>
     </nav>
@@ -298,134 +301,173 @@
     <!-- Hero -->
     <header class="hero">
       <h1>Maintenance Rating Program (MRP)</h1>
-      <p>End-to-end responsive app for field inspections at VDOT.</p>
+      <p>Mobile-first inspection platform supporting VDOT field operations.</p>
     </header>
 
     <!-- Meta tags -->
     <div class="meta-bar" aria-label="Project tags and quick facts">
       <div class="meta-row">
-        <span class="tag">Field inspections</span>
+        <span class="tag">Field operations</span>
         <span class="tag">Mobile-first</span>
         <span class="tag">Accessibility (WCAG)</span>
+        <span class="tag">Government systems</span>
         <span class="tag">Figma</span>
       </div>
     </div>
 
-    <!-- Project facts (from your reference slide) -->
     <!-- Project overview -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Project overview</h2>
         <p class="lead">
           The Maintenance Rating Program (MRP) is a mobile-first application
-          designed for field inspectors at the Virginia Department of
-          Transportation (VDOT) to log, track, and report maintenance operations
-          efficiently. As the sole UI/UX designer, I created a responsive,
-          accessible design system that supports fast data entry and clear
-          reporting in challenging on-site conditions.
+          used by Virginia Department of Transportation (VDOT) field inspectors
+          to capture, review, and report roadway maintenance data directly on
+          site. Inspectors often work outdoors, under time pressure, and in
+          conditions where clarity, speed, and accessibility are critical.
+        </p>
+
+        <p class="lead" style="margin-top: 12px">
+          As the sole UI/UX designer, I owned the end-to-end design of the
+          application, translating operational requirements into a responsive
+          and accessible interface optimized for fast data entry and minimal
+          cognitive load.
         </p>
 
         <ul>
           <li>
-            <strong>Challenge:</strong> Enable quick, accessible inspection
-            reporting in the field, replacing a slow, manual process.
+            <strong>Problem:</strong> Existing inspection workflows were slow
+            and heavily manual, increasing friction and the risk of inconsistent
+            data capture in the field.
           </li>
           <li>
-            <strong>Approach:</strong> Designed wireframes, built a Figma
-            prototype, and validated for accessibility compliance (WCAG).
+            <strong>Role & Scope:</strong> Sole UI/UX designer responsible for
+            wireframes, interaction design, visual system, accessibility
+            validation, and high-fidelity prototyping.
           </li>
           <li>
-            <strong>Impact:</strong> Streamlined reporting process and improved
-            usability for inspectors, reducing operational bottlenecks.
+            <strong>Outcome:</strong> Delivered a streamlined, mobile-optimized
+            inspection experience that improved usability and supported more
+            efficient reporting in real-world field conditions.
           </li>
         </ul>
 
         <div class="media-well" style="margin-top: 16px">
           <img
             src="imgs/moblieapp1.png"
-            alt="MRP app screens – login and requirements"
+            alt="MRP app screens showing login and inspection requirements"
           />
         </div>
       </div>
     </section>
 
-    <!-- From wireframe to framework (from your second slide) -->
+    <!-- From wireframe to framework -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">From wireframe to framework</h2>
         <p class="lead">
-          Purpose: translate raw structural ideas into a scalable design system
-          supporting VDOT’s mobile inspection workflow.
+          Early concepts focused on structure and task flow. These ideas were
+          progressively refined into a scalable design framework that could
+          support multiple inspection scenarios while remaining fast and
+          intuitive for mobile field use.
         </p>
 
         <div class="card">
           <h3 style="font-size: 16px; margin-bottom: 8px">
-            Design framework in action
+            Design framework in practice
           </h3>
           <ul>
-            <li>Used consistent layout patterns and component hierarchy.</li>
             <li>
-              Created a visual system with spacing, font, and color variables.
+              Established consistent layout patterns to support quick scanning
+              and reduce cognitive load during inspections.
             </li>
-            <li>Defined interaction states (active, default, disabled).</li>
-            <li>Ensured WCAG-compliant contrast with browser-based testing.</li>
+            <li>
+              Defined typography, spacing, and color variables to create a
+              cohesive and reusable visual system.
+            </li>
+            <li>
+              Designed clear interaction states to prevent user error during
+              data entry and review.
+            </li>
+            <li>
+              Treated accessibility as a core requirement by validating color
+              contrast, focus states, and readability against WCAG standards.
+            </li>
           </ul>
 
           <h3 style="font-size: 16px; margin: 12px 0 8px">Tools</h3>
           <ul>
-            <li>Figma (wireframes → prototypes)</li>
-            <li>Browser contrast checker</li>
-            <li>Internal component library</li>
+            <li>
+              Figma for wireframes, component library, and interactive
+              prototypes
+            </li>
+            <li>Browser-based contrast and accessibility testing tools</li>
+            <li>Internal component standards</li>
           </ul>
         </div>
 
         <div class="media-well" style="margin-top: 16px">
           <img
             src="imgs/lofi-wireframesmoblie.png"
-            alt="Wireframes evolving to hi-fi mobile screens"
+            alt="Low-fidelity wireframes evolving into high-fidelity mobile screens"
           />
         </div>
       </div>
     </section>
 
-    <!-- Prototype showcase (smaller, centered, portrait ratio) -->
+    <!-- Prototype showcase -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Prototype showcase</h2>
+
         <div
           class="media-well"
           style="aspect-ratio: 16/10; max-width: 800px; margin: 0 auto"
         >
           <iframe
-            title="MRP prototype video"
+            title="MRP interactive prototype video"
             src="https://player.vimeo.com/video/1062612099?h=a17cd0cc51&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allow="
+              autoplay;
+              fullscreen;
+              picture-in-picture;
+              clipboard-write;
+              encrypted-media;
+            "
             frameborder="0"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
         </div>
+
         <div class="case-nav" style="margin-top: 14px">
           <a
             class="primary"
             href="https://www.figma.com/proto/5L8LsRFEwt2RS9DDYknlph/MRP-Application?node-id=101-2&starting-point-node-id=101%3A2"
             target="_blank"
             rel="noopener noreferrer"
-            >Open interactive prototype →</a
           >
+            Open interactive prototype →
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Outcomes (kept truthful to your slide) -->
+    <!-- Outcomes -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Outcomes</h2>
         <div class="card">
           <ul>
             <li>
-              Streamlined field reporting and improved usability through
-              accessible UI patterns.
+              Delivered a mobile-first, accessible inspection experience that
+              reduced reporting friction and improved overall usability for VDOT
+              field inspectors.
+            </li>
+            <li>
+              Beta testing with representative users showed the application was
+              easy to use and intuitive, reinforcing the effectiveness of the
+              information hierarchy and interaction design.
             </li>
           </ul>
         </div>

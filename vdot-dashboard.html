@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VDOT MRP Dashboard — Case Study | Destinee Young</title>
+    <title>VDOT MRP Web Platform — Case Study | Destinee Young</title>
     <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
     <script
       async
@@ -38,8 +38,9 @@
         height: 100%;
       }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Inter, system-ui, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+          system-ui, sans-serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
@@ -335,7 +336,10 @@
     <!-- Hero -->
     <header class="hero">
       <h1>VDOT MRP Dashboard</h1>
-      <p>Analytics and tracking that make backlog signals and actions clear.</p>
+      <p>
+        Operational analytics that make maintenance priorities and status easy
+        to scan.
+      </p>
     </header>
 
     <!-- Meta tags -->
@@ -345,7 +349,6 @@
         <span class="tag">Web</span>
         <span class="tag">WCAG</span>
         <span class="tag">Figma</span>
-        <span class="tag">POC</span>
       </div>
     </div>
 
@@ -354,12 +357,26 @@
       <div class="container">
         <h2 class="section-title">Project overview</h2>
         <p class="lead">
-          The <strong>Maintenance Rating Program (MRP) Dashboard</strong> is a
-          centralized view for VDOT managers to prioritize work, and spot
-          blockers early. It brings booking status, inspection results, and
-          location context into one place so teams can move from signal to
-          action faster.
+          The <strong>Maintenance Rating Program (MRP) Web platfom</strong> is a
+          web-based interface designed to help VDOT managers prioritize
+          maintenance work, track status, and identify blockers early. My
+          deliverable was a mid- to high-fidelity prototype that defined
+          information hierarchy and interaction patterns for a production web
+          platform.
         </p>
+        <div class="card">
+          <ul>
+            <li><strong>Role:</strong> Sole UX Designer</li>
+            <li>
+              <strong>Scope:</strong> Competitive analysis, lo-fi wireframes,
+              and mid/high-fi prototyping
+            </li>
+            <li>
+              <strong>Research:</strong> Stakeholder- and workflow-informed
+              (limited formal UX research)
+            </li>
+          </ul>
+        </div>
         <div class="media-well center" style="margin-top: 16px">
           <img src="imgs/dashboard1.png" alt="VDOT MRP dashboard overview" />
         </div>
@@ -375,9 +392,9 @@
             <li>
               Give district managers a single place to triage and assign work.
             </li>
-            <li>Surface real-time status.</li>
-            <li>Reduce manual data pulls across systems.</li>
-            <li>Improve communication paths between field and office.</li>
+            <li>Make status and urgency signals clear at a glance.</li>
+            <li>Reduce reliance on manual data pulls across systems.</li>
+            <li>Support coordination between field and office teams.</li>
           </ul>
         </div>
       </div>
@@ -390,19 +407,20 @@
         <div class="card">
           <ul>
             <li>
-              <strong>Worklist</strong> clear states and due-soon highlights.
+              <strong>Worklist:</strong> clear states and due-soon highlights
+              for quick triage.
             </li>
             <li>
               <strong>Role-aware panels:</strong> views tailored for ops leads
               and coordinators.
             </li>
             <li>
-              <strong>Interactive map context:</strong> location and cluster
-              signals for routing.
+              <strong>Interactive map context:</strong> location and clustering
+              to support routing decisions.
             </li>
             <li>
-              <strong>Notification stream:</strong> centralized updates with
-              deep links.
+              <strong>Notification stream:</strong> centralized updates that
+              deep-link into the relevant record.
             </li>
             <li>
               <strong>Accessible UI:</strong> WCAG-aligned contrast and spacing
@@ -417,21 +435,26 @@
     <section class="section" id="competitive-analysis">
       <div class="container">
         <h2 class="section-title">Competitive analysis</h2>
-        <p class="lead">What we borrowed—and what we improved for MRP:</p>
+        <p class="lead">
+          I reviewed comparable operational dashboards to identify patterns for
+          summarization, map + list layouts, and notification handling, adapting
+          them to MRP’s maintenance workflows.
+        </p>
 
         <div class="card">
           <ul>
             <li>
-              <strong>At-a-glance dashboards</strong> help users prioritize; we
-              added color.
+              <strong>At-a-glance summaries</strong> support rapid
+              prioritization; I applied hierarchy and visual emphasis to surface
+              urgency.
             </li>
             <li>
-              <strong>Maps in context</strong> are powerful; we balanced map
-              size with actionable tables.
+              <strong>Maps in context</strong> are powerful; I balanced map size
+              with actionable tables to keep tasks front and center.
             </li>
             <li>
-              <strong>Notifications</strong> reduce inbox hopping; ours
-              deep-link into the exact record and filter state.
+              <strong>Notification streams</strong> reduce context switching;
+              the design deep-links into the exact record and filter state.
             </li>
           </ul>
         </div>
@@ -445,8 +468,8 @@
               />
             </div>
             <figcaption>
-              Strong homepage overview patterns informed our “Today” strip and
-              summary tiles.
+              Homepage summary patterns informed the “Today” strip and
+              high-level status tiles used for rapid triage.
             </figcaption>
           </figure>
           <figure class="comp-card">
@@ -457,7 +480,8 @@
               />
             </div>
             <figcaption>
-              List + map layouts shaped our split view and cluster interactions.
+              List and map combinations validated the split-view layout and
+              guided clustering behavior for location-based work items.
             </figcaption>
           </figure>
           <figure class="comp-card">
@@ -468,7 +492,9 @@
               />
             </div>
             <figcaption>
-              Notification streams inspired our inline updates with deep links.
+              Notification streams influenced the inline update model, allowing
+              users to jump directly into relevant records without losing
+              context.
             </figcaption>
           </figure>
         </div>
@@ -478,7 +504,11 @@
     <!-- Lo-fi -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Lo-fi prototype</h2>
+        <h2 class="section-title">Lo-fi layout exploration</h2>
+        <p class="lead">
+          Low-fidelity wireframes were used to explore layout, information
+          hierarchy, and relationships between views before visual refinement.
+        </p>
         <div class="media-well center" style="aspect-ratio: 16/10">
           <img
             src="imgs/lofi-wireframesdashboard.png"
@@ -491,12 +521,23 @@
     <!-- Prototype Showcase (smaller, centered) -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Prototype showcase</h2>
+        <h2 class="section-title">Mid–high fidelity prototype</h2>
+        <p class="lead">
+          The mid- to high-fidelity prototype finalized interaction patterns,
+          visual hierarchy, and accessibility considerations and served as the
+          design source for development.
+        </p>
         <div class="media-well center" style="padding: 0">
           <iframe
             title="MRP dashboard prototype video"
             src="https://player.vimeo.com/video/1062612168?h=dc99a167ef&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allow="
+              autoplay;
+              fullscreen;
+              picture-in-picture;
+              clipboard-write;
+              encrypted-media;
+            "
             frameborder="0"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -526,7 +567,13 @@
               <iframe
                 src="https://player.vimeo.com/video/1062612121?h=a178c4364b&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
                 frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                allow="
+                  autoplay;
+                  fullscreen;
+                  picture-in-picture;
+                  clipboard-write;
+                  encrypted-media;
+                "
                 title="dashboard UI element 1"
               ></iframe>
             </div>
@@ -541,7 +588,13 @@
               <iframe
                 src="https://player.vimeo.com/video/1062612141?h=b7c11c798e&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
                 frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                allow="
+                  autoplay;
+                  fullscreen;
+                  picture-in-picture;
+                  clipboard-write;
+                  encrypted-media;
+                "
                 title="dashboard UI element 2"
               ></iframe>
             </div>
@@ -560,11 +613,16 @@
         <div class="card">
           <ul>
             <li>
-              Clearer prioritization and visibility reduced coordination cycles.
+              Defined a clear information hierarchy for prioritizing maintenance
+              work.
             </li>
-            <li>Fewer manual exports by centralizing operational data.</li>
             <li>
-              Consistent, accessible UI improved scan speed for long sessions.
+              Aligned stakeholders on role-based data visibility and workflow
+              expectations.
+            </li>
+            <li>
+              The mid/high-fidelity prototype served as the design foundation
+              for the production web platform.
             </li>
           </ul>
         </div>

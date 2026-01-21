@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -55,8 +55,9 @@
         height: 100%;
       }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Inter, system-ui, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+          system-ui, sans-serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
@@ -315,9 +316,12 @@
         color: var(--text);
       }
 
-      @media (max-width: 900px) {
-        .hero {
-          padding-bottom: 0;
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-inner {
+          justify-content: flex-start;
         }
       }
     </style>
@@ -356,18 +360,20 @@
     <header class="hero">
       <h1>PCIS Multi-Persona Dashboard</h1>
       <p>
-        Unified cargo visibility for terminals, carriers, and BCOs with
-        role-based views and clearer comms.
+        Role-based dashboards for terminal, transportation, and BCO workflows to
+        improve visibility, coordination, and decision-making.
       </p>
     </header>
 
     <!-- Meta tags -->
     <div class="meta-bar" aria-label="Project tags and quick facts">
       <div class="meta-row">
+        <span class="tag">Multi-persona UX</span>
         <span class="tag">Stakeholder alignment</span>
         <span class="tag">Prototyping</span>
         <span class="tag">Web</span>
-        <span class="tag">POC</span>
+        <span class="tag">Proof of Concept</span>
+        <span class="tag">Task-based usability testing</span>
         <span class="tag">Figma</span>
       </div>
     </div>
@@ -377,11 +383,21 @@
       <div class="container">
         <h2 class="section-title">Project overview</h2>
         <p class="lead">
-          The <strong>Port Community Information System (PCIS)</strong> is a
-          multi-persona desktop interface designed to streamline port
-          operations. It provides tailored dashboards for Terminal Operators,
-          Transportation Operators, and Beneficial Cargo Owners (BCOs), enabling
-          efficient cargo management and real-time communication.
+          The <strong>Port Community Information Sharing (PCIS)</strong> Proof
+          of Concept is a multi-persona desktop interface designed to streamline
+          port coordination by improving shared visibility across key
+          stakeholder roles. The experience provides tailored dashboards for
+          <strong>Terminal Operators</strong>,
+          <strong>Transportation Operators</strong>, and
+          <strong>Beneficial Cargo Owners (BCOs)</strong> to support
+          appointment-style scheduling, container status tracking, and
+          cross-stakeholder communication.
+        </p>
+        <p class="lead" style="margin-top: 12px">
+          This project explored how a unified view of cargo and operational
+          signals can reduce manual follow-ups, improve alignment around
+          capacity and timing, and help ports without a single system operate
+          more efficiently.
         </p>
         <div class="media-well" style="margin-top: 16px">
           <img src="imgs/pcis-dashboard.png" alt="PCIS overview dashboard" />
@@ -396,71 +412,20 @@
         <div class="card">
           <ul>
             <li>
-              Streamline cargo booking and tracking for port stakeholders.
-            </li>
-            <li>Provide real-time updates and notifications.</li>
-            <li>
-              Enhance communication between Terminal Operators, Transportation
-              Operators, and BCOs.
-            </li>
-            <li>Improve operational efficiency and reduce delays.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Key features</h2>
-        <div class="card">
-          <ul>
-            <li>
-              <strong>Role-Specific Dashboards:</strong> Custom interfaces for
-              Terminal Operators, Transportation Operators, and BCOs.
+              Improve cargo visibility across roles with consistent, role-based
+              dashboards.
             </li>
             <li>
-              <strong>Real-Time Updates:</strong> Instant notifications for
-              booking approvals, status changes, and delays.
+              Support appointment and pickup workflows with real-time status and
+              clear next steps.
             </li>
             <li>
-              <strong>Interactive Map:</strong> Visual tracking of cargo
-              locations and port operations.
+              Reduce coordination overhead by centralizing updates, approvals,
+              and notifications.
             </li>
             <li>
-              <strong>Data Integration:</strong> Integration with external
-              systems like COPRAR.
-            </li>
-            <li>
-              <strong>User-Centric Design:</strong> Intuitive navigation and
-              accessible UI.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Design process</h2>
-        <div class="card">
-          <ul>
-            <li>
-              <strong>Competitive Analysis:</strong> Studied similar interfaces
-              to identify best practices and gaps.
-            </li>
-            <li>
-              <strong>Wireframing:</strong> Low-fi frames to map structure and
-              flows.
-            </li>
-            <li>
-              <strong>Prototyping:</strong> Interactive prototype for
-              stakeholder reviews.
-            </li>
-            <li>
-              <strong>High-Fidelity Design:</strong> Polished UI and interaction
-              details.
+              Enable faster operational decisions by surfacing priority items
+              and live signals.
             </li>
           </ul>
         </div>
@@ -472,62 +437,36 @@
       <div class="container">
         <h2 class="section-title">Competitive analysis</h2>
 
-        <!-- Findings summary (based on the provided screenshots) -->
+        <!-- Findings summary -->
         <div class="card">
-          <h3 style="font-size: 16px; margin-bottom: 8px">Key findings</h3>
-          <ul>
-            <li>
-              <strong>“At-a-glance” works:</strong> A home view that surfaces
-              upcoming appointments, alerts and gate load helps users decide
-              what to do first.
-            </li>
-            <li>
-              <strong>Live operational signals reduce friction:</strong> Showing
-              current gate busyness and recent container events prevents wasted
-              trips and calls.
-            </li>
-            <li>
-              <strong>Role clarity matters:</strong> Tools that tailor labels
-              and KPIs to each user (ops, transport, BCO) are easier to scan.
-            </li>
-            <li>
-              <strong>Error states need guidance:</strong> Clear reasons (e.g.,
-              invalid PIN/booking) plus next steps lower support load.
-            </li>
-            <li>
-              <strong>Inline notifications beat inbox hopping:</strong>
-              Centralized notifications with deep links keep people in flow.
-            </li>
-          </ul>
-
           <h3 style="font-size: 16px; margin: 12px 0 8px">
             Design implications for PCIS
           </h3>
           <ul>
             <li>
-              Place a concise <strong>“Today / Now” strip</strong> at the top of
-              each persona dashboard (prioritized items + quick actions).
+              Add a concise <strong>“Today / Now”</strong> section to each
+              persona dashboard with prioritized items and quick actions.
             </li>
             <li>
-              Expose <strong>live gate/yard signals</strong> next to worklists
-              to inform scheduling choices.
+              Pair worklists with <strong>live signals</strong> that inform
+              scheduling and timing decisions.
             </li>
             <li>
-              Ship <strong>persona-specific views</strong> first with consistent
-              language but different KPIs per role.
+              Maintain consistent navigation across personas while tailoring
+              <strong>KPIs and terminology</strong> per role.
             </li>
             <li>
-              Standardize <strong>problem → cause → fix</strong> patterns on
-              validation and error states.
+              Standardize <strong>problem → cause → fix</strong> patterns for
+              errors, validation, and exceptions.
             </li>
             <li>
-              Add a <strong>unified notifications panel</strong> with filters
+              Use a unified <strong>notifications panel</strong> with filters
               and deep links to records.
             </li>
           </ul>
         </div>
 
-        <!-- Screenshot gallery -->
+        <!-- Screenshot gallery (unchanged) -->
         <div class="comp-grid">
           <figure class="comp-card">
             <div class="media-well">
@@ -575,6 +514,11 @@
     <section class="section">
       <div class="container">
         <h2 class="section-title">Lo-fi prototype</h2>
+        <p class="lead">
+          Early wireframes focused on establishing shared structure across
+          personas and validating information hierarchy before moving into
+          detailed UI patterns.
+        </p>
         <div
           class="media-well"
           style="aspect-ratio: 16/10; max-width: 800px; margin: 0 auto"
@@ -588,6 +532,10 @@
     <section class="section">
       <div class="container">
         <h2 class="section-title">Prototype showcase</h2>
+        <p class="lead">
+          Interactive walkthrough demonstrating role-based dashboards and key
+          workflows across terminal, transport, and BCO perspectives.
+        </p>
         <div
           class="media-well"
           style="aspect-ratio: 16/10; max-width: 800px; margin: 0 auto"
@@ -597,7 +545,14 @@
             src="https://player.vimeo.com/video/1062612244?h=a6acbd63e0&title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1"
             frameborder="0"
             referrerpolicy="strict-origin-when-cross-origin"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            allow="
+              autoplay;
+              fullscreen;
+              picture-in-picture;
+              clipboard-write;
+              encrypted-media;
+              web-share;
+            "
             allowfullscreen
           >
           </iframe>
@@ -618,6 +573,11 @@
     <section class="section">
       <div class="container">
         <h2 class="section-title">UI elements</h2>
+        <p class="lead">
+          Role-based dashboards were designed to keep navigation consistent
+          while adapting metrics, terminology, and actions to each stakeholder’s
+          responsibilities.
+        </p>
         <div class="showcase-grid">
           <div class="showcase-item">
             <h3>Terminal Operator Dashboard</h3>
@@ -628,7 +588,8 @@
               />
             </div>
             <p style="color: var(--muted); margin-top: 8px">
-              Manage bookings, status, and approvals.
+              Review and approve bookings, monitor terminal activity, and manage
+              container status updates.
             </p>
           </div>
           <div class="showcase-item">
@@ -640,7 +601,8 @@
               />
             </div>
             <p style="color: var(--muted); margin-top: 8px">
-              Track assigned bookings and update statuses.
+              Track assigned pickups, confirm readiness, and update milestone
+              status as work progresses.
             </p>
           </div>
           <div class="showcase-item">
@@ -649,9 +611,54 @@
               <img src="imgs/bco-dashboard.png" alt="BCO dashboard" />
             </div>
             <p style="color: var(--muted); margin-top: 8px">
-              Real-time cargo tracking and communications.
+              Monitor container location and status, view timelines, and
+              communicate updates across partners.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usability Testing -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Usability testing & validation</h2>
+        <div class="card">
+          <p>
+            To evaluate the proof of concept, a
+            <strong>task-based usability test</strong> was conducted with
+            representative port stakeholders. While the effort was labeled as
+            “UAT” in project materials, the sessions were structured as
+            usability testing focused on task completion, clarity of
+            terminology, and overall ease of use across roles.
+          </p>
+
+          <ul>
+            <li>
+              Helped define task scenarios aligned to each persona’s workflows
+              and responsibilities
+            </li>
+            <li>
+              Served as note-taker during sessions and captured both usability
+              issues and user expectations
+            </li>
+            <li>
+              Collected quantitative ratings alongside qualitative feedback
+              during remote walkthroughs
+            </li>
+            <li>
+              Organized open-ended feedback into themes to identify patterns
+              across stakeholder roles
+            </li>
+          </ul>
+
+          <p>
+            Participants described the experience as
+            <strong>easy to use</strong> and <strong>intuitive</strong>, and the
+            themed synthesis helped prioritize improvement areas such as
+            terminology alignment, workflow visibility, and flexibility for
+            different operational contexts.
+          </p>
         </div>
       </div>
     </section>
@@ -662,14 +669,21 @@
         <h2 class="section-title">Outcomes</h2>
         <div class="card">
           <ul>
-            <li>Delivered a validated UX design grounded in user needs</li>
-            <li>Secured strong stakeholder alignment on design decisions</li>
             <li>
-              Passed User Acceptance Testing (UAT) with no critical issues
+              Usability testing feedback indicated the system was easy to
+              understand and intuitive to use across roles
             </li>
             <li>
-              Ensured final experience met usability, accessibility, and
-              business goals
+              Synthesized qualitative feedback into themes to highlight
+              recurring needs and usability patterns
+            </li>
+            <li>
+              Translated themed findings into recommendations to support future
+              iterations and expanded scope
+            </li>
+            <li>
+              Built strong stakeholder alignment on core dashboard structure,
+              terminology, and proof of concept direction
             </li>
           </ul>
         </div>
