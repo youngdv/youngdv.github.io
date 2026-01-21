@@ -168,7 +168,14 @@
       .case-nav a.primary { background: var(--text); color: #fff; }
       .case-nav a.secondary { background: transparent; color: var(--text); }
 
-      @media (max-width: 900px) { .hero { padding-bottom: 0; } }
+ @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-inner {
+          justify-content: flex-start;
+        }
+      }
     </style>
   </head>
 
