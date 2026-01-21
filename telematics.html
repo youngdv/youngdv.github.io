@@ -6,7 +6,10 @@
     <title>Telematics Mobile Prototype — Case Study | Destinee Young</title>
     <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34V535KX45"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-34V535KX45"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -17,10 +20,19 @@
     </script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" sizes="48x48" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon/favicon-48x48.png"
+      sizes="48x48"
+    />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
     <meta name="apple-mobile-web-app-title" content="Telematics" />
     <link rel="manifest" href="favicon/site.webmanifest" />
 
@@ -34,16 +46,32 @@
         --accent: #111111;
       }
 
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      html, body { height: 100%; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, system-ui, sans-serif;
+        height: 100%;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+          system-ui, sans-serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
       }
-      a { color: var(--accent); text-decoration: none; }
-      a:focus-visible, button:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 2px;
+      }
 
       nav {
         position: sticky;
@@ -61,13 +89,33 @@
         justify-content: space-between;
         gap: 16px;
       }
-      .brand { display: flex; align-items: center; gap: 12px; }
-      .brand img { height: 36px; width: auto; }
-      .brand .name { font-weight: 700; letter-spacing: 0.2px; }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        height: 36px;
+        width: auto;
+      }
+      .brand .name {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
 
-      .nav-links { display: flex; gap: 22px; align-items: center; }
-      .nav-links a { position: relative; padding: 6px 0; color: var(--text); }
-      .nav-links a:hover::after { width: 100%; }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+      .nav-links a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--text);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
       .nav-links a::after {
         content: "";
         position: absolute;
@@ -90,14 +138,33 @@
         font-weight: 600;
         cursor: pointer;
       }
-      .btn.ghost { background: transparent; color: var(--text); padding: 10px 14px; }
+      .btn.ghost {
+        background: transparent;
+        color: var(--text);
+        padding: 10px 14px;
+      }
 
-      .section { padding: 56px 5%; }
-      .container { max-width: 1200px; margin: 0 auto; }
+      .section {
+        padding: 56px 5%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-      .hero { padding: 36px 5% 8px; }
-      .hero h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; font-weight: 800; margin-bottom: 8px; }
-      .hero p { color: var(--muted); font-size: clamp(16px, 2.2vw, 18px); }
+      .hero {
+        padding: 36px 5% 8px;
+      }
+      .hero h1 {
+        font-size: clamp(28px, 5vw, 40px);
+        line-height: 1.15;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: clamp(16px, 2.2vw, 18px);
+      }
 
       .meta-bar {
         padding: 16px;
@@ -149,8 +216,14 @@
         border-radius: 8px;
       }
 
-      h2.section-title { font-size: clamp(22px, 3.6vw, 26px); margin-bottom: 12px; }
-      .lead { color: var(--muted); max-width: 900px; }
+      h2.section-title {
+        font-size: clamp(22px, 3.6vw, 26px);
+        margin-bottom: 12px;
+      }
+      .lead {
+        color: var(--muted);
+        max-width: 900px;
+      }
 
       .card {
         border: 1px solid var(--line);
@@ -160,15 +233,36 @@
         margin-top: 16px;
       }
 
-      ul { padding-left: 1.25rem; margin: 12px 0; }
-      li { margin-bottom: 10px; }
+      ul {
+        padding-left: 1.25rem;
+        margin: 12px 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
 
-      .case-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
-      .case-nav a { border: 1px solid var(--text); border-radius: 10px; padding: 10px 14px; font-weight: 700; }
-      .case-nav a.primary { background: var(--text); color: #fff; }
-      .case-nav a.secondary { background: transparent; color: var(--text); }
+      .case-nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .case-nav a {
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+      .case-nav a.primary {
+        background: var(--text);
+        color: #fff;
+      }
+      .case-nav a.secondary {
+        background: transparent;
+        color: var(--text);
+      }
 
- @media (max-width: 768px) {
+      @media (max-width: 768px) {
         .nav-links {
           display: none;
         }
@@ -184,7 +278,10 @@
     <nav aria-label="Primary">
       <div class="nav-inner">
         <div class="brand">
-          <a href="index.html" style="display: flex; align-items: center; gap: 12px">
+          <a
+            href="index.html"
+            style="display: flex; align-items: center; gap: 12px"
+          >
             <img src="logo/logo1.png" alt="DY monogram" />
             <div class="name">Destinee Young</div>
           </a>
@@ -192,8 +289,16 @@
         <div class="nav-links">
           <a href="index.html#capabilities">Capabilities</a>
           <a href="index.html#work">Work</a>
-          <a href="mailto:destinee.young99@gmail.com?subject=Portfolio%20Inquiry">Contact</a>
-          <a class="btn ghost" href="imgs/DestineeResume2025new.pdf" aria-label="Download resume">Resume</a>
+          <a
+            href="mailto:destinee.young99@gmail.com?subject=Portfolio%20Inquiry"
+            >Contact</a
+          >
+          <a
+            class="btn ghost"
+            href="imgs/DestineeResume2025new.pdf"
+            aria-label="Download resume"
+            >Resume</a
+          >
         </div>
       </div>
     </nav>
@@ -202,7 +307,9 @@
     <header class="hero">
       <h1>Telematics Mobile Prototype</h1>
       <p>
-        Redesigning a web-based telematics interface into a mobile-first prototype so internal teams can view vehicle data during on-road research studies.
+        Redesigning a web-based telematics interface into a mobile-first
+        prototype so internal teams can view vehicle data during on-road
+        research studies.
       </p>
     </header>
 
@@ -223,17 +330,21 @@
       <div class="container">
         <h2 class="section-title">Project overview</h2>
         <p class="lead">
-          This project focused on redesigning an existing <strong>web-based telematics UI</strong> into a
-          <strong>mobile-first prototype</strong> so internal users could access critical vehicle and event data while
-          running research studies in the field. The goal was to make key workflows faster on a small screen, reduce
-          navigation friction, and support “in the moment” decision-making during active tests.
+          This project focused on redesigning an existing
+          <strong>web-based telematics UI</strong> into a
+          <strong>mobile-first prototype</strong> so internal users could access
+          critical vehicle and event data while running research studies in the
+          field. The goal was to make key workflows faster on a small screen,
+          reduce navigation friction, and support “in the moment”
+          decision-making during active tests.
         </p>
-      </div>
         <div class="media-well" style="margin-top: 16px">
           <img
             src="imgs/telematics2.png"
             alt="MRP app screens showing login and inspection requirements"
           />
+        </div>
+      </div>
     </section>
 
     <!-- Problem -->
@@ -242,9 +353,11 @@
         <h2 class="section-title">Problem</h2>
         <div class="card">
           <p>
-            The existing telematics interface was built for desktop use. During on-road research studies, internal users
-            often need to check vehicle and event details quickly while on the go. Desktop-first navigation, dense tables,
-            and multi-step actions made it harder to access the right information fast in mobile contexts.
+            The existing telematics interface was built for desktop use. During
+            on-road research studies, internal users often need to check vehicle
+            and event details quickly while on the go. Desktop-first navigation,
+            dense tables, and multi-step actions made it harder to access the
+            right information fast in mobile contexts.
           </p>
         </div>
       </div>
@@ -256,20 +369,29 @@
         <h2 class="section-title">Goal</h2>
         <div class="card">
           <ul>
-            <li>Translate the desktop experience into a mobile-friendly flow for field use.</li>
-            <li>Make vehicle and event information easy to scan with clear “next steps.”</li>
-            <li>Reduce taps for the most common workflows used during research studies.</li>
+            <li>
+              Translate the desktop experience into a mobile-friendly flow for
+              field use.
+            </li>
+            <li>
+              Make vehicle and event information easy to scan with clear “next
+              steps.”
+            </li>
+            <li>
+              Reduce taps for the most common workflows used during research
+              studies.
+            </li>
             <li>Keep terminology and structure familiar for internal users.</li>
           </ul>
         </div>
-     <div class="media-well" style="margin-top: 16px">
+        <div class="media-well" style="margin-top: 16px">
           <img
             src="imgs/telematics.png"
             alt="MRP app screens showing login and inspection requirements"
           />
+        </div>
+      </div>
     </section>
-
-
 
     <!-- Design approach -->
     <section class="section">
@@ -277,14 +399,25 @@
         <h2 class="section-title">Design approach</h2>
         <div class="card">
           <ul>
-            <li><strong>Mobile-first information hierarchy:</strong> Prioritized “what to do next” for field use.</li>
-            <li><strong>Quick actions:</strong> Common tasks surfaced at the top of key screens.</li>
-            <li><strong>Scan-friendly layouts:</strong> Converted dense tables into cards and structured summaries.</li>
-            <li><strong>Consistency with the web UI:</strong> Kept core terms and workflows recognizable.</li>
+            <li>
+              <strong>Mobile-first information hierarchy:</strong> Prioritized
+              “what to do next” for field use.
+            </li>
+            <li>
+              <strong>Quick actions:</strong> Common tasks surfaced at the top
+              of key screens.
+            </li>
+            <li>
+              <strong>Scan-friendly layouts:</strong> Converted dense tables
+              into cards and structured summaries.
+            </li>
+            <li>
+              <strong>Consistency with the web UI:</strong> Kept core terms and
+              workflows recognizable.
+            </li>
           </ul>
         </div>
-      </div>
-         <div class="case-nav" style="margin-top: 14px">
+        <div class="case-nav" style="margin-top: 14px">
           <a
             class="primary"
             href="https://www.figma.com/proto/5L8LsRFEwt2RS9DDYknlph/MRP-Application?node-id=101-2&starting-point-node-id=101%3A2"
@@ -303,9 +436,18 @@
         <h2 class="section-title">Outcome</h2>
         <div class="card">
           <ul>
-            <li>Created a mobile prototype concept that supports on-the-go research workflows.</li>
-            <li>Reframed event and unit management for smaller screens with clearer hierarchy and actions.</li>
-            <li>Defined a mobile structure that can scale to dashboards and vehicle data views.</li>
+            <li>
+              Created a mobile prototype concept that supports on-the-go
+              research workflows.
+            </li>
+            <li>
+              Reframed event and unit management for smaller screens with
+              clearer hierarchy and actions.
+            </li>
+            <li>
+              Defined a mobile structure that can scale to dashboards and
+              vehicle data views.
+            </li>
           </ul>
         </div>
 
