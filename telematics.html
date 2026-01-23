@@ -192,7 +192,7 @@
       /* Media wells */
       .media-well {
         width: 100%;
-        max-width: 800px; /* keep media modestly sized */
+        max-width: 800px;
         aspect-ratio: 16/9;
         background: #f8f8f8;
         border: 1px solid var(--line);
@@ -206,7 +206,7 @@
       }
       .media-well.tall {
         aspect-ratio: 9/19;
-      } /* for portrait phone videos */
+      }
       .media-well img,
       .media-well iframe {
         width: 100%;
@@ -262,12 +262,71 @@
         color: var(--text);
       }
 
+      /* Existing web platform (better styling) */
+      .web-context {
+        margin-top: 18px;
+        padding: 18px;
+        background: #fafafa;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+      }
+      .web-context-header {
+        max-width: 760px;
+        margin-bottom: 14px;
+      }
+      .web-context-header h3 {
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 4px;
+        letter-spacing: 0.1px;
+      }
+      .web-context-header p {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .web-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+      .web-shot {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+      .web-shot:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+      }
+      .web-shot img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        display: block;
+      }
+      .web-caption {
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
       @media (max-width: 768px) {
         .nav-links {
           display: none;
         }
         .nav-inner {
           justify-content: flex-start;
+        }
+        .web-context {
+          padding: 14px;
         }
       }
     </style>
@@ -359,6 +418,52 @@
             dense tables, and multi-step actions made it harder to access the
             right information fast in mobile contexts.
           </p>
+
+          <!-- Existing web platform (refined) -->
+          <div class="web-context">
+            <div class="web-context-header">
+              <h3>Existing web platform</h3>
+              <p>
+                Desktop-first dashboards and configuration tables designed for
+                large screens and precise cursor interaction.
+              </p>
+            </div>
+
+            <div class="web-grid">
+              <figure class="web-shot">
+                <img
+                  src="imgs/grafana1.png"
+                  alt="Telematics web dashboard showing system metrics"
+                />
+              </figure>
+
+              <figure class="web-shot">
+                <img
+                  src="imgs/Topicmanagement1.png"
+                  alt="Web interface showing topic management table"
+                />
+              </figure>
+
+              <figure class="web-shot">
+                <img
+                  src="imgs/Topicmanagement2.png"
+                  alt="Web platform topic configuration view"
+                />
+              </figure>
+
+              <figure class="web-shot">
+                <img
+                  src="imgs/topicmanagement3.png"
+                  alt="Detailed topic management settings in desktop interface"
+                />
+              </figure>
+            </div>
+
+            <p class="web-caption">
+              These screens required multi-column scanning and deep navigation,
+              which slowed down quick checks during active, on-road sessions.
+            </p>
+          </div>
         </div>
       </div>
     </section>
