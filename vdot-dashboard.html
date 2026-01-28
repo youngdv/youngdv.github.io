@@ -116,10 +116,11 @@
         background: var(--text);
         color: #fff;
         border: 1px solid var(--text);
-        padding: 10px 14px;
+        padding: 12px 16px;
         border-radius: 10px;
         font-weight: 600;
         cursor: pointer;
+        min-height: 48px;
       }
       .btn.ghost {
         background: transparent;
@@ -129,7 +130,7 @@
 
       /* Layout */
       .section {
-        padding: 56px 5%;
+        padding: 64px 5%;
       }
       .container {
         max-width: 1200px;
@@ -143,7 +144,7 @@
       .hero h1 {
         font-size: clamp(28px, 5vw, 40px);
         line-height: 1.15;
-        font-weight: 800;
+        font-weight: 600;
         margin-bottom: 8px;
       }
       .hero p {
@@ -178,8 +179,8 @@
       /* Media wells for images & videos */
       .media-well {
         width: 100%;
-        max-width: 100%;
-        aspect-ratio: 16 / 9;
+        max-width: 800px; /* keep media modestly sized */
+        aspect-ratio: 16/9;
         background: #f8f8f8;
         border: 1px solid var(--line);
         border-radius: 12px;
@@ -188,7 +189,7 @@
         justify-content: center;
         overflow: hidden;
         padding: 10px;
-        margin: 14px 0 0;
+        margin: 14px auto 0;
       }
       .media-well img,
       .media-well iframe {
@@ -296,9 +297,179 @@
         color: var(--text);
       }
 
-         @media (max-width: 768px) {
+      /* Project metadata row */
+      .project-meta {
+        background: #fafafa;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin: 24px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+      }
+      .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .meta-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--muted);
+      }
+      .meta-value {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      /* Project sections */
+      .project-section {
+        margin-bottom: 48px;
+        padding: 36px 5% 8px;
+      }
+      .project-section h2 {
+        font-size: clamp(20px, 2.5vw, 24px);
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .project-section p,
+      .project-section ul {
+        color: var(--text);
+        line-height: 1.7;
+      }
+      .project-section ul {
+        padding-left: 1.5rem;
+        margin: 12px 0;
+      }
+      .project-section li {
+        margin-bottom: 12px;
+      }
+
+      /* Footer */
+      footer {
+        background: #fafafa;
+        border-top: 1px solid var(--line);
+        padding: 64px 20px 32px;
+      }
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        gap: 48px;
+      }
+      .footer-cta {
+        text-align: center;
+      }
+      .footer-cta h3 {
+        font-size: clamp(22px, 3vw, 28px);
+        margin: 0 0 16px;
+        font-weight: 600;
+      }
+      .footer-cta p {
+        color: var(--muted);
+        margin: 0 0 20px;
+      }
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 32px;
+        padding-top: 48px;
+        border-top: 1px solid var(--line);
+      }
+      .footer-col h4 {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0 0 16px;
+        color: var(--text);
+      }
+      .footer-col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .footer-col li {
+        margin-bottom: 10px;
+      }
+      .footer-col a {
+        color: var(--muted);
+        font-size: 15px;
+        transition: color 0.2s ease;
+      }
+      .footer-col a:hover {
+        color: var(--text);
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 32px;
+        margin-top: 32px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Mobile Navigation */
+      .mobile-nav {
+        display: none;
+      }
+      .mobile-nav summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 8px 12px;
+        font-weight: 600;
+        user-select: none;
+      }
+      .mobile-nav summary::-webkit-details-marker {
+        display: none;
+      }
+      .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--line);
+        min-height: 48px;
+      }
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+
+      @media (max-width: 768px) {
         .nav-links {
           display: none;
+        }
+        .mobile-nav {
+          display: block;
+        }
+        .nav-inner {
+          justify-content: space-between;
+        }
+        .section {
+          padding: 48px 5%;
+        }
+        .project-meta {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+      @media (max-width: 640px) {
+        .section {
+          padding: 40px 5%;
+        }
+        .hero {
+          padding: 40px 5% 24px;
         }
       }
     </style>
@@ -313,220 +484,203 @@
             style="display: flex; align-items: center; gap: 12px"
           >
             <img src="logo/logo1.png" alt="DY monogram" />
-            <div class="name">Destinee Young</div>
           </a>
         </div>
         <div class="nav-links">
-          <a href="index.html#capabilities">Capabilities</a>
-          <a href="index.html#work">Work</a>
-          <a
-            href="mailto:destinee.young99@gmail.com?subject=Portfolio%20Inquiry"
-            >Contact</a
-          >
-          <a
-            class="btn ghost"
-            href="imgs/DestineeResume2025new.pdf"
-            aria-label="Download resume"
-            >Resume</a
-          >
+          <a href="index.html#projects">Work</a>
+          <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+
+          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
+        <details class="mobile-nav">
+          <summary aria-label="Toggle menu">Menu</summary>
+          <div class="mobile-menu">
+            <a href="index.html#projects">Work</a>
+            <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+
+            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
+          </div>
+        </details>
       </div>
     </nav>
 
     <!-- Hero -->
     <header class="hero">
-      <h1>VDOT MRP Dashboard</h1>
+      <h1>VDOT MRP Web Platform</h1>
       <p>
         Operational analytics that make maintenance priorities and status easy
         to scan.
       </p>
     </header>
 
-    <!-- Meta tags -->
-    <div class="meta-bar" aria-label="Project tags and quick facts">
-      <div class="meta-row">
-        <span class="tag">Ops analytics</span>
-        <span class="tag">Web</span>
-        <span class="tag">WCAG</span>
-        <span class="tag">Figma</span>
+    <div class="project-section">
+      <!-- Hero Image -->
+      <div class="media-well center" style="margin-bottom: 32px">
+        <img src="imgs/dashboard1.png" alt="VDOT MRP dashboard overview" />
       </div>
+      <!-- Project Content -->
+      <div class="container" style="padding-top: 40px; padding-bottom: 80px">
+        <!-- Project Metadata -->
+        <div class="project-meta">
+          <div class="meta-item">
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">Government / Transportation</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Client</div>
+            <div class="meta-value">Virginia DOT</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Timeframe</div>
+            <div class="meta-value">In Progress</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Role</div>
+            <div class="meta-value">User Experience Designer</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        The VDOT MRP Web Platform is a web-based analytics platform designed to
+        help district managers monitor inspection backlogs, track maintenance
+        status, and prioritize work across regions. As the sole UX designer, I
+        created a streamlined Web Platform interface that provides real-time
+        visibility into field operations and supports data-driven
+        decision-making for maintenance planning.
+      </p>
     </div>
 
-    <!-- Overview -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Project overview</h2>
-        <p class="lead">
-          The <strong>Maintenance Rating Program (MRP) Web platfom</strong> is a
-          web-based interface designed to help VDOT managers prioritize
-          maintenance work, track status, and identify blockers early. My
-          deliverable was a mid- to high-fidelity prototype that defined
-          information hierarchy and interaction patterns for a production web
-          platform.
-        </p>
-        <div class="card">
-          <ul>
-            <li><strong>Role:</strong> Sole UX Designer</li>
-            <li>
-              <strong>Scope:</strong> Competitive analysis, lo-fi wireframes,
-              and mid/high-fi prototyping
-            </li>
-            <li>
-              <strong>Research:</strong> Stakeholder- and workflow-informed
-              (limited formal UX research)
-            </li>
-          </ul>
-        </div>
-        <div class="media-well center" style="margin-top: 16px">
-          <img src="imgs/dashboard1.png" alt="VDOT MRP dashboard overview" />
-        </div>
-      </div>
-    </section>
+    <!-- Who is this product for? -->
+    <div class="project-section">
+      <h2>Who is this product for?</h2>
+      <p>
+        VDOT district managers and operations staff who oversee maintenance
+        inspection programs across Virginia. These users need to quickly assess
+        inspection status, identify backlogs, assign work, and coordinate
+        between field teams and office operations.
+      </p>
+    </div>
 
     <!-- Goals -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Goals</h2>
-        <div class="card">
-          <ul>
-            <li>
-              Give district managers a single place to triage and assign work.
-            </li>
-            <li>Make status and urgency signals clear at a glance.</li>
-            <li>Reduce reliance on manual data pulls across systems.</li>
-            <li>Support coordination between field and office teams.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <div class="project-section">
+      <h2>Goals</h2>
+      <ul>
+        <li>
+          Provide real-time visibility into inspection data and maintenance
+          status across districts
+        </li>
+        <li>
+          Support decision-making with clear prioritization and urgency signals
+        </li>
+        <li>
+          Enable efficient triage and work assignment through role-based views
+        </li>
+        <li>Reduce manual data pulls by centralizing operational analytics</li>
+        <li>
+          Facilitate coordination between field inspectors and district managers
+        </li>
+      </ul>
+    </div>
 
-    <!-- Features -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Key features</h2>
-        <div class="card">
-          <ul>
-            <li>
-              <strong>Worklist:</strong> clear states and due-soon highlights
-              for quick triage.
-            </li>
-            <li>
-              <strong>Role-aware panels:</strong> views tailored for ops leads
-              and coordinators.
-            </li>
-            <li>
-              <strong>Interactive map context:</strong> location and clustering
-              to support routing decisions.
-            </li>
-            <li>
-              <strong>Notification stream:</strong> centralized updates that
-              deep-link into the relevant record.
-            </li>
-            <li>
-              <strong>Accessible UI:</strong> WCAG-aligned contrast and spacing
-              for long sessions.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- Goals Image -->
+    <div class="media-well" style="margin-bottom: 8px">
+      <img
+        src="imgs/dashboard1.png"
+        alt="Lo-fi dashboard wireframes"
+      />
+    </div>
 
-    <!-- Competitive Analysis -->
-    <section class="section" id="competitive-analysis">
-      <div class="container">
-        <h2 class="section-title">Competitive analysis</h2>
-        <p class="lead">
-          I reviewed comparable operational dashboards to identify patterns for
-          summarization, map + list layouts, and notification handling, adapting
-          them to MRP’s maintenance workflows.
+    <!-- Why is this needed? -->
+    <div class="project-section">
+      <h2>Why is this needed?</h2>
+      <p>
+        District managers lacked a centralized view of inspection status and
+        maintenance priorities. Data was scattered across multiple systems,
+        requiring manual aggregation and making it difficult to identify urgent
+        work, track progress, or coordinate efficiently across teams. VDOT
+        needed a Web Platform solution that could surface actionable insights
+        and support proactive maintenance planning.
+      </p>
+    </div>
+
+    <!-- What did I work on? -->
+    <div class="project-section">
+      <h2>What did I work on?</h2>
+      <ul>
+        <li>
+          Web Platform design and layout that prioritizes operational visibility
+          and quick scanning
+        </li>
+        <li>
+          Data visualization patterns for inspection status, backlogs, and
+          urgency indicators
+        </li>
+        <li>
+          Filtering and search patterns to support targeted views across
+          districts and work types
+        </li>
+        <li>
+          Role-based UI configurations for different user types and workflows
+        </li>
+        <li>
+          Responsive layout design to support both desktop and mobile access
+        </li>
+        <li>Competitive analysis of comparable operational Platforms</li>
+      </ul>
+    </div>
+
+    <!-- Who'd I work with? -->
+    <div class="project-section">
+      <h2>Who'd I work with?</h2>
+      <p>
+        I collaborated with the engineering team on technical feasibility and
+        data structure, data analysts to understand reporting requirements and
+        key metrics, and VDOT management to validate Web Platform priorities and
+        role-based needs. Stakeholder feedback sessions helped refine the
+        information hierarchy and ensure the design met operational
+        requirements.
+      </p>
+
+      <div class="media-well" style="margin-bottom: 32px">
+        <img
+          src="imgs/alphateam.png"
+          alt="MRP app screens showing login and inspection requirements"
+        />
+      </div>
+
+      <!-- Impact -->
+      <div class="project-section">
+        <h2>Impact</h2>
+        <p>
+          Delivered a centralized Web Platform that provides real-time
+          visibility into inspection data and maintenance status. The design
+          supports data-driven decision-making with clear prioritization signals
+          and role-based views tailored to district manager workflows. By
+          consolidating operational analytics in one interface, the Web Platform
+          reduced manual effort and improved coordination between field and
+          office teams.
         </p>
-
-        <div class="card">
-          <ul>
-            <li>
-              <strong>At-a-glance summaries</strong> support rapid
-              prioritization; I applied hierarchy and visual emphasis to surface
-              urgency.
-            </li>
-            <li>
-              <strong>Maps in context</strong> are powerful; I balanced map size
-              with actionable tables to keep tasks front and center.
-            </li>
-            <li>
-              <strong>Notification streams</strong> reduce context switching;
-              the design deep-links into the exact record and filter state.
-            </li>
-          </ul>
-        </div>
-
-        <div class="comp-grid">
-          <figure class="comp-card">
-            <div class="media-well">
-              <img
-                src="imgs/comanalysisdashboard1.png"
-                alt="Comparable dashboard: at-a-glance overview"
-              />
-            </div>
-            <figcaption>
-              Homepage summary patterns informed the “Today” strip and
-              high-level status tiles used for rapid triage.
-            </figcaption>
-          </figure>
-          <figure class="comp-card">
-            <div class="media-well">
-              <img
-                src="imgs/comanalysisdashboard2.png"
-                alt="Comparable dashboard: list + map pattern"
-              />
-            </div>
-            <figcaption>
-              List and map combinations validated the split-view layout and
-              guided clustering behavior for location-based work items.
-            </figcaption>
-          </figure>
-          <figure class="comp-card">
-            <div class="media-well">
-              <img
-                src="imgs/comanalysisdashboard3.png"
-                alt="Comparable dashboard: notifications stream"
-              />
-            </div>
-            <figcaption>
-              Notification streams influenced the inline update model, allowing
-              users to jump directly into relevant records without losing
-              context.
-            </figcaption>
-          </figure>
-        </div>
       </div>
-    </section>
 
-    <!-- Lo-fi -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Lo-fi layout exploration</h2>
-        <p class="lead">
-          Low-fidelity wireframes were used to explore layout, information
-          hierarchy, and relationships between views before visual refinement.
-        </p>
-        <div class="media-well center" style="aspect-ratio: 16/10">
+      <!-- Design Process
+      <div class="project-section">
+        <h2>Design Process</h2>
+        <div class="media-well center" style="margin-bottom: 24px">
+          <img src="imgs/dashboard1.png" alt="VDOT MRP dashboard overview" />
+        </div>
+        <div
+          class="media-well center"
+          style="aspect-ratio: 16/10; margin-bottom: 24px"
+        >
           <img
             src="imgs/lofi-wireframesdashboard.png"
             alt="Lo-fi dashboard wireframes"
           />
         </div>
-      </div>
-    </section>
-
-    <!-- Prototype Showcase (smaller, centered) -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Mid–high fidelity prototype</h2>
-        <p class="lead">
-          The mid- to high-fidelity prototype finalized interaction patterns,
-          visual hierarchy, and accessibility considerations and served as the
-          design source for development.
-        </p>
         <div class="media-well center" style="padding: 0">
           <iframe
             title="MRP dashboard prototype video"
@@ -543,95 +697,72 @@
             allowfullscreen
           ></iframe>
         </div>
-        <div class="case-nav" style="margin-top: 14px">
-          <a
-            class="primary"
-            href="https://www.figma.com/proto/your-figma-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open interactive prototype →
-          </a>
-        </div>
       </div>
-    </section>
 
-    <!-- UI elements (two quick videos/images) -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">UI elements</h2>
-        <div class="showcase-grid">
-          <div class="showcase-item">
-            <h3>Worklist</h3>
-            <div class="media-well" style="padding: 0">
-              <iframe
-                src="https://player.vimeo.com/video/1062612121?h=a178c4364b&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
-                frameborder="0"
-                allow="
-                  autoplay;
-                  fullscreen;
-                  picture-in-picture;
-                  clipboard-write;
-                  encrypted-media;
-                "
-                title="dashboard UI element 1"
-              ></iframe>
-            </div>
-            <p style="color: var(--muted); margin-top: 8px">
-              Prioritize by due-soon and status at a glance.
-            </p>
+      Back button -->
+      <div class="case-nav">
+        <a class="secondary" href="index.html">← Back to work</a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-cta">
+          <h3>Let's talk</h3>
+          <p>Interested in working together or have questions about my work?</p>
+          <a class="btn" href="contact.html">Get in touch</a>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#projects">Work</a></li>
+              <li><a href="about.html">About</a></li>
+              <li>
+                <a href="imgs/DestineeResume2025new.pdf" target="_blank"
+                  >Resume</a
+                >
+              </li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </div>
 
-          <div class="showcase-item">
-            <h3>Map context</h3>
-            <div class="media-well" style="padding: 0">
-              <iframe
-                src="https://player.vimeo.com/video/1062612141?h=b7c11c798e&title=0&byline=0&portrait=0&badge=0&autopause=0&muted=1"
-                frameborder="0"
-                allow="
-                  autoplay;
-                  fullscreen;
-                  picture-in-picture;
-                  clipboard-write;
-                  encrypted-media;
-                "
-                title="dashboard UI element 2"
-              ></iframe>
-            </div>
-            <p style="color: var(--muted); margin-top: 8px">
-              Clustered pins and selection sync with the table.
-            </p>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/destineeyoung/"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+              </li>
+              <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Work</h4>
+            <ul>
+              <li><a href="vdot-mobile-app.html">VDOT MRP App</a></li>
+              <li><a href="vdot-dashboard.html">VDOT MRP Web</a></li>
+              <li><a href="pcis-dashboard.html">PCIS Dashboard</a></li>
+              <li><a href="telematics.html">CARMA Telematics</a></li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Outcomes -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Outcomes</h2>
-        <div class="card">
-          <ul>
-            <li>
-              Defined a clear information hierarchy for prioritizing maintenance
-              work.
-            </li>
-            <li>
-              Aligned stakeholders on role-based data visibility and workflow
-              expectations.
-            </li>
-            <li>
-              The mid/high-fidelity prototype served as the design foundation
-              for the production web platform.
-            </li>
-          </ul>
-        </div>
-
-        <!-- Footer CTAs consistent with site -->
-        <div class="case-nav">
-          <a class="secondary" href="index.html">← Back</a>
+        <div class="footer-bottom">
+          © <span id="year"></span> Destinee Young. All rights reserved.
         </div>
       </div>
-    </section>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

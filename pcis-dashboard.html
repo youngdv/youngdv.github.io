@@ -99,7 +99,7 @@
         width: auto;
       }
       .brand .name {
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: 0.2px;
       }
 
@@ -133,10 +133,11 @@
         background: var(--text);
         color: #fff;
         border: 1px solid var(--text);
-        padding: 10px 14px;
+        padding: 12px 16px;
         border-radius: 10px;
         font-weight: 600;
         cursor: pointer;
+        min-height: 48px;
       }
       .btn.ghost {
         background: transparent;
@@ -146,7 +147,7 @@
 
       /* Layout */
       .section {
-        padding: 56px 5%;
+        padding: 64px 5%;
       }
       .container {
         max-width: 1200px;
@@ -160,7 +161,7 @@
       .hero h1 {
         font-size: clamp(28px, 5vw, 40px);
         line-height: 1.15;
-        font-weight: 800;
+        font-weight: 600;
         margin-bottom: 8px;
       }
       .hero p {
@@ -195,6 +196,7 @@
       /* Media well for images/videos (matches work cards) */
       .media-well {
         width: 100%;
+        max-width: 800px; /* keep media modestly sized */
         aspect-ratio: 16/9;
         background: #f8f8f8;
         border: 1px solid var(--line);
@@ -204,7 +206,7 @@
         justify-content: center;
         overflow: hidden;
         padding: 10px;
-        margin: 14px 0 0;
+        margin: 14px auto 0;
       }
       .media-well img,
       .media-well iframe {
@@ -316,12 +318,179 @@
         color: var(--text);
       }
 
+      /* Project metadata row */
+      .project-meta {
+        background: #fafafa;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin: 24px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+      }
+      .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .meta-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--muted);
+      }
+      .meta-value {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      /* Project sections */
+      .project-section {
+        margin-bottom: 48px;
+        padding: 36px 5% 8px;
+      }
+      .project-section h2 {
+        font-size: clamp(20px, 2.5vw, 24px);
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .project-section p,
+      .project-section ul {
+        color: var(--text);
+        line-height: 1.7;
+      }
+      .project-section ul {
+        padding-left: 1.5rem;
+        margin: 12px 0;
+      }
+      .project-section li {
+        margin-bottom: 12px;
+      }
+
+      /* Footer */
+      footer {
+        background: #fafafa;
+        border-top: 1px solid var(--line);
+        padding: 64px 20px 32px;
+      }
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        gap: 48px;
+      }
+      .footer-cta {
+        text-align: center;
+      }
+      .footer-cta h3 {
+        font-size: clamp(22px, 3vw, 28px);
+        margin: 0 0 16px;
+        font-weight: 600;
+      }
+      .footer-cta p {
+        color: var(--muted);
+        margin: 0 0 20px;
+      }
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 32px;
+        padding-top: 48px;
+        border-top: 1px solid var(--line);
+      }
+      .footer-col h4 {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0 0 16px;
+        color: var(--text);
+      }
+      .footer-col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .footer-col li {
+        margin-bottom: 10px;
+      }
+      .footer-col a {
+        color: var(--muted);
+        font-size: 15px;
+        transition: color 0.2s ease;
+      }
+      .footer-col a:hover {
+        color: var(--text);
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 32px;
+        margin-top: 32px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Mobile Navigation */
+      .mobile-nav {
+        display: none;
+      }
+      .mobile-nav summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 8px 12px;
+        font-weight: 600;
+        user-select: none;
+      }
+      .mobile-nav summary::-webkit-details-marker {
+        display: none;
+      }
+      .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--line);
+        min-height: 48px;
+      }
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+
       @media (max-width: 768px) {
         .nav-links {
           display: none;
         }
+        .mobile-nav {
+          display: block;
+        }
         .nav-inner {
-          justify-content: flex-start;
+          justify-content: space-between;
+        }
+        .section {
+          padding: 48px 5%;
+        }
+        .project-meta {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+      @media (max-width: 640px) {
+        .section {
+          padding: 40px 5%;
+        }
+        .hero {
+          padding: 40px 5% 24px;
         }
       }
     </style>
@@ -336,23 +505,25 @@
             style="display: flex; align-items: center; gap: 12px"
           >
             <img src="logo/logo1.png" alt="DY monogram" />
-            <div class="name">Destinee Young</div>
           </a>
         </div>
         <div class="nav-links">
-          <a href="index.html#capabilities">Capabilities</a>
-          <a href="index.html#work">Work</a>
-          <a
-            href="mailto:destinee.young99@gmail.com?subject=Portfolio%20Inquiry"
-            >Contact</a
-          >
-          <a
-            class="btn ghost"
-            href="imgs/DestineeResume2025new.pdf"
-            aria-label="Download resume"
-            >Resume</a
-          >
+          <a href="index.html#projects">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+
+          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
+        <details class="mobile-nav">
+          <summary aria-label="Toggle menu">Menu</summary>
+          <div class="mobile-menu">
+            <a href="index.html#projects">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
+          </div>
+        </details>
       </div>
     </nav>
 
@@ -364,335 +535,258 @@
         improve visibility, coordination, and decision-making.
       </p>
     </header>
-
-    <!-- Meta tags -->
-    <div class="meta-bar" aria-label="Project tags and quick facts">
-      <div class="meta-row">
-        <span class="tag">Multi-persona UX</span>
-        <span class="tag">Stakeholder alignment</span>
-        <span class="tag">Prototyping</span>
-        <span class="tag">Web</span>
-        <span class="tag">Proof of Concept</span>
-        <span class="tag">Task-based usability testing</span>
-        <span class="tag">Figma</span>
+    <div class="project-section">
+      <!-- Hero Image -->
+      <div class="media-well" style="margin-bottom: 32px">
+        <img src="imgs/pcis-dashboard.png" alt="PCIS overview dashboard" />
       </div>
-    </div>
+      <!-- Project Content -->
+      <div class="container" style="padding-top: 40px; padding-bottom: 80px">
+        <!-- Project Metadata -->
+        <div class="project-meta">
+          <div class="meta-item">
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">Transportation / Logistics</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Client</div>
+            <div class="meta-value">Leidos</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Timeframe</div>
+            <div class="meta-value">In Progress</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Role</div>
+            <div class="meta-value">User Experience Designer & Researcher</div>
+          </div>
+        </div>
 
-    <!-- Overview -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Project overview</h2>
-        <p class="lead">
-          The <strong>Port Community Information Sharing (PCIS)</strong> Proof
-          of Concept is a multi-persona desktop interface designed to streamline
-          port coordination by improving shared visibility across key
-          stakeholder roles. The experience provides tailored dashboards for
-          <strong>Terminal Operators</strong>,
-          <strong>Transportation Operators</strong>, and
-          <strong>Beneficial Cargo Owners (BCOs)</strong> to support
-          appointment-style scheduling, container status tracking, and
-          cross-stakeholder communication.
+        <h2>Overview</h2>
+        <p>
+          The Port Community Information Sharing (PCIS) platform is a
+          multi-persona dashboard designed to unify cargo visibility across
+          terminal operators, carriers, and beneficial cargo owners. As UX Lead,
+          I designed role-based interfaces that streamline appointment
+          scheduling, container tracking, and cross-stakeholder communication to
+          improve coordination and reduce operational friction at ports without
+          integrated systems.
         </p>
-        <p class="lead" style="margin-top: 12px">
-          This project explored how a unified view of cargo and operational
-          signals can reduce manual follow-ups, improve alignment around
-          capacity and timing, and help ports without a single system operate
-          more efficiently.
+      </div>
+
+      <!-- Who is this product for? -->
+      <div class="project-section">
+        <h2>Who is this product for?</h2>
+        <p>
+          Terminal operators who manage container availability and approvals,
+          transportation operators who coordinate pickups and deliveries, and
+          beneficial cargo owners (BCOs) who track shipment status and
+          communicate with partners. Each persona has distinct workflows and
+          information needs that require tailored dashboard views while
+          maintaining consistent navigation and shared data.
         </p>
-        <div class="media-well" style="margin-top: 16px">
+      </div>
+
+      <!-- Goals -->
+      <div class="project-section">
+        <h2>Goals</h2>
+        <ul>
+          <li>
+            Provide unified cargo visibility across multiple stakeholder roles
+            with consistent interfaces
+          </li>
+          <li>
+            Support role-based workflows with tailored dashboards for terminals,
+            carriers, and BCOs
+          </li>
+          <li>
+            Reduce communication gaps and manual coordination through
+            centralized status updates
+          </li>
+          <li>
+            Enable efficient appointment scheduling and container tracking
+            across the port ecosystem
+          </li>
+          <li>
+            Build stakeholder alignment on shared terminology and operational
+            workflows
+          </li>
+        </ul>
+      </div>
+
+      <!-- Goals Image -->
+      <div class="media-well" style="aspect-ratio: 16/10; margin-bottom: 48px">
+        <img src="imgs/lofi-wireframes.png" alt="Lo-fi wireframes" />
+      </div>
+
+      <!-- Why is this needed? -->
+      <div class="project-section">
+        <h2>Why is this needed?</h2>
+        <p>
+          Fragmented information across stakeholders created delays,
+          inefficiencies, and constant manual follow-ups. Without a single
+          system, terminals, carriers, and cargo owners operated in silos with
+          limited visibility into shared operations. PCIS was designed to bridge
+          these gaps by providing a unified platform that centralizes cargo data
+          and supports real-time coordination across the port community.
+        </p>
+      </div>
+
+      <!-- What did I work on? -->
+      <div class="project-section">
+        <h2>What did I work on?</h2>
+        <ul>
+          <li>
+            Multi-persona dashboard design that balances consistency with
+            role-specific needs
+          </li>
+          <li>
+            Role-based UI patterns for terminals, transportation operators, and
+            BCOs
+          </li>
+          <li>
+            Workflow mapping and task flow design for appointment scheduling and
+            container tracking
+          </li>
+          <li>
+            Competitive analysis of comparable port and logistics platforms
+          </li>
+          <li>
+            High-fidelity prototyping and interactive demonstrations for
+            stakeholder review
+          </li>
+          <li>Task-based usability testing facilitation and synthesis</li>
+        </ul>
+      </div>
+
+      <!-- Who'd I work with? -->
+      <div class="project-section">
+        <h2>Who'd I work with?</h2>
+        <p>
+          I collaborated with the product team to define requirements and scope,
+          stakeholders representing each persona to validate workflows and
+          terminology, the engineering team on technical feasibility, and
+          participated in usability testing sessions with representative users
+          from terminal, carrier, and BCO roles to gather feedback and refine
+          the design.
+        </p>
+      </div>
+
+      <!-- Impact -->
+      <div class="project-section">
+        <h2>Impact</h2>
+        <p>
+          Delivered role-based dashboards that provide unified cargo visibility
+          across terminal, carrier, and BCO personas. Usability testing
+          confirmed the design was easy to use and intuitive across stakeholder
+          roles. The design clarified workflows, reduced communication friction,
+          and established strong stakeholder alignment on the proof of concept
+          direction. Themed synthesis of feedback helped identify priority areas
+          for future iterations.
+        </p>
+      </div>
+
+      <!-- Design Process 
+      <div class="project-section">
+        <h2>Design Process</h2>
+        <div class="media-well" style="margin-bottom: 24px">
           <img src="imgs/pcis-dashboard.png" alt="PCIS overview dashboard" />
         </div>
-      </div>
-    </section>
-
-    <!-- Goals -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Goals</h2>
-        <div class="card">
-          <ul>
-            <li>
-              Improve cargo visibility across roles with consistent, role-based
-              dashboards.
-            </li>
-            <li>
-              Support appointment and pickup workflows with real-time status and
-              clear next steps.
-            </li>
-            <li>
-              Reduce coordination overhead by centralizing updates, approvals,
-              and notifications.
-            </li>
-            <li>
-              Enable faster operational decisions by surfacing priority items
-              and live signals.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Competitive Analysis -->
-    <section class="section" id="competitive-analysis">
-      <div class="container">
-        <h2 class="section-title">Competitive analysis</h2>
-
-        <!-- Findings summary -->
-        <div class="card">
-          <h3 style="font-size: 16px; margin: 12px 0 8px">
-            Design implications for PCIS
-          </h3>
-          <ul>
-            <li>
-              Add a concise <strong>“Today / Now”</strong> section to each
-              persona dashboard with prioritized items and quick actions.
-            </li>
-            <li>
-              Pair worklists with <strong>live signals</strong> that inform
-              scheduling and timing decisions.
-            </li>
-            <li>
-              Maintain consistent navigation across personas while tailoring
-              <strong>KPIs and terminology</strong> per role.
-            </li>
-            <li>
-              Standardize <strong>problem → cause → fix</strong> patterns for
-              errors, validation, and exceptions.
-            </li>
-            <li>
-              Use a unified <strong>notifications panel</strong> with filters
-              and deep links to records.
-            </li>
-          </ul>
-        </div>
-
-        <!-- Screenshot gallery (unchanged) -->
-        <div class="comp-grid">
-          <figure class="comp-card">
-            <div class="media-well">
-              <img
-                src="imgs/comanalysis1.png"
-                alt="Navis: appointments, gate busyness, notifications"
-              />
-            </div>
-            <figcaption>
-              <strong>Navis</strong> — Clear “today” view with upcoming
-              appointments, live gate busyness, and a notifications panel.
-            </figcaption>
-          </figure>
-
-          <figure class="comp-card">
-            <div class="media-well">
-              <img
-                src="imgs/comanalysis2.png"
-                alt="Yangtai: scheduling and task status views"
-              />
-            </div>
-            <figcaption>
-              <strong>Yangtai</strong> — Scheduling layout that makes task
-              status visible and easy to sequence.
-            </figcaption>
-          </figure>
-
-          <figure class="comp-card">
-            <div class="media-well">
-              <img
-                src="imgs/comanalysis3.png"
-                alt="NYTD Shanghai Trader: integrated data and live updates"
-              />
-            </div>
-            <figcaption>
-              <strong>NYTD Shanghai Trader</strong> — Broad integrations with
-              timely updates across partners.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lo-fi -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Lo-fi prototype</h2>
-        <p class="lead">
-          Early wireframes focused on establishing shared structure across
-          personas and validating information hierarchy before moving into
-          detailed UI patterns.
-        </p>
         <div
           class="media-well"
-          style="aspect-ratio: 16/10; max-width: 800px; margin: 0 auto"
+          style="aspect-ratio: 16/10; margin-bottom: 24px"
         >
           <img src="imgs/lofi-wireframes.png" alt="Lo-fi wireframes" />
         </div>
-      </div>
-    </section>
-
-    <!-- Prototype Showcase (Vimeo) -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Prototype showcase</h2>
-        <p class="lead">
-          Interactive walkthrough demonstrating role-based dashboards and key
-          workflows across terminal, transport, and BCO perspectives.
-        </p>
-        <div
-          class="media-well"
-          style="aspect-ratio: 16/10; max-width: 800px; margin: 0 auto"
-        >
-          <iframe
-            title="PCIS prototype video"
-            src="https://player.vimeo.com/video/1062612244?h=a6acbd63e0&title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1"
-            frameborder="0"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="
-              autoplay;
-              fullscreen;
-              picture-in-picture;
-              clipboard-write;
-              encrypted-media;
-              web-share;
-            "
-            allowfullscreen
-          >
-          </iframe>
-        </div>
-        <div class="case-nav" style="margin-top: 14px">
-          <a
-            class="primary"
-            href="https://www.figma.com/proto/lyh3N5nrhMOu2oShUg3dOc/PCIS-Interface_MVP?node-id=939-33650&t=Avn7slSH1Xz810oE-1&scaling=contain&content-scaling=fixed&page-id=937%3A56300&starting-point-node-id=939%3A33650&show-proto-sidebar=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Open interactive prototype →</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- UI elements -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">UI elements</h2>
-        <p class="lead">
-          Role-based dashboards were designed to keep navigation consistent
-          while adapting metrics, terminology, and actions to each stakeholder’s
-          responsibilities.
-        </p>
-        <div class="showcase-grid">
+        <div class="showcase-grid" style="margin-bottom: 24px">
           <div class="showcase-item">
-            <h3>Terminal Operator Dashboard</h3>
+            <h3>Terminal Operator</h3>
             <div class="media-well">
-              <img
-                src="imgs/pcis-dashboard.png"
-                alt="Terminal Operator dashboard"
-              />
+              <img src="imgs/pcis-dashboard.png" alt="Terminal dashboard" />
             </div>
-            <p style="color: var(--muted); margin-top: 8px">
-              Review and approve bookings, monitor terminal activity, and manage
-              container status updates.
-            </p>
           </div>
           <div class="showcase-item">
-            <h3>Transportation Operator Dashboard</h3>
+            <h3>Transportation Operator</h3>
             <div class="media-well">
               <img
                 src="imgs/transport-dashboard.png"
-                alt="Transportation Operator dashboard"
+                alt="Transport dashboard"
               />
             </div>
-            <p style="color: var(--muted); margin-top: 8px">
-              Track assigned pickups, confirm readiness, and update milestone
-              status as work progresses.
-            </p>
           </div>
           <div class="showcase-item">
-            <h3>BCO Dashboard</h3>
+            <h3>BCO</h3>
             <div class="media-well">
               <img src="imgs/bco-dashboard.png" alt="BCO dashboard" />
             </div>
-            <p style="color: var(--muted); margin-top: 8px">
-              Monitor container location and status, view timelines, and
-              communicate updates across partners.
-            </p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Usability Testing -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Usability testing & validation</h2>
-        <div class="card">
-          <p>
-            To evaluate the proof of concept, a
-            <strong>task-based usability test</strong> was conducted with
-            representative port stakeholders. While the effort was labeled as
-            “UAT” in project materials, the sessions were structured as
-            usability testing focused on task completion, clarity of
-            terminology, and overall ease of use across roles.
-          </p>
+     Back button -->
+      <div class="case-nav">
+        <a class="secondary" href="index.html">← Back to work</a>
+      </div>
+    </div>
 
-          <ul>
-            <li>
-              Helped define task scenarios aligned to each persona’s workflows
-              and responsibilities
-            </li>
-            <li>
-              Served as note-taker during sessions and captured both usability
-              issues and user expectations
-            </li>
-            <li>
-              Collected quantitative ratings alongside qualitative feedback
-              during remote walkthroughs
-            </li>
-            <li>
-              Organized open-ended feedback into themes to identify patterns
-              across stakeholder roles
-            </li>
-          </ul>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-cta">
+          <h3>Let's talk</h3>
+          <p>Interested in working together or have questions about my work?</p>
+          <a class="btn" href="contact.html">Get in touch</a>
+        </div>
 
-          <p>
-            Participants described the experience as
-            <strong>easy to use</strong> and <strong>intuitive</strong>, and the
-            themed synthesis helped prioritize improvement areas such as
-            terminology alignment, workflow visibility, and flexibility for
-            different operational contexts.
-          </p>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#projects">Work</a></li>
+              <li><a href="about.html">About</a></li>
+              <li>
+                <a href="imgs/DestineeResume2025new.pdf" target="_blank"
+                  >Resume</a
+                >
+              </li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/destineeyoung/"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+              </li>
+              <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Work</h4>
+            <ul>
+              <li><a href="vdot-mobile-app.html">VDOT MRP App</a></li>
+              <li><a href="vdot-dashboard.html">VDOT MRP Web</a></li>
+              <li><a href="pcis-dashboard.html">PCIS Dashboard</a></li>
+              <li><a href="telematics.html">CARMA Telematics</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © <span id="year"></span> Destinee Young. All rights reserved.
         </div>
       </div>
-    </section>
+    </footer>
 
-    <!-- Outcomes -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Outcomes</h2>
-        <div class="card">
-          <ul>
-            <li>
-              Usability testing feedback indicated the system was easy to
-              understand and intuitive to use across roles
-            </li>
-            <li>
-              Synthesized qualitative feedback into themes to highlight
-              recurring needs and usability patterns
-            </li>
-            <li>
-              Translated themed findings into recommendations to support future
-              iterations and expanded scope
-            </li>
-            <li>
-              Built strong stakeholder alignment on core dashboard structure,
-              terminology, and proof of concept direction
-            </li>
-          </ul>
-        </div>
-
-        <!-- Footer CTAs consistent with site -->
-        <div class="case-nav">
-          <a class="secondary" href="index.html">← Back</a>
-        </div>
-      </div>
-    </section>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
