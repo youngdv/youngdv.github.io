@@ -326,38 +326,13 @@
       /* Content with Image Layout */
       .content-with-image {
         display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        gap: 48px;
+        grid-template-columns: 1fr;
+        gap: 24px;
         align-items: start;
         margin-bottom: 64px;
       }
       .content-text h2 {
         margin-bottom: 16px;
-      }
-      .content-image {
-        background: #fafafa;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        overflow: hidden;
-        position: sticky;
-        top: 80px;
-      }
-      .content-image img {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: cover;
-        display: block;
-      }
-      .content-image.placeholder {
-        background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
-        min-height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--muted);
-        font-size: 14px;
-        font-weight: 500;
       }
 
       /* Skills List */
@@ -380,11 +355,6 @@
         .content-with-image {
           grid-template-columns: 1fr;
           gap: 32px;
-        }
-        .content-image {
-          position: static;
-          max-width: 500px;
-          margin: 0 auto;
         }
       }
 
@@ -410,9 +380,6 @@
           gap: 24px;
           margin-bottom: 48px;
         }
-        .content-image img {
-          max-height: 300px;
-        }
       }
     </style>
   </head>
@@ -426,7 +393,7 @@
             href="index.html"
             style="display: flex; align-items: center; gap: 12px"
           >
-            <img src="logo/logo1.png" alt="DY monogram" />
+            <span class="name">Destinee Young</span>
           </a>
         </div>
         <div class="nav-links">
@@ -452,95 +419,79 @@
       <div class="container">
         <h1>About</h1>
 
-        <h3>Hi, I'm Destinee. I design by understanding people first.</h3>
-        <p>Before I ever think about screens, I think about humans.</p>
+        <h3>
+          Optimizing Human-System Interaction for Complex Operations
+        </h3>
+        <p>
+          I am a Human Factors professional and UI/UX Designer at Leidos focused
+          on improving operational efficiency and data governance in government
+          and transportation systems. With a B.S. in Psychology and an M.S. in
+          Human-Computer Interaction, I design and evaluate Human-System
+          Interfaces (HSI) that translate complex workflows into actionable,
+          accessible tools.
+        </p>
         <div class="content-with-image">
           <div class="content-text">
-            <p>Hi, I’m Destinee. I design by understanding people first.</p>
+            <h2>From Research to Implementation</h2>
             <p>
-              I began in a neuroinflammation lab studying cognitive changes in
-              rodent models, where I learned to observe patterns, work with
-              uncertainty, and let evidence guide conclusions. I later applied
-              those skills in human factors transportation research, where I
-              recruited participants, coordinated studies, and moderated
-              sessions focused on driver behavior, attention, and safety.
+              My approach is grounded in scientific rigor from 3+ years at
+              Leidos, where I began as a Human Factors Research Scientist
+              supporting federally funded research with eye-tracking and
+              simulator environments before transitioning into UI/UX design.
             </p>
             <p>
-              Translating research into real world system improvements is what
-              led me into UX. I now design complex government and operational
-              tools, turning research, user needs, and system constraints into
-              clear workflows, usable interfaces, and thoughtful design
-              decisions grounded in how people actually think and work.
+              I apply Task Analysis, Heuristic Evaluation, and behavioral
+              observation to align system requirements with user mental models,
+              operational workflow constraints, and measurable performance goals.
             </p>
-          </div>
-          <div class="content-image">
-            <img src="imgs/mouse.png" alt="Research team collaboration" />
           </div>
         </div>
       </div>
       <div class="container">
         <div class="content-with-image">
           <div class="content-text">
-            <h2>I pay attention to environments, not just interfaces</h2>
+            <h2>Modernizing Government Infrastructure</h2>
             <p>
-              I love to travel, not just for the places, but for how different
-              environments change human behavior. Airports, cities, transit
-              systems, markets, cultural spaces. Every environment has its own
-              unspoken rules and friction points. Traveling has made me more
-              adaptable and deeply aware of how context affects experience.
+              I specialize in taking fragmented legacy systems and turning them
+              into streamlined, compliant, and accessible operational platforms.
+              Whether acting as the sole designer on the VDOT web platform or
+              conducting detailed Task Analysis for PCIS dashboards, my work
+              focuses on system clarity and operator effectiveness in complex,
+              data-heavy environments.
             </p>
-            <p>
-              That awareness carries directly into my design work. I don't just
-              design features. I think about the setting people are in when they
-              use them.
-            </p>
-          </div>
-          <div class="content-image">
-            <img src="imgs/az.png" alt="Aztrip" />
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="content-with-image">
-          <div class="content-text">
-            <h2>My creative side lives in 3D</h2>
-            <p>
-              When I'm not researching or designing, I'm in Blender. I build 3D
-              scenes, experiment with lighting, materials, and form, and treat
-              digital space like a playground.
-            </p>
-            <p>
-              Working in 3D changed how I think about design. Interfaces aren't
-              just flat layouts to me. They are spaces people move through,
-              focus within, and experience over time. Blender keeps my
-              creativity active and strengthens my spatial and visual thinking
-              in ways that influence my UX work every day.
-            </p>
-          </div>
-          <div class="content-image">
-            <img src="imgs/dstar3d.PNG" alt="Research team collaboration" />
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="content-with-image">
-          <div class="content-text">
-            <h2>How I work</h2>
-            <p>I bring together:</p>
             <ul class="skills-list">
-              <li><strong>Psychology</strong> — to understand people</li>
               <li>
-                <strong>Research</strong> — to ground decisions in evidence
+                <strong>Data Governance</strong> — simplifying dense telemetry
+                and infrastructure backlogs into intuitive decision-support
+                interfaces
               </li>
-              <li><strong>Observation</strong> — to notice what others miss</li>
               <li>
-                <strong>Creativity</strong> — to build thoughtful, engaging
-                experiences
+                <strong>Cognitive Load Management</strong> — structuring
+                information architecture to reduce operator fatigue in
+                data-intensive workflows
+              </li>
+              <li>
+                <strong>Validation</strong> — performing Heuristic Evaluations
+                and serving as a Behavioral Analyst during usability testing to
+                identify performance bottlenecks
+              </li>
+              <li>
+                <strong>Accessibility &amp; Compliance</strong> — implementing
+                Section 508 and WCAG 2.1 standards for federal and state agency
+                contracts
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="content-with-image">
+          <div class="content-text">
+            <h2>My Philosophy</h2>
             <p>
-              I'm most excited by problems that require patience, investigation,
-              and human insight.
+              I believe the most effective systems respect human constraints
+              while maximizing technical capability. My goal is to build tools
+              that are compliant, functional, and fundamentally human-centered.
             </p>
           </div>
         </div>
@@ -568,11 +519,6 @@
                 margin-bottom: 16px;
               "
             >
-              <img
-                src="logo/logo1.png"
-                alt="DY monogram"
-                style="height: 32px"
-              />
               <span style="font-weight: 600; font-size: 16px"
                 >Destinee Young</span
               >
@@ -585,7 +531,7 @@
                 max-width: 280px;
               "
             >
-              Research-driven designer building accessible tools for complex
+              Human Factors Specialist designing accessible HSI for complex
               systems.
             </p>
           </div>
