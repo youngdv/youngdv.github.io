@@ -43,10 +43,12 @@
         --text: #0b0b0b;
         --muted: #6b7280;
         --line: rgba(0, 0, 0, 0.08);
-        --brand: #111111;
+        --brand: #DF207C;
         --radius: 16px;
         --container: 1200px;
       }
+      /* Logo pink tint */
+      .brand img, .footer-brand img { filter: brightness(0) saturate(100%) invert(18%) sepia(89%) saturate(2000%) hue-rotate(306deg) brightness(100%); }
       * {
         box-sizing: border-box;
       }
@@ -534,10 +536,10 @@
             <div class="footer-col">
               <h4>Work</h4>
               <ul>
-                <li><a href="vdot-mobile-app.html">VDOT MRP App</a></li>
-                <li><a href="vdot-dashboard.html">VDOT MRP Web</a></li>
-                <li><a href="pcis-dashboard.html">PCIS Dashboard</a></li>
-                <li><a href="telematics.html">CARMA Telematics</a></li>
+                <li><a href="vdot-mrp-system.html">VDOT MRP System</a></li>
+                <li>
+                  <a href="pcis-dashboard.html">PCIS Port Logistics Platform</a>
+                </li>
               </ul>
             </div>
           </div>

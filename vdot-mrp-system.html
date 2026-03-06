@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Designing a Field-to-Office Maintenance System for a State Transportation Agency | Destinee Young
+    </title>
+    <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-34V535KX45"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-34V535KX45");
+    </script>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #0b0b0b;
+        --muted: #6b7280;
+        --line: rgba(0, 0, 0, 0.08);
+        --card: #ffffff;
+        --accent: #111111;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+          system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 2px;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        height: 36px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+      .nav-links a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--text);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 1px;
+        width: 0;
+        background: var(--text);
+        transition: width 0.2s ease;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--text);
+        color: #fff;
+        border: 1px solid var(--text);
+        padding: 12px 16px;
+        border-radius: 10px;
+        font-weight: 600;
+        min-height: 48px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 36px 5% 8px;
+      }
+
+      .hero {
+        padding: 36px 5% 12px;
+      }
+      .hero h1 {
+        font-size: clamp(28px, 5vw, 40px);
+        line-height: 1.15;
+        font-weight: 600;
+        margin-bottom: 10px;
+        max-width: 980px;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: clamp(16px, 2.2vw, 18px);
+        max-width: 980px;
+      }
+      .hero .tagline {
+        margin-top: 10px;
+        font-size: 15px;
+        color: var(--text);
+      }
+
+      .project-meta {
+        background: #fafafa;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin: 24px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+      }
+      .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .meta-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--muted);
+      }
+      .meta-value {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .media-well {
+        width: 100%;
+        max-width: 800px;
+        aspect-ratio: 16/9;
+        background: #f8f8f8;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 10px;
+        margin: 14px auto 0;
+      }
+      .media-well img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+
+      .project-section {
+        margin-bottom: 44px;
+        padding: 28px 5% 8px;
+      }
+      .project-section h2 {
+        font-size: clamp(21px, 2.8vw, 28px);
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .project-section h3 {
+        font-size: clamp(18px, 2vw, 22px);
+        margin: 20px 0 10px;
+        font-weight: 600;
+      }
+      .project-section p,
+      .project-section ul {
+        color: var(--text);
+        line-height: 1.75;
+      }
+      .project-section ul {
+        padding-left: 1.5rem;
+        margin: 12px 0;
+      }
+      .project-section li {
+        margin-bottom: 10px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 18px;
+        margin-top: 14px;
+      }
+
+      .design-decision {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fbfbfb;
+        padding: 16px;
+        margin: 14px 0;
+      }
+      .design-decision h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .design-decision p {
+        margin-bottom: 10px;
+      }
+      .design-decision p:last-child {
+        margin-bottom: 0;
+      }
+
+      .annotated-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+      }
+      .comparison-item {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        padding: 12px;
+      }
+      .comparison-item h4 {
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .hierarchy-annotations {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fafafa;
+        padding: 16px;
+        margin-top: 16px;
+      }
+      .hierarchy-annotations ul {
+        list-style: none;
+        padding: 0;
+      }
+      .hierarchy-annotations li {
+        margin: 10px 0;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: #fff;
+      }
+      .hierarchy-primary {
+        border-left: 4px solid #111;
+      }
+      .hierarchy-secondary {
+        border-left: 4px solid #6b7280;
+      }
+      .hierarchy-tertiary {
+        border-left: 4px solid #94a3b8;
+      }
+
+      .case-nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .case-nav a {
+        border: 1px solid var(--text);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+      .case-nav a.secondary {
+        background: transparent;
+        color: var(--text);
+      }
+
+      footer {
+        background: linear-gradient(to bottom, #fafafa 0%, #f5f5f5 100%);
+        border-top: 1px solid var(--line);
+        padding: 56px 20px 24px;
+      }
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 2fr;
+        gap: 64px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--line);
+      }
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+      .footer-col h4 {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin: 0 0 14px;
+        color: var(--text);
+      }
+      .footer-col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .footer-col li {
+        margin-bottom: 8px;
+      }
+      .footer-col a {
+        color: var(--muted);
+        font-size: 14px;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+      .footer-col a:hover {
+        color: var(--text);
+      }
+      .footer-bottom {
+        padding-top: 24px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .mobile-nav {
+        display: none;
+      }
+      .mobile-nav summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 8px 12px;
+        font-weight: 600;
+        user-select: none;
+      }
+      .mobile-nav summary::-webkit-details-marker {
+        display: none;
+      }
+      .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--line);
+        min-height: 48px;
+      }
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+
+      @media (max-width: 900px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .footer-nav {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 32px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .mobile-nav {
+          display: block;
+        }
+        .project-meta {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .comparison-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding: 34px 5% 16px;
+        }
+        .project-section {
+          padding-top: 24px;
+        }
+        .footer-nav {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="Primary">
+      <div class="nav-inner">
+        <div class="brand">
+          <a
+            href="index.html"
+            style="display: flex; align-items: center; gap: 12px"
+          >
+            <img src="logo/logo1.png" alt="DY monogram" />
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html#projects">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
+        </div>
+        <details class="mobile-nav">
+          <summary aria-label="Toggle menu">Menu</summary>
+          <div class="mobile-menu">
+            <a href="index.html#projects">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
+          </div>
+        </details>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <h1>
+        Designing a Field-to-Office Maintenance System for a State
+        Transportation Agency
+      </h1>
+      <p>
+        End-to-end UX design for VDOT's Maintenance Rating Program - from mobile
+        field inspections to management analytics.
+      </p>
+      <p class="tagline">
+        How cognitive load analysis and information hierarchy design improved
+        field inspection workflows and operational decision-making across VDOT's
+        Maintenance Rating Program.
+      </p>
+    </header>
+
+    <div class="container" style="padding-top: 12px">
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <h4>Field Inspection Interface</h4>
+          <div class="media-well" style="aspect-ratio: 4/3; margin-top: 0">
+            <img
+              src="imgs/moblieapp1.png"
+              alt="VDOT mobile field inspection screens"
+            />
+          </div>
+        </div>
+        <div class="comparison-item">
+          <h4>Management Analytics Interface</h4>
+          <div class="media-well" style="aspect-ratio: 4/3; margin-top: 0">
+            <img
+              src="imgs/dashboard1.png"
+              alt="VDOT management dashboard overview"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="project-meta">
+        <div class="meta-item">
+          <div class="meta-label">Industry</div>
+          <div class="meta-value">Government / Transportation</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Client</div>
+          <div class="meta-value">Virginia DOT</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Timeframe</div>
+          <div class="meta-value">8+ months</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">Lead UX Designer - End-to-End System Design</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="project-section">
+      <h2>The Decision Environment</h2>
+      <p>
+        Field inspectors work on highway shoulders in rain, heat, and glare.
+        They wear gloves. Trucks pass at 60+ mph. They need to assess dozens of
+        road features per inspection segment - rating pavement condition,
+        drainage, signage, guardrails - and record data accurately in real time.
+        Every rating decision feeds into district-level maintenance planning that
+        determines where millions of dollars in repairs go. Meanwhile, district
+        managers sitting in offices need to monitor inspection backlogs,
+        identify urgent work, and coordinate field teams across regions - often
+        pulling data from multiple disconnected systems.
+      </p>
+      <p>
+        This is not a consumer app. Errors here affect road safety and budget
+        allocation. The interface either supports or undermines hundreds of
+        micro-decisions made daily.
+      </p>
+      <div
+        class="placeholder-image"
+        role="img"
+        aria-label="[PLACEHOLDER: Photo or illustration showing field inspection environment — inspector on roadside with tablet, highway setting]"
+        style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 32px 0;"
+      >
+        <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+          [PLACEHOLDER: Photo or illustration showing field inspection environment — inspector on roadside with tablet, highway setting]
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>The Problem</h2>
+      <p>
+        Existing workflows were paper-based for field inspectors - slow,
+        error-prone, and requiring double data entry when transferring to
+        desktop systems. District managers lacked a centralized view of
+        inspection status, relying on scattered spreadsheets and manual data
+        aggregation to identify urgent work. There was no single system
+        connecting what happened in the field to the decisions being made in the
+        office.
+      </p>
+      <p>
+        VDOT needed an integrated solution: a mobile platform for real-time
+        field data capture and a web dashboard for operational analytics,
+        designed as one coherent system.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>My Approach - Frameworks &amp; Methodology</h2>
+      <p>I approached this as two halves of one system, not two separate products.</p>
+      <ul>
+        <li>
+          <strong>Task analysis</strong> of field inspection workflows to map
+          every decision point and interaction
+        </li>
+        <li>
+          <strong>Cognitive walkthroughs</strong> to identify where the
+          interface could reduce mental effort under field conditions
+        </li>
+        <li>
+          <strong>Information hierarchy design</strong> based on task priority -
+          what does the user need in the first 3 seconds vs. what can be
+          accessed on demand
+        </li>
+        <li><strong>Competitive analysis</strong> of comparable operational platforms</li>
+        <li>
+          <strong>Iterative prototyping</strong> from low-fidelity wireframes
+          through high-fidelity prototypes validated with stakeholders and field
+          inspectors
+        </li>
+      </ul>
+      <div
+        class="placeholder-image"
+        role="img"
+        aria-label="[PLACEHOLDER: Process diagram or methodology framework visual — task analysis flow or cognitive walkthrough artifact]"
+        style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 32px 0;"
+      >
+        <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+          [PLACEHOLDER: Process diagram or methodology framework visual — task analysis flow or cognitive walkthrough artifact]
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Designing the Mobile Field Tool</h2>
+
+      <h3>Cognitive Load Under Pressure</h3>
+      <p>
+        Field inspectors do not browse - they execute. Every screen must answer:
+        what do I need to rate, what are my options, and how do I move to the
+        next item? I designed a stepped linear flow rather than a dashboard
+        overview because inspectors process one road segment at a time.
+        Presenting all segments simultaneously would force unnecessary
+        context-switching and increase error risk.
+      </p>
+
+      <h3>Key Design Decisions</h3>
+      <div class="design-decision">
+        <h4>Decision: High-contrast interaction targets</h4>
+        <p><strong>What I chose:</strong> Large touch targets and high-contrast color coding across rating actions.</p>
+        <p>
+          <strong>Why:</strong> Improved reliability in glare, wet screens, and
+          gloved use while reducing miss-taps in safety-critical roadside
+          conditions.
+        </p>
+        <p>
+          <strong>What I rejected:</strong> Smaller dense controls that displayed
+          more options per screen but increased tap errors and slowed completion.
+        </p>
+      </div>
+
+      <div class="design-decision">
+        <h4>Decision: Stepped linear flow</h4>
+        <p><strong>What I chose:</strong> Sequential segment-by-segment progression instead of hub-and-spoke navigation.</p>
+        <p>
+          <strong>Why:</strong> Reduced context-switching during sequential
+          inspections and supported faster recovery if interruptions occurred.
+        </p>
+        <p>
+          <strong>What I rejected:</strong> A central dashboard screen that
+          exposed all segments at once, which increased cognitive overhead while
+          inspectors were actively rating.
+        </p>
+      </div>
+
+      <div class="design-decision">
+        <h4>Decision: Progressive disclosure for history</h4>
+        <p><strong>What I chose:</strong> Historical ratings and reference imagery behind on-demand expansion.</p>
+        <p>
+          <strong>Why:</strong> Kept active rating screens visually focused while
+          preserving context when users needed comparison data.
+        </p>
+        <p>
+          <strong>What I rejected:</strong> Persistent historical panels on every
+          screen, which competed with current-task controls and increased visual
+          clutter.
+        </p>
+      </div>
+
+      <div class="design-decision">
+        <h4>Decision: Incomplete-entry confirmation step</h4>
+        <p><strong>What I chose:</strong> Added a final confirmation pattern whenever required inputs were missing.</p>
+        <p>
+          <strong>Why:</strong> Prevented accidental submissions observed during
+          beta testing and reduced downstream correction work.
+        </p>
+        <p>
+          <strong>What I rejected:</strong> Silent auto-save behavior that let
+          users move forward with unresolved fields and caused inconsistent data
+          quality.
+        </p>
+      </div>
+
+      <div class="annotated-grid">
+        <div
+          class="placeholder-image"
+          role="img"
+          aria-label="Annotated mobile screen showing cognitive load callouts"
+          style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 0;"
+        >
+          <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+            [PLACEHOLDER: Annotated mobile screen showing cognitive load callouts]
+          </p>
+        </div>
+        <div
+          class="placeholder-image"
+          role="img"
+          aria-label="Annotated mobile screen showing cognitive load callouts"
+          style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 0;"
+        >
+          <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+            [PLACEHOLDER: Annotated mobile screen showing cognitive load callouts]
+          </p>
+        </div>
+        <div
+          class="placeholder-image"
+          role="img"
+          aria-label="Annotated mobile screen showing cognitive load callouts"
+          style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 0;"
+        >
+          <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+            [PLACEHOLDER: Annotated mobile screen showing cognitive load callouts]
+          </p>
+        </div>
+      </div>
+
+      <h3>Information Hierarchy Walkthrough</h3>
+      <p>
+        One key inspection screen was weighted so the highest-risk action
+        receives immediate visual priority while contextual information remains
+        accessible.
+      </p>
+      <div class="hierarchy-annotations">
+        <ul>
+          <li class="hierarchy-primary">
+            <strong>Primary (immediate attention):</strong> The condition rating
+            input - this is the inspector's core task.
+          </li>
+          <li class="hierarchy-secondary">
+            <strong>Secondary (confirms context):</strong> Segment ID and
+            location - needed to confirm they are rating the right section, but
+            not interactive.
+          </li>
+          <li class="hierarchy-tertiary">
+            <strong>Tertiary (on-demand):</strong> Historical ratings and
+            reference photos - available for comparison but hidden behind a tap
+            to avoid visual clutter during active inspection.
+          </li>
+        </ul>
+      </div>
+      <div
+        class="placeholder-image"
+        role="img"
+        aria-label="[PLACEHOLDER: Single mobile screen with visual hierarchy annotations — arrows or numbered callouts showing primary/secondary/tertiary zones]"
+        style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 32px 0;"
+      >
+        <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+          [PLACEHOLDER: Single mobile screen with visual hierarchy annotations — arrows or numbered callouts showing primary/secondary/tertiary zones]
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Designing the Management Dashboard</h2>
+
+      <h3>The Scanning Problem</h3>
+      <p>
+        District managers do not read dashboards - they scan them. I designed
+        for a morning check-in workflow: the manager opens the dashboard and
+        needs to know in under 10 seconds what is urgent, what is on track, and
+        what needs attention. The visual hierarchy was built around this
+        scanning behavior. Urgency indicators and backlog counts are visually
+        dominant, while detailed breakdowns are accessible through progressive
+        drill-down.
+      </p>
+
+      <h3>Data Visualization Rationale</h3>
+      <p>
+        Choosing how to represent each metric was a deliberate process. I tested
+        multiple approaches for backlog visualization - numerical counts, bar
+        charts, heat maps - and landed on [describe what you chose] because
+        [rationale]. Status indicators use a traffic light pattern
+        (red/yellow/green) because it maps to an existing mental model district
+        managers already use in verbal communication about priorities.
+      </p>
+      <div
+        class="placeholder-image"
+        role="img"
+        aria-label="Dashboard screen with annotations showing data visualization choices and scanning hierarchy"
+        style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 32px 0;"
+      >
+        <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+          [PLACEHOLDER: Dashboard screen with annotations showing data visualization choices and scanning hierarchy]
+        </p>
+      </div>
+
+      <h3>Role-Based Views</h3>
+      <p>
+        Different users need different information hierarchies from the same
+        data. District managers need high-level status and exception alerts.
+        Operations coordinators need assignment queues and scheduling views. I
+        designed role-based configurations that share a consistent navigation
+        shell but surface different default views and data emphasis based on the
+        user's primary workflow.
+      </p>
+      <div
+        class="placeholder-image"
+        role="img"
+        aria-label="Side-by-side comparison of role-based dashboard views showing different information emphasis"
+        style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 32px 0;"
+      >
+        <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+          [PLACEHOLDER: Side-by-side comparison of role-based dashboard views showing different information emphasis]
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Connecting Field to Office - The System View</h2>
+      <p>
+        The mobile app and dashboard are not separate products - data flows from
+        the inspector's field entries directly into the manager's operational
+        view. I designed this connection deliberately: real-time sync status
+        indicators on the mobile app so inspectors know their data uploaded, and
+        live-updating inspection feeds on the dashboard so managers see new data
+        without manual refreshes. The system architecture informed interface
+        decisions on both sides.
+      </p>
+      <div
+        class="placeholder-image"
+        role="img"
+        aria-label="Diagram showing data flow from mobile field app to backend to management dashboard, with UX touchpoints annotated at each stage"
+        style="background-color: #f0f4f8; border: 2px dashed #94a3b8; border-radius: 8px; padding: 40px 24px; text-align: center; margin: 32px 0;"
+      >
+        <p style="color: #64748b; font-size: 14px; font-style: italic; margin: 0;">
+          [PLACEHOLDER: Diagram showing data flow from mobile field app → backend → management dashboard, with UX touchpoints annotated at each stage]
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Constraints &amp; Tradeoffs</h2>
+      <ul>
+        <li>
+          <strong>Offline capability vs. data freshness:</strong> Field
+          connectivity is unreliable, so I designed for offline-first data
+          capture with sync-when-available. This meant managers sometimes saw
+          stale data; we mitigated this with last-synced timestamps on the
+          dashboard.
+        </li>
+        <li>
+          <strong>Data density vs. cognitive load:</strong> Stakeholders
+          initially wanted more data fields per inspection screen. I advocated
+          for progressive disclosure - showing only what is needed for the
+          current task - and validated this approach in beta testing when
+          inspectors completed tasks faster with fewer errors.
+        </li>
+        <li>
+          <strong>Engineering constraints:</strong> [Add any real constraints you
+          navigated — data model limitations, API restrictions, etc.]
+        </li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Validation &amp; Outcomes</h2>
+      <h3>Beta Testing Findings:</h3>
+      <ul>
+        <li>[Specific finding 1 — what you observed, what changed as a result]</li>
+        <li>[Specific finding 2]</li>
+        <li>[Specific finding 3]</li>
+      </ul>
+
+      <h3>Measurable Outcomes:</h3>
+      <ul>
+        <li>
+          Digital workflow replaced paper-based process, eliminating double data
+          entry
+        </li>
+        <li>
+          [Add any metrics you have — task completion time, error reduction,
+          user satisfaction scores]
+        </li>
+        <li>[Any qualitative quotes from inspectors or managers]</li>
+      </ul>
+
+      <h3>What I'd Do Differently:</h3>
+      <ul>
+        <li>[Honest reflection — this shows senior-level self-awareness]</li>
+      </ul>
+    </section>
+
+    <section class="project-section" style="margin-bottom: 20px">
+      <h2>The Team</h2>
+      <p>
+        I was the sole UX designer on a cross-functional Alpha Team: Product
+        Manager, Solutions Architect, Software Engineer, and Engineering Intern.
+      </p>
+      <ul>
+        <li>
+          Partnering with the Solutions Architect to understand data model
+          constraints that shaped interface possibilities
+        </li>
+        <li>
+          Working with VDOT stakeholders to translate operational requirements
+          into design decisions
+        </li>
+        <li>
+          Facilitating beta testing sessions with field inspectors and
+          synthesizing feedback into design iterations
+        </li>
+      </ul>
+      <div class="media-well" style="aspect-ratio: 16/10; margin-bottom: 24px">
+        <img
+          src="imgs/alphateam.png"
+          alt="Alpha Team collaboration for VDOT Maintenance Rating Program"
+        />
+      </div>
+
+      <div class="case-nav">
+        <a class="secondary" href="index.html">← Back to work</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 16px;
+              "
+            >
+              <img
+                src="logo/logo1.png"
+                alt="DY monogram"
+                style="height: 32px"
+              />
+              <span style="font-weight: 600; font-size: 16px"
+                >Destinee Young</span
+              >
+            </div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 14px;
+                line-height: 1.6;
+                max-width: 280px;
+              "
+            >
+              Human Factors Specialist designing accessible HSI for complex
+              systems.
+            </p>
+          </div>
+
+          <div class="footer-nav">
+            <div class="footer-col">
+              <h4>Navigate</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                  <a href="imgs/DestineeResume2025new.pdf" target="_blank"
+                    >Resume</a
+                  >
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Connect</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/destineeyoung/"
+                    target="_blank"
+                    rel="noopener"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Work</h4>
+              <ul>
+                <li><a href="vdot-mrp-system.html">VDOT MRP System</a></li>
+                <li>
+                  <a href="pcis-dashboard.html">PCIS Port Logistics Platform</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © <span id="year"></span> Destinee Young
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

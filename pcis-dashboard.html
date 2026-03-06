@@ -3,507 +3,249 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PCIS Dashboard — Case Study | Destinee Young</title>
+    <title>PCIS Multi-Stakeholder Port Logistics Platform | Destinee Young</title>
     <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-34V535KX45"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34V535KX45"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-34V535KX45");
     </script>
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="favicon/favicon-48x48.png"
-      sizes="48x48"
-    />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="favicon/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="PCIS Dashboard" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
-
     <style>
       :root {
-        /* white theme to match index/work */
         --bg: #ffffff;
         --text: #0b0b0b;
-        --muted: #6b7280; /* gray-500 */
+        --muted: #6b7280;
         --line: rgba(0, 0, 0, 0.08);
         --card: #ffffff;
-        --accent: #111111;
+        --accent: #DF207C;
+        --pink: #DF207C;
+        --pink-light: #fce7f3;
+        --pink-dark: #a8105a;
+        --pink-border: #f9a8d4;
+        --green: #4ade80;
+        --green-light: #f0fdf4;
+        --green-dark: #166534;
+        --green-border: #bbf7d0;
+        --terminal-accent: #1f4d8f;
+        --carrier-accent: #0f766e;
+        --bco-accent: #92400e;
       }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html,
+      /* Logo pink tint */
+      .brand img, .footer-brand img { filter: brightness(0) saturate(100%) invert(18%) sepia(89%) saturate(2000%) hue-rotate(306deg) brightness(100%); }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { height: 100%; }
       body {
-        height: 100%;
-      }
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
-          system-ui, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, system-ui, sans-serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
       }
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      a:focus-visible,
-      button:focus-visible {
-        outline: 2px solid #000;
-        outline-offset: 2px;
-      }
+      a { color: var(--accent); text-decoration: none; }
+      a:focus-visible, button:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
 
-      /* Nav (same structure as index) */
-      nav {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: var(--bg);
-        border-bottom: 1px solid var(--line);
-      }
+      /* Nav */
+      nav { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); }
       .nav-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 14px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
+        max-width: 1200px; margin: 0 auto; padding: 14px 20px;
+        display: flex; align-items: center; justify-content: space-between; gap: 16px;
       }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .brand img {
-        height: 36px;
-        width: auto;
-      }
-      .brand .name {
-        font-weight: 600;
-        letter-spacing: 0.2px;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 22px;
-        align-items: center;
-      }
-      .nav-links a {
-        position: relative;
-        padding: 6px 0;
-        color: var(--text);
-      }
-      .nav-links a:hover::after {
-        width: 100%;
-      }
+      .brand img { height: 36px; }
+      .nav-links { display: flex; gap: 22px; align-items: center; }
+      .nav-links a { position: relative; padding: 6px 0; color: var(--text); }
       .nav-links a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        height: 1px;
-        width: 0;
-        background: var(--text);
-        transition: width 0.2s ease;
+        content: ""; position: absolute; left: 0; bottom: -2px;
+        height: 1px; width: 0; background: var(--text); transition: width 0.2s ease;
       }
+      .nav-links a:hover::after { width: 100%; }
       .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--text);
-        color: #fff;
-        border: 1px solid var(--text);
-        padding: 12px 16px;
-        border-radius: 10px;
-        font-weight: 600;
-        cursor: pointer;
-        min-height: 48px;
-      }
-      .btn.ghost {
-        background: transparent;
-        color: var(--text);
-        padding: 10px 14px;
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--accent); color: #fff; border: 1px solid var(--accent);
+        padding: 12px 16px; border-radius: 10px; font-weight: 600; min-height: 48px;
       }
 
-      /* Layout */
-      .section {
-        padding: 64px 5%;
+      /* Outcome banner */
+      .outcome-banner { background: #fce7f3; border-bottom: 1px solid #f9a8d4; padding: 18px 5%; }
+      .outcome-banner-inner {
+        max-width: 1200px; margin: 0 auto;
+        display: flex; gap: 32px; align-items: center; flex-wrap: wrap;
       }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+      .outcome-stat { display: flex; flex-direction: column; gap: 2px; }
+      .outcome-stat .number { font-size: 22px; font-weight: 700; color: #531034; line-height: 1.2; }
+      .outcome-stat .label { font-size: 12px; color: #531034; font-weight: 500; }
+      .outcome-divider { width: 1px; height: 40px; background: #f9a8d4; }
 
       /* Hero */
-      .hero {
-        padding: 36px 5% 8px;
-      }
-      .hero h1 {
-        font-size: clamp(28px, 5vw, 40px);
-        line-height: 1.15;
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-      .hero p {
-        color: var(--muted);
-        font-size: clamp(16px, 2.2vw, 18px);
-      }
+      .hero { padding: 40px 5% 20px; }
+      .hero h1 { font-size: clamp(26px, 4.5vw, 38px); line-height: 1.15; font-weight: 600; margin-bottom: 12px; max-width: 900px; }
+      .hero p { color: var(--muted); font-size: clamp(15px, 2vw, 17px); max-width: 820px; }
 
-      /* Meta bar (tags / quick facts) */
-      .meta-bar {
-        padding: 16px;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        background: #fafafa;
-      }
-      .meta-row {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      .tag {
-        font-size: 12px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 6px 10px;
-        background: #fff;
-        color: #111;
-      }
-
-      /* Media well for images/videos (matches work cards) */
-      .media-well {
-        width: 100%;
-        max-width: 800px; /* keep media modestly sized */
-        aspect-ratio: 16/9;
-        background: #f8f8f8;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        padding: 10px;
-        margin: 14px auto 0;
-      }
-      .media-well img,
-      .media-well iframe {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border: 0;
-        border-radius: 8px;
-      }
-
-      /* Section titles + content */
-      h2.section-title {
-        font-size: clamp(22px, 3.6vw, 26px);
-        margin-bottom: 12px;
-      }
-      .lead {
-        color: var(--muted);
-        max-width: 900px;
-      }
-
-      /* Cardy blocks */
-      .card {
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        background: var(--card);
-        padding: 16px;
-        margin-top: 16px;
-      }
-
-      /* Lists */
-      ul {
-        padding-left: 1.25rem;
-        margin: 12px 0;
-      }
-      li {
-        margin-bottom: 10px;
-      }
-
-      /* Showcase grid (UI elements) */
-      .showcase-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 16px;
-        margin-top: 12px;
-      }
-      .showcase-item {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 14px;
-        background: var(--card);
-      }
-      .showcase-item h3 {
-        font-size: 16px;
-        margin-bottom: 8px;
-      }
-      .showcase-item .media-well {
-        aspect-ratio: 16/10;
-      }
-
-      /* Competitive analysis gallery */
-      .comp-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 16px;
-        margin-top: 16px;
-      }
-      .comp-card {
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        background: var(--card);
-        padding: 12px;
-      }
-      .comp-card .media-well {
-        aspect-ratio: 16/9;
-        margin-top: 0;
-      }
-      .comp-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border-radius: 8px;
-      }
-      .comp-card figcaption {
-        font-size: 14px;
-        color: var(--muted);
-        margin-top: 8px;
-        line-height: 1.5;
-      }
-
-      /* Footer nav */
-      .case-nav {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 18px;
-      }
-      .case-nav a {
-        border: 1px solid var(--text);
-        border-radius: 10px;
-        padding: 10px 14px;
-        font-weight: 700;
-      }
-      .case-nav a.primary {
-        background: var(--text);
-        color: #fff;
-      }
-      .case-nav a.secondary {
-        background: transparent;
-        color: var(--text);
-      }
-
-      /* Project metadata row */
+      /* Meta bar */
       .project-meta {
-        background: #fafafa;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 20px 24px;
-        margin: 24px 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 20px;
+        background: #fff; border: 1px solid var(--line); border-radius: 16px;
+        padding: 20px 24px; margin: 24px 5%;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px; max-width: 1160px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       }
-      .meta-item {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .meta-label {
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: var(--muted);
-      }
-      .meta-value {
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--text);
-      }
+      .meta-item { display: flex; flex-direction: column; gap: 4px; }
+      .meta-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+      .meta-value { font-size: 15px; font-weight: 600; color: var(--text); }
 
-      /* Project sections */
+      /* Sections — scrapbook card */
       .project-section {
-        margin-bottom: 48px;
-        padding: 36px 5% 8px;
+        background: #fff; border-radius: 20px;
+        margin: 0 2% 28px; padding: 36px 44px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03);
+        opacity: 0; transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
       }
-      .project-section h2 {
-        font-size: clamp(20px, 2.5vw, 24px);
-        margin-bottom: 16px;
-        font-weight: 600;
+      .project-section.visible { opacity: 1; transform: translateY(0); }
+      .project-section:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03); }
+      .project-section > p, .project-section > ul, .project-section > h2, .project-section > h3 { max-width: 720px; }
+      .project-section h2 { font-size: clamp(20px, 2.6vw, 26px); margin-bottom: 16px; font-weight: 600; }
+      .project-section h3 { font-size: clamp(17px, 2vw, 20px); margin: 24px 0 10px; font-weight: 600; }
+      .project-section p, .project-section ul { color: var(--text); line-height: 1.75; font-size: 15px; }
+      .project-section ul { padding-left: 1.5rem; margin: 12px 0; }
+      .project-section li { margin-bottom: 10px; }
+      .project-section p + p { margin-top: 14px; }
+
+      /* Section tag — sticker style */
+      .section-tag {
+        display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.5px; color: var(--pink-dark);
+        background: var(--pink-light); border: 1px solid var(--pink-border);
+        border-radius: 999px; padding: 3px 10px; margin-bottom: 12px;
+        transform: rotate(-1.5deg); box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
-      .project-section p,
-      .project-section ul {
-        color: var(--text);
-        line-height: 1.7;
+      .section-tag:hover { transform: rotate(0deg) scale(1.06); }
+      .section-tag.green { color: var(--green-dark); background: var(--green-light); border-color: var(--green-border); }
+
+      /* Media */
+      .media-tape { position: relative; padding-top: 14px; }
+      .media-tape.green-tape::before {
+        content: ""; position: absolute; top: 0; left: 50%;
+        transform: translateX(-50%) rotate(-2deg);
+        width: 60px; height: 16px; background: rgba(187, 247, 208, 0.9);
+        border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
       }
-      .project-section ul {
-        padding-left: 1.5rem;
-        margin: 12px 0;
+      .media-well {
+        width: 100%; max-width: 900px; aspect-ratio: 16/9;
+        background: #f8f8f8; border: 1px solid var(--line); border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        overflow: hidden; padding: 10px; margin: 16px auto 0;
       }
-      .project-section li {
-        margin-bottom: 12px;
+      .media-well img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
+
+      /* Persona grid */
+      .persona-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin: 24px 0; }
+      .persona-card {
+        border: 1px solid var(--line); border-radius: 16px; background: #fff; padding: 20px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
+      .persona-card:hover { transform: translateY(-3px) rotate(0.4deg); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+      .persona-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 18px; }
+      .persona-card p { margin: 8px 0; font-size: 15px; line-height: 1.7; }
+      .persona-card.terminal { border-top: 4px solid var(--terminal-accent); }
+      .persona-card.carrier { border-top: 4px solid var(--carrier-accent); }
+      .persona-card.bco { border-top: 4px solid var(--bco-accent); }
+
+      /* Role view grid */
+      .role-view-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin-top: 18px; }
+      .role-view-item { border: 1px solid var(--line); border-radius: 14px; padding: 14px; background: #fff; }
+      .role-view-item h4 { font-size: 15px; margin-bottom: 10px; font-weight: 600; }
+      .role-view-item .media-well { margin-top: 0; aspect-ratio: 4/3; }
+
+      /* Finding blocks */
+      .finding-block {
+        border: 1px solid var(--line); border-radius: 14px; background: #fbfbfb;
+        padding: 18px 20px; margin: 16px 0;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .finding-block:hover { transform: translateY(-3px) rotate(0.4deg); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+      .finding-block h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
+      .finding-block p { margin-bottom: 10px; font-size: 15px; }
+      .finding-block p:last-child { margin-bottom: 0; }
+
+      /* Comparison grid */
+      .comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 14px; }
+      .comparison-item { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 14px; }
+      .comparison-item h4 { font-size: 15px; margin-bottom: 10px; font-weight: 600; }
+
+      /* Placeholder image */
+      .placeholder-img {
+        background: #f0f4f8; border: 2px dashed #c8d5e3;
+        border-radius: 10px; padding: 36px 24px; text-align: center; margin: 20px 0;
+      }
+      .placeholder-img p { color: #7a90a4; font-size: 13px; font-style: italic; margin: 0; }
+
+      /* Service blueprint */
+      .service-blueprint-container {
+        margin-top: 18px; border: 1px solid var(--line); border-radius: 14px;
+        background: #fbfcfe; padding: 16px; overflow-x: auto;
+      }
+      .service-blueprint-container .blueprint-inner { min-width: 960px; }
+
+      /* Case nav */
+      .case-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+      .case-nav a { border: 1px solid var(--text); border-radius: 10px; padding: 10px 14px; font-weight: 700; }
+      .case-nav a.primary { background: var(--accent); color: #fff; }
+      .case-nav a.secondary { background: transparent; color: var(--text); }
 
       /* Footer */
-      footer {
-        background: #fafafa;
-        border-top: 1px solid var(--line);
-        padding: 64px 20px 32px;
-      }
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        gap: 48px;
-      }
-      .footer-cta {
-        text-align: center;
-      }
-      .footer-cta h3 {
-        font-size: clamp(22px, 3vw, 28px);
-        margin: 0 0 16px;
-        font-weight: 600;
-      }
-      .footer-cta p {
-        color: var(--muted);
-        margin: 0 0 20px;
-      }
-      .footer-links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 32px;
-        padding-top: 48px;
-        border-top: 1px solid var(--line);
-      }
-      .footer-col h4 {
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin: 0 0 16px;
-        color: var(--text);
-      }
-      .footer-col ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .footer-col li {
-        margin-bottom: 10px;
-      }
-      .footer-col a {
-        color: var(--muted);
-        font-size: 15px;
-        transition: color 0.2s ease;
-      }
-      .footer-col a:hover {
-        color: var(--text);
-      }
-      .footer-bottom {
-        text-align: center;
-        padding-top: 32px;
-        margin-top: 32px;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 14px;
-      }
+      footer { background: linear-gradient(to bottom, #fafafa 0%, #f5f5f5 100%); border-top: 1px solid var(--line); padding: 56px 20px 24px; }
+      .footer-content { max-width: 1200px; margin: 0 auto; }
+      .footer-grid { display: grid; grid-template-columns: 1.2fr 2fr; gap: 64px; padding-bottom: 40px; border-bottom: 1px solid var(--line); }
+      .footer-brand { display: flex; flex-direction: column; }
+      .footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+      .footer-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 14px; color: var(--text); }
+      .footer-col ul { list-style: none; margin: 0; padding: 0; }
+      .footer-col li { margin-bottom: 8px; }
+      .footer-col a { color: var(--muted); font-size: 14px; transition: color 0.2s ease; }
+      .footer-col a:hover { color: var(--text); }
+      .footer-bottom { padding-top: 24px; color: var(--muted); font-size: 13px; }
 
-      /* Mobile Navigation */
-      .mobile-nav {
-        display: none;
-      }
-      .mobile-nav summary {
-        list-style: none;
-        cursor: pointer;
-        padding: 8px 12px;
-        font-weight: 600;
-        user-select: none;
-      }
-      .mobile-nav summary::-webkit-details-marker {
-        display: none;
-      }
-      .mobile-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg);
-        border-bottom: 1px solid var(--line);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      }
-      .mobile-menu a {
-        display: block;
-        padding: 14px 20px;
-        border-bottom: 1px solid var(--line);
-        min-height: 48px;
-      }
-      .mobile-menu a:last-child {
-        border-bottom: none;
-      }
+      /* Mobile nav */
+      .mobile-nav { display: none; }
+      .mobile-nav summary { list-style: none; cursor: pointer; padding: 8px 12px; font-weight: 600; user-select: none; }
+      .mobile-nav summary::-webkit-details-marker { display: none; }
+      .mobile-menu { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+      .mobile-menu a { display: block; padding: 14px 20px; border-bottom: 1px solid var(--line); min-height: 48px; }
+      .mobile-menu a:last-child { border-bottom: none; }
 
+      @media (prefers-reduced-motion: reduce) {
+        .project-section { opacity: 1 !important; transform: none !important; transition: box-shadow 0.3s ease !important; }
+        .section-tag, .persona-card, .finding-block { transform: none !important; transition: none !important; }
+        .section-tag:hover, .persona-card:hover, .finding-block:hover { transform: none !important; box-shadow: none !important; }
+      }
+      @media (max-width: 980px) { .persona-grid, .role-view-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+        .footer-nav { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .outcome-divider { display: none; }
+        .project-section { margin: 0 1% 20px; padding: 28px 24px; }
+      }
       @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-        .mobile-nav {
-          display: block;
-        }
-        .nav-inner {
-          justify-content: space-between;
-        }
-        .section {
-          padding: 48px 5%;
-        }
-        .project-meta {
-          grid-template-columns: 1fr;
-          gap: 16px;
-        }
+        .nav-links { display: none; }
+        .mobile-nav { display: block; }
+        .project-meta { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .comparison-grid { grid-template-columns: 1fr; }
       }
       @media (max-width: 640px) {
-        .section {
-          padding: 40px 5%;
-        }
-        .hero {
-          padding: 40px 5% 24px;
-        }
+        .footer-nav { grid-template-columns: 1fr; gap: 28px; }
+        .footer-grid { gap: 32px; }
+        .project-meta { grid-template-columns: 1fr; }
+        .project-section { margin: 0 0 16px; border-radius: 16px; padding: 24px 20px; }
       }
     </style>
   </head>
   <body>
-    <!-- Nav -->
     <nav aria-label="Primary">
       <div class="nav-inner">
         <div class="brand">
-          <a
-            href="index.html"
-            style="display: flex; align-items: center; gap: 12px"
-          >
+          <a href="index.html" style="display: flex; align-items: center; gap: 12px">
             <img src="logo/logo1.png" alt="DY monogram" />
           </a>
         </div>
@@ -511,7 +253,6 @@
           <a href="index.html#projects">Work</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-
           <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
         <details class="mobile-nav">
@@ -520,265 +261,362 @@
             <a href="index.html#projects">Work</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-
             <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
           </div>
         </details>
       </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero">
-      <h1>PCIS Multi-Persona Dashboard</h1>
-      <p>
-        Supported the modernization of cargo visibility by translating complex
-        operational requirements into a multi-persona HSI.
-      </p>
-    </header>
-    <div class="project-section">
-      <!-- Hero Image -->
-      <div class="media-well" style="margin-bottom: 32px">
-        <img src="imgs/pcis-dashboard.png" alt="PCIS overview dashboard" />
-      </div>
-      <!-- Project Content -->
-      <div class="container" style="padding-top: 40px; padding-bottom: 80px">
-        <!-- Project Metadata -->
-        <div class="project-meta">
-          <div class="meta-item">
-            <div class="meta-label">Industry</div>
-            <div class="meta-value">Transportation / Logistics</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">Client</div>
-            <div class="meta-value">Leidos</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">Timeframe</div>
-            <div class="meta-value">In Progress</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">Role</div>
-            <div class="meta-value">UI/UX Designer & Behavioral Analyst</div>
-          </div>
+    <!-- Outcome banner -->
+    <div class="outcome-banner">
+      <div class="outcome-banner-inner">
+        <div class="outcome-stat">
+          <span class="number">3 Personas</span>
+          <span class="label">Terminal operators, carriers, and cargo owners</span>
         </div>
-
-        <h2>Overview</h2>
-        <p>
-          The Port Community Information Sharing (PCIS) platform is a
-          multi-persona HSI designed to unify cargo visibility across terminal
-          operators, carriers, and beneficial cargo owners. The objective was to
-          improve operator performance under time-sensitive logistics constraints
-          by giving each persona a task-relevant view of shared cargo workflows.
-        </p>
-      </div>
-
-      <!-- Who is this product for? -->
-      <div class="project-section">
-        <h2>Who is this product for?</h2>
-        <p>
-          Terminal operators who manage container availability and approvals,
-          transportation operators who coordinate pickups and deliveries, and
-          beneficial cargo owners (BCOs) who track shipment status and
-          communicate with partners. Each persona has distinct workflows and
-          information needs that require tailored dashboard views while
-          maintaining consistent navigation and shared data.
-        </p>
-      </div>
-
-      <!-- Goals -->
-      <div class="project-section">
-        <h2>Goals</h2>
-        <ul>
-          <li>
-            Provide unified cargo visibility across multiple stakeholder roles
-            with consistent interfaces
-          </li>
-          <li>
-            Support role-based workflows with tailored dashboards for terminals,
-            carriers, and BCOs
-          </li>
-          <li>
-            Reduce communication gaps and manual coordination through
-            centralized status updates
-          </li>
-          <li>
-            Enable efficient appointment scheduling and container tracking
-            across the port ecosystem
-          </li>
-          <li>
-            Build stakeholder alignment on shared terminology and operational
-            workflows
-          </li>
-        </ul>
-      </div>
-
-      <!-- Goals Image -->
-      <div class="media-well" style="aspect-ratio: 16/10; margin-bottom: 48px">
-        <img src="imgs/lofi-wireframes.png" alt="Lo-fi wireframes" />
-      </div>
-
-      <!-- Why is this needed? -->
-      <div class="project-section">
-        <h2>Why is this needed?</h2>
-        <p>
-          Fragmented information across terminal and carrier stakeholders created
-          inconsistent handoffs and delayed decisions. Without a shared system,
-          teams relied on manual updates and had limited visibility into
-          cross-party dependencies, increasing the risk of missing time-critical
-          actions across the port ecosystem.
-        </p>
-      </div>
-
-      <!-- What did I work on? -->
-      <div class="project-section">
-        <h2>HF Contribution (The Research)</h2>
-        <ul>
-          <li>
-            Performed a detailed Task Analysis to identify critical decision
-            points for terminal operators and carriers
-          </li>
-          <li>
-            Served as a Behavioral Analyst during usability testing, acting as
-            the primary note-taker to capture performance bottlenecks
-          </li>
-        </ul>
-      </div>
-
-      <div class="project-section">
-        <h2>The Human-System Interface (HSI)</h2>
-        <p>
-          Applied Function Allocation strategies to ensure each persona (Carrier
-          vs. Operator) saw only the safety-critical data relevant to their
-          specific tasks, reducing cognitive noise while preserving shared cargo
-          visibility.
-        </p>
-      </div>
-
-      <!-- Who'd I work with? -->
-      <div class="project-section">
-        <h2>Who'd I work with?</h2>
-        <p>
-          I collaborated with the product team to define requirements and scope,
-          stakeholders representing each persona to validate workflows and
-          terminology, the engineering team on technical feasibility, and
-          participated in usability testing sessions with representative users
-          from terminal, carrier, and BCO roles to gather feedback and refine
-          the design.
-        </p>
-      </div>
-
-      <!-- Impact -->
-      <div class="project-section">
-        <h2>Impact</h2>
-        <p>
-          Delivered a role-based multi-persona HSI that improved decision clarity
-          across terminal and carrier workflows. Usability validation findings
-          from behavioral note-taking directly informed refinement priorities and
-          strengthened alignment on next-phase implementation requirements.
-        </p>
-      </div>
-
-      <!-- Design Process 
-      <div class="project-section">
-        <h2>Design Process</h2>
-        <div class="media-well" style="margin-bottom: 24px">
-          <img src="imgs/pcis-dashboard.png" alt="PCIS overview dashboard" />
+        <div class="outcome-divider"></div>
+        <div class="outcome-stat">
+          <span class="number">6+ Stakeholders</span>
+          <span class="label">Unified across the full port ecosystem</span>
         </div>
-        <div
-          class="media-well"
-          style="aspect-ratio: 16/10; margin-bottom: 24px"
-        >
-          <img src="imgs/lofi-wireframes.png" alt="Lo-fi wireframes" />
+        <div class="outcome-divider"></div>
+        <div class="outcome-stat">
+          <span class="number">Safety-Critical</span>
+          <span class="label">Hazmat workflows designed for compliance</span>
         </div>
-        <div class="showcase-grid" style="margin-bottom: 24px">
-          <div class="showcase-item">
-            <h3>Terminal Operator</h3>
-            <div class="media-well">
-              <img src="imgs/pcis-dashboard.png" alt="Terminal dashboard" />
-            </div>
-          </div>
-          <div class="showcase-item">
-            <h3>Transportation Operator</h3>
-            <div class="media-well">
-              <img
-                src="imgs/transport-dashboard.png"
-                alt="Transport dashboard"
-              />
-            </div>
-          </div>
-          <div class="showcase-item">
-            <h3>BCO</h3>
-            <div class="media-well">
-              <img src="imgs/bco-dashboard.png" alt="BCO dashboard" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-     Back button -->
-      <div class="case-nav">
-        <a class="secondary" href="index.html">← Back to work</a>
       </div>
     </div>
 
+    <!-- Hero -->
+    <header class="hero">
+      <h1>Designing a Multi-Stakeholder Port Logistics Platform</h1>
+      <p>
+        Service design and role-based interfaces for terminal operators,
+        carriers, and cargo owners — including safety-critical hazardous cargo workflows.
+      </p>
+    </header>
+
+    <div class="project-meta">
+      <div class="meta-item">
+        <div class="meta-label">Industry</div>
+        <div class="meta-value">Transportation / Logistics</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Leidos</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Timeframe</div>
+        <div class="meta-value">In Progress</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">My Role</div>
+        <div class="meta-value">UX Lead — Service Design &amp; Multi-Persona Interface Design</div>
+      </div>
+    </div>
+
+    <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px;">
+      <div class="media-tape">
+        <div class="media-well">
+          <img src="imgs/pcis-dashboard.png" alt="PCIS logistics platform overview" />
+        </div>
+      </div>
+    </div>
+
+    <!-- The Ecosystem -->
+    <section class="project-section">
+      <span class="section-tag">The Challenge</span>
+      <h2>The Ecosystem</h2>
+      <p>
+        Port logistics is not a single-user problem. It is an ecosystem of
+        competing priorities: terminal operators need efficient throughput,
+        carriers need to minimize wait time, and beneficial cargo owners need
+        visibility into their specific shipments. Add customs, safety
+        inspectors, and IT systems, and you have 6+ stakeholders interacting
+        through fragmented communication channels with no shared visibility.
+      </p>
+      <p>
+        PCIS was designed to be the connective tissue — a unified platform that
+        gives each stakeholder a tailored view of shared operational data.
+      </p>
+      <div class="placeholder-img" role="img" aria-label="Ecosystem map placeholder">
+        <p>[PLACEHOLDER: Ecosystem map showing all actors — terminal operators, carriers, BCOs, customs, safety inspectors, IT systems — with lines showing data/communication flows and friction points]</p>
+      </div>
+    </section>
+
+    <!-- Service Blueprint -->
+    <section class="project-section">
+      <span class="section-tag green">Research</span>
+      <h2>Service Blueprint</h2>
+      <p>Before designing any screens, I mapped the entire service ecosystem. The service blueprint captures:</p>
+      <ul>
+        <li><strong>Frontstage actions:</strong> What each stakeholder does and sees</li>
+        <li><strong>Backstage processes:</strong> System integrations, data flows, and manual processes that support the frontend</li>
+        <li><strong>Support processes:</strong> IT infrastructure, compliance checks, and inter-organizational communication</li>
+        <li><strong>Pain points:</strong> Where information breaks down between stakeholders, causing delays and manual workarounds</li>
+      </ul>
+      <div class="service-blueprint-container">
+        <div class="blueprint-inner">
+          <div class="placeholder-img" role="img" aria-label="Full service blueprint placeholder" style="margin: 0;">
+            <p>[PLACEHOLDER: Full service blueprint showing frontstage/backstage/support layers across terminal operator, carrier, and BCO journeys — wide, detailed diagram. Gray/blue color scheme with red markers at pain points]</p>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: 18px;">
+        The blueprint revealed that the highest-friction points were not within
+        any single role's workflow — they were at the handoff points between
+        stakeholders. These handoffs became my primary design targets.
+      </p>
+    </section>
+
+    <!-- Persona Deep Dives -->
+    <section class="project-section">
+      <span class="section-tag">User Research</span>
+      <h2>Persona Deep Dives — Conflicting Needs</h2>
+      <div class="persona-grid">
+        <article class="persona-card terminal">
+          <h3>Terminal Operator</h3>
+          <p><strong>Primary goal:</strong> Maximize throughput and minimize yard congestion</p>
+          <p><strong>Key workflow:</strong> Container availability management, appointment approvals, yard planning</p>
+          <p><strong>Tension:</strong> Wants to batch-process approvals for efficiency, but carriers need individual real-time updates</p>
+        </article>
+        <article class="persona-card carrier">
+          <h3>Transportation Operator (Carrier)</h3>
+          <p><strong>Primary goal:</strong> Minimize wait time and maximize daily pickups/deliveries</p>
+          <p><strong>Key workflow:</strong> Appointment scheduling, real-time container status checks, route planning</p>
+          <p><strong>Tension:</strong> Needs instant visibility into availability, but terminals update status in batches</p>
+        </article>
+        <article class="persona-card bco">
+          <h3>Beneficial Cargo Owner (BCO)</h3>
+          <p><strong>Primary goal:</strong> Shipment visibility and partner communication</p>
+          <p><strong>Key workflow:</strong> Tracking container status, communicating with carriers and terminals</p>
+          <p><strong>Tension:</strong> Wants granular shipment-level detail, but system data is organized by container, not shipment</p>
+        </article>
+      </div>
+      <p style="margin-top: 20px;">
+        These tensions meant I could not simply design three versions of the
+        same dashboard. Each persona needed a fundamentally different
+        information hierarchy built on shared underlying data.
+      </p>
+    </section>
+
+    <!-- Information Architecture -->
+    <section class="project-section">
+      <span class="section-tag green">IA &amp; Design</span>
+      <h2>Information Architecture Across Personas</h2>
+      <p>
+        The core IA challenge was maintaining consistency (same navigation
+        patterns, same visual language, same terminology) while tailoring
+        information priority to each role. I designed a shared navigation shell
+        with role-specific default views:
+      </p>
+      <ul>
+        <li><strong>Shared elements:</strong> Global navigation, notification system, search, and container detail views</li>
+        <li><strong>Role-specific defaults:</strong> Terminal operators land on an approval queue and yard overview. Carriers land on appointment scheduling and container availability. BCOs land on shipment tracking and communication feeds.</li>
+      </ul>
+      <p>
+        This approach meant users who interact across roles experience a consistent system, while their primary workflow is immediately accessible.
+      </p>
+      <div class="role-view-grid">
+        <div class="role-view-item">
+          <h4>Terminal Operator View</h4>
+          <div class="media-well">
+            <img src="imgs/pcis-dashboard.png" alt="Terminal operator dashboard view" />
+          </div>
+        </div>
+        <div class="role-view-item">
+          <h4>Carrier View</h4>
+          <div class="media-well">
+            <img src="imgs/transport-dashboard.png" alt="Carrier dashboard view" />
+          </div>
+        </div>
+        <div class="role-view-item">
+          <h4>BCO View</h4>
+          <div class="media-well">
+            <img src="imgs/bco-dashboard.png" alt="BCO dashboard view" />
+          </div>
+        </div>
+      </div>
+      <div class="placeholder-img" style="margin-top: 24px;" role="img" aria-label="IA diagram placeholder">
+        <p>[PLACEHOLDER: Information architecture diagram showing shared navigation shell with branching role-specific views]</p>
+      </div>
+    </section>
+
+    <!-- Hazardous Cargo -->
+    <section class="project-section">
+      <span class="section-tag">Safety Design</span>
+      <h2>The Hazardous Cargo Workflow</h2>
+      <p>
+        Hazardous cargo is the highest-stakes workflow in the port ecosystem.
+        Different regulations (IMDG Code, 49 CFR), different handling
+        requirements, different urgency levels, and different approval chains.
+        A mistake here has safety consequences.
+      </p>
+      <p>I designed the hazardous cargo workflow with additional safeguards:</p>
+      <ul>
+        <li><strong>Visual differentiation:</strong> Hazmat containers are flagged with persistent warning indicators across all persona views — not just color coding, but iconography and placement changes that make them impossible to miss even when scanning quickly</li>
+        <li><strong>Mandatory confirmation steps:</strong> Approval workflows for hazmat require explicit acknowledgment of cargo class and handling requirements before status changes</li>
+        <li><strong>Cross-stakeholder visibility:</strong> When a hazmat container's status changes, all relevant stakeholders receive proactive notifications — not just the next person in the chain</li>
+        <li><strong>Audit trail:</strong> Every action on a hazmat container is logged with timestamps and actor identification for compliance</li>
+      </ul>
+      <div class="media-tape green-tape" style="margin-top: 24px;">
+        <div class="media-well">
+          <img src="imgs/Hazardouscargo.png" alt="Hazardous cargo workflow showing approval chain and safety checkpoints" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-Stakeholder Communication -->
+    <section class="project-section">
+      <span class="section-tag green">System Design</span>
+      <h2>Cross-Stakeholder Communication Design</h2>
+      <p>
+        One of the most complex design challenges was the communication layer
+        between personas. I designed a unified notification and messaging system that:
+      </p>
+      <ul>
+        <li>Surfaces relevant updates in each persona's dashboard without requiring them to check a separate inbox</li>
+        <li>Contextualizes messages with container/shipment data so recipients do not need to cross-reference</li>
+        <li>Supports both automated status notifications and human-written messages in the same thread</li>
+      </ul>
+      <div class="placeholder-img" role="img" aria-label="Communication interface placeholder">
+        <p>[PLACEHOLDER: Mockup showing the notification/communication interface — split view showing how the same event appears in terminal operator vs. carrier vs. BCO dashboards]</p>
+      </div>
+    </section>
+
+    <!-- Usability Testing -->
+    <section class="project-section">
+      <span class="section-tag">Validation</span>
+      <h2>Usability Testing — Specific Findings</h2>
+      <p>I facilitated task-based usability testing with representative users from each persona role. Key findings:</p>
+
+      <div class="finding-block">
+        <h3>Finding 1: [Title]</h3>
+        <p><strong>What happened:</strong> [Specific observation during testing]</p>
+        <p><strong>What changed:</strong> [How you iterated the design based on this]</p>
+        <div class="comparison-grid" style="margin-top: 14px;">
+          <div class="comparison-item">
+            <h4>Before</h4>
+            <div class="placeholder-img" role="img" style="margin: 0; padding: 28px 16px;">
+              <p>[PLACEHOLDER: Before screen]</p>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <h4>After</h4>
+            <div class="placeholder-img" role="img" style="margin: 0; padding: 28px 16px;">
+              <p>[PLACEHOLDER: After screen]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="finding-block">
+        <h3>Finding 2: [Title]</h3>
+        <p><strong>What happened:</strong> [Specific observation]</p>
+        <p><strong>What changed:</strong> [Design iteration]</p>
+      </div>
+      <div class="finding-block">
+        <h3>Finding 3: [Title]</h3>
+        <p><strong>What happened:</strong> [Specific observation]</p>
+        <p><strong>What changed:</strong> [Design iteration]</p>
+      </div>
+
+      <h3>Themed Synthesis:</h3>
+      <p>After testing, I conducted a themed analysis of feedback across all three persona groups. Key themes:</p>
+      <ul>
+        <li>[Theme 1 and what it revealed]</li>
+        <li>[Theme 2 and what it revealed]</li>
+        <li>[Theme 3 and what it revealed]</li>
+      </ul>
+    </section>
+
+    <!-- Outcomes -->
+    <section class="project-section">
+      <span class="section-tag green">The Outcome</span>
+      <h2>Outcomes &amp; Reflection</h2>
+      <ul>
+        <li>Delivered role-based dashboards with unified cargo visibility across three stakeholder personas</li>
+        <li>Usability testing confirmed the design was intuitive across roles while maintaining role-specific efficiency</li>
+        <li>Stakeholder alignment achieved on shared terminology and workflow definitions — a precondition for the technical build</li>
+        <li>The proof of concept established direction for future development phases</li>
+      </ul>
+      <h3>What I'd do differently:</h3>
+      <p>[Honest reflection]</p>
+    </section>
+
+    <!-- Team -->
+    <section class="project-section">
+      <span class="section-tag">The Team</span>
+      <h2>The Team</h2>
+      <p>
+        I led UX direction across a cross-functional product group and worked
+        directly with terminal operators, carrier representatives, and cargo
+        owners to align workflows before development.
+      </p>
+      <ul>
+        <li>Facilitated stakeholder workshops to align terminology, statuses, and handoff expectations across organizations</li>
+        <li>Partnered with engineering to translate service blueprint dependencies into role-based interaction patterns</li>
+        <li>Synthesized multi-persona usability findings into prioritized design iterations and readiness recommendations</li>
+      </ul>
+
+      <div class="case-nav" style="margin-top: 28px;">
+        <a class="secondary" href="index.html">← Back to work</a>
+        <a class="secondary" href="vdot-dashboard.html">← VDOT Dashboard</a>
+        <a class="primary" href="telematics.html">Next: Telematics →</a>
+      </div>
+    </section>
+
     <footer>
       <div class="footer-content">
-        <div class="footer-cta">
-          <h3>Let's talk</h3>
-          <p>Interested in working together or have questions about my work?</p>
-          <a class="btn" href="contact.html">Get in touch</a>
-        </div>
-
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Navigate</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html#projects">Work</a></li>
-              <li><a href="about.html">About</a></li>
-              <li>
-                <a href="imgs/DestineeResume2025new.pdf" target="_blank"
-                  >Resume</a
-                >
-              </li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <img src="logo/logo1.png" alt="DY monogram" style="height: 32px" />
+              <span style="font-weight: 600; font-size: 16px">Destinee Young</span>
+            </div>
+            <p style="color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 280px;">
+              Product Designer rooted in human behavior. Psychology + HCI + accessibility — built in from the start. ₊˚⊹♡
+            </p>
           </div>
-
-          <div class="footer-col">
-            <h4>Connect</h4>
-            <ul>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/destineeyoung/"
-                  target="_blank"
-                  rel="noopener"
-                  >LinkedIn</a
-                >
-              </li>
-              <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Work</h4>
-            <ul>
-              <li><a href="vdot-mobile-app.html">VDOT MRP App</a></li>
-              <li><a href="vdot-dashboard.html">VDOT MRP Web</a></li>
-              <li><a href="pcis-dashboard.html">PCIS Dashboard</a></li>
-              <li><a href="telematics.html">CARMA Telematics</a></li>
-            </ul>
+          <div class="footer-nav">
+            <div class="footer-col">
+              <h4>Navigate</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Connect</h4>
+              <ul>
+                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Work</h4>
+              <ul>
+                <li><a href="vdot-mobile-app.html">VDOT Field App</a></li>
+                <li><a href="vdot-dashboard.html">VDOT Dashboard</a></li>
+                <li><a href="pcis-dashboard.html">PCIS Platform</a></li>
+                <li><a href="telematics.html">Telematics</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <div class="footer-bottom">
-          © <span id="year"></span> Destinee Young. All rights reserved.
-        </div>
+        <div class="footer-bottom">© <span id="year"></span> Destinee Young</div>
       </div>
     </footer>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      const io = new IntersectionObserver(
+        entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } }),
+        { threshold: 0.05 }
+      );
+      document.querySelectorAll(".project-section").forEach(el => io.observe(el));
     </script>
   </body>
 </html>
