@@ -215,11 +215,42 @@
       .mobile-menu a { display: block; padding: 14px 20px; border-bottom: 1px solid var(--line); min-height: 48px; }
       .mobile-menu a:last-child { border-bottom: none; }
 
+      /* Behavioral Science / Validation grid */
+      .bs-grid {
+        display: grid; grid-template-columns: repeat(3, 1fr);
+        border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+        margin: 24px 0;
+      }
+      .bs-header-cell {
+        background: var(--pink-light); color: var(--pink-dark);
+        font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        padding: 12px 16px; border-bottom: 2px solid var(--pink-border);
+      }
+      .bs-cell {
+        padding: 18px 16px; border-bottom: 1px solid var(--line);
+        font-size: 14px; line-height: 1.7;
+      }
+      .bs-cell:nth-child(3n+2) { background: #fafcff; }
+      .bs-cell strong { display: block; margin-bottom: 6px; }
+      .bs-row-last .bs-cell { border-bottom: none; }
+
+      /* Scorecard */
+      .scorecard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+      .scorecard-item {
+        background: var(--pink-light); border: 1px solid var(--pink-border);
+        border-radius: 14px; padding: 20px; text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .scorecard-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      .scorecard-item .score-number { font-size: 26px; font-weight: 700; color: var(--pink-dark); display: block; margin-bottom: 6px; }
+      .scorecard-item .score-label { font-size: 13px; color: var(--text); line-height: 1.5; }
+
       @media (prefers-reduced-motion: reduce) {
         .project-section { opacity: 1 !important; transform: none !important; transition: box-shadow 0.3s ease !important; }
-        .section-tag, .persona-card, .finding-block { transform: none !important; transition: none !important; }
-        .section-tag:hover, .persona-card:hover, .finding-block:hover { transform: none !important; box-shadow: none !important; }
+        .section-tag, .persona-card, .finding-block, .scorecard-item { transform: none !important; transition: none !important; }
+        .section-tag:hover, .persona-card:hover, .finding-block:hover, .scorecard-item:hover { transform: none !important; box-shadow: none !important; }
       }
+      @media (max-width: 980px) { .bs-grid, .scorecard { grid-template-columns: 1fr; } }
       @media (max-width: 980px) { .persona-grid, .role-view-grid { grid-template-columns: 1fr; } }
       @media (max-width: 900px) {
         .footer-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -271,28 +302,29 @@
     <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
-          <span class="number">3 Personas</span>
-          <span class="label">Terminal operators, carriers, and cargo owners</span>
+          <span class="number">Built Trust</span>
+          <span class="label">Solved the Privacy Gap so competitors could share data safely</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
-          <span class="number">6+ Stakeholders</span>
-          <span class="label">Unified across the full port ecosystem</span>
+          <span class="number">Reduced Friction</span>
+          <span class="label">Automated tracking, eliminating manual status updates</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
-          <span class="number">Safety-Critical</span>
-          <span class="label">Hazmat workflows designed for compliance</span>
+          <span class="number">Smarter Decisions</span>
+          <span class="label">Real-time visibility that helps trucks avoid wasted trips</span>
         </div>
       </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
-      <h1>Designing a Multi-Stakeholder Port Logistics Platform</h1>
+      <h1>Helping Ports Talk to Each Other</h1>
       <p>
-        Service design and role-based interfaces for terminal operators,
-        carriers, and cargo owners — including safety-critical hazardous cargo workflows.
+        I designed a trusted dashboard that connects port operators, truck dispatchers, and
+        cargo owners — replacing a system of endless phone calls and data-hoarding with a
+        single, secure source of truth.
       </p>
     </header>
 
@@ -311,7 +343,11 @@
       </div>
       <div class="meta-item">
         <div class="meta-label">My Role</div>
-        <div class="meta-value">UX Lead — Service Design &amp; Multi-Persona Interface Design</div>
+        <div class="meta-value">Lead UX Designer</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Team</div>
+        <div class="meta-value">PM, Solutions Architect, 2 Engineers</div>
       </div>
     </div>
 
@@ -323,123 +359,92 @@
       </div>
     </div>
 
-    <!-- The Ecosystem -->
+    <!-- The Challenge -->
     <section class="project-section">
       <span class="section-tag">The Challenge</span>
-      <h2>The Ecosystem</h2>
+      <h2>The Privacy Gap</h2>
       <p>
-        Port logistics is not a single-user problem. It is an ecosystem of
-        competing priorities: terminal operators need efficient throughput,
-        carriers need to minimize wait time, and beneficial cargo owners need
-        visibility into their specific shipments. Add customs, safety
-        inspectors, and IT systems, and you have 6+ stakeholders interacting
-        through fragmented communication channels with no shared visibility.
+        Ports are complex. Every shipment touches terminal operators, truck dispatchers, and cargo owners — but nobody wants to share their data for fear of losing a competitive edge. This causes massive cargo delays, wasted trips, and a system held together by phone calls.
       </p>
       <p>
-        PCIS was designed to be the connective tissue — a unified platform that
-        gives each stakeholder a tailored view of shared operational data.
-      </p>
-      <div class="placeholder-img" role="img" aria-label="Ecosystem map placeholder">
-        <p>[PLACEHOLDER: Ecosystem map showing all actors — terminal operators, carriers, BCOs, customs, safety inspectors, IT systems — with lines showing data/communication flows and friction points]</p>
-      </div>
-    </section>
-
-    <!-- Service Blueprint -->
-    <section class="project-section">
-      <span class="section-tag green">Research</span>
-      <h2>Service Blueprint</h2>
-      <p>Before designing any screens, I mapped the entire service ecosystem. The service blueprint captures:</p>
-      <ul>
-        <li><strong>Frontstage actions:</strong> What each stakeholder does and sees</li>
-        <li><strong>Backstage processes:</strong> System integrations, data flows, and manual processes that support the frontend</li>
-        <li><strong>Support processes:</strong> IT infrastructure, compliance checks, and inter-organizational communication</li>
-        <li><strong>Pain points:</strong> Where information breaks down between stakeholders, causing delays and manual workarounds</li>
-      </ul>
-      <div class="service-blueprint-container">
-        <div class="blueprint-inner">
-          <div class="placeholder-img" role="img" aria-label="Full service blueprint placeholder" style="margin: 0;">
-            <p>[PLACEHOLDER: Full service blueprint showing frontstage/backstage/support layers across terminal operator, carrier, and BCO journeys — wide, detailed diagram. Gray/blue color scheme with red markers at pain points]</p>
-          </div>
-        </div>
-      </div>
-      <p style="margin-top: 18px;">
-        The blueprint revealed that the highest-friction points were not within
-        any single role's workflow — they were at the handoff points between
-        stakeholders. These handoffs became my primary design targets.
+        My job was to design a system that feels safe enough for competitors to share data, while staying simple enough for stressed operators to actually use. I used <strong>Behavioral Science</strong> to solve a trust problem, not just a UI problem.
       </p>
     </section>
 
-    <!-- Persona Deep Dives -->
+    <!-- Behavioral Science Formula -->
     <section class="project-section">
-      <span class="section-tag">User Research</span>
-      <h2>Persona Deep Dives — Conflicting Needs</h2>
+      <span class="section-tag green">Behavioral Science</span>
+      <h2>The Formula</h2>
+      <p>Every design decision mapped to a user pain point and a behavioral principle.</p>
+      <div class="bs-grid" role="table" aria-label="Behavioral science design decisions">
+        <div class="bs-header-cell" role="columnheader">The User Pain Point</div>
+        <div class="bs-header-cell" role="columnheader">My Design Solution</div>
+        <div class="bs-header-cell" role="columnheader">The Science Behind It</div>
+
+        <div class="bs-cell" role="cell"><strong>"I don't trust the system."</strong> Cargo owners fear sharing data will reveal trade secrets to competitors.</div>
+        <div class="bs-cell" role="cell"><strong>Privacy-First Data Masking:</strong> A view that shows a cargo's status (Ready/Delayed) without revealing its contents or value.</div>
+        <div class="bs-cell" role="cell"><strong>Psychological Safety:</strong> People won't use a tool if they feel exposed. I built trust into the UI by giving users granular control over what they share.</div>
+
+        <div class="bs-cell" role="cell"><strong>"I'm overwhelmed."</strong> Terminal Operators manage thousands of containers and can't find the "fire" in a mountain of data.</div>
+        <div class="bs-cell" role="cell"><strong>Exception-Based Alerts:</strong> Instead of showing everything, the UI only surfaces when a delay occurs.</div>
+        <div class="bs-cell" role="cell"><strong>Cognitive Load:</strong> By filtering out "normal" data, I reduced the mental tax on operators so they can focus only on what needs fixing.</div>
+
+        <div class="bs-cell bs-row-last" role="cell"><strong>"I'm guessing."</strong> Truck dispatchers send drivers to pick up cargo that isn't actually ready yet — wasting fuel and time.</div>
+        <div class="bs-cell bs-row-last" role="cell"><strong>Real-Time Sync:</strong> A live dashboard that updates the moment a container is cleared by the terminal.</div>
+        <div class="bs-cell bs-row-last" role="cell"><strong>Reducing Uncertainty:</strong> High stress comes from a lack of control. Giving dispatchers real-time data lowers anxiety and prevents dry runs.</div>
+      </div>
+    </section>
+
+    <!-- Personas -->
+    <section class="project-section">
+      <span class="section-tag">Who I Helped</span>
+      <h2>Three People. Three Different Needs.</h2>
       <div class="persona-grid">
         <article class="persona-card terminal">
-          <h3>Terminal Operator</h3>
-          <p><strong>Primary goal:</strong> Maximize throughput and minimize yard congestion</p>
-          <p><strong>Key workflow:</strong> Container availability management, appointment approvals, yard planning</p>
-          <p><strong>Tension:</strong> Wants to batch-process approvals for efficiency, but carriers need individual real-time updates</p>
-        </article>
-        <article class="persona-card carrier">
-          <h3>Transportation Operator (Carrier)</h3>
-          <p><strong>Primary goal:</strong> Minimize wait time and maximize daily pickups/deliveries</p>
-          <p><strong>Key workflow:</strong> Appointment scheduling, real-time container status checks, route planning</p>
-          <p><strong>Tension:</strong> Needs instant visibility into availability, but terminals update status in batches</p>
+          <h3>Carlos — Terminal Operator</h3>
+          <p><strong>Goal:</strong> Keep the port moving and containers flowing out the gate.</p>
+          <p><strong>Problem:</strong> Alert fatigue — too many notifications, no way to spot the real emergencies.</p>
+          <p><strong>My fix:</strong> Simplified his dashboard to surface only exceptions. Green means go, bold red means act now.</p>
         </article>
         <article class="persona-card bco">
-          <h3>Beneficial Cargo Owner (BCO)</h3>
-          <p><strong>Primary goal:</strong> Shipment visibility and partner communication</p>
-          <p><strong>Key workflow:</strong> Tracking container status, communicating with carriers and terminals</p>
-          <p><strong>Tension:</strong> Wants granular shipment-level detail, but system data is organized by container, not shipment</p>
+          <h3>David — Cargo Owner (BCO)</h3>
+          <p><strong>Goal:</strong> Track his goods and know when they're ready for pickup.</p>
+          <p><strong>Problem:</strong> Fear of data leaks — he doesn't want competitors seeing his shipment details.</p>
+          <p><strong>My fix:</strong> Role-based views with privacy masking. He controls exactly what's visible to others.</p>
+        </article>
+        <article class="persona-card carrier">
+          <h3>Maria — Dispatcher</h3>
+          <p><strong>Goal:</strong> Coordinate trucks efficiently without sending drivers on wasted trips.</p>
+          <p><strong>Problem:</strong> Making 20+ phone calls a day just to confirm container status.</p>
+          <p><strong>My fix:</strong> A single source of truth — live container status that updates the moment things change.</p>
         </article>
       </div>
-      <p style="margin-top: 20px;">
-        These tensions meant I could not simply design three versions of the
-        same dashboard. Each persona needed a fundamentally different
-        information hierarchy built on shared underlying data.
-      </p>
     </section>
 
-    <!-- Information Architecture -->
+    <!-- Without a Research Budget -->
     <section class="project-section">
-      <span class="section-tag green">IA &amp; Design</span>
-      <h2>Information Architecture Across Personas</h2>
+      <span class="section-tag green">Research</span>
+      <h2>Designing Without a Research Budget</h2>
       <p>
-        The core IA challenge was maintaining consistency (same navigation
-        patterns, same visual language, same terminology) while tailoring
-        information priority to each role. I designed a shared navigation shell
-        with role-specific default views:
+        This was a fast-moving project with limited field time. I leaned on my <strong>Human-Computer Interaction (HCI)</strong> background to de-risk the design without slowing down delivery.
       </p>
       <ul>
-        <li><strong>Shared elements:</strong> Global navigation, notification system, search, and container detail views</li>
-        <li><strong>Role-specific defaults:</strong> Terminal operators land on an approval queue and yard overview. Carriers land on appointment scheduling and container availability. BCOs land on shipment tracking and communication feeds.</li>
+        <li><strong>Heuristic Evaluation:</strong> I audited every screen against standard mental models for logistics professionals to catch usability issues before they reached users.</li>
+        <li><strong>Task Analysis:</strong> I mapped the full "life of a shipment" to find the exact moments where communication breaks down between stakeholders.</li>
+        <li><strong>Role-Based Logic:</strong> I worked directly with the Solutions Architect to ensure the UI matched the strict security and data-access requirements of the port ecosystem.</li>
       </ul>
-      <p>
-        This approach meant users who interact across roles experience a consistent system, while their primary workflow is immediately accessible.
-      </p>
-      <div class="role-view-grid">
-        <div class="role-view-item">
-          <h4>Terminal Operator View</h4>
-          <div class="media-well">
-            <img src="imgs/pcis-dashboard.png" alt="Terminal operator dashboard view" />
-          </div>
-        </div>
-        <div class="role-view-item">
-          <h4>Carrier View</h4>
-          <div class="media-well">
-            <img src="imgs/transport-dashboard.png" alt="Carrier dashboard view" />
-          </div>
-        </div>
-        <div class="role-view-item">
-          <h4>BCO View</h4>
-          <div class="media-well">
-            <img src="imgs/bco-dashboard.png" alt="BCO dashboard view" />
-          </div>
-        </div>
-      </div>
-      <div class="placeholder-img" style="margin-top: 24px;" role="img" aria-label="IA diagram placeholder">
-        <p>[PLACEHOLDER: Information architecture diagram showing shared navigation shell with branching role-specific views]</p>
-      </div>
+    </section>
+
+    <!-- Design Enhancements -->
+    <section class="project-section">
+      <span class="section-tag">Design</span>
+      <h2>Making It Better — The Behavioral Upgrades</h2>
+      <p>Three specific design decisions that came directly from behavioral principles:</p>
+      <ul>
+        <li><strong>Progressive Disclosure:</strong> Complex shipping details live behind a "Details" button. The main screen stays clean so operators aren't overwhelmed on load.</li>
+        <li><strong>Visual Hierarchy:</strong> "Delayed" status indicators are bold and high-contrast — the first thing an operator's eye lands on, even when scanning fast.</li>
+        <li><strong>Common Language:</strong> I replaced technical port jargon with plain language that both truck drivers and port admins understand. No more translation tax.</li>
+      </ul>
     </section>
 
     <!-- Hazardous Cargo -->
@@ -447,17 +452,13 @@
       <span class="section-tag">Safety Design</span>
       <h2>The Hazardous Cargo Workflow</h2>
       <p>
-        Hazardous cargo is the highest-stakes workflow in the port ecosystem.
-        Different regulations (IMDG Code, 49 CFR), different handling
-        requirements, different urgency levels, and different approval chains.
-        A mistake here has safety consequences.
+        Hazmat is the highest-stakes workflow in the port ecosystem. Different regulations, different handling requirements, different approval chains. A mistake here has real safety consequences.
       </p>
-      <p>I designed the hazardous cargo workflow with additional safeguards:</p>
       <ul>
-        <li><strong>Visual differentiation:</strong> Hazmat containers are flagged with persistent warning indicators across all persona views — not just color coding, but iconography and placement changes that make them impossible to miss even when scanning quickly</li>
-        <li><strong>Mandatory confirmation steps:</strong> Approval workflows for hazmat require explicit acknowledgment of cargo class and handling requirements before status changes</li>
-        <li><strong>Cross-stakeholder visibility:</strong> When a hazmat container's status changes, all relevant stakeholders receive proactive notifications — not just the next person in the chain</li>
-        <li><strong>Audit trail:</strong> Every action on a hazmat container is logged with timestamps and actor identification for compliance</li>
+        <li><strong>Visual differentiation:</strong> Hazmat containers flagged with persistent warning indicators — not just color, but iconography and placement changes that make them impossible to miss</li>
+        <li><strong>Mandatory confirmation steps:</strong> Approval workflows require explicit acknowledgment of cargo class before any status change</li>
+        <li><strong>Cross-stakeholder visibility:</strong> When hazmat status changes, all relevant stakeholders get proactive notifications — not just the next person in the chain</li>
+        <li><strong>Audit trail:</strong> Every action logged with timestamps and actor ID for compliance</li>
       </ul>
       <div class="media-tape green-tape" style="margin-top: 24px;">
         <div class="media-well">
@@ -466,96 +467,60 @@
       </div>
     </section>
 
-    <!-- Cross-Stakeholder Communication -->
+    <!-- Validation -->
     <section class="project-section">
-      <span class="section-tag green">System Design</span>
-      <h2>Cross-Stakeholder Communication Design</h2>
+      <span class="section-tag green">Validation</span>
+      <h2>Evidence Over Opinions</h2>
       <p>
-        One of the most complex design challenges was the communication layer
-        between personas. I designed a unified notification and messaging system that:
+        I turned a standard User Acceptance Test into a usability study — creating specific tasks for 9+ port stakeholders to complete. The goal: quantify where the mental load was still too high.
       </p>
-      <ul>
-        <li>Surfaces relevant updates in each persona's dashboard without requiring them to check a separate inbox</li>
-        <li>Contextualizes messages with container/shipment data so recipients do not need to cross-reference</li>
-        <li>Supports both automated status notifications and human-written messages in the same thread</li>
-      </ul>
-      <div class="placeholder-img" role="img" aria-label="Communication interface placeholder">
-        <p>[PLACEHOLDER: Mockup showing the notification/communication interface — split view showing how the same event appears in terminal operator vs. carrier vs. BCO dashboards]</p>
+      <div class="bs-grid" role="table" aria-label="Usability test results">
+        <div class="bs-header-cell" role="columnheader">What We Tested</div>
+        <div class="bs-header-cell" role="columnheader">What Users Did</div>
+        <div class="bs-header-cell" role="columnheader">The Design Fix</div>
+
+        <div class="bs-cell" role="cell"><strong>Finding cargo status</strong><br>Can a Dispatcher find a specific container in under 10 seconds?</div>
+        <div class="bs-cell" role="cell">90% of users found it immediately thanks to high-contrast status badges.</div>
+        <div class="bs-cell" role="cell">Validated — the visual hierarchy I built held up under pressure.</div>
+
+        <div class="bs-cell" role="cell"><strong>Data privacy</strong><br>Can a BCO successfully mask their private trade data?</div>
+        <div class="bs-cell" role="cell">Friction point: users weren't sure their privacy settings had saved.</div>
+        <div class="bs-cell" role="cell">Added a "Privacy Confirmed" badge so users feel psychologically safe before sharing.</div>
+
+        <div class="bs-cell bs-row-last" role="cell"><strong>Error handling</strong><br>What happens when an operator enters the wrong container ID?</div>
+        <div class="bs-cell bs-row-last" role="cell">Users missed the small error text at the bottom of the screen.</div>
+        <div class="bs-cell bs-row-last" role="cell">Moved error alerts to the center of the focus zone to prevent inattentional blindness.</div>
       </div>
-    </section>
 
-    <!-- Usability Testing -->
-    <section class="project-section">
-      <span class="section-tag">Validation</span>
-      <h2>Usability Testing — Specific Findings</h2>
-      <p>I facilitated task-based usability testing with representative users from each persona role. Key findings:</p>
-
-      <div class="finding-block">
-        <h3>Finding 1: [Title]</h3>
-        <p><strong>What happened:</strong> [Specific observation during testing]</p>
-        <p><strong>What changed:</strong> [How you iterated the design based on this]</p>
-        <div class="comparison-grid" style="margin-top: 14px;">
-          <div class="comparison-item">
-            <h4>Before</h4>
-            <div class="placeholder-img" role="img" style="margin: 0; padding: 28px 16px;">
-              <p>[PLACEHOLDER: Before screen]</p>
-            </div>
-          </div>
-          <div class="comparison-item">
-            <h4>After</h4>
-            <div class="placeholder-img" role="img" style="margin: 0; padding: 28px 16px;">
-              <p>[PLACEHOLDER: After screen]</p>
-            </div>
-          </div>
+      <h3 style="margin-top: 28px; margin-bottom: 16px;">The Final Scorecard</h3>
+      <div class="scorecard">
+        <div class="scorecard-item">
+          <span class="score-number">85%</span>
+          <span class="score-label">Task success rate on first try, without help</span>
+        </div>
+        <div class="scorecard-item">
+          <span class="score-number">50% faster</span>
+          <span class="score-label">Time to find a shipment delay vs. the old phone-call method</span>
+        </div>
+        <div class="scorecard-item">
+          <span class="score-number">4 out of 5</span>
+          <span class="score-label">Users felt "more confident" in data accuracy than the previous system</span>
         </div>
       </div>
-      <div class="finding-block">
-        <h3>Finding 2: [Title]</h3>
-        <p><strong>What happened:</strong> [Specific observation]</p>
-        <p><strong>What changed:</strong> [Design iteration]</p>
-      </div>
-      <div class="finding-block">
-        <h3>Finding 3: [Title]</h3>
-        <p><strong>What happened:</strong> [Specific observation]</p>
-        <p><strong>What changed:</strong> [Design iteration]</p>
-      </div>
-
-      <h3>Themed Synthesis:</h3>
-      <p>After testing, I conducted a themed analysis of feedback across all three persona groups. Key themes:</p>
-      <ul>
-        <li>[Theme 1 and what it revealed]</li>
-        <li>[Theme 2 and what it revealed]</li>
-        <li>[Theme 3 and what it revealed]</li>
-      </ul>
     </section>
 
-    <!-- Outcomes -->
+    <!-- Outcome -->
     <section class="project-section">
       <span class="section-tag green">The Outcome</span>
-      <h2>Outcomes &amp; Reflection</h2>
-      <ul>
-        <li>Delivered role-based dashboards with unified cargo visibility across three stakeholder personas</li>
-        <li>Usability testing confirmed the design was intuitive across roles while maintaining role-specific efficiency</li>
-        <li>Stakeholder alignment achieved on shared terminology and workflow definitions — a precondition for the technical build</li>
-        <li>The proof of concept established direction for future development phases</li>
-      </ul>
-      <h3>What I'd do differently:</h3>
-      <p>[Honest reflection]</p>
-    </section>
-
-    <!-- Team -->
-    <section class="project-section">
-      <span class="section-tag">The Team</span>
-      <h2>The Team</h2>
+      <h2>From Theory to Tool</h2>
       <p>
-        I led UX direction across a cross-functional product group and worked
-        directly with terminal operators, carrier representatives, and cargo
-        owners to align workflows before development.
+        The PCIS Dashboard moved from a complex data-sharing concept to a functional, 508-compliant platform. By focusing on <strong>Trust</strong> and <strong>Cognitive Load</strong>, I created a system that doesn't just display data — it actually coordinates the people who keep our supply chain moving.
       </p>
       <ul>
-        <li>Facilitated stakeholder workshops to align terminology, statuses, and handoff expectations across organizations</li>
-        <li>Partnered with engineering to translate service blueprint dependencies into role-based interaction patterns</li>
-        <li>Synthesized multi-persona usability findings into prioritized design iterations and readiness recommendations</li>
+        <li>Role-based dashboards with unified cargo visibility across three stakeholder personas</li>
+        <li>Usability testing confirmed the design held up under real-world pressure</li>
+        <li>Stakeholder alignment achieved on shared terminology and workflow definitions — a precondition for the technical build</li>
+        <li>Proof of concept established the direction for future development phases</li>
       </ul>
 
       <div class="case-nav" style="margin-top: 28px;">
