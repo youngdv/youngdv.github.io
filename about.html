@@ -123,7 +123,8 @@
         background: currentColor;
         transition: width 0.2s ease;
       }
-      .nav-links a:hover::after {
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
         width: 100%;
       }
       .btn {
@@ -261,7 +262,8 @@
         display: flex;
         flex-direction: column;
       }
-      .spec-card:hover {
+      .spec-card:hover,
+      .spec-card:focus-within {
         border-color: var(--pink-border);
         transform: translateY(-3px) rotate(0.4deg);
         box-shadow: 0 8px 24px rgba(0,0,0,0.08);
@@ -323,7 +325,8 @@
         padding: 22px 20px;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
-      .fun-card:hover {
+      .fun-card:hover,
+      .fun-card:focus-within {
         transform: translateY(-3px) rotate(0.5deg);
         box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       }
@@ -454,6 +457,8 @@
         color: var(--muted);
         font-size: 14px;
         transition: color 0.2s ease;
+        display: block;
+        padding: 4px 0;
       }
       .footer-col a:hover {
         color: var(--text);
@@ -472,6 +477,9 @@
         list-style: none;
         cursor: pointer;
         padding: 8px 12px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
         font-weight: 600;
         user-select: none;
       }
@@ -558,14 +566,13 @@
       <div class="container nav-inner">
         <div class="brand">
           <a href="index.html" style="display: flex; align-items: center; gap: 12px">
-            <span style="font-weight: 600;">Destinee Young</span>
+            <img src="logo/logo1.png" alt="DY monogram" />
           </a>
         </div>
         <div class="nav-links">
           <a href="index.html#projects">Work</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
         <details class="mobile-nav">
           <summary aria-label="Toggle menu">Menu</summary>
@@ -573,7 +580,6 @@
             <a href="index.html#projects">Work</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
           </div>
         </details>
       </div>
@@ -585,10 +591,6 @@
         <h1>I'm Destinee. I design for the human brain, not just the screen. ₊˚⊹♡</h1>
         <p class="hero-sub">
           I help government and tech teams turn messy, data-heavy projects into clear tools that work for everyone.
-        </p>
-        <p class="hero-sub" style="margin-top: 14px; font-size: 15px;">
-          <strong style="color: var(--pink-dark);">I solve:</strong> The "headache" of navigating confusing, expert-level government applications.<br>
-          <strong style="color: var(--pink-dark);">I alleviate:</strong> The risk of human error by making sure buttons and information are accessible and exactly where they belong.
         </p>
       </div>
     </header>
@@ -705,7 +707,6 @@
           </p>
           <div class="cta-buttons">
             <a class="btn" href="contact.html">Get in touch</a>
-            <a class="btn ghost" href="imgs/DestineeResume2025new.pdf" target="_blank">Download resume</a>
           </div>
         </div>
       </div>
@@ -730,7 +731,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#projects">Work</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -765,6 +765,10 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      document.querySelectorAll('.mobile-nav').forEach(nav => {
+        nav.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
+        document.addEventListener('click', e => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+      });
     </script>
   </body>
 </html>

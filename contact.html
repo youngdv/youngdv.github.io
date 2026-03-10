@@ -131,7 +131,8 @@
         background: currentColor;
         transition: width 0.2s ease;
       }
-      .nav-links a:hover::after {
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
         width: 100%;
       }
       .btn {
@@ -205,13 +206,15 @@
         transition: transform 0.3s ease;
       }
 
-      .contact-item:hover {
+      .contact-item:hover,
+      .contact-item:focus-within {
         transform: translateY(-4px);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         border-color: var(--text);
       }
 
-      .contact-item:hover::before {
+      .contact-item:hover::before,
+      .contact-item:focus-within::before {
         transform: scaleY(1);
       }
 
@@ -242,7 +245,8 @@
         transition: width 0.3s ease;
       }
 
-      .contact-item a:hover::after {
+      .contact-item a:hover::after,
+      .contact-item a:focus-visible::after {
         width: 100%;
       }
 
@@ -318,6 +322,8 @@
         font-size: 14px;
         transition: color 0.2s ease;
         position: relative;
+        display: block;
+        padding: 4px 0;
       }
       .footer-col a:hover {
         color: var(--text);
@@ -357,6 +363,9 @@
         list-style: none;
         cursor: pointer;
         padding: 8px 12px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
         font-weight: 600;
         user-select: none;
       }
@@ -420,7 +429,6 @@
           <a href="index.html#projects">Work</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
         <details class="mobile-nav">
           <summary aria-label="Toggle menu">Menu</summary>
@@ -428,7 +436,6 @@
             <a href="index.html#projects">Work</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
           </div>
         </details>
       </div>
@@ -509,11 +516,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#projects">Work</a></li>
                 <li><a href="about.html">About</a></li>
-                <li>
-                  <a href="imgs/DestineeResume2025new.pdf" target="_blank"
-                    >Resume</a
-                  >
-                </li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -553,6 +555,10 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      document.querySelectorAll('.mobile-nav').forEach(nav => {
+        nav.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
+        document.addEventListener('click', e => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+      });
     </script>
   </body>
 </html>

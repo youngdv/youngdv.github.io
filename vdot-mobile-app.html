@@ -65,7 +65,8 @@
         content: ""; position: absolute; left: 0; bottom: -2px;
         height: 1px; width: 0; background: var(--text); transition: width 0.2s ease;
       }
-      .nav-links a:hover::after { width: 100%; }
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after { width: 100%; }
 
       .btn {
         display: inline-flex; align-items: center; gap: 8px;
@@ -88,27 +89,10 @@
         align-items: center;
         flex-wrap: wrap;
       }
-      .outcome-stat {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
-      .outcome-stat .number {
-        font-size: 22px;
-        font-weight: 700;
-        color: #531034;
-        line-height: 1.2;
-      }
-      .outcome-stat .label {
-        font-size: 12px;
-        color: #531034;
-        font-weight: 500;
-      }
-      .outcome-divider {
-        width: 1px;
-        height: 40px;
-        background: #f9a8d4;
-      }
+      .outcome-stat { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px; }
+      .outcome-stat .number { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #a8105a; }
+      .outcome-stat .label { font-size: 14px; color: #531034; font-weight: 400; line-height: 1.55; }
+      .outcome-divider { width: 1px; align-self: stretch; background: #f9a8d4; flex-shrink: 0; }
 
       /* Hero */
       .hero { padding: 40px 5% 20px; }
@@ -127,13 +111,14 @@
         border: 1px solid var(--line);
         border-radius: 12px;
         padding: 20px 24px;
-        margin: 24px 5%;
+        margin: 24px auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 20px;
         max-width: 1160px;
+        justify-content: center;
       }
-      .meta-item { display: flex; flex-direction: column; gap: 4px; }
+      .meta-item { display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center; }
       .meta-label {
         font-size: 11px; font-weight: 700; text-transform: uppercase;
         letter-spacing: 0.5px; color: var(--muted);
@@ -192,7 +177,7 @@
         padding: 18px 20px;
         margin: 16px 0;
       }
-      .design-decision h4 { font-size: 15px; margin-bottom: 10px; font-weight: 600; }
+      .design-decision h3, .design-decision h4 { font-size: 15px; margin-bottom: 10px; font-weight: 600; }
       .design-decision p { margin-bottom: 10px; font-size: 15px; }
       .design-decision p:last-child { margin-bottom: 0; }
 
@@ -328,7 +313,7 @@
       }
       .footer-col ul { list-style: none; margin: 0; padding: 0; }
       .footer-col li { margin-bottom: 8px; }
-      .footer-col a { color: var(--muted); font-size: 14px; transition: color 0.2s ease; }
+      .footer-col a { color: var(--muted); font-size: 14px; transition: color 0.2s ease; display: block; padding: 4px 0; }
       .footer-col a:hover { color: var(--text); }
       .footer-bottom { padding-top: 24px; color: var(--muted); font-size: 13px; }
 
@@ -336,6 +321,7 @@
       .mobile-nav { display: none; }
       .mobile-nav summary {
         list-style: none; cursor: pointer; padding: 8px 12px;
+        min-height: 44px; display: flex; align-items: center;
         font-weight: 600; user-select: none;
       }
       .mobile-nav summary::-webkit-details-marker { display: none; }
@@ -386,7 +372,6 @@
           <a href="index.html#projects">Work</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
         <details class="mobile-nav">
           <summary aria-label="Toggle menu">Menu</summary>
@@ -394,7 +379,6 @@
             <a href="index.html#projects">Work</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
           </div>
         </details>
       </div>
@@ -404,28 +388,23 @@
     <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
-          <span class="number">100% Digital</span>
-          <span class="label">Eliminated all paper &amp; manual double-entry</span>
+          <span class="number">What I Did</span>
+          <span class="label">I took a complex, 15-year-old manual process and turned an 80-page technical rulebook into a step-by-step mobile app. I used high-contrast colors and extra-large buttons so the app stays usable even in bright sunlight or when the inspector is wearing work gloves.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
-          <span class="number">Zero Data Gaps</span>
-          <span class="label">Smart "Stop &amp; Check" catches skipped fields</span>
-        </div>
-        <div class="outcome-divider"></div>
-        <div class="outcome-stat">
-          <span class="number">Safer Work</span>
-          <span class="label">Lower "brain-tax" so inspectors focus on traffic, not screens</span>
+          <span class="number">The Result</span>
+          <span class="label">Inspectors can now finish their work without carrying heavy binders or paper forms. Because the app "checks" their work as they go, they can't accidentally skip a required field, ensuring 100% accurate data before they leave the highway.</span>
         </div>
       </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
-      <h1>Saving Time (and Stress) on the Highway</h1>
+      <h1>VDOT MRP: Safety-Critical Field Inspection 🚜</h1>
       <p>
-        I replaced a messy paper process with a mobile app that works in the rain, next to 60mph traffic.
-        This is a real-world example of Behavioral Science applied to product design.
+        I translated an 80-page technical manual into a high-contrast mobile app. I replaced manual paper forms
+        with a guided workflow that ensures 100% data accuracy — even when standing feet away from 60mph highway traffic.
       </p>
     </header>
 
@@ -460,79 +439,130 @@
       </div>
     </div>
 
-    <!-- The Challenge -->
+    <!-- The Project at a Glance -->
     <section class="project-section">
-      <span class="section-tag">The Challenge</span>
-      <h2>The "Pinpoint"</h2>
-      <p>
-        Inspectors aren't sitting at desks. They are on the side of the highway in heat, rain, and glare.
-        They wear gloves. Trucks are flying by at 60mph. They're rating pavement, guardrails, and signage —
-        and every decision feeds into millions of dollars in repair planning.
-      </p>
-      <p>I had to solve two main problems:</p>
-      <ul>
-        <li><strong>Mental Load:</strong> It's hard to think clearly when you're in a dangerous environment.</li>
-        <li><strong>Physical Limits:</strong> Small buttons don't work with gloves or wet screens.</li>
-      </ul>
+      <span class="section-tag">The Project at a Glance</span>
+      <h2>The User, The Challenge, My Role</h2>
+
+      <div class="design-decision">
+        <h3>The User</h3>
+        <p>Field inspectors standing on highway shoulders in rain, heat, and high-speed traffic.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>The Challenge</h3>
+        <p>Assessing dozens of assets (Pavement, Signs, Guardrails) while following strict federal audit rules, on paper forms, in the field.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>My Role</h3>
+        <p>Lead UX Designer. I owned the full transition from the Standard Operating Procedure (SOP) to the final mobile interface.</p>
+      </div>
     </section>
 
-    <!-- Behavioral Formula -->
+    <!-- Designing Without a Research Budget -->
     <section class="project-section">
-      <span class="section-tag">The Behavioral Formula</span>
-      <h2>How Behavioral Science Drove Every Decision</h2>
+      <span class="section-tag">Design Strategy</span>
+      <h2>Designing Without a Research Budget</h2>
+      <p>
+        This was a fast-moving project with limited field time and no budget for traditional user studies.
+        I leaned on my Human-Computer Interaction (HCI) background to de-risk the design and ensure
+        high-stakes government requirements were met without slowing down delivery.
+      </p>
+
+      <h3>How I De-Risked the Design (Predictive Engineering)</h3>
+      <p>Instead of guessing, I used established behavioral principles to audit the interface:</p>
+
+      <div class="design-decision">
+        <h4>SOP as the "Primary User"</h4>
+        <p>I treated the mandatory forms (IMCS-626/627) as the source of truth. I built Forcing Functions into the UI to prevent the exact human errors the manual warned against.</p>
+      </div>
+
+      <div class="design-decision">
+        <h4>Predictive Task Mapping</h4>
+        <p>Based on the 80-page SOP, I designed a "Stepped Flow," breaking the task into smaller, linear stages. This prevents Cognitive Overload by ensuring the inspector only focuses on one asset at a time.</p>
+      </div>
+
+      <div class="design-decision">
+        <h4>Heuristic Evaluation</h4>
+        <p>I performed a professional audit of every screen to ensure Error Prevention. I made the app feel like a natural extension of the VDOT workflow, even without a formal field study.</p>
+      </div>
+    </section>
+
+    <!-- Behavioral Science Formula -->
+    <section class="project-section">
+      <span class="section-tag">The Behavioral Science Formula</span>
+      <h2>How Psychology Drove Every Design Decision</h2>
       <p style="margin-bottom: 20px;">
         Skim the bold headers for the 30-second version — or read the Science column to see the depth behind each choice.
       </p>
 
       <div class="behavioral-grid">
         <div class="bg-header">
-          <div>The Problem</div>
-          <div>My Design Fix</div>
-          <div>The Science (Why it works)</div>
+          <div>The Field Challenge</div>
+          <div>My Design Solution</div>
+          <div>The Science (The "DNA")</div>
         </div>
         <div class="bg-row">
-          <div class="bg-problem">Information Overload</div>
-          <div>One step at a time. I used a "stepped" flow instead of a big dashboard.</div>
-          <div class="bg-science"><strong>Cognitive Load:</strong> When you're stressed, your brain can only handle one choice at a time. I kept the focus on the current task.</div>
+          <div class="bg-problem">Environmental Glare: Screens wash out in direct sunlight or heavy rain.</div>
+          <div>Ultra-High Contrast UI: Deep-sea blue background with vibrant "Safety Green/Red" buttons.</div>
+          <div class="bg-science"><strong>Visual Perception:</strong> Under physical stress and glare, the eye struggles with subtle shades. I optimized for maximum legibility under load.</div>
         </div>
         <div class="bg-row">
-          <div class="bg-problem">Environmental Stress</div>
-          <div>Big buttons &amp; high contrast. Everything is oversized and bright.</div>
-          <div class="bg-science"><strong>Physical Ergonomics:</strong> Gloved hands aren't precise. High glare makes normal colors disappear. I designed for "worst-case" visibility.</div>
+          <div class="bg-problem">Complex Rules: Inspectors had to remember 80+ pages of "Passing" rules.</div>
+          <div>Criteria-at-a-Glance: I placed the specific IMCS-626 passing/failing rules directly on the rating screen.</div>
+          <div class="bg-science"><strong>Recognition over Recall:</strong> It is easier for the brain to recognize a rule on a screen than to recall it from memory while distracted by traffic.</div>
         </div>
         <div class="bg-row">
-          <div class="bg-problem">Distraction</div>
-          <div>Hidden history. I hid old data behind a "tap" so it only shows when needed.</div>
-          <div class="bg-science"><strong>Progressive Disclosure:</strong> By hiding secondary info, I stopped "visual noise" from distracting the inspector from the primary rating.</div>
+          <div class="bg-problem">Physical Limits: Inspectors wear heavy gloves. Small buttons lead to "miss-taps."</div>
+          <div>Oversized Hit Zones: Every primary action button (Pass/Fail) is a large, full-width target.</div>
+          <div class="bg-science"><strong>Fitts's Law:</strong> The time to hit a target is a function of its size. Large buttons reduce errors for users with limited dexterity.</div>
         </div>
         <div class="bg-row">
-          <div class="bg-problem">Human Error</div>
-          <div>The "Stop &amp; Check." The app flags missing info before they can move to the next segment.</div>
-          <div class="bg-science"><strong>Forcing Functions:</strong> In a rush, it's easy to forget a field. This small "speed bump" prevents hours of correction work later.</div>
+          <div class="bg-problem">Slip-Errors: In a rush, it is easy to forget to rate one asset among hundreds.</div>
+          <div>The "Stop &amp; Check": The app flags missing required inputs (Form IMCS-627) before an inspector can advance.</div>
+          <div class="bg-science"><strong>Forcing Functions:</strong> By creating a small, intentional "speed bump," I prevented hours of manual data correction work later.</div>
         </div>
       </div>
     </section>
 
-    <!-- How I Proved It -->
+    <!-- Turning the SOP into a Product -->
     <section class="project-section">
-      <span class="section-tag">Research Methods</span>
-      <h2>How I Proved It Worked</h2>
-      <p>I didn't just guess — I used Human Factors methods:</p>
+      <span class="section-tag">From Manual to Mobile</span>
+      <h2>Turning the Manual (SOP) into a Product</h2>
+      <p>
+        The original VDOT SOP was a dense technical document. I broke it down into a Stepped Flow
+        that mirrors the inspector's physical walk-around:
+      </p>
 
       <div class="design-decision">
-        <h4>Task Analysis</h4>
-        <p>I mapped out every single move an inspector makes to ensure the app followed their natural rhythm — what they do, in what order, under what conditions.</p>
+        <h3>Guided Rating (IMCS-626)</h3>
+        <p>By using a Stepped Flow, I break the inspection into logical "chunks" (Pavement → Drainage → Traffic Services). This follows Miller's Law, keeping the number of items a user has to remember at any one time to a minimum.</p>
+      </div>
+
+      <div class="placeholder-img" role="img" aria-label="Guided Rating stepped flow placeholder">
+        <p>[PLACEHOLDER: Guided Rating (IMCS-626) — stepped flow screen showing Pavement → Drainage → Traffic Services progression]</p>
       </div>
 
       <div class="design-decision">
-        <h4>Cognitive Walkthroughs</h4>
-        <p>I stepped through the design as if I were in the rain and distracted, to find "bottlenecks" before they became real problems. This is how I caught the dashboard layout failing before we built it.</p>
+        <h3>Instant Failing Reports (IMCS-627)</h3>
+        <p>If an asset fails, the app immediately triggers a request for a photo and a maintenance note. No offline reconciliation needed.</p>
       </div>
+    </section>
 
-      <div class="design-decision">
-        <h4>Beta Testing</h4>
-        <p>We put the app in the hands of real inspectors. This is how I discovered they were skipping fields — a consistent pattern across participants, not individual error. That insight directly led to the "Stop &amp; Check" feature.</p>
-      </div>
+    <!-- Validation & Beta Testing -->
+    <section class="project-section">
+      <span class="section-tag">Validation</span>
+      <h2>Validation &amp; Beta Testing</h2>
+      <p>
+        We conducted a Beta Test with real inspectors to ensure technical stability. While the field
+        provided no direct feedback, the result was a success: <strong>"No news is good news."</strong>
+      </p>
+      <p>
+        Because I had already applied HCI principles to the DNA of the app, the inspectors were able
+        to pick up the tool and use it immediately with zero training. The lack of negative feedback
+        validated that the predictive design was intuitive enough to handle the complexity of the job.
+      </p>
     </section>
 
     <!-- Final Word -->
@@ -540,31 +570,23 @@
       <span class="section-tag">The Outcome</span>
       <h2>The Final Word</h2>
       <p>
-        This project proves that <strong>Behavioral Science is the best tool for "no-budget" research.</strong>
-        By understanding how the human brain works under pressure, I built a tool that is now used across
-        Virginia to manage millions of dollars in road repairs.
+        This project proves that you don't need a massive research budget to create a successful product.
+        By understanding how the human brain processes information under stress, I delivered a tool that
+        is now used across Virginia to manage millions of dollars in road repairs safely and accurately.
       </p>
       <ul style="margin-top: 14px;">
-        <li>100% digital — eliminated all paper and manual re-entry</li>
-        <li>Zero data gaps — the "Stop &amp; Check" catches skipped fields before they cause downstream problems</li>
-        <li>Lower cognitive load — inspectors can stay aware of their surroundings instead of wrestling with their screens</li>
-        <li>Part of a connected system — see the <a href="vdot-dashboard.html" style="text-decoration: underline;">Management Dashboard case study</a> for the other half</li>
+        <li>100% digital: eliminated all paper forms and manual re-entry</li>
+        <li>Zero data gaps: the "Stop &amp; Check" catches skipped fields before inspectors leave the site</li>
+        <li>Enhanced safety: lower mental tax lets inspectors stay aware of their surroundings</li>
+        <li>Part of a connected system. See the <a href="vdot-dashboard.html" style="text-decoration: underline;">Management Dashboard case study</a> for the other half</li>
       </ul>
     </section>
 
     <!-- Team -->
     <section class="project-section">
-      <h2>The team</h2>
-      <p>
-        I was the sole UX designer on a cross-functional Alpha Team at Leidos: a Product Manager,
-        Solutions Architect, Software Engineer, and Engineering Intern.
-      </p>
-      <p>
-        My work included partnering with the Solutions Architect to understand data model constraints
-        that shaped interface possibilities, working directly with VDOT stakeholders to translate
-        operational requirements into design decisions, and facilitating beta testing sessions with
-        field inspectors to synthesize feedback into iterations.
-      </p>
+      <span class="section-tag">The Team</span>
+      <h2>The Team</h2>
+      <p style="font-size: 15px; color: var(--muted); font-weight: 500;">Sole UX Designer on a 5-person Alpha Team at Leidos: PM, Solutions Architect, Software Engineer, and Engineering Intern.</p>
       <div class="media-well" style="aspect-ratio: 16/10; margin-top: 20px;">
         <img src="imgs/alphateam.png" alt="Alpha Team collaboration for VDOT MRP" />
       </div>
@@ -595,7 +617,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#projects">Work</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -628,6 +649,10 @@
         { threshold: 0.05 }
       );
       document.querySelectorAll(".project-section").forEach(el => io.observe(el));
+      document.querySelectorAll('.mobile-nav').forEach(nav => {
+        nav.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
+        document.addEventListener('click', e => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+      });
     </script>
   </body>
 </html>

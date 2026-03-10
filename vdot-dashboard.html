@@ -58,7 +58,8 @@
         content: ""; position: absolute; left: 0; bottom: -2px;
         height: 1px; width: 0; background: var(--text); transition: width 0.2s ease;
       }
-      .nav-links a:hover::after { width: 100%; }
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after { width: 100%; }
       .btn {
         display: inline-flex; align-items: center; gap: 8px;
         background: var(--accent); color: #fff; border: 1px solid var(--accent);
@@ -72,10 +73,10 @@
         max-width: 1200px; margin: 0 auto;
         display: flex; gap: 32px; align-items: center; flex-wrap: wrap;
       }
-      .outcome-stat { display: flex; flex-direction: column; gap: 2px; }
-      .outcome-stat .number { font-size: 22px; font-weight: 700; color: #531034; line-height: 1.2; }
-      .outcome-stat .label { font-size: 12px; color: #531034; font-weight: 500; }
-      .outcome-divider { width: 1px; height: 40px; background: #f9a8d4; }
+      .outcome-stat { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px; }
+      .outcome-stat .number { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #a8105a; }
+      .outcome-stat .label { font-size: 14px; color: #531034; font-weight: 400; line-height: 1.55; }
+      .outcome-divider { width: 1px; align-self: stretch; background: #f9a8d4; flex-shrink: 0; }
 
       /* Hero */
       .hero { padding: 40px 5% 20px; }
@@ -88,12 +89,12 @@
       /* Meta bar */
       .project-meta {
         background: #fff; border: 1px solid var(--line); border-radius: 16px;
-        padding: 20px 24px; margin: 24px 5%;
+        padding: 20px 24px; margin: 24px auto;
         display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 20px; max-width: 1160px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04); justify-content: center;
       }
-      .meta-item { display: flex; flex-direction: column; gap: 4px; }
+      .meta-item { display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center; }
       .meta-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
       .meta-value { font-size: 15px; font-weight: 600; color: var(--text); }
 
@@ -165,8 +166,9 @@
         padding: 18px 20px; margin: 16px 0;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
-      .design-decision:hover { transform: translateY(-3px) rotate(0.4deg); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
-      .design-decision h4 { font-size: 15px; margin-bottom: 10px; font-weight: 600; }
+      .design-decision:hover,
+      .design-decision:focus-within { transform: translateY(-3px) rotate(0.4deg); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+      .design-decision h3, .design-decision h4 { font-size: 15px; margin-bottom: 10px; font-weight: 600; }
       .design-decision p { margin-bottom: 10px; font-size: 15px; }
       .design-decision p:last-child { margin-bottom: 0; }
 
@@ -197,6 +199,29 @@
       }
       .system-callout p { font-size: 15px; color: var(--text); margin: 0; line-height: 1.6; }
 
+      /* Behavioral table */
+      .behavioral-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+      .behavioral-table th {
+        background: #fafafa; border: 1px solid var(--line);
+        padding: 12px 16px; text-align: left;
+        font-size: 11px; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.5px; color: var(--muted);
+      }
+      .behavioral-table td {
+        border: 1px solid var(--line); padding: 16px;
+        vertical-align: top; line-height: 1.65;
+      }
+      .behavioral-table tr:nth-child(even) td { background: #fafafa; }
+      .behavioral-table td:first-child { font-weight: 600; color: var(--text); }
+      .behavioral-table td:last-child { color: var(--muted); }
+      .behavioral-table td:last-child strong { color: var(--pink-dark); font-style: normal; }
+      @media (max-width: 640px) {
+        .behavioral-table thead { display: none; }
+        .behavioral-table tr { display: block; margin-bottom: 12px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+        .behavioral-table td { display: block; border: none; border-bottom: 1px solid var(--line); }
+        .behavioral-table td:last-child { border-bottom: none; }
+      }
+
       /* Case nav */
       .case-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
       .case-nav a { border: 1px solid var(--text); border-radius: 10px; padding: 10px 14px; font-weight: 700; }
@@ -221,13 +246,13 @@
       }
       .footer-col ul { list-style: none; margin: 0; padding: 0; }
       .footer-col li { margin-bottom: 8px; }
-      .footer-col a { color: var(--muted); font-size: 14px; transition: color 0.2s ease; }
+      .footer-col a { color: var(--muted); font-size: 14px; transition: color 0.2s ease; display: block; padding: 4px 0; }
       .footer-col a:hover { color: var(--text); }
       .footer-bottom { padding-top: 24px; color: var(--muted); font-size: 13px; }
 
       /* Mobile nav */
       .mobile-nav { display: none; }
-      .mobile-nav summary { list-style: none; cursor: pointer; padding: 8px 12px; font-weight: 600; user-select: none; }
+      .mobile-nav summary { list-style: none; cursor: pointer; padding: 8px 12px; min-height: 44px; display: flex; align-items: center; font-weight: 600; user-select: none; }
       .mobile-nav summary::-webkit-details-marker { display: none; }
       .mobile-menu {
         position: absolute; top: 100%; left: 0; right: 0;
@@ -284,7 +309,6 @@
           <a href="index.html#projects">Work</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
         <details class="mobile-nav">
           <summary aria-label="Toggle menu">Menu</summary>
@@ -292,7 +316,6 @@
             <a href="index.html#projects">Work</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
           </div>
         </details>
       </div>
@@ -302,30 +325,24 @@
     <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
-          <span class="number">10-second scan</span>
-          <span class="label">Urgent items surface immediately on open</span>
+          <span class="number">What I Did</span>
+          <span class="label">I designed a central website that automatically organizes data coming in from the field. I made sure critical "failing" assets stand out instantly and linked them directly to photos taken by the inspectors.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
-          <span class="number">Live field data</span>
-          <span class="label">Real-time sync from mobile inspections</span>
-        </div>
-        <div class="outcome-divider"></div>
-        <div class="outcome-stat">
-          <span class="number">Multi-role</span>
-          <span class="label">Role-based views for managers and coordinators</span>
+          <span class="number">The Result</span>
+          <span class="label">Office staff and contractors no longer have to hunt through spreadsheets to find problems. They can see exactly what is broken and where the moment an inspector hits "submit," cutting down the time it takes to start repairs.</span>
         </div>
       </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
-      <h1>VDOT MRP — Management Dashboard</h1>
+      <h1>VDOT MRP: Operations &amp; Transparency Platform 🖥️</h1>
       <p>
-        District managers were making million-dollar maintenance decisions with
-        no real-time visibility into what was happening in the field. I designed
-        a scanning-first dashboard that surfaces what's urgent in the first 10
-        seconds — no digging required.
+        I designed a real-time data hub that connects field inspections to office operations. I replaced a
+        "black box" reporting system with a transparent platform where staff and contractors can instantly
+        verify and act on the data captured by inspectors.
       </p>
     </header>
 
@@ -360,176 +377,161 @@
       </div>
     </div>
 
-    <!-- The problem -->
+    <!-- The Project at a Glance -->
     <section class="project-section">
-      <span class="section-tag">The Challenge</span>
-      <h2>The problem</h2>
-      <p>
-        District managers need to oversee inspection backlogs, identify urgent
-        maintenance work, and coordinate field teams across regions — all while
-        pulling data from multiple disconnected systems. There was no
-        centralized view. Decisions were being made based on scattered
-        spreadsheets and manual data aggregation.
-      </p>
-      <p>
-        Meanwhile, field inspectors (on the mobile side of this system) were
-        completing ratings that had no real-time path to the people who needed
-        to act on them. The information gap between field and office was a
-        design problem, not just a data problem.
-      </p>
+      <span class="section-tag">The Project at a Glance</span>
+      <h2>The User, The Challenge, My Role</h2>
 
-      <div class="system-callout">
+      <div class="design-decision">
+        <h3>The User</h3>
+        <p>VDOT operational staff and maintenance contractors.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>The Challenge</h3>
+        <p>Field data was historically trapped in paper forms or delayed spreadsheets. Users needed to see what was happening on the roads <em>now</em> to stay compliant with state maintenance standards.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>My Role</h3>
+        <p>Lead UX Designer. I designed the web experience to ensure high-density field data was easy to filter, verify, and transform into maintenance work orders.</p>
+      </div>
+
+      <div class="system-callout" style="margin-top: 20px;">
         <p class="sc-label">Part of a connected system</p>
         <p>
-          This dashboard is the office-side of the same system as the
+          This platform is the office-side of the same system as the
           <a href="vdot-mobile-app.html" style="text-decoration: underline">Field Inspection App</a>.
-          The design decisions on each side were made in relation to the
-          other — they're not two separate products.
+          The design decisions on each side were made in relation to the other. They're not two separate products.
         </p>
       </div>
     </section>
 
-    <!-- Research -->
+    <!-- Designing Without a Research Budget -->
     <section class="project-section">
-      <span class="section-tag green">Research</span>
-      <h2>Research</h2>
+      <span class="section-tag">Design Strategy</span>
+      <h2>Designing Without a Research Budget</h2>
       <p>
-        District managers don't read dashboards — they scan them. That single
-        behavioral insight drove the entire information architecture.
+        In a high-velocity development cycle, I used Predictive Design to de-risk the platform. I treated
+        the VDOT Standard Operating Procedure (SOP) as the "Primary User," ensuring that the interface
+        mirrored the legal and operational logic the staff already uses.
       </p>
 
-      <div class="research-highlight">
-        <p class="rh-label">Key insight</p>
-        <p>
-          I designed for a morning check-in workflow: the manager opens the
-          dashboard and needs to know in under 10 seconds what is urgent, what
-          is on track, and what needs attention. Everything else is secondary.
-        </p>
-      </div>
-
-      <p>
-        I conducted cognitive walkthroughs modeling the scanning behavior of
-        district managers, and analyzed how comparable operational dashboards
-        (utilities management, fleet operations) structured urgency signals for
-        experienced users who scan rather than read.
-      </p>
-
-      <h3>Research → design connections</h3>
-      <div class="insight-design-grid">
-        <div class="insight-col">
-          <h4>Insight</h4>
-          <p>Managers open the dashboard to triage — they need to know immediately what's behind schedule or flagged, not browse through all regions equally.</p>
-        </div>
-        <div class="insight-col">
-          <h4>Design decision</h4>
-          <p>Urgency indicators and backlog counts are visually dominant in the layout. Neutral status fades to the background so exceptions stand out without scanning the whole screen.</p>
-        </div>
-      </div>
-      <div class="insight-design-grid">
-        <div class="insight-col">
-          <h4>Insight</h4>
-          <p>Managers already use a "red/yellow/green" verbal shorthand when discussing work status with their teams. This is an existing mental model, not a color convention imposed by design.</p>
-        </div>
-        <div class="insight-col">
-          <h4>Design decision</h4>
-          <p>Status indicators use a traffic light pattern because it maps to how these users already think and communicate about priorities — no new mental model to learn.</p>
-        </div>
-      </div>
-      <div class="insight-design-grid">
-        <div class="insight-col">
-          <h4>Insight</h4>
-          <p>Different users need different default views from the same data. District managers need high-level status; operations coordinators need assignment queues.</p>
-        </div>
-        <div class="insight-col">
-          <h4>Design decision</h4>
-          <p>Role-based configurations share a consistent navigation shell but surface different default views and data emphasis based on the user's primary workflow.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Design decisions -->
-    <section class="project-section">
-      <span class="section-tag">Design Decisions</span>
-      <h2>Design decisions</h2>
+      <h3>How I De-Risked the Design (The HCI Strategy)</h3>
 
       <div class="design-decision">
-        <h4>Scanning-first visual hierarchy</h4>
-        <p><strong>What I chose:</strong> A layout where urgency signals are dominant and detail is accessed through progressive drill-down.</p>
-        <p><strong>Why:</strong> Dashboard users don't start at the top and read down — they search for the thing that needs attention. The visual weight of elements needed to reflect the priority of the information, not the breadth of available data.</p>
-        <p><strong>What I rejected:</strong> Equal visual weight across all regions and metrics, which buried urgent items in a sea of normal-status information.</p>
+        <h4>Heuristic Evaluation</h4>
+        <p>I audited the platform for Visibility of System Status. I ensured that when an inspector posts from the app, the web user sees a clear status indicator, reducing the uncertainty of "did they finish that route yet?"</p>
       </div>
 
       <div class="design-decision">
-        <h4>Backlog visualization format</h4>
-        <p><strong>What I chose:</strong> Numerical counts with directional indicators (backlog growing vs. clearing) as the primary backlog representation.</p>
-        <p><strong>Why:</strong> In testing, numerical counts with trend direction gave managers the fastest time-to-understanding for "is this getting better or worse?" — faster than bar charts or heat maps for this specific decision context.</p>
-        <p><strong>What I rejected:</strong> Heat maps (useful for spatial analysis, slower for status triage) and pure bar charts (less intuitive for trend direction at a glance).</p>
+        <h4>Operational Mapping</h4>
+        <p>The website is organized to mirror the IMCS-626 (Asset Condition) and IMCS-627 (Failing Assets) forms. I ensured that the table headers and data fields on-screen perfectly match the legal paperwork users are required to track.</p>
       </div>
 
       <div class="design-decision">
-        <h4>Role-based views with shared shell</h4>
-        <p><strong>What I chose:</strong> Consistent navigation architecture with role-configured default views and data emphasis.</p>
-        <p><strong>Why:</strong> Separate interfaces per role would create maintenance overhead and fragment the team's shared situational awareness. A unified shell with role-based defaults lets users switch context without losing orientation.</p>
-        <p><strong>What I rejected:</strong> A single fixed view that tried to serve all roles simultaneously — which served none of them optimally.</p>
-      </div>
-
-      <div class="placeholder-img" role="img" aria-label="Dashboard annotations placeholder">
-        <p>[PLACEHOLDER: Dashboard screenshot with visual hierarchy annotations — scanning zones, urgency indicators, progressive drill-down callouts]</p>
+        <h4>Predictive Search &amp; Filtering</h4>
+        <p>Knowing that users often hunt for specific "Sample Sites" or "Asset IDs" during audits, I built a robust filtering system that allows a user to locate a single failing guardrail out of thousands of records in two clicks.</p>
       </div>
     </section>
 
-    <!-- Connecting field to office -->
+    <!-- Behavioral Science Formula -->
     <section class="project-section">
-      <span class="section-tag green">System Design</span>
-      <h2>Connecting field to office</h2>
-      <p>
-        The mobile app and dashboard aren't separate products — data flows from
-        the inspector's field entries directly into the manager's operational
-        view. I designed this connection deliberately:
+      <span class="section-tag">The Behavioral Science Formula</span>
+      <h2>How Psychology Made Field Data Useful</h2>
+      <p style="margin-bottom: 20px;">
+        Skim the bold headers for the 30-second version — or read the Science column to see the depth behind each choice.
       </p>
-      <ul>
-        <li><strong>Real-time sync status indicators</strong> on the mobile app so inspectors know their data uploaded successfully before moving on</li>
-        <li><strong>Live-updating inspection feeds</strong> on the dashboard so managers see new data without manual refreshes</li>
-        <li><strong>Last-synced timestamps</strong> on dashboard views to account for field connectivity gaps — managers know when data is current vs. when it may be stale</li>
-      </ul>
+
+      <table class="behavioral-table">
+        <thead>
+          <tr>
+            <th>The User Challenge</th>
+            <th>My Design Solution</th>
+            <th>The Science (The "DNA")</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data Fragmentation: Inspection records were historically scattered across physical folders and fragmented files.</td>
+            <td>Centralized Data Tables: I designed a "Master View" that pulls all field posts into one searchable grid.</td>
+            <td><strong>Chunking:</strong> By grouping related data points (Date, Asset ID, Status) into a single row, I reduced the mental effort required to scan for specific information.</td>
+          </tr>
+          <tr>
+            <td>Trust Gaps: Office staff often wonder if a "Failing" rating in the field was subjective or accurate.</td>
+            <td>Direct Photo Integration: I placed field-captured photos directly alongside the rating data in a split-screen view.</td>
+            <td><strong>Visual Proof:</strong> Humans process images 60,000x faster than text. Seeing the "why" behind a "Fail" rating builds instant trust and speeds up the repair approval process.</td>
+          </tr>
+          <tr>
+            <td>Mental Fatigue: Reviewing hundreds of "Passing" ratings to find the few critical "Failures" is exhausting.</td>
+            <td>High-Signal Status Badges: I used high-contrast "Safety Red" badges for failures and "Neutral Gray" for routine passing items.</td>
+            <td><strong>Signal Detection Theory:</strong> I optimized the UI so the "Signal" (the problems) stands out against the "Noise" (the routine data), preventing "alarm fatigue."</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Closing the Loop -->
+    <section class="project-section">
+      <span class="section-tag">From the Shoulder to the Screen</span>
+      <h2>Closing the Loop</h2>
       <p>
-        This last point was a real constraint: field connectivity is unreliable,
-        so I designed for offline-first data capture on the mobile side with
-        sync-when-available. The dashboard's last-synced indicators give
-        managers the context to make good decisions even when data isn't fully
-        real-time.
+        The web platform acts as the "Receiver" for the VDOT Mobile App. I designed the interaction to be a seamless feedback loop:
       </p>
-      <div class="placeholder-img" role="img" aria-label="System connection diagram placeholder">
-        <p>[PLACEHOLDER: Diagram showing field app → backend → dashboard data flow with UX touchpoints at each stage]</p>
+
+      <div class="design-decision">
+        <h3>Macro-Level Overview</h3>
+        <p>Users see a statewide or regional map showing the status of all current inspection cycles.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>The "Drill-Down" Flow</h3>
+        <p>Clicking a region opens a list of Sample Sites. Clicking a site opens the specific IMCS-626/627 data captured by the mobile app.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Photo-Backed Auditing</h3>
+        <p>For any failing asset, the user can instantly open the high-resolution photo taken on the highway shoulder for immediate verification.</p>
       </div>
     </section>
 
-    <!-- Outcomes -->
+    <!-- Validation -->
     <section class="project-section">
-      <span class="section-tag green">The Outcome</span>
-      <h2>Outcomes</h2>
-      <ul>
-        <li>Real-time visibility from field inspections to district management — replacing disconnected spreadsheets</li>
-        <li>Role-based views give each user type the information emphasis they need without a separate product</li>
-        <li>Last-synced timestamps and offline handling mean managers can make informed decisions even when field connectivity is intermittent</li>
-        <li>Part of a field-to-office system — see the <a href="vdot-mobile-app.html" style="text-decoration: underline">Field Inspection App case study</a> for the other half</li>
+      <span class="section-tag green">Validation</span>
+      <h2>Validation: Approval on the First Pass</h2>
+      <p>
+        We are currently in the development phase. When these designs were presented to VDOT stakeholders
+        and contractors, they were <strong>approved immediately with zero requests for changes.</strong>
+      </p>
+      <p>
+        In a project with no research budget, this "No Feedback" result is the ultimate validation of my
+        HCI approach. It proves that by mirroring the SOP logic and using established behavioral principles,
+        I created a tool that felt so "correct" it required no additional explanation or iteration.
+      </p>
+    </section>
+
+    <!-- Final Word -->
+    <section class="project-section">
+      <span class="section-tag">The Outcome</span>
+      <h2>The Final Word</h2>
+      <p>
+        The VDOT MRP Web Platform proves that transparency is the key to successful operations. By using
+        Behavioral Science to organize field data, I built a platform that allows VDOT staff and contractors
+        to stop hunting for information and start acting on it.
+      </p>
+      <ul style="margin-top: 14px;">
+        <li>Real-time visibility: field results available the moment an inspector submits</li>
+        <li>Evidence-based accountability: every failing asset backed by GPS-tagged photos</li>
+        <li>Streamlined audit trails: federal compliance automated as a byproduct of the workflow</li>
+        <li>Part of a connected system. See the <a href="vdot-mobile-app.html" style="text-decoration: underline">Field Inspection App case study</a> for the other half</li>
       </ul>
     </section>
 
     <!-- Team -->
     <section class="project-section">
       <span class="section-tag">The Team</span>
-      <h2>The team</h2>
-      <p>
-        I was the sole UX designer on a cross-functional Alpha Team at Leidos: a
-        Product Manager, Solutions Architect, Software Engineer, and Engineering Intern.
-      </p>
-      <p>
-        For the dashboard specifically, I worked closely with the Solutions
-        Architect on the data model constraints that shaped what was feasible to
-        surface in real-time, and facilitated working sessions with VDOT
-        district managers to validate the scanning hierarchy and role-based view decisions.
-      </p>
+      <h2>The Team</h2>
+      <p style="font-size: 15px; color: var(--muted); font-weight: 500;">Sole UX Designer on a 5-person Alpha Team at Leidos: PM, Solutions Architect, Software Engineer, and Engineering Intern.</p>
       <div class="media-tape" style="margin-top: 20px;">
         <div class="media-well" style="aspect-ratio: 16/10;">
           <img src="imgs/alphateam.png" alt="Alpha Team collaboration for VDOT MRP" />
@@ -562,7 +564,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#projects">Work</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -596,6 +597,10 @@
         { threshold: 0.05 }
       );
       document.querySelectorAll(".project-section").forEach(el => io.observe(el));
+      document.querySelectorAll('.mobile-nav').forEach(nav => {
+        nav.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
+        document.addEventListener('click', e => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+      });
     </script>
   </body>
 </html>

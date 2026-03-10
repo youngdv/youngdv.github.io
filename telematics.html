@@ -60,7 +60,8 @@
         content: ""; position: absolute; left: 0; bottom: -2px;
         height: 1px; width: 0; background: var(--text); transition: width 0.2s ease;
       }
-      .nav-links a:hover::after { width: 100%; }
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after { width: 100%; }
       .btn {
         display: inline-flex; align-items: center; gap: 8px;
         background: var(--accent); color: #fff; border: 1px solid var(--accent);
@@ -73,10 +74,10 @@
         max-width: 1200px; margin: 0 auto;
         display: flex; gap: 32px; align-items: center; flex-wrap: wrap;
       }
-      .outcome-stat { display: flex; flex-direction: column; gap: 2px; }
-      .outcome-stat .number { font-size: 22px; font-weight: 700; color: #531034; line-height: 1.2; }
-      .outcome-stat .label { font-size: 12px; color: #531034; font-weight: 500; }
-      .outcome-divider { width: 1px; height: 40px; background: #f9a8d4; }
+      .outcome-stat { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px; }
+      .outcome-stat .number { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #a8105a; }
+      .outcome-stat .label { font-size: 14px; color: #531034; font-weight: 400; line-height: 1.55; }
+      .outcome-divider { width: 1px; align-self: stretch; background: #f9a8d4; flex-shrink: 0; }
 
       /* Hero */
       .hero { padding: 40px 5% 20px; }
@@ -86,12 +87,12 @@
       /* Meta bar */
       .project-meta {
         background: #fff; border: 1px solid var(--line); border-radius: 16px;
-        padding: 20px 24px; margin: 24px 5%;
+        padding: 20px 24px; margin: 24px auto;
         display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 20px; max-width: 1160px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04); justify-content: center;
       }
-      .meta-item { display: flex; flex-direction: column; gap: 4px; }
+      .meta-item { display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center; }
       .meta-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
       .meta-value { font-size: 15px; font-weight: 600; color: var(--text); }
 
@@ -131,8 +132,9 @@
         padding: 18px 20px; margin: 16px 0;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
-      .design-decision:hover { transform: translateY(-3px) rotate(0.4deg); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
-      .design-decision h4 { font-size: 15px; margin-bottom: 10px; font-weight: 600; }
+      .design-decision:hover,
+      .design-decision:focus-within { transform: translateY(-3px) rotate(0.4deg); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+      .design-decision h3, .design-decision h4 { font-size: 15px; margin-bottom: 10px; font-weight: 600; }
       .design-decision p { margin-bottom: 10px; font-size: 15px; }
       .design-decision p:last-child { margin-bottom: 0; }
 
@@ -164,7 +166,8 @@
         display: flex; align-items: center; justify-content: center;
         transition: transform 0.15s ease, box-shadow 0.15s ease;
       }
-      .web-shot:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.06); }
+      .web-shot:hover,
+      .web-shot:focus-within { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.06); }
       .web-shot img { width: 100%; height: auto; object-fit: contain; border-radius: 8px; display: block; }
 
       /* Case nav */
@@ -182,13 +185,13 @@
       .footer-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 14px; color: var(--text); }
       .footer-col ul { list-style: none; margin: 0; padding: 0; }
       .footer-col li { margin-bottom: 8px; }
-      .footer-col a { color: var(--muted); font-size: 14px; transition: color 0.2s ease; }
+      .footer-col a { color: var(--muted); font-size: 14px; transition: color 0.2s ease; display: block; padding: 4px 0; }
       .footer-col a:hover { color: var(--text); }
       .footer-bottom { padding-top: 24px; color: var(--muted); font-size: 13px; }
 
       /* Mobile nav */
       .mobile-nav { display: none; }
-      .mobile-nav summary { list-style: none; cursor: pointer; padding: 8px 12px; font-weight: 600; user-select: none; }
+      .mobile-nav summary { list-style: none; cursor: pointer; padding: 8px 12px; min-height: 44px; display: flex; align-items: center; font-weight: 600; user-select: none; }
       .mobile-nav summary::-webkit-details-marker { display: none; }
       .mobile-menu { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
       .mobile-menu a { display: block; padding: 14px 20px; border-bottom: 1px solid var(--line); min-height: 48px; }
@@ -230,7 +233,6 @@
           <a href="index.html#projects">Work</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
         <details class="mobile-nav">
           <summary aria-label="Toggle menu">Menu</summary>
@@ -238,7 +240,6 @@
             <a href="index.html#projects">Work</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
           </div>
         </details>
       </div>
@@ -248,18 +249,13 @@
     <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
-          <span class="number">Mobile-First</span>
-          <span class="label">Complex telemetry redesigned for field use</span>
+          <span class="number">What I Did</span>
+          <span class="label">I turned a messy, spreadsheet-style desktop system into a simple mobile app for research teams. I used Functional Analysis to separate critical safety alerts from basic info, ensuring the most important data is the easiest to see.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
-          <span class="number">On-the-Road</span>
-          <span class="label">Decision support for in-vehicle research teams</span>
-        </div>
-        <div class="outcome-divider"></div>
-        <div class="outcome-stat">
-          <span class="number">Reduced Friction</span>
-          <span class="label">Desktop-to-mobile workflow simplification</span>
+          <span class="number">The Result</span>
+          <span class="label">Researchers can now check vehicle data and make quick decisions while on the road without getting overwhelmed by a crowded screen. By simplifying 5-step tasks into single taps, I made the system much safer and faster to use in active field conditions.</span>
         </div>
       </div>
     </div>
@@ -378,15 +374,15 @@
       </p>
 
       <div class="design-decision">
-        <h4>Glanceable data hierarchy</h4>
+        <h3>Glanceable data hierarchy</h3>
         <p>Safety-critical telemetry markers are visually separated from informational data so field users can assess status at a glance without reading through dense tables.</p>
       </div>
       <div class="design-decision">
-        <h4>Simplified navigation for mobile</h4>
+        <h3>Simplified navigation for mobile</h3>
         <p>Desktop workflows that required 4–5 taps were condensed into a single contextual action, reducing the number of decisions a researcher needs to make while on-the-road.</p>
       </div>
       <div class="design-decision">
-        <h4>Terminology consistency</h4>
+        <h3>Terminology consistency</h3>
         <p>Kept all labels and terminology aligned with the existing web platform so experienced users don't have to re-learn the system — just the interaction model.</p>
       </div>
     </section>
@@ -440,7 +436,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#projects">Work</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -473,6 +468,10 @@
         { threshold: 0.05 }
       );
       document.querySelectorAll(".project-section").forEach(el => io.observe(el));
+      document.querySelectorAll('.mobile-nav').forEach(nav => {
+        nav.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
+        document.addEventListener('click', e => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+      });
     </script>
   </body>
 </html>

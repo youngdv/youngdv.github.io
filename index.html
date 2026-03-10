@@ -118,7 +118,8 @@
         background: currentColor;
         transition: width 0.2s ease;
       }
-      .nav-links a:hover::after {
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
         width: 100%;
       }
       .btn {
@@ -448,6 +449,8 @@
         color: var(--muted);
         font-size: 14px;
         transition: color 0.2s ease;
+        display: block;
+        padding: 4px 0;
       }
       .footer-col a:hover {
         color: var(--text);
@@ -466,6 +469,9 @@
         list-style: none;
         cursor: pointer;
         padding: 8px 12px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
         font-weight: 600;
         user-select: none;
       }
@@ -562,7 +568,6 @@
           <a href="#projects">Work</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-          <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
         </div>
         <details class="mobile-nav">
           <summary aria-label="Toggle menu">Menu</summary>
@@ -570,7 +575,6 @@
             <a href="#projects">Work</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="imgs/DestineeResume2025new.pdf" target="_blank">Resume</a>
           </div>
         </details>
       </div>
@@ -631,16 +635,16 @@
               <p class="work-label">Government / Transportation · Real Work</p>
               <h3 class="work-title">VDOT MRP — Field Inspection App</h3>
               <p class="work-problem">
-                Field inspectors were rating road conditions on paper — on
-                highway shoulders, in rain and heat, with trucks passing at 60
-                mph.
+                Inspectors were standing feet away from 60mph traffic, juggling
+                80-page manuals and paper forms while trying to stay safe.
               </p>
               <p class="work-solution">
-                I designed a mobile tool that reduces cognitive load and error
-                risk in some of the hardest working conditions imaginable.
+                I designed a high-contrast, "stepped flow" app that guides
+                inspectors through complex ratings so they can focus on the
+                road, not the screen.
               </p>
               <div class="outcome-badge">
-                ✓ Replaced paper-based workflow · eliminated double data entry
+                ✓ 100% digital data capture with zero "slip errors"
               </div>
               <p class="work-meta">Lead UX Designer · Team of 5 · 8+ months</p>
               <a class="work-link" href="vdot-mobile-app.html"
@@ -659,18 +663,19 @@
             </div>
             <div class="work-body">
               <p class="work-label">Government / Transportation · Real Work</p>
-              <h3 class="work-title">VDOT MRP — Management Dashboard</h3>
+              <h3 class="work-title">VDOT MRP — Operations Hub</h3>
               <p class="work-problem">
-                District managers were making million-dollar maintenance
-                decisions with no real-time visibility into what was happening
-                in the field.
+                Staff and contractors had zero visibility into real-time field
+                data, leading to massive delays in maintenance verification
+                and audits.
               </p>
               <p class="work-solution">
-                I designed a scanning-first dashboard that surfaces what's
-                urgent in the first 10 seconds — no digging required.
+                I designed a "transparency-first" hub that links GPS-tagged
+                field photos directly to ratings, surfacing critical failures
+                in the first 10 seconds.
               </p>
               <div class="outcome-badge">
-                ✓ Real-time field-to-office data visibility
+                ✓ Real-time field-to-office operational transparency
               </div>
               <p class="work-meta">Lead UX Designer · Team of 5 · 8+ months</p>
               <a class="work-link" href="vdot-dashboard.html"
@@ -691,14 +696,14 @@
               <p class="work-label">Port Logistics / Government · Real Work</p>
               <h3 class="work-title">PCIS — Helping Ports Talk to Each Other</h3>
               <p class="work-problem">
-                Everyone at the port needed each other's data — but nobody would
+                Everyone at the port needed each other's data, but nobody would
                 share it. Endless phone calls, wasted truck trips, and a system
                 held together by fear of losing competitive edge.
               </p>
               <p class="work-solution">
                 I used behavioral science to solve a trust problem, not just a
                 UI problem. Privacy-first data masking, exception-based alerts,
-                and real-time sync — each tied to a specific psychological principle.
+                and real-time sync, each tied to a specific psychological principle.
               </p>
               <div class="outcome-badge">
                 ✓ 85% task success · 50% faster to find delays
@@ -723,7 +728,7 @@
               <h3 class="work-title">Telematics — Mobile Decision Tool</h3>
               <p class="work-problem">
                 Research teams were trying to interpret live vehicle telemetry
-                on dense desktop screens — from inside a moving vehicle.
+                on dense desktop screens, from inside a moving vehicle.
               </p>
               <p class="work-solution">
                 I redesigned the experience as a glanceable mobile tool built
@@ -812,9 +817,6 @@
             style="display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0"
           >
             <a class="btn ghost" href="about.html">About me</a>
-            <a class="btn" href="imgs/DestineeResume2025new.pdf" target="_blank"
-              >Resume (PDF)</a
-            >
           </div>
         </div>
       </div>
@@ -861,11 +863,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#projects">Work</a></li>
                 <li><a href="about.html">About</a></li>
-                <li>
-                  <a href="imgs/DestineeResume2025new.pdf" target="_blank"
-                    >Resume</a
-                  >
-                </li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -905,6 +902,10 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      document.querySelectorAll('.mobile-nav').forEach(nav => {
+        nav.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
+        document.addEventListener('click', e => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+      });
     </script>
   </body>
 </html>
