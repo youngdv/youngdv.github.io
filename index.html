@@ -19,20 +19,23 @@
       gtag("config", "G-34V535KX45");
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
-        --bg: #F2F2F0;
-        --surface: #E8E8E6;
+        --bg: #f2f2f0;
+        --surface: #e8e8e6;
         --text: #0b0b0b;
         --muted: #5f6575;
         --line: rgba(0, 0, 0, 0.08);
         --brand: #111111;
         --radius: 16px;
         --container: 1200px;
-        --pink: #DF207C;
+        --pink: #df207c;
         --pink-light: #fce7f3;
         --pink-dark: #a8105a;
         --pink-border: #f9a8d4;
@@ -42,7 +45,11 @@
         --green-border: #bbf7d0;
       }
       /* Logo pink tint */
-      .brand img, .footer-brand img { filter: brightness(0) saturate(100%) invert(18%) sepia(89%) saturate(2000%) hue-rotate(306deg) brightness(100%); }
+      .brand img,
+      .footer-brand img {
+        filter: brightness(0) saturate(100%) invert(18%) sepia(89%)
+          saturate(2000%) hue-rotate(306deg) brightness(100%);
+      }
       * {
         box-sizing: border-box;
       }
@@ -126,7 +133,10 @@
         width: 100%;
       }
       .nav-links a[aria-current="page"],
-      .mobile-menu a[aria-current="page"] { color: var(--pink); font-weight: 600; }
+      .mobile-menu a[aria-current="page"] {
+        color: var(--pink);
+        font-weight: 600;
+      }
       .btn {
         display: inline-flex;
         align-items: center;
@@ -159,7 +169,11 @@
       /* Hero */
       .hero {
         padding: 88px 0 64px;
-        background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+        background-image: radial-gradient(
+          circle,
+          rgba(0, 0, 0, 0.055) 1px,
+          transparent 1px
+        );
         background-size: 28px 28px;
       }
       .hero h1 {
@@ -169,7 +183,10 @@
         font-weight: 400;
         max-width: 880px;
       }
-      .hero h1 em { color: var(--pink); font-style: italic; }
+      .hero h1 em {
+        color: var(--pink);
+        font-style: italic;
+      }
 
       /* Available badge */
       .available-badge {
@@ -195,8 +212,13 @@
         animation: badge-pulse 2.2s ease-in-out infinite;
       }
       @keyframes badge-pulse {
-        0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
-        60% { box-shadow: 0 0 0 5px rgba(16,185,129,0); }
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+        }
+        60% {
+          box-shadow: 0 0 0 5px rgba(16, 185, 129, 0);
+        }
       }
 
       /* Marquee */
@@ -215,7 +237,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1.2px;
-        color: rgba(255,255,255,0.6);
+        color: rgba(255, 255, 255, 0.6);
         padding: 0 6px;
       }
       .marquee-inner .sep {
@@ -223,8 +245,12 @@
         padding: 0 14px;
       }
       @keyframes marquee {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
       }
 
       .hero-subtext {
@@ -285,7 +311,11 @@
       }
 
       /* Display font */
-      h1, h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+      h1,
+      h2 {
+        font-family: "DM Serif Display", Georgia, serif;
+        font-weight: 400;
+      }
 
       /* Section headings */
       h2 {
@@ -302,9 +332,16 @@
       }
 
       /* Section color rhythm */
-      #projects { background: var(--surface); }
-      #approach { background: var(--surface); }
-      .approach-title { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+      #projects {
+        background: var(--surface);
+      }
+      #approach {
+        background: var(--surface);
+      }
+      .approach-title {
+        font-family: "DM Serif Display", Georgia, serif;
+        font-weight: 400;
+      }
 
       /* Work cards — 2-column grid */
       .work-grid {
@@ -320,7 +357,9 @@
         display: flex;
         flex-direction: column;
         box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-        transition: box-shadow 0.25s ease, transform 0.25s ease;
+        transition:
+          box-shadow 0.25s ease,
+          transform 0.25s ease;
       }
       .work-card:hover {
         box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
@@ -359,7 +398,7 @@
         margin-bottom: 10px;
       }
       .work-title {
-        font-family: 'DM Serif Display', Georgia, serif;
+        font-family: "DM Serif Display", Georgia, serif;
         font-size: clamp(19px, 2.2vw, 23px);
         font-weight: 400;
         margin: 0 0 14px;
@@ -436,7 +475,7 @@
         box-shadow: 0 2px 12px rgba(244, 114, 182, 0.12);
       }
       .approach-number {
-        font-family: 'DM Serif Display', Georgia, serif;
+        font-family: "DM Serif Display", Georgia, serif;
         font-size: 32px;
         font-weight: 400;
         color: var(--pink);
@@ -483,9 +522,11 @@
         background: #1e2028;
         border-top: none;
         padding: 56px 20px 24px;
-        color: rgba(255,255,255,0.85);
+        color: rgba(255, 255, 255, 0.85);
       }
-      .footer-brand p { color: rgba(255,255,255,0.6) !important; }
+      .footer-brand p {
+        color: rgba(255, 255, 255, 0.6) !important;
+      }
       .footer-content {
         max-width: 1200px;
         margin: 0 auto;
@@ -495,7 +536,7 @@
         grid-template-columns: 1.2fr 2fr;
         gap: 64px;
         padding-bottom: 40px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       .footer-brand {
         display: flex;
@@ -523,7 +564,7 @@
         margin-bottom: 8px;
       }
       .footer-col a {
-        color: rgba(255,255,255,0.55);
+        color: rgba(255, 255, 255, 0.55);
         font-size: 14px;
         transition: color 0.2s ease;
         display: block;
@@ -534,7 +575,7 @@
       }
       .footer-bottom {
         padding-top: 24px;
-        color: rgba(255,255,255,0.7);
+        color: rgba(255, 255, 255, 0.7);
         font-size: 13px;
       }
 
@@ -626,7 +667,11 @@
         }
       }
       @media (prefers-reduced-motion: reduce) {
-        .work-card, .work-card:hover { transform: none !important; transition: box-shadow 0.2s ease !important; }
+        .work-card,
+        .work-card:hover {
+          transform: none !important;
+          transition: box-shadow 0.2s ease !important;
+        }
       }
       .skip-link {
         position: absolute;
@@ -642,8 +687,12 @@
         border-radius: 0 0 4px 0;
         transition: top 0.2s ease;
       }
-      .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
-        </style>
+      .skip-link:focus {
+        top: 0;
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+    </style>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -681,10 +730,17 @@
           them.♡
         </h1>
         <p class="hero-subtext">
-          I'm Destinee Young, a designer who builds websites and digital products that are easy to use, beautiful to look at, and built to convert. With a background in psychology and human-computer interaction, I bring a research-informed approach to everything from small business websites to complex enterprise platforms.
+          I'm Destinee Young, a designer who builds websites and digital
+          products that are easy to use, beautiful to look at, and built to
+          convert. With a background in psychology and human-computer
+          interaction, I bring a research-informed approach to everything from
+          small business websites to complex enterprise platforms.
         </p>
         <div class="hero-dna">
-          My background is in behavioral research and psychology, which means every design decision I make is grounded in <strong>how people actually think</strong>, not just how they're expected to.
+          My background is in behavioral research and psychology, which means
+          every design decision I make is grounded in
+          <strong>how people actually think</strong>, not just how they're
+          expected to.
         </div>
         <div class="hero-cta">
           <a class="btn" href="#projects">View my work</a>
@@ -698,7 +754,8 @@
       <div class="container">
         <h2>Selected Work</h2>
         <p class="section-lede">
-          From small business brands to enterprise platforms, design that works for real people.
+          From small business brands to enterprise platforms, design that works
+          for real people.
         </p>
 
         <div class="work-grid">
@@ -706,7 +763,7 @@
           <article class="work-card">
             <div class="work-img">
               <img
-                src="imgs/moblieapp1.png"
+                src="imgs/vdotapp.png"
                 alt="VDOT MRP mobile field inspection app screens"
               />
             </div>
@@ -741,7 +798,9 @@
               />
             </div>
             <div class="work-body">
-              <p class="work-label">Music Education / Small Business · Freelance</p>
+              <p class="work-label">
+                Music Education / Small Business · Freelance
+              </p>
               <h3 class="work-title">Studio88 Keys — Freelance Web Design</h3>
               <p class="work-problem">
                 McKenzie was growing her piano studio entirely through word of
@@ -750,8 +809,8 @@
               </p>
               <p class="work-solution">
                 I designed and built a full 7-page marketing site in Figma and
-                Framer: warm, conversion-focused, with transparent pricing and
-                a founder-forward story that builds trust before the first call.
+                Framer: warm, conversion-focused, with transparent pricing and a
+                founder-forward story that builds trust before the first call.
               </p>
               <div class="outcome-badge">
                 ✓ Full 7-page site · Figma to Framer production build
@@ -774,13 +833,13 @@
               <h3 class="work-title">VDOT MRP — Operations Hub</h3>
               <p class="work-problem">
                 Staff and contractors had zero visibility into real-time field
-                data, leading to massive delays in maintenance verification
-                and audits.
+                data, leading to massive delays in maintenance verification and
+                audits.
               </p>
               <p class="work-solution">
-                I designed a transparency-first hub that links GPS-tagged
-                field photos directly to ratings, surfacing critical failures
-                in the first 10 seconds.
+                I designed a transparency-first hub that links GPS-tagged field
+                photos directly to ratings, surfacing critical failures in the
+                first 10 seconds.
               </p>
               <div class="outcome-badge">
                 ✓ Real-time field-to-office operational transparency
@@ -802,7 +861,9 @@
             </div>
             <div class="work-body">
               <p class="work-label">Port Logistics / Government · Real Work</p>
-              <h3 class="work-title">PCIS — Helping Ports Talk to Each Other</h3>
+              <h3 class="work-title">
+                PCIS — Helping Ports Talk to Each Other
+              </h3>
               <p class="work-problem">
                 Everyone at the port needed each other's data, but nobody would
                 share it. Endless phone calls, wasted truck trips, and a system
@@ -811,7 +872,8 @@
               <p class="work-solution">
                 I used behavioral science to solve a trust problem, not just a
                 UI problem. Privacy-first data masking, exception-based alerts,
-                and real-time sync, each tied to a specific psychological principle.
+                and real-time sync, each tied to a specific psychological
+                principle.
               </p>
               <div class="outcome-badge">
                 ✓ 85% task success · 50% faster to find delays
@@ -877,8 +939,8 @@
             <p class="approach-number">02</p>
             <h3 class="approach-title">Design</h3>
             <p class="approach-desc">
-              Wireframes, prototypes, design systems. Every decision traces
-              back to a research finding. I design for the real context of use,
+              Wireframes, prototypes, design systems. Every decision traces back
+              to a research finding. I design for the real context of use,
               whether that's a busy parent on a phone or a field technician
               under time pressure.
             </p>
@@ -897,8 +959,8 @@
             <h3 class="approach-title">Accessibility</h3>
             <p class="approach-desc">
               WCAG 2.1 AA standards, Section 508 for government work. I build
-              accessibility into the architecture from day one, not bolted on
-              at the end.
+              accessibility into the architecture from day one, not bolted on at
+              the end.
             </p>
           </div>
         </div>
@@ -959,7 +1021,8 @@
                 max-width: 280px;
               "
             >
-              Designer building websites and digital products rooted in how people actually think. ₊˚⊹♡
+              Designer building websites and digital products rooted in how
+              people actually think. ₊˚⊹♡
             </p>
           </div>
 
@@ -1010,9 +1073,16 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
-      document.querySelectorAll('.mobile-nav').forEach(nav => {
-        nav.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
-        document.addEventListener('click', e => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+      document.querySelectorAll(".mobile-nav").forEach((nav) => {
+        nav.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && nav.open) {
+            nav.open = false;
+            nav.querySelector("summary").focus();
+          }
+        });
+        document.addEventListener("click", (e) => {
+          if (nav.open && !nav.contains(e.target)) nav.open = false;
+        });
       });
     </script>
   </body>
