@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telematics Mobile Prototype — Case Study | Destinee Young</title>
+    <title>Studio88 Keys — Freelance Web Design | Destinee Young</title>
     <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-34V535KX45"></script>
     <script>
@@ -12,11 +12,8 @@
       gtag("js", new Date());
       gtag("config", "G-34V535KX45");
     </script>
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Telematics" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -144,35 +141,22 @@
 
       /* Media */
       .media-tape { position: relative; padding-top: 14px; }
-      .media-tape.green-tape::before {
-        content: ""; position: absolute; top: 0; left: 50%;
-        transform: translateX(-50%) rotate(-2deg);
-        width: 60px; height: 16px; background: rgba(187, 247, 208, 0.9);
-        border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      }
       .media-well {
         width: 100%; max-width: 900px; aspect-ratio: 16/9;
         background: #f8f8f8; border: 1px solid var(--line); border-radius: 12px;
         display: flex; align-items: center; justify-content: center;
         overflow: hidden; padding: 10px; margin: 16px auto 0;
       }
-      .media-well.tall { aspect-ratio: 4/3; }
       .media-well img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
 
-      /* Web context box */
-      .web-context {
-        margin-top: 18px; padding: 18px; background: #fafafa;
-        border: 1px solid var(--line); border-radius: 14px;
+      /* Pages grid */
+      .pages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 20px; }
+      .page-card {
+        background: #fff; border: 1px solid var(--line); border-radius: 12px;
+        padding: 16px 18px;
       }
-      .web-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-      .web-shot {
-        background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px;
-        display: flex; align-items: center; justify-content: center;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
-      }
-      .web-shot:hover,
-      .web-shot:focus-within { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.06); }
-      .web-shot img { width: 100%; height: auto; object-fit: contain; border-radius: 8px; display: block; }
+      .page-card strong { font-size: 14px; font-weight: 600; display: block; margin-bottom: 4px; }
+      .page-card span { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
       /* Case nav */
       .case-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
@@ -204,8 +188,8 @@
 
       @media (prefers-reduced-motion: reduce) {
         .project-section { opacity: 1 !important; transform: none !important; transition: box-shadow 0.3s ease !important; }
-        .section-tag, .design-decision, .web-shot { transform: none !important; transition: none !important; }
-        .section-tag:hover, .design-decision:hover, .web-shot:hover { transform: none !important; box-shadow: none !important; }
+        .section-tag, .design-decision { transform: none !important; transition: none !important; }
+        .section-tag:hover, .design-decision:hover { transform: none !important; box-shadow: none !important; }
       }
       @media (max-width: 900px) {
         .footer-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -271,48 +255,51 @@
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
-          <span class="label">I turned a messy, spreadsheet-style desktop system into a simple mobile app for research teams. I used Functional Analysis to separate critical safety alerts from basic info, ensuring the most important data is the easiest to see.</span>
+          <span class="label">Designed a full 7-page marketing website in Figma and built it in Framer — from information architecture through production — for a private piano studio in the DMV area.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
           <span class="number">The Result</span>
-          <span class="label">Researchers can now check vehicle data and make quick decisions while on the road without getting overwhelmed by a crowded screen. By simplifying 5-step tasks into single taps, I made the system much safer and faster to use in active field conditions.</span>
+          <span class="label">McKenzie now has a single link she can share with prospective families that answers their questions, builds trust, and drives them toward booking — before she ever picks up the phone.</span>
         </div>
       </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
-      <h1>Telematics Mobile Prototype</h1>
+      <h1>Studio88 Keys — Freelance Web Design</h1>
       <p>
-        System redesign focused on migrating complex vehicle telemetry from a
-        legacy web platform to a mobile-first decision tool.
+        A warm, conversion-focused website for a private piano studio in the DC, Maryland, and Virginia area.
       </p>
     </header>
 
     <div class="project-meta">
       <div class="meta-item">
         <div class="meta-label">Industry</div>
-        <div class="meta-value">Transportation / Research</div>
+        <div class="meta-value">Music Education / Small Business</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Client</div>
-        <div class="meta-value">Leidos / CARMA Program</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Timeframe</div>
-        <div class="meta-value">Design sprint</div>
+        <div class="meta-value">Studio88 Keys</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">My Role</div>
-        <div class="meta-value">UI/UX Designer</div>
+        <div class="meta-value">Web Designer (Freelance)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Tools</div>
+        <div class="meta-value">Figma · Framer</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Deliverable</div>
+        <div class="meta-value">Full marketing website (7 pages)</div>
       </div>
     </div>
 
     <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px;">
       <div class="media-tape">
         <div class="media-well">
-          <img src="imgs/telematics2.png" alt="Telematics mobile screens overview" />
+          <img src="imgs/studio88.png" alt="Studio88 Keys website screens" />
         </div>
       </div>
     </div>
@@ -320,121 +307,135 @@
     <!-- Overview -->
     <section class="project-section">
       <span class="section-tag">Overview</span>
-      <h2>The redesign</h2>
+      <h2>Building a web presence from scratch</h2>
       <p>
-        This redesign reframed a dense desktop telematics experience into a
-        mobile HSI that supports field research decisions under time pressure.
-        The work centered on translating established patterns from comparable
-        systems into a simpler interaction model optimized for in-vehicle and
-        roadside contexts.
+        McKenzie Sherman is the founder of Studio88 Keys, a private piano studio serving kids and adults across the DC, Maryland, and Virginia area. She had been growing her studio entirely through word of mouth, but needed a professional web presence to attract new students, communicate her teaching philosophy, and let parents book lessons without back-and-forth emails.
+      </p>
+      <p>
+        I designed the site in Figma and built it in Framer — a complete 7-page website that positions Studio88 as approachable, trustworthy, and easy to engage with.
       </p>
     </section>
 
-    <!-- Who is this for -->
+    <!-- The Challenge -->
     <section class="project-section">
-      <span class="section-tag green">The User</span>
-      <h2>Who is this product for?</h2>
+      <span class="section-tag">The Challenge</span>
+      <h2>Word of mouth only goes so far</h2>
       <p>
-        Internal research teams at Leidos who conduct vehicle studies and need
-        to monitor telematics data, check event details, and make operational
-        decisions while on the road. These users require mobile access to data
-        that was previously only available on desktop systems.
+        McKenzie had no website — all communication happened through email, social media DMs, and referrals. This created several friction points: prospective families couldn't learn about the studio on their own time, there was no clear way to see pricing or policies before reaching out, and McKenzie was spending time answering the same introductory questions repeatedly.
+      </p>
+      <p>
+        She needed a site that could do the heavy lifting of building trust and answering FAQs so she could focus on teaching.
       </p>
     </section>
 
-    <!-- Goals -->
+    <!-- My Process -->
     <section class="project-section">
-      <span class="section-tag">Goals</span>
-      <h2>Goals</h2>
-      <ul>
-        <li>Provide mobile-first access to vehicle and event data for on-the-go research teams</li>
-        <li>Support field decision-making with clear information hierarchy and quick actions</li>
-        <li>Reduce navigation friction by simplifying desktop workflows for mobile contexts</li>
-        <li>Maintain terminology consistency with the existing web platform for familiarity</li>
-        <li>Enable quick scanning of vehicle status and event details on small screens</li>
-      </ul>
-      <div class="media-tape green-tape" style="margin-top: 24px;">
-        <div class="media-well">
-          <img src="imgs/Topicmanagement1.png" alt="Mobile telematics interface screens" />
+      <span class="section-tag green">My Process</span>
+      <h2>Design first, then build</h2>
+      <p>
+        I started in Figma, working through the information architecture, page layouts, and visual direction before moving into production. This included mapping the site's navigation structure across all 7 pages, exploring typography pairings and color palette options, and building component-level layouts for reusable sections — nav, footer, CTA blocks, and closure cards. McKenzie reviewed and approved the visual direction before I committed to code.
+      </p>
+      <p>
+        Once the designs were approved, I moved into Framer to build the live site — translating Figma comps into responsive, production-ready pages with working interactions, a contact form, and CMS-ready content sections.
+      </p>
+    </section>
+
+    <!-- Design Rationale -->
+    <section class="project-section">
+      <span class="section-tag">Design</span>
+      <h2>Every decision had a reason</h2>
+
+      <div class="design-decision">
+        <h3>Warm, inviting color palette</h3>
+        <p>Cream background with burnt orange and forest green accents reflects the studio's personality — playful but grounded. The palette avoids the cold, corporate feel of many service websites and creates a sense of warmth that mirrors McKenzie's teaching style.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Expressive typography</h3>
+        <p>The hero section uses a serif italic for key words to inject personality and movement into the headline. This typographic contrast gives the brand a memorable identity without relying on heavy illustration or stock imagery.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Trust-building through transparency</h3>
+        <p>Rather than hiding pricing and policies behind a contact form, I designed dedicated Tuition and Policy pages that lay everything out upfront — lesson durations, monthly rates, cancellation rules, holiday schedules. Parents can make informed decisions before ever reaching out, which filters for serious inquiries.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Storytelling through structure</h3>
+        <p>The About section uses a numbered timeline to walk visitors through the studio's origin story. This narrative approach builds emotional connection and positions McKenzie as someone who grew organically, not a faceless business.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Founder-forward design</h3>
+        <p>The "Meet the Founder" section gives McKenzie a full portrait, bio, and personal quote. For a service where parents are trusting someone with their child, seeing and connecting with the actual instructor is critical to conversion.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Social proof through a real gallery</h3>
+        <p>The "Inside the Studio" gallery showcases real recital photos, students with certificates, and candid teaching moments. This is more persuasive than any testimonial block — it shows a thriving, active community.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Clear conversion path</h3>
+        <p>Every page includes a persistent "Book a Lesson" CTA in the navigation. The Contact page pairs a simple form with studio hours, location, and email so visitors have multiple ways to engage. No dead ends.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Closure calendar</h3>
+        <p>The "Upcoming Closures" section with dated cards shows operational maturity and helps set expectations for prospective and current families — a small detail that reduces support questions.</p>
+      </div>
+    </section>
+
+    <!-- Pages Delivered -->
+    <section class="project-section">
+      <span class="section-tag green">Deliverables</span>
+      <h2>7 pages delivered</h2>
+      <div class="pages-grid">
+        <div class="page-card">
+          <strong>Homepage</strong>
+          <span>Hero, social proof stats, and enrollment banner</span>
+        </div>
+        <div class="page-card">
+          <strong>About</strong>
+          <span>Studio origin story and teaching philosophy</span>
+        </div>
+        <div class="page-card">
+          <strong>Tuition</strong>
+          <span>Transparent pricing — lesson durations and monthly rates</span>
+        </div>
+        <div class="page-card">
+          <strong>Founder</strong>
+          <span>McKenzie's full bio, portrait, and personal quote</span>
+        </div>
+        <div class="page-card">
+          <strong>Gallery</strong>
+          <span>Recital and studio photos</span>
+        </div>
+        <div class="page-card">
+          <strong>Policy</strong>
+          <span>Cancellations, holidays, and lesson termination</span>
+        </div>
+        <div class="page-card">
+          <strong>Contact</strong>
+          <span>Form, studio hours, and location info</span>
         </div>
       </div>
     </section>
 
-    <!-- Why is this needed -->
-    <section class="project-section">
-      <span class="section-tag">The Challenge</span>
-      <h2>Why is this needed?</h2>
-      <p>
-        Research and field teams needed to interpret complex vehicle telemetry
-        in real time, but the legacy workflow depended on dense,
-        spreadsheet-like web layouts that were difficult to use in active field
-        conditions. This increased navigation friction and delayed
-        time-sensitive interpretation tasks.
-      </p>
-    </section>
-
-    <!-- HF Contribution -->
-    <section class="project-section">
-      <span class="section-tag green">Research Methods</span>
-      <h2>HF Contribution (Benchmarking)</h2>
-      <ul>
-        <li>Conducted a <strong>Competitive Systems Analysis</strong> of existing telematics platforms to identify industry-standard mental models for data visualization</li>
-        <li>Performed a <strong>Baseline Heuristic Evaluation</strong> of the legacy system to identify high-frequency error points and navigation friction</li>
-        <li>Led a <strong>Functional Analysis</strong> to separate safety-critical telemetry markers from informational data so the interface reduces alert fatigue</li>
-      </ul>
-    </section>
-
-    <!-- HSI Design -->
-    <section class="project-section">
-      <span class="section-tag">Design</span>
-      <h2>The Human-System Interface (HSI)</h2>
-      <p>
-        Prioritized glanceable telemetry data to support situational awareness
-        for researchers in the field, with clear hierarchy for faster
-        interpretation and intervention decisions.
-      </p>
-
-      <div class="design-decision">
-        <h3>Glanceable data hierarchy</h3>
-        <p>Safety-critical telemetry markers are visually separated from informational data so field users can assess status at a glance without reading through dense tables.</p>
-      </div>
-      <div class="design-decision">
-        <h3>Simplified navigation for mobile</h3>
-        <p>Desktop workflows that required 4–5 taps were condensed into a single contextual action, reducing the number of decisions a researcher needs to make while on-the-road.</p>
-      </div>
-      <div class="design-decision">
-        <h3>Terminology consistency</h3>
-        <p>Kept all labels and terminology aligned with the existing web platform so experienced users don't have to re-learn the system — just the interaction model.</p>
-      </div>
-    </section>
-
-    <!-- Team -->
-    <section class="project-section">
-      <span class="section-tag green">The Team</span>
-      <h2>Who'd I work with?</h2>
-      <p>
-        I collaborated with product stakeholders and engineering to define
-        scope and feasibility, then used competitive references and heuristic
-        findings to drive redesign priorities where direct primary research was
-        limited in this phase.
-      </p>
-    </section>
-
-    <!-- Impact -->
+    <!-- Outcome -->
     <section class="project-section">
       <span class="section-tag">The Outcome</span>
-      <h2>Impact</h2>
+      <h2>A studio that speaks for itself</h2>
       <p>
-        Produced a mobile-first decision support concept that improved
-        scanability of telemetry workflows and established a safer visual
-        hierarchy for field usage. The redesign provides a practical foundation
-        for future implementation focused on operator performance in live
-        research contexts.
+        McKenzie was thrilled with the final product. The site gave her studio a professional, polished identity for the first time and immediately reduced the volume of repetitive inquiry questions she was fielding.
+      </p>
+      <p>
+        She now has a single link to share with prospective families that answers their questions, builds trust, and drives them toward booking — all before she ever picks up the phone.
       </p>
 
       <div class="case-nav" style="margin-top: 28px;">
         <a class="secondary" href="index.html">← Back to work</a>
-        <a class="secondary" href="pcis-dashboard.html">← PCIS Platform</a>
+        <a class="secondary" href="telematics.html">Telematics →</a>
       </div>
     </section>
 
@@ -474,6 +475,7 @@
                 <li><a href="vdot-dashboard.html">VDOT Dashboard</a></li>
                 <li><a href="pcis-dashboard.html">PCIS Platform</a></li>
                 <li><a href="telematics.html">Telematics</a></li>
+                <li><a href="studio88.html">Studio88 Keys</a></li>
               </ul>
             </div>
           </div>

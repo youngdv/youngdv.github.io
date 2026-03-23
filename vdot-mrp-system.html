@@ -23,7 +23,7 @@
       :root {
         --bg: #ffffff;
         --text: #0b0b0b;
-        --muted: #6b7280;
+        --muted: #5f6575;
         --line: rgba(0, 0, 0, 0.08);
         --card: #ffffff;
         --accent: #111111;
@@ -440,9 +440,25 @@
           gap: 28px;
         }
       }
-    </style>
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #0b0b0b;
+        color: #fff;
+        padding: 8px 16px;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        z-index: 200;
+        border-radius: 0 0 4px 0;
+        transition: top 0.2s ease;
+      }
+      .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
+        </style>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <nav aria-label="Primary">
       <div class="nav-inner">
         <div class="brand">
