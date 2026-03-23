@@ -138,6 +138,8 @@
       .nav-links a:focus-visible::after {
         width: 100%;
       }
+      .nav-links a[aria-current="page"],
+      .mobile-menu a[aria-current="page"] { color: var(--pink); font-weight: 600; }
       .btn {
         display: inline-flex;
         align-items: center;
@@ -338,7 +340,7 @@
       }
       .footer-bottom {
         padding-top: 24px;
-        color: rgba(255,255,255,0.4);
+        color: rgba(255,255,255,0.7);
         font-size: 13px;
       }
 
@@ -452,14 +454,14 @@
         <div class="nav-links">
           <a href="index.html#projects">Work</a>
           <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html" aria-current="page">Contact</a>
         </div>
         <details class="mobile-nav">
           <summary aria-label="Toggle menu">Menu</summary>
           <div class="mobile-menu">
             <a href="index.html#projects">Work</a>
             <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" aria-current="page">Contact</a>
           </div>
         </details>
       </div>
@@ -538,7 +540,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#projects">Work</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
               </ul>
             </div>
 
