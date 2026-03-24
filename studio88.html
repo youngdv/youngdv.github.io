@@ -161,6 +161,30 @@
       .page-card strong { font-size: 14px; font-weight: 600; display: block; margin-bottom: 4px; }
       .page-card span { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
+      /* Image placeholders */
+      .img-placeholder {
+        width: 100%;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #f0f0ee 0%, #e8e8e6 100%);
+        border: 2px dashed rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 48px 24px;
+        color: var(--muted);
+        text-align: center;
+        margin: 20px 0;
+      }
+      .ph-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text); opacity: 0.5; }
+      .ph-hint { font-size: 12px; color: var(--muted); }
+      .ph-icon { font-size: 22px; opacity: 0.25; margin-bottom: 4px; line-height: 1; }
+      .proto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+      .proto-grid .img-placeholder { margin: 0; }
+      .proto-step-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 8px; }
+      @media (max-width: 640px) { .proto-grid { grid-template-columns: 1fr; } }
+
       /* Case nav */
       .case-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
       .case-nav a { border: 1px solid var(--text); border-radius: 10px; padding: 10px 14px; font-weight: 700; }
@@ -338,9 +362,19 @@
       <p>
         I started in Figma, working through the information architecture, page layouts, and visual direction before moving into production. This included mapping the site's navigation structure across all 7 pages, exploring typography pairings and color palette options, and building component-level layouts for reusable sections — nav, footer, CTA blocks, and closure cards. McKenzie reviewed and approved the visual direction before I committed to code.
       </p>
+
+      <div class="media-well" style="max-width: 100%; margin: 20px 0;">
+        <img src="imgs/studio88_moodboard.png" alt="Studio88 Keys moodboard — typography, color palette, and visual direction exploration" />
+      </div>
+
       <p>
         Once the designs were approved, I moved into Framer to build the live site — translating Figma comps into responsive, production-ready pages with working interactions, a contact form, and CMS-ready content sections.
       </p>
+
+      <h3 style="margin-top: 28px; margin-bottom: 16px;">Wireframe to hi-fi</h3>
+      <div class="media-well" style="max-width: 100%; margin: 0;">
+        <img src="imgs/wireframe.png" alt="Side-by-side comparison of wireframes and hi-fi prototype for Studio88 Keys" />
+      </div>
     </section>
 
     <!-- Design Rationale -->
