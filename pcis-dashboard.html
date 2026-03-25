@@ -101,7 +101,7 @@
       .meta-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
       .meta-value { font-size: 15px; font-weight: 600; color: var(--text); }
 
-      /* Sections — scrapbook card */
+      /* Sections, scrapbook card */
       .project-section {
         background: #fff; border-radius: 20px;
         margin: 0 2% 28px; padding: 36px 44px;
@@ -119,7 +119,7 @@
       .project-section li { margin-bottom: 10px; }
       .project-section p + p { margin-top: 14px; }
 
-      /* Section tag — sticker style */
+      /* Section tag, sticker style */
       .section-tag {
         display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
         letter-spacing: 0.5px; color: var(--pink-dark);
@@ -327,12 +327,12 @@
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
-          <span class="label">I took a messy, complicated process for tracking cargo ships and organized it into a clear, digital priority list. I used "progressive disclosure" — hiding secondary details so the user only sees the most important info at any given time.</span>
+          <span class="label">I took a messy, spreadsheet-heavy process for tracking cargo and transformed it into a decision-making tool that 85% of users found easy to use on their first try.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
           <span class="number">The Result</span>
-          <span class="label">Three stakeholder groups historically unwilling to share data now operate from a single source of truth. Role-based access and privacy controls replaced years of phone calls, wasted trips, and guesswork.</span>
+          <span class="label">Phase 1 validated with an 85% ease-of-use rating and 100% stakeholder alignment. The behavioral design approach made competitors willing to share data — a problem no spreadsheet had solved in years.</span>
         </div>
       </div>
     </div>
@@ -342,7 +342,7 @@
       <h1>Helping Ports Talk to Each Other</h1>
       <p>
         I designed a trusted dashboard that connects port operators, truck dispatchers, and
-        cargo owners — replacing a system of endless phone calls and data-hoarding with a
+        cargo owners, replacing a system of endless phone calls and data-hoarding with a
         single, secure source of truth.
       </p>
     </header>
@@ -358,7 +358,11 @@
       </div>
       <div class="meta-item">
         <div class="meta-label">Timeframe</div>
-        <div class="meta-value">In Progress</div>
+        <div class="meta-value">2025 – Present</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Status</div>
+        <div class="meta-value">Phase 1 Validated · Phase 2 Design &amp; Integration Underway</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">My Role</div>
@@ -383,111 +387,101 @@
       <span class="section-tag">The Challenge</span>
       <h2>The Privacy Gap</h2>
       <p>
-        Ports are complex. Every shipment touches terminal operators, truck dispatchers, and cargo owners — but nobody wants to share their data for fear of losing a competitive edge. This causes massive cargo delays, wasted trips, and a system held together by phone calls.
+        Ports are competitive. Terminal operators and cargo owners are often afraid to share data for fear of losing their edge. This leads to endless phone calls, wasted truck trips, and massive delays.
       </p>
       <p>
-        My job was to design a system that feels safe enough for competitors to share data, while staying simple enough for stressed operators to actually use. I used <strong>Behavioral Science</strong> to solve a trust problem, not just a UI problem.
+        My job was to design a system that felt safe enough for competitors to share data, but simple enough for stressed operators to actually use. I used <strong>Behavioral Science</strong> to solve a trust problem, not just a UI problem.
       </p>
     </section>
 
-    <!-- Behavioral Science Formula -->
-    <section class="project-section">
-      <span class="section-tag green">Behavioral Science</span>
-      <h2>The Formula</h2>
-      <p>Every design decision mapped to a user pain point and a behavioral principle.</p>
-      <div class="bs-grid-wrap">
-        <table class="bs-grid" aria-label="Behavioral science design decisions">
-          <thead>
-            <tr>
-              <th>The User Pain Point</th>
-              <th>My Design Solution</th>
-              <th>The Science Behind It</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>"I don't trust the system."</strong> Cargo owners fear sharing data will reveal trade secrets to competitors.</td>
-              <td><strong>Privacy-First Data Masking:</strong> A view that shows a cargo's status (Ready/Delayed) without revealing its contents or value.</td>
-              <td><strong>Psychological Safety:</strong> People won't use a tool if they feel exposed. I built trust into the UI by giving users granular control over what they share.</td>
-            </tr>
-            <tr>
-              <td><strong>"I'm overwhelmed."</strong> Terminal Operators manage thousands of containers and can't find the "fire" in a mountain of data.</td>
-              <td><strong>Exception-Based Alerts:</strong> Instead of showing everything, the UI only surfaces when a delay occurs.</td>
-              <td><strong>Cognitive Load:</strong> By filtering out "normal" data, I reduced the mental tax on operators so they can focus only on what needs fixing.</td>
-            </tr>
-            <tr>
-              <td><strong>"I'm guessing."</strong> Truck dispatchers send drivers to pick up cargo that isn't actually ready yet — wasting fuel and time.</td>
-              <td><strong>Real-Time Sync:</strong> A live dashboard that updates the moment a container is cleared by the terminal.</td>
-              <td><strong>Reducing Uncertainty:</strong> High stress comes from a lack of control. Giving dispatchers real-time data lowers anxiety and prevents dry runs.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Personas -->
-    <section class="project-section">
-      <span class="section-tag">Who I Helped</span>
-      <h2>Three People. Three Different Needs.</h2>
-      <div class="persona-grid">
-        <article class="persona-card terminal">
-          <h3>Carlos — Terminal Operator</h3>
-          <p><strong>Goal:</strong> Keep the port moving and containers flowing out the gate.</p>
-          <p><strong>Problem:</strong> Alert fatigue — too many notifications, no way to spot the real emergencies.</p>
-          <p><strong>My fix:</strong> Simplified his dashboard to surface only exceptions. Green means go, bold red means act now.</p>
-        </article>
-        <article class="persona-card bco">
-          <h3>David — Cargo Owner (BCO)</h3>
-          <p><strong>Goal:</strong> Track his goods and know when they're ready for pickup.</p>
-          <p><strong>Problem:</strong> Fear of data leaks — he doesn't want competitors seeing his shipment details.</p>
-          <p><strong>My fix:</strong> Role-based views with privacy masking. He controls exactly what's visible to others.</p>
-        </article>
-        <article class="persona-card carrier">
-          <h3>Maria — Dispatcher</h3>
-          <p><strong>Goal:</strong> Coordinate trucks efficiently without sending drivers on wasted trips.</p>
-          <p><strong>Problem:</strong> Making 20+ phone calls a day just to confirm container status.</p>
-          <p><strong>My fix:</strong> A single source of truth — live container status that updates the moment things change.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Without a Research Budget -->
+    <!-- Research -->
     <section class="project-section">
       <span class="section-tag green">Research</span>
-      <h2>Designing Without a Research Budget</h2>
+      <h2>Learning from the Competition</h2>
       <p>
-        This was a fast-moving project with limited field time. I leaned on my <strong>Human-Computer Interaction (HCI)</strong> background to de-risk the design without slowing down delivery.
+        Before designing, I performed a Competitive Audit of 4 legacy port management systems to understand why they were failing to solve this problem.
       </p>
+      <h3 style="margin-top: 24px; margin-bottom: 12px;">What I found in other systems</h3>
       <ul>
-        <li><strong>Heuristic Evaluation:</strong> I audited every screen against standard mental models for logistics professionals to catch usability issues before they reached users.</li>
-        <li><strong>Task Analysis:</strong> I mapped the full "life of a shipment" to find the exact moments where communication breaks down between stakeholders.</li>
-        <li><strong>Role-Based Logic:</strong> I worked directly with the Solutions Architect to ensure the UI matched the strict security and data-access requirements of the port ecosystem.</li>
+        <li><strong>Information Overload:</strong> Most systems looked like giant, messy spreadsheets. It was nearly impossible to find emergencies in a mountain of data.</li>
+        <li><strong>Reactive Design:</strong> They only showed what was happening right now, with no way for managers to anticipate a busy afternoon or plan ahead.</li>
       </ul>
     </section>
 
-    <!-- Design Enhancements -->
+    <!-- User-Centered Strategy -->
+    <section class="project-section">
+      <span class="section-tag green">Strategy</span>
+      <h2>Three Users. Three Behavioral Principles.</h2>
+      <p>I used Behavioral Science to solve a trust problem, not just a UI problem. Each user had a distinct mental model and a specific reason not to engage.</p>
+      <div class="persona-grid">
+        <article class="persona-card terminal">
+          <h3>Carlos, Terminal Operator</h3>
+          <p><strong>Cognitive Load:</strong> I replaced his cluttered spreadsheets with Exception-Based Alerts. Instead of seeing thousands of containers, the UI only flags the issues that need his attention right now.</p>
+        </article>
+        <article class="persona-card bco">
+          <h3>David, Cargo Owner (BCO)</h3>
+          <p><strong>Psychological Safety:</strong> To fix the fear of data leaks, I built Privacy-First Data Masking. He can share a status (Ready/Delayed) without revealing the private value of his cargo to competitors.</p>
+        </article>
+        <article class="persona-card carrier">
+          <h3>Maria, Dispatcher</h3>
+          <p><strong>Reducing Uncertainty:</strong> I replaced her 20+ daily phone calls with a Real-Time Sync dashboard, giving her total control over truck scheduling without leaving her desk.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Design -->
     <section class="project-section">
       <span class="section-tag">Design</span>
-      <h2>Making It Better — The Behavioral Upgrades</h2>
-      <p>Three specific design decisions that came directly from behavioral principles:</p>
+      <h2>Human-Centered Organization</h2>
+      <p>
+        I moved away from the "tabular fatigue" common in legacy port systems by prioritizing how users scan for information under pressure.
+      </p>
+
+      <h3 style="margin-top: 28px; margin-bottom: 10px;">From Spreadsheets to Action Cards</h3>
+      <p>
+        I replaced high-density, 15-column tables with a structured Card-Based Architecture. By placing the Cargo Unit ID in the top-left corner — the natural starting point for the human eye — I ensured that the most critical data point acts as an anchor for the user. This spatial "chunking" allows operators to process one shipment at a time, eliminating the row-blur that leads to errors in traditional spreadsheet views.
+      </p>
+
+      <h3 style="margin-top: 28px; margin-bottom: 10px;">Design for High-Stakes Environments</h3>
+      <p>I approached Section 508 Compliance not just as a legal requirement, but as a core safety feature for the port's unique physical environment.</p>
       <ul>
-        <li><strong>Progressive Disclosure:</strong> Complex shipping details live behind a "Details" button. The main screen stays clean so operators aren't overwhelmed on load.</li>
-        <li><strong>Visual Hierarchy:</strong> "Delayed" status indicators are bold and high-contrast — the first thing an operator's eye lands on, even when scanning fast.</li>
-        <li><strong>Common Language:</strong> I replaced technical port jargon with plain language that both truck drivers and port admins understand. No more translation tax.</li>
+        <li><strong>Environmental Legibility:</strong> I utilized a high-contrast color palette exceeding WCAG 2.1 AA standards to ensure data remains readable on tablets used in direct sunlight or on low-resolution outdoor monitors.</li>
+        <li><strong>Redundant Status Coding:</strong> To support users with color vision deficiencies and improve recognition speed, I paired color-coded statuses with distinct iconography and specific spatial placement.</li>
+        <li><strong>Touch-Target Optimization:</strong> Recognizing that many users interact via ruggedized tablets or while wearing gloves, I ensured all interactive elements meet minimum size requirements to prevent "fat-finger" errors.</li>
       </ul>
+      <div style="margin-top: 36px; display: flex; flex-direction: column; gap: 48px;">
+
+        <!-- Comparison 1: Wall of Text -->
+        <div>
+          <h3 style="margin: 0 0 6px;">Breaking Up the Wall of Text</h3>
+          <p style="color: var(--muted); font-size: 14px; margin: 0 0 16px;">Legacy systems use tiny, cramped rows where every line looks identical. To find one container, you have to read 50 lines of the same text.</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+            <div>
+              <img src="imgs/l1.png" alt="Legacy system: high-density table where all rows look identical" style="width: 100%; border-radius: 10px; border: 1px solid var(--line);" />
+              <p style="font-size: 12px; color: var(--muted); margin: 8px 0 0; line-height: 1.5;">Legacy systems bury critical info in high-density tables, making it hard to spot emergencies.</p>
+            </div>
+            <div>
+              <img src="imgs/bco2.png" alt="PCIS card-based layout: each shipment is a distinct scannable object" style="width: 100%; border-radius: 10px; border: 1px solid var(--line);" />
+              <p style="font-size: 12px; color: var(--muted); margin: 8px 0 0; line-height: 1.5;">My design uses a card-based layout to highlight the Status, making the screen scannable in high-stress environments.</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
     </section>
 
     <!-- Hazardous Cargo -->
-    <section class="project-section">
+    <section class="project-section" style="display:none">
       <span class="section-tag">Safety Design</span>
       <h2>The Hazardous Cargo Workflow</h2>
       <p>
         Hazmat is the highest-stakes workflow in the port ecosystem. Different regulations, different handling requirements, different approval chains. A mistake here has real safety consequences.
       </p>
       <ul>
-        <li><strong>Visual differentiation:</strong> Hazmat containers flagged with persistent warning indicators — not just color, but iconography and placement changes that make them impossible to miss</li>
+        <li><strong>Visual differentiation:</strong> Hazmat containers flagged with persistent warning indicators, not just color, but iconography and placement changes that make them impossible to miss</li>
         <li><strong>Mandatory confirmation steps:</strong> Approval workflows require explicit acknowledgment of cargo class before any status change</li>
-        <li><strong>Cross-stakeholder visibility:</strong> When hazmat status changes, all relevant stakeholders get proactive notifications — not just the next person in the chain</li>
+        <li><strong>Cross-stakeholder visibility:</strong> When hazmat status changes, all relevant stakeholders get proactive notifications, not just the next person in the chain</li>
         <li><strong>Audit trail:</strong> Every action logged with timestamps and actor ID for compliance</li>
       </ul>
       <div class="media-tape" style="margin-top: 24px;">
@@ -500,71 +494,80 @@
     <!-- Validation -->
     <section class="project-section">
       <span class="section-tag green">Validation</span>
-      <h2>Evidence Over Opinions</h2>
+      <h2>Remote Usability Study</h2>
       <p>
-        I turned a standard User Acceptance Test into a usability study — creating specific tasks for 9+ port stakeholders to complete. The goal: quantify where the mental load was still too high.
+        I validated the design with 7 key stakeholders — Terminal Operators and Vendors — across three states using remote, task-based walkthroughs via Teams. I used a mix of System Usability Scale assessments and open-ended qualitative feedback to capture both the numbers and the nuance.
       </p>
+
+      <h3 style="margin-top: 28px; margin-bottom: 16px;">The Final Scorecard</h3>
+      <p style="color: var(--muted); font-size: 15px; margin-bottom: 20px;">The system passed the validation criteria, proving that the Behavioral Design approach effectively lowered the barrier to data sharing.</p>
+      <div class="scorecard">
+        <div class="scorecard-item">
+          <span class="score-number">85%</span>
+          <span class="score-label">Ease of Use, 6 out of 7 stakeholders agreed the system was easy to understand and use</span>
+        </div>
+        <div class="scorecard-item">
+          <span class="score-number">100%</span>
+          <span class="score-label">Alignment: Every participant confirmed the platform successfully met their high-stakes professional requirements.</span>
+        </div>
+        <div class="scorecard-item">
+          <span class="score-number">57%</span>
+          <span class="score-label">Immediate Benefit: Over half the group identified specific performance gains for their home ports within the first walkthrough.</span>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 36px; margin-bottom: 16px;">Evidence-Based Iterations</h3>
+      <p style="color: var(--muted); font-size: 15px; margin-bottom: 20px;">The study transformed the project from a Proof of Concept into a Roadmap by identifying key friction points.</p>
       <div class="bs-grid-wrap">
-        <table class="bs-grid" aria-label="Usability test results">
+        <table class="bs-grid" aria-label="Evidence-based iteration decisions">
           <thead>
             <tr>
-              <th>What We Tested</th>
-              <th>What Users Did</th>
-              <th>The Design Fix</th>
+              <th>Focus Area</th>
+              <th>Stakeholder Feedback</th>
+              <th>UX Strategy Response</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Finding cargo status</strong><br>Can a Dispatcher find a specific container in under 10 seconds?</td>
-              <td>90% of users found it immediately thanks to high-contrast status badges.</td>
-              <td>Validated — the visual hierarchy I built held up under pressure.</td>
+              <td><strong>Industry Jargon</strong></td>
+              <td>Preferred "Appointment" over "Booking" for cargo pickup.</td>
+              <td><strong>Standardized Mental Models:</strong> Aligned UI copy with literal port floor vocabulary.</td>
             </tr>
             <tr>
-              <td><strong>Data privacy</strong><br>Can a BCO successfully mask their private trade data?</td>
-              <td>Friction point: users weren't sure their privacy settings had saved.</td>
-              <td>Added a "Privacy Confirmed" badge so users feel psychologically safe before sharing.</td>
+              <td><strong>Workflow Tracking</strong></td>
+              <td>Users wanted to see their "spot" in the overall process.</td>
+              <td><strong>Process Visualization:</strong> Redesigned the header to show a linear status indicator.</td>
             </tr>
             <tr>
-              <td><strong>Error handling</strong><br>What happens when an operator enters the wrong container ID?</td>
-              <td>Users missed the small error text at the bottom of the screen.</td>
-              <td>Moved error alerts to the center of the focus zone to prevent inattentional blindness.</td>
+              <td><strong>Operational Scaling</strong></td>
+              <td>Must handle up to 300 separate truck operators.</td>
+              <td><strong>Performance Design:</strong> Validated that the card layout remains scannable under high data loads.</td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <h3 style="margin-top: 28px; margin-bottom: 16px;">The Final Scorecard</h3>
-      <div class="scorecard">
-        <div class="scorecard-item">
-          <span class="score-number">85%</span>
-          <span class="score-label">Task success rate on first try, without help</span>
-        </div>
-        <div class="scorecard-item">
-          <span class="score-number">50% faster</span>
-          <span class="score-label">Time to find a shipment delay vs. the old phone-call method</span>
-        </div>
-        <div class="scorecard-item">
-          <span class="score-number">4 out of 5</span>
-          <span class="score-label">Users felt "more confident" in data accuracy than the previous system</span>
-        </div>
-      </div>
     </section>
 
-    <!-- Outcome -->
+    <!-- Impact & Future Roadmap -->
     <section class="project-section">
-      <span class="section-tag green">The Outcome</span>
-      <h2>From Theory to Tool</h2>
+      <span class="section-tag green">Impact</span>
+      <h2>Impact &amp; Future Roadmap</h2>
       <p>
-        The PCIS Dashboard moved from a complex data-sharing concept to a functional, 508-compliant platform. By focusing on <strong>Trust</strong> and <strong>Cognitive Load</strong>, I created a system that doesn't just display data — it actually coordinates the people who keep our supply chain moving.
+        The success of Phase 1 secured immediate investment and a massive expansion of scope. PCIS evolved from a data-sharing concept no one could agree on into a validated, 508-compliant platform with multi-state buy-in.
       </p>
+
+      <h3 style="margin-top: 28px; margin-bottom: 14px;">The Future Roadmap</h3>
+      <div style="background: var(--pink-light); border-left: 3px solid var(--pink); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 0 0 20px;">
+        <p style="margin: 0; font-weight: 700; font-size: 15px; color: var(--pink-dark);">"Design is never finished."</p>
+      </div>
+      <p>Based on our UAT findings, I am currently leading the Phase 2 Expansion, focusing on:</p>
       <ul>
-        <li>Three distinct role-based dashboards — terminal operators, dispatchers, and cargo owners each see exactly what they need, nothing they don't</li>
-        <li>Usability testing with 9+ port stakeholders hit an 85% first-try task success rate with no assistance — the behavioral design held up under real-world pressure</li>
-        <li>Achieved stakeholder alignment on shared terminology and workflow definitions — a prerequisite for the technical build that had no prior solution</li>
-        <li>Proof of concept validated the design direction and set the blueprint for all future development phases</li>
+        <li><strong>Workflow Agility:</strong> Moving from static lists to Visual Graphs so managers can anticipate bottlenecks hours before they happen.</li>
+        <li><strong>Massive Scaling:</strong> Ensuring the UI stays performant while handling real-time data for 300+ simultaneous truck operators.</li>
+        <li><strong>Process-Oriented Flow:</strong> Transitioning from tables to a visual lifecycle view, ensuring users always know exactly where their cargo is without hunting through text.</li>
       </ul>
 
-      <div class="case-nav" style="margin-top: 28px;">
+      <div class="case-nav" style="margin-top: 36px;">
         <a class="secondary" href="index.html">← Back to work</a>
         <a class="secondary" href="vdot-dashboard.html">← VDOT Dashboard</a>
         <a class="primary" href="telematics.html">Next: Telematics →</a>
