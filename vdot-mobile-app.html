@@ -703,6 +703,25 @@
           box-shadow: none !important;
         }
       }
+      /* Cognitive load reduction — readability */
+      .project-section p,
+      .about-text p,
+      .about-section p {
+        line-height: 1.75;
+        margin-bottom: 14px;
+        max-width: 72ch;
+      }
+      .project-section ul,
+      .about-text ul {
+        max-width: 72ch;
+        line-height: 1.75;
+      }
+      .project-section li {
+        margin-bottom: 8px;
+      }
+      .design-decision {
+        margin-bottom: 20px;
+      }
       .skip-link {
         position: absolute;
         top: -40px;
@@ -846,7 +865,8 @@
 
       <div class="design-decision">
         <h3>My Role</h3>
-        <p>As Lead UX Designer, I led the end-to-end transformation of a manual process into a mobile product, defining workflows, prioritizing critical actions, and designing for real-world constraints like weather, visibility, and time pressure. Design work was delivered in two-week sprint cycles alongside engineering.</p>
+        <p>As Lead UX Designer, I owned the end-to-end transformation of a manual process into a mobile product. I defined workflows, prioritized critical actions, and designed for real-world constraints like weather, glare, and time pressure.</p>
+        <p>Design was delivered in two-week sprint cycles alongside engineering.</p>
       </div>
     </section>
 
@@ -952,7 +972,8 @@
 
       <div class="design-decision">
         <h3>Shared Design Language</h3>
-        <p>Because the mobile app feeds directly into the management dashboard, I established a shared component library in Figma with status colors, typography scales, and interaction patterns that stay consistent whether a user is rating an asset on a phone or reviewing results on desktop.</p>
+        <p>The mobile app feeds directly into the management dashboard. To keep both products consistent, I built a shared component library in Figma.</p>
+        <p>Status colors, typography scales, and interaction patterns stay the same whether a user is rating an asset on their phone or reviewing results on a desktop screen.</p>
       </div>
     </section>
 
@@ -960,28 +981,34 @@
     <section class="project-section">
       <span class="section-tag">Validation</span>
       <h2>Usability Study</h2>
-      <p>I validated the product in real-world inspection scenarios to confirm that the simplified workflow improved usability in the field.</p>
-      <p>I recruited 8 participants via Prolific to complete three goal-based missions on their own phones, mirroring real field conditions.</p>
-
       <div class="design-decision">
         <h3>Study Design</h3>
-        <p>
-          I recruited 8 participants via Prolific to complete three goal-based missions on their own phones, mirroring real field conditions. Each mission mapped to a critical step in the inspection process: locating an asset on the map, rating it against IMCS-626 criteria, and completing final documentation. After each mission, participants rated the experience on a 7-point Likert scale.
-        </p>
+        <p>8 participants recruited via Prolific completed three goal-based missions on their own phones, mirroring real field conditions.</p>
+        <p>Each mission mapped to a critical inspection step:</p>
+        <ul>
+          <li>Locating an asset on the map</li>
+          <li>Rating it against IMCS-626 criteria</li>
+          <li>Completing final documentation</li>
+        </ul>
+        <p>After each mission, participants rated the experience on a 7-point Likert scale.</p>
       </div>
 
       <div class="design-decision">
         <h3>What the Data Confirmed</h3>
-        <p>
-          The inspection and rating workflow, the most safety-critical part of the app, performed the strongest. Participants were able to navigate the stepped rating flow, reference the on-screen criteria, and submit their assessments with relatively low friction. Likert responses reinforced this: participants rated the on-screen rating criteria and the Record button's tap-ability highest among all measures, averaging above the scale midpoint.
-        </p>
+        <p>The inspection and rating workflow performed the strongest. It's the most safety-critical part of the app.</p>
+        <p>Participants navigated the stepped flow, referenced on-screen criteria, and submitted assessments with low friction.</p>
+        <p>Likert scores confirmed it: on-screen criteria and the Record button's tap-ability rated highest across all measures.</p>
       </div>
 
       <div class="design-decision">
         <h3>Where the Data Pointed Next</h3>
-        <p>
-          The map-based asset discovery flow and the final documentation step showed higher friction, with elevated misclick rates and more participants abandoning those tasks. Qualitative feedback echoed this, one participant noted there were "too many buttons to get to the requirements section," while another suggested the ability to batch-upload records. These findings gave the team a clear, evidence-based shortlist for the next design iteration: simplify the map interaction model and reduce the steps to complete documentation.
-        </p>
+        <p>Two flows showed higher friction: map-based asset discovery and final documentation.</p>
+        <p>Qualitative feedback surfaced clear patterns:</p>
+        <ul>
+          <li>"Too many buttons to get to the requirements section"</li>
+          <li>Request for batch-upload of records</li>
+        </ul>
+        <p><strong>V2 priorities:</strong> simplify the map interaction model and reduce documentation steps.</p>
       </div>
 
       <div class="design-decision">

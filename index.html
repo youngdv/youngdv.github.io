@@ -180,7 +180,7 @@
         line-height: 1.08;
         margin: 0 0 0.4em;
         font-weight: 400;
-        max-width: 100%;
+        max-width: 880px;
       }
       .hero h1 em {
         color: var(--pink);
@@ -255,7 +255,7 @@
       .hero-subtext {
         font-size: clamp(16px, 2vw, 18px);
         color: var(--muted);
-        max-width: 100%;
+        max-width: 680px;
         line-height: 1.65;
         margin: 0 0 20px;
       }
@@ -693,6 +693,25 @@
           transform: none !important;
           transition: box-shadow 0.2s ease !important;
         }
+      }
+      /* Cognitive load reduction — readability */
+      .project-section p,
+      .about-text p,
+      .about-section p {
+        line-height: 1.75;
+        margin-bottom: 14px;
+        max-width: 72ch;
+      }
+      .project-section ul,
+      .about-text ul {
+        max-width: 72ch;
+        line-height: 1.75;
+      }
+      .project-section li {
+        margin-bottom: 8px;
+      }
+      .design-decision {
+        margin-bottom: 20px;
       }
       .skip-link {
         position: absolute;

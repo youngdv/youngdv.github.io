@@ -305,6 +305,25 @@
         .project-meta { grid-template-columns: 1fr; }
         .project-section { margin: 0 0 16px; border-radius: 16px; padding: 24px 20px; }
       }
+      /* Cognitive load reduction — readability */
+      .project-section p,
+      .about-text p,
+      .about-section p {
+        line-height: 1.75;
+        margin-bottom: 14px;
+        max-width: 72ch;
+      }
+      .project-section ul,
+      .about-text ul {
+        max-width: 72ch;
+        line-height: 1.75;
+      }
+      .project-section li {
+        margin-bottom: 8px;
+      }
+      .design-decision {
+        margin-bottom: 20px;
+      }
       .skip-link {
         position: absolute;
         top: -40px;
@@ -425,7 +444,12 @@
 
       <div class="design-decision">
         <h3>The User</h3>
-        <p>Three distinct roles with different needs: regular users (field inspectors reviewing their own projects and assignments), admins (district-level staff managing records for their specific district), and super admins (overseeing the full system, approving new users, and assigning roles and projects).</p>
+        <p>Three distinct roles, each with different needs:</p>
+        <ul>
+          <li><strong>Regular Users:</strong> Field inspectors reviewing their own projects and assignments</li>
+          <li><strong>Admins:</strong> District-level staff managing records for their specific district</li>
+          <li><strong>Super Admins:</strong> Full system access, approving new users and assigning roles</li>
+        </ul>
       </div>
 
       <div class="design-decision">
@@ -435,7 +459,8 @@
 
       <div class="design-decision">
         <h3>My Role</h3>
-        <p>Lead UX Designer. I owned the full design of the web platform and contributed to front-end development. Design work was delivered in sprint-aligned increments, with stakeholder feedback sessions during sprint reviews to refine information hierarchy and ensure the design met operational requirements.</p>
+        <p><strong>Lead UX Designer.</strong> I owned the full design of the web platform and contributed to front-end development.</p>
+        <p>Work was delivered in sprint-aligned increments. Stakeholder feedback sessions during sprint reviews helped refine information hierarchy and confirm the design met operational requirements.</p>
       </div>
 
       <div class="system-callout" style="margin-top: 20px;">
@@ -499,7 +524,10 @@
         The hardest design decision was helping regular users orient themselves from the home page. With multiple projects, roles, and views available, it wasn't obvious where to go first.
       </p>
       <p>
-        I solved this with a hover menu anchored to the profile tab, giving users a quick, contextual entry point to their projects and role-specific views without cluttering the main navigation. This kept the interface clean for power users (admins) while reducing the "where do I start?" friction for inspectors who only visit the platform occasionally.
+        I solved this with a hover menu anchored to the profile tab. It gives users a quick, contextual entry point to their projects and role-specific views without cluttering the main navigation.
+      </p>
+      <p>
+        This kept the interface clean for admins while reducing "where do I start?" friction for inspectors who visit only occasionally.
       </p>
     </section>
 
@@ -508,7 +536,10 @@
       <span class="section-tag">Design System</span>
       <h2>Shared Design Language</h2>
       <p>
-        Because this platform is the web counterpart to the mobile field app, I established and maintained a shared component library in Figma with status colors, typography, and interaction patterns consistent across both products. An inspector who rates an asset as "failing" on their phone sees the same visual language when that record appears on the dashboard.
+        This platform is the web counterpart to the mobile field app. I maintained a shared component library in Figma with consistent status colors, typography, and interaction patterns across both.
+      </p>
+      <p>
+        An inspector who marks an asset "failing" on their phone sees that same visual language when the record appears on the dashboard.
       </p>
     </section>
 
@@ -517,7 +548,10 @@
       <span class="section-tag">Impact</span>
       <h2>Impact</h2>
       <p>
-        Designing a centralized web platform that connects directly to the mobile field app, giving district staff real-time visibility into inspection data. The role-based architecture scales cleanly as VDOT adds new districts and users, and the shared design system ensures consistency across the full MRP ecosystem.
+        A centralized web platform that connects directly to the mobile field app. District staff get real-time visibility into inspection data with no manual re-entry.
+      </p>
+      <p>
+        The role-based architecture scales as VDOT adds districts and users. The shared design system keeps the full MRP ecosystem consistent.
       </p>
       <ul style="margin-top: 14px;">
         <li>Field-to-office connection: inspection data flows from the mobile app into map and tabular views with no manual re-entry</li>

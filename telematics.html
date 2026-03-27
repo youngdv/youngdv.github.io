@@ -228,6 +228,25 @@
         .project-meta { grid-template-columns: 1fr; }
         .project-section { margin: 0 0 16px; border-radius: 16px; padding: 24px 20px; }
       }
+      /* Cognitive load reduction — readability */
+      .project-section p,
+      .about-text p,
+      .about-section p {
+        line-height: 1.75;
+        margin-bottom: 14px;
+        max-width: 72ch;
+      }
+      .project-section ul,
+      .about-text ul {
+        max-width: 72ch;
+        line-height: 1.75;
+      }
+      .project-section li {
+        margin-bottom: 8px;
+      }
+      .design-decision {
+        margin-bottom: 20px;
+      }
       .skip-link {
         position: absolute;
         top: -40px;
@@ -342,7 +361,10 @@
       <span class="section-tag">Overview</span>
       <h2>The redesign</h2>
       <p>
-        This redesign reframed a dense desktop telematics experience into a mobile human-system interface that supports field research decisions under time pressure. I worked within a compressed agile sprint, leveraging competitive references and heuristic findings to drive redesign priorities where direct primary research was limited in this phase.
+        This redesign transformed a dense desktop telematics tool into a mobile interface built for field decisions under time pressure.
+      </p>
+      <p>
+        I worked within a compressed agile sprint, using competitive references and heuristic findings to set redesign priorities.
       </p>
     </section>
 
@@ -351,10 +373,10 @@
       <span class="section-tag green">The User</span>
       <h2>Who is this product for?</h2>
       <p>
-        Internal research teams at Leidos who conduct vehicle studies and need
-        to monitor telematics data, check event details, and make operational
-        decisions while on the road. These users require mobile access to data
-        that was previously only available on desktop systems.
+        Internal Leidos research teams conducting vehicle studies. They monitor telematics data, check event details, and make operational decisions while on the road.
+      </p>
+      <p>
+        Previously, all of this data required a desktop. This redesign brought it to mobile.
       </p>
     </section>
 
@@ -395,8 +417,6 @@
       <h2>HF Contribution (Benchmarking)</h2>
       <ul>
         <li>Conducted a <strong>Competitive Systems Analysis</strong> of existing telematics platforms to identify industry-standard mental models for data visualization</li>
-        <li>Performed a <strong>Baseline Heuristic Evaluation</strong> of the legacy system to identify high-frequency error points and navigation friction</li>
-        <li>Led a <strong>Functional Analysis</strong> to separate safety-critical telemetry markers from informational data so the interface reduces alert fatigue</li>
       </ul>
     </section>
 
@@ -425,7 +445,8 @@
 
       <div class="design-decision">
         <h3>Pattern reuse from the legacy platform</h3>
-        <p>Where possible, I carried over established component patterns from the existing web system, data cards, status indicators, alert hierarchies, and adapted them for mobile constraints rather than redesigning from scratch. This reduced the learning curve for teams already familiar with the desktop tool.</p>
+        <p>I carried over established patterns from the existing web system: data cards, status indicators, and alert hierarchies. I adapted them for mobile rather than rebuilding from scratch.</p>
+        <p>This kept the learning curve low for teams already familiar with the desktop tool.</p>
       </div>
     </section>
 
@@ -446,11 +467,10 @@
       <span class="section-tag">The Outcome</span>
       <h2>Impact</h2>
       <p>
-        Produced a mobile-first decision support concept that improved
-        scanability of telemetry workflows and established a safer visual
-        hierarchy for field usage. The redesign provides a practical foundation
-        for future implementation focused on operator performance in live
-        research contexts.
+        Produced a mobile-first decision support tool with clearer telemetry hierarchy and safer field usage.
+      </p>
+      <p>
+        The redesign provides a practical foundation for future implementation focused on operator performance in live research contexts.
       </p>
 
       <div class="case-nav" style="margin-top: 28px;">

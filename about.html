@@ -581,6 +581,25 @@
         .spec-card, .fun-card, .solve-item { transform: none !important; transition: none !important; }
         .spec-card:hover, .fun-card:hover { transform: none !important; box-shadow: none !important; }
       }
+      /* Cognitive load reduction — readability */
+      .project-section p,
+      .about-text p,
+      .about-section p {
+        line-height: 1.75;
+        margin-bottom: 14px;
+        max-width: 72ch;
+      }
+      .project-section ul,
+      .about-text ul {
+        max-width: 72ch;
+        line-height: 1.75;
+      }
+      .project-section li {
+        margin-bottom: 8px;
+      }
+      .design-decision {
+        margin-bottom: 20px;
+      }
       .skip-link {
         position: absolute;
         top: -40px;
