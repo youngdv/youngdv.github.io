@@ -460,7 +460,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 40px;
       }
-      .footer-col h4 {
+      .footer-col h3 {
         font-size: 12px;
         font-weight: 700;
         text-transform: uppercase;
@@ -577,9 +577,201 @@
           gap: 32px;
         }
       }
+      /* Name animation — 508-compliant: respects prefers-reduced-motion */
+      .name-anim {
+        position: relative;
+        display: inline;
+        white-space: nowrap;
+      }
+      .name-anim::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background: #AF1861;
+        transform: scaleX(0);
+        transform-origin: left center;
+        animation: name-underline 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .name-anim.scrolled-out::after {
+        transform: scaleX(0);
+        transform-origin: right center;
+      }
+      @keyframes name-underline {
+        to { transform: scaleX(1); }
+      }
+
+      /* Degree emphasis */
+      strong.degree {
+        font-weight: 700;
+      }
+
+      /* ── Text-to-UI process animation ── */
+      .process-anim {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 40px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+      }
+      .process-anim::-webkit-scrollbar { display: none; }
+
+      .pa-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .pa-step.pa-step-1 { transition-delay: 0.1s; }
+      .pa-step.pa-step-2 { transition-delay: 0.65s; }
+      .pa-step.pa-step-3 { transition-delay: 1.2s; }
+      .process-anim.is-visible .pa-step {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .pa-arrow {
+        color: var(--muted);
+        flex-shrink: 0;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        width: 36px;
+      }
+      .pa-arrow.arr-1 { transition-delay: 0.38s; }
+      .pa-arrow.arr-2 { transition-delay: 0.93s; }
+      .process-anim.is-visible .pa-arrow { opacity: 1; }
+
+      /* Frame shell */
+      .pa-frame {
+        width: 156px;
+        height: 116px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+      }
+      .pa-bar {
+        background: #ededeb;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        padding: 5px 7px;
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+      .pa-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.15);
+      }
+
+      /* Step 1 — requirements text */
+      .pa-body-1 {
+        padding: 9px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .pa-line {
+        height: 4px;
+        background: rgba(0,0,0,0.11);
+        border-radius: 2px;
+      }
+
+      /* Step 2 — wireframe */
+      .pa-body-2 { padding: 0; }
+      .pa-wf-nav {
+        height: 12px;
+        background: rgba(0,0,0,0.07);
+        border-bottom: 1px solid rgba(0,0,0,0.07);
+      }
+      .pa-wf-layout {
+        display: flex;
+        gap: 5px;
+        padding: 7px 8px 0;
+      }
+      .pa-wf-aside {
+        width: 26px;
+        background: rgba(0,0,0,0.05);
+        border-radius: 3px;
+        height: 72px;
+      }
+      .pa-wf-main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .pa-wf-block {
+        height: 14px;
+        background: rgba(0,0,0,0.08);
+        border-radius: 3px;
+      }
+      .pa-wf-block.sm { width: 65%; height: 9px; }
+      .pa-wf-btn {
+        margin-top: 2px;
+        width: 44%;
+        height: 11px;
+        background: rgba(0,0,0,0.1);
+        border-radius: 4px;
+      }
+
+      /* Step 3 — designed UI */
+      .pa-frame.styled { border-color: rgba(175,24,97,0.18); }
+      .pa-bar.styled {
+        background: #AF1861;
+        border-bottom-color: #8f1250;
+      }
+      .pa-bar.styled .pa-dot { background: rgba(255,255,255,0.35); }
+      .pa-body-3 { padding: 0; }
+      .pa-ui-nav {
+        height: 12px;
+        background: #AF1861;
+      }
+      .pa-ui-hero {
+        height: 26px;
+        margin: 6px 7px 5px;
+        border-radius: 5px;
+        background: linear-gradient(110deg, #fce7f3 0%, #f9a8d4 100%);
+      }
+      .pa-ui-cards {
+        display: flex;
+        gap: 5px;
+        padding: 0 7px;
+      }
+      .pa-ui-card {
+        flex: 1;
+        height: 30px;
+        background: #fff;
+        border: 1px solid rgba(175,24,97,0.18);
+        border-top: 2px solid #AF1861;
+        border-radius: 5px;
+      }
+
+      .pa-label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--muted);
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .spec-card, .fun-card, .solve-item { transform: none !important; transition: none !important; }
         .spec-card:hover, .fun-card:hover { transform: none !important; box-shadow: none !important; }
+        .name-anim::after { animation: none; transform: scaleX(1); transition: none; }
+        .name-anim.scrolled-out::after { transform: scaleX(1); }
+        .pa-step, .pa-arrow { opacity: 1 !important; transform: none !important; transition: none !important; }
       }
       /* Cognitive load reduction — readability */
       .project-section p,
@@ -617,7 +809,7 @@
       .a11y-statement {
         margin-top: 12px;
         font-size: 12px;
-        color: rgba(255,255,255,0.45);
+        color: rgba(255,255,255,0.55);
         max-width: 640px;
         line-height: 1.6;
       }
@@ -659,6 +851,76 @@
         <p class="hero-sub">
           I partner with organizations, from agile startups to government agencies, to design digital experiences that reduce friction, align with user behavior, and deliver measurable outcomes.
         </p>
+
+        <!-- Text-to-UI animation — decorative, hidden from assistive tech -->
+        <div class="process-anim" aria-hidden="true" role="presentation">
+
+          <div class="pa-step pa-step-1">
+            <div class="pa-frame">
+              <div class="pa-bar">
+                <div class="pa-dot"></div><div class="pa-dot"></div><div class="pa-dot"></div>
+              </div>
+              <div class="pa-body-1">
+                <div class="pa-line" style="width:82%"></div>
+                <div class="pa-line" style="width:65%"></div>
+                <div class="pa-line" style="width:90%"></div>
+                <div class="pa-line" style="width:50%"></div>
+                <div class="pa-line" style="width:76%"></div>
+                <div class="pa-line" style="width:42%"></div>
+                <div class="pa-line" style="width:88%"></div>
+              </div>
+            </div>
+            <span class="pa-label">Requirements</span>
+          </div>
+
+          <svg class="pa-arrow arr-1" viewBox="0 0 36 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 7 H28 M22 1 L30 7 L22 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <div class="pa-step pa-step-2">
+            <div class="pa-frame">
+              <div class="pa-bar">
+                <div class="pa-dot"></div><div class="pa-dot"></div><div class="pa-dot"></div>
+              </div>
+              <div class="pa-body-2">
+                <div class="pa-wf-nav"></div>
+                <div class="pa-wf-layout">
+                  <div class="pa-wf-aside"></div>
+                  <div class="pa-wf-main">
+                    <div class="pa-wf-block"></div>
+                    <div class="pa-wf-block sm"></div>
+                    <div class="pa-wf-block"></div>
+                    <div class="pa-wf-btn"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="pa-label">Wireframe</span>
+          </div>
+
+          <svg class="pa-arrow arr-2" viewBox="0 0 36 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 7 H28 M22 1 L30 7 L22 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <div class="pa-step pa-step-3">
+            <div class="pa-frame styled">
+              <div class="pa-bar styled">
+                <div class="pa-dot"></div><div class="pa-dot"></div><div class="pa-dot"></div>
+              </div>
+              <div class="pa-body-3">
+                <div class="pa-ui-nav"></div>
+                <div class="pa-ui-hero"></div>
+                <div class="pa-ui-cards">
+                  <div class="pa-ui-card"></div>
+                  <div class="pa-ui-card"></div>
+                  <div class="pa-ui-card"></div>
+                </div>
+              </div>
+            </div>
+            <span class="pa-label">Design</span>
+          </div>
+
+        </div>
       </div>
     </header>
 
@@ -668,7 +930,7 @@
         <div class="about-text section-narrow">
           <h2>Who I am</h2>
           <p>
-            I'm Destinee Young, a UX Designer with a background in Psychology and Human-Computer Interaction. I've spent my career designing for the environments that most designers avoid: government infrastructure and safety-critical workflows where a confusing interface isn't just frustrating, it causes real errors.
+            I'm <span class="name-anim">Destinee Young</span>, a UX Designer with a background in Psychology and Human-Computer Interaction. I've spent my career designing for the environments that most designers avoid: government infrastructure and safety-critical workflows where a confusing interface isn't just frustrating, it causes real errors.
           </p>
           <p>
             My approach is grounded in behavioral research. Before I wireframe a single screen, I work to understand the cognitive load users carry, the workflows they're navigating, and the decisions they need to make. Then I design to reduce that burden.
@@ -693,7 +955,7 @@
         <div class="about-text section-narrow">
           <h2>My DNA: The Evidence-Based Architect</h2>
           <p>
-            My path into design didn't start with Figma. It started with a <strong>B.S. in Psychology</strong> and a <strong>M.S. in Human-Computer Interaction</strong>, and three years working as a <strong>Human Factors Research Scientist</strong> at the FHWA.
+            My path into design didn't start with Figma. It started with a <strong class="degree">B.S. in Psychology</strong> and a <strong class="degree">M.S. in Human-Computer Interaction</strong>, and three years working as a <strong>Human Factors Research Scientist</strong> at the FHWA.
           </p>
           <p>
             In that role, I designed and ran eye-tracking studies and driving simulator experiments to understand how people process information under pressure. I learned that human behavior is predictable, and that if you understand the "why," you can design a much better "how."
@@ -745,17 +1007,17 @@
         </div>
         <div class="fun-grid">
           <div class="fun-card">
-            <span class="fun-icon">🖥️</span>
+            <span class="fun-icon" aria-hidden="true">🖥️</span>
             <h3>3D Design</h3>
             <p>Outside of UX, I'm a 3D designer. I use Blender to build scenes, models, and renders. A completely different creative muscle, and I love it.</p>
           </div>
           <div class="fun-card">
-            <span class="fun-icon">✈️</span>
+            <span class="fun-icon" aria-hidden="true">✈️</span>
             <h3>Global Perspective</h3>
             <p>Traveling and experiencing how different cultures design everyday life keeps my thinking fresh. New places, new mental models, endlessly useful.</p>
           </div>
           <div class="fun-card green">
-            <span class="fun-icon">🦋</span>
+            <span class="fun-icon" aria-hidden="true">🦋</span>
             <h3>Iterative Growth</h3>
             <p>I'm a firm believer that the best outcomes come from an unglamorous, iterative process. In design and in life.</p>
           </div>
@@ -795,7 +1057,7 @@
 
           <div class="footer-nav">
             <div class="footer-col">
-              <h4>Navigate</h4>
+              <h3>Navigate</h3>
               <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#projects">Work</a></li>
@@ -805,7 +1067,7 @@
             </div>
 
             <div class="footer-col">
-              <h4>Connect</h4>
+              <h3>Connect</h3>
               <ul>
                 <li>
                   <a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">LinkedIn</a>
@@ -815,7 +1077,7 @@
             </div>
 
             <div class="footer-col">
-              <h4>Work</h4>
+              <h3>Work</h3>
               <ul>
                 <li><a href="vdot-mobile-app.html">VDOT Field App</a></li>
                 <li><a href="vdot-dashboard.html">VDOT Dashboard</a></li>
@@ -838,6 +1100,29 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Process animation: trigger once when it enters the viewport
+      const processAnim = document.querySelector('.process-anim');
+      if (processAnim) {
+        const po = new IntersectionObserver(
+          ([entry]) => { if (entry.isIntersecting) { processAnim.classList.add('is-visible'); po.disconnect(); } },
+          { threshold: 0.2 }
+        );
+        po.observe(processAnim);
+      }
+
+      // Name underline: draw in on load, retract when section scrolls out
+      const nameEl = document.querySelector('.name-anim');
+      if (nameEl) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            nameEl.classList.toggle('scrolled-out', !entry.isIntersecting);
+          },
+          { threshold: 0.1 }
+        );
+        observer.observe(nameEl.closest('section') || nameEl);
+      }
+
       document.querySelectorAll('.mobile-nav').forEach(nav => {
         nav.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
         document.addEventListener('click', e => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
