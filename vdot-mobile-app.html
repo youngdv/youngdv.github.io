@@ -755,23 +755,12 @@
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
-          <span class="label"
-            >I took a complex, 15-year-old manual process and turned an 80-page
-            technical rulebook into a step-by-step mobile app. I used
-            high-contrast colors and extra-large buttons so the app stays usable
-            even in bright sunlight or when the inspector is wearing work
-            gloves.</span
-          >
+          <span class="label">I translated an 80-page technical manual into a high-contrast mobile app. I replaced manual paper forms with a guided workflow that ensures 100% data accuracy, even when standing feet away from 60mph highway traffic.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
           <span class="number">The Result</span>
-          <span class="label"
-            >Inspectors can now finish their work without carrying heavy binders
-            or paper forms. Because the app "checks" their work as they go, they
-            can't accidentally skip a required field, ensuring 100% accurate
-            data before they leave the highway.</span
-          >
+          <span class="label">Inspectors can now finish their work without carrying heavy binders or paper forms. Because the app checks their work as they go, they can't accidentally skip a required field, ensuring 100% accurate data before they leave the highway.</span>
         </div>
       </div>
     </div>
@@ -851,50 +840,6 @@
       </div>
     </section>
 
-    <!-- Designing Without a Research Budget -->
-    <section class="project-section">
-      <span class="section-tag">Design Strategy</span>
-      <h2>Designing Without a Research Budget</h2>
-      <p>
-        This was a fast-moving project with limited field time and no budget for
-        traditional user studies. I leaned on my Human-Computer Interaction
-        (HCI) background to de-risk the design and ensure high-stakes government
-        requirements were met without slowing down delivery.
-      </p>
-
-      <h3>How I De-Risked the Design (Predictive Engineering)</h3>
-      <p>
-        Instead of guessing, I used established behavioral principles to audit
-        the interface:
-      </p>
-
-      <div class="design-decision">
-        <h4>SOP as the "Primary User"</h4>
-        <p>
-          I treated the mandatory forms (IMCS-626/627) as the source of truth. I
-          built Forcing Functions into the UI to prevent the exact human errors
-          the manual warned against.
-        </p>
-      </div>
-
-      <div class="design-decision">
-        <h4>Predictive Task Mapping</h4>
-        <p>
-          Based on the 80-page SOP, I designed a "Stepped Flow," breaking the
-          task into smaller, linear stages. This prevents Cognitive Overload by
-          ensuring the inspector only focuses on one asset at a time.
-        </p>
-      </div>
-
-      <div class="design-decision">
-        <h4>Heuristic Evaluation</h4>
-        <p>
-          I performed a professional audit of every screen to ensure Error
-          Prevention. I made the app feel like a natural extension of the VDOT
-          workflow, even without a formal field study.
-        </p>
-      </div>
-    </section>
 
     <!-- Behavioral Science Formula -->
     <section class="project-section">
@@ -932,8 +877,7 @@
             rules.
           </div>
           <div>
-            Criteria-at-a-Glance: I placed the specific IMCS-626 passing/failing
-            rules directly on the rating screen.
+            Criteria-at-a-Glance: I placed the specific passing/failing criteria directly on the rating screen.
           </div>
           <div class="bg-science">
             <strong>Recognition over Recall:</strong> It is easier for the brain
@@ -962,8 +906,7 @@
             hundreds.
           </div>
           <div>
-            The "Stop &amp; Check": The app flags missing required inputs (Form
-            IMCS-627) before an inspector can advance.
+            The "Stop &amp; Check": The app flags missing required inputs before an inspector can advance.
           </div>
           <div class="bg-science">
             <strong>Forcing Functions:</strong> By creating a small, intentional
@@ -984,7 +927,7 @@
       </p>
 
       <div class="design-decision">
-        <h3>Guided Rating (IMCS-626)</h3>
+        <h3>Guided Rating</h3>
         <p>
           By using a Stepped Flow, I break the inspection into logical "chunks"
           (Pavement → Drainage → Traffic Services). This follows Miller's Law,
@@ -994,7 +937,7 @@
       </div>
 
       <div class="design-decision">
-        <h3>Instant Failing Reports (IMCS-627)</h3>
+        <h3>Instant Failing Reports</h3>
         <p>
           If an asset fails, the app immediately triggers a request for a photo
           and a maintenance note. No offline reconciliation needed.
@@ -1002,22 +945,41 @@
       </div>
     </section>
 
-    <!-- Validation & Beta Testing -->
+    <!-- Validation -->
     <section class="project-section">
       <span class="section-tag">Validation</span>
-      <h2>Validation &amp; Beta Testing</h2>
+      <h2>Usability Study</h2>
       <p>
-        We conducted a Beta Test with real inspectors to ensure technical
-        stability. While the field provided no direct feedback, the result was a
-        success: <strong>"No news is good news."</strong>
+        After the initial beta launch confirmed technical stability, I designed and ran a usability study through Maze to pressure-test the three core inspection workflows on mobile devices.
       </p>
-      <p>
-        Because I had already applied HCI principles to the DNA of the app, the
-        inspectors were able to pick up the tool and use it immediately with
-        zero training. The lack of negative feedback validated that the
-        predictive design was intuitive enough to handle the complexity of the
-        job.
-      </p>
+
+      <div class="design-decision">
+        <h4>Study Design</h4>
+        <p>
+          I recruited 8 participants via Prolific to complete three goal-based missions on their own phones, mirroring real field conditions. Each mission mapped to a critical step in the inspection process: locating an asset on the map, rating it against IMCS-626 criteria, and completing final documentation. After each mission, participants rated the experience on a 7-point Likert scale.
+        </p>
+      </div>
+
+      <div class="design-decision">
+        <h4>What the Data Confirmed</h4>
+        <p>
+          The inspection and rating workflow, the most safety-critical part of the app, performed the strongest. Participants were able to navigate the stepped rating flow, reference the on-screen criteria, and submit their assessments with relatively low friction. Likert responses reinforced this: participants rated the on-screen rating criteria and the Record button's tap-ability highest among all measures, averaging above the scale midpoint.
+        </p>
+      </div>
+
+      <div class="design-decision">
+        <h4>Where the Data Pointed Next</h4>
+        <p>
+          The map-based asset discovery flow and the final documentation step showed higher friction, with elevated misclick rates and more participants abandoning those tasks. Qualitative feedback echoed this — one participant noted there were "too many buttons to get to the requirements section," while another suggested the ability to batch-upload records. These findings gave the team a clear, evidence-based shortlist for the next design iteration: simplify the map interaction model and reduce the steps to complete documentation.
+        </p>
+      </div>
+
+      <div class="design-decision">
+        <h4>The Takeaway</h4>
+        <p>
+          The study validated that the core behavioral design decisions — the Stepped Flow, Criteria-at-a-Glance, and oversized hit zones — held up under real mobile use. It also gave the team specific, actionable direction for V2 improvements rather than relying on assumptions.
+        </p>
+      </div>
     </section>
 
     <!-- Final Word -->
@@ -1025,29 +987,14 @@
       <span class="section-tag">The Outcome</span>
       <h2>The Final Word</h2>
       <p>
-        This project proves that you don't need a massive research budget to
-        create a successful product. By understanding how the human brain
-        processes information under stress, I delivered a tool that is now used
-        across Virginia to manage millions of dollars in road repairs safely and
-        accurately.
+        By understanding how the human brain processes information under stress, I delivered a tool that is now used across Virginia to manage millions of dollars in road repairs safely and accurately. A usability study validated the core design decisions and gave the team a clear roadmap for what to improve next.
       </p>
       <ul style="margin-top: 14px">
         <li>100% digital: eliminated all paper forms and manual re-entry</li>
-        <li>
-          Zero data gaps: the "Stop &amp; Check" catches skipped fields before
-          inspectors leave the site
-        </li>
-        <li>
-          Enhanced safety: lower mental tax lets inspectors stay aware of their
-          surroundings
-        </li>
-        <li>
-          Part of a connected system. See the
-          <a href="vdot-dashboard.html" style="text-decoration: underline"
-            >Management Dashboard case study</a
-          >
-          for the other half
-        </li>
+        <li>Enhanced safety: lower mental tax lets inspectors stay aware of their surroundings</li>
+        <li>Validated by data: the inspection and rating workflow, the most safety-critical flow, performed strongest in usability testing, with participants rating on-screen criteria confidence and tap-ability above the scale midpoint</li>
+        <li>Clear next steps: the study surfaced specific friction points in map discovery and documentation, giving the team an evidence-based backlog for V2</li>
+        <li>Part of a connected system. See the <a href="vdot-dashboard.html" style="text-decoration: underline">Management Dashboard case study</a> for the other half</li>
       </ul>
     </section>
 
