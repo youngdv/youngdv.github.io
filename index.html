@@ -252,6 +252,43 @@
         }
       }
 
+      /* Name animation — 508-compliant: respects prefers-reduced-motion */
+      .name-anim {
+        position: relative;
+        display: inline;
+        white-space: nowrap;
+      }
+      .name-anim::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background: #AF1861;
+        transform: scaleX(0);
+        transform-origin: left center;
+        animation: name-underline 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .name-anim.scrolled-out::after {
+        transform: scaleX(0);
+        transform-origin: right center;
+      }
+      @keyframes name-underline {
+        to { transform: scaleX(1); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .name-anim::after {
+          animation: none;
+          transform: scaleX(1);
+          transition: none;
+        }
+        .name-anim.scrolled-out::after {
+          transform: scaleX(1);
+        }
+      }
+
       .hero-subtext {
         font-size: clamp(16px, 2vw, 18px);
         color: var(--muted);
@@ -778,7 +815,7 @@
 I help organizations improve complex digital experiences by identifying where users get stuck and turning those insights into prioritized, high-impact product decisions.
         </h1>
         <p class="hero-subtext">
-          I'm Destinee Young. I focus on uncovering friction in workflows, aligning user needs with business goals, and driving solutions that improve efficiency and deliver measurable results.
+          I'm <span class="name-anim">Destinee Young</span>. I focus on uncovering friction in workflows, aligning user needs with business goals, and driving solutions that improve efficiency and deliver measurable results.
         </p>
         <p class="hero-subtext">
           With a background in psychology and human-computer interaction, I partner closely with product, engineering, and stakeholders to translate insights into scalable solutions that move products forward.
@@ -1124,6 +1161,18 @@ I help organizations improve complex digital experiences by identifying where us
           }, 100);
         });
       });
+      // Name underline: draw in on load, retract when hero scrolls out
+      const nameEl = document.querySelector('.name-anim');
+      if (nameEl) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            nameEl.classList.toggle('scrolled-out', !entry.isIntersecting);
+          },
+          { threshold: 0.1 }
+        );
+        observer.observe(nameEl.closest('header') || nameEl);
+      }
+
       document.querySelectorAll(".mobile-nav").forEach((nav) => {
         nav.addEventListener("keydown", (e) => {
           if (e.key === "Escape" && nav.open) {
