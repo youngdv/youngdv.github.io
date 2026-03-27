@@ -249,6 +249,13 @@
         border-radius: 0 0 4px 0;
         transition: top 0.2s ease;
       }
+      .a11y-statement {
+        margin-top: 12px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.45);
+        max-width: 640px;
+        line-height: 1.6;
+      }
       .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
         </style>
   </head>
@@ -277,12 +284,14 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- Outcome banner -->
-    <div id="main-content" class="outcome-banner">
+    <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
-          <span class="label">I designed and deployed a comprehensive 7-page marketing platform that transformed a manual, word-of-mouth referral process into a self-service enrollment funnel.</span>
+          <span class="label">I transformed a word-of-mouth referral process into a comprehensive 7-page marketing platform that transformed a manual, word-of-mouth referral process into a self-service enrollment funnel.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
@@ -294,9 +303,9 @@
 
     <!-- Hero -->
     <header class="hero">
-      <h1>Studio88 Keys: Engineering Trust through Transparency</h1>
+      <h1>Transforming a digital brand experience to drive user engagement and measurable business growth</h1>
       <p>
-        A warm, conversion-focused website for a private piano studio in the DC, Maryland, and Virginia area.
+        McKenzie's studio was growing through word-of-mouth, but a lack of web presence meant prospective families faced high interaction costs just to find basic information. I identified the key drop-off points and redesigned the enrollment journey around transparent pricing and founder-forward trust signals to drive qualified conversions.
       </p>
     </header>
 
@@ -326,7 +335,7 @@
     <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px;">
       <div class="media-tape">
         <div class="media-well">
-          <img src="imgs/studio88.png" alt="Studio88 Keys website screens" />
+          <img src="imgs/studio88.png" alt="Studio88 Keys homepage and interior pages showing the hero section, lesson pricing cards, instructor bio, and enrollment call-to-action" />
         </div>
       </div>
     </div>
@@ -352,12 +361,12 @@
       </p>
       <ul>
         <li><strong>Information Architecture:</strong> I mapped the vertical flow of each page to ensure a "no-dead-ends" experience. I prioritized a user flow that moves parents from Curiosity (Homepage) to Validation (Tuition/Gallery) to Action (Contact).</li>
-        <li><strong>Component-Driven System:</strong> I didn't just design pages — I built a library of reusable components including universal navigation, footer systems, and custom Closure Cards, ensuring 1:1 visual consistency during the Framer build-out.</li>
+        <li><strong>Component-Driven System:</strong> I didn't just produce pages — I built a library of reusable components including universal navigation, footer systems, and custom Closure Cards, ensuring 1:1 visual consistency during the Framer build-out.</li>
         <li><strong>Figma-to-Framer Fidelity:</strong> I translated high-fidelity comps into a responsive production site. By building with a mobile-first mindset, I ensured the scrolling experience remained smooth and legible on small screens, where vertical space is at a premium.</li>
       </ul>
 
       <div class="media-well" style="max-width: 100%; margin: 20px 0;">
-        <img src="imgs/studio88_moodboard.png" alt="Studio88 Keys moodboard, typography, color palette, and visual direction exploration" />
+        <img src="imgs/studio88_moodboard.png" alt="Studio88 Keys moodboard including typeface selections, color swatches, and reference imagery establishing the brand's warm, elevated visual identity" />
       </div>
 
       <h3 style="margin-top: 28px; margin-bottom: 16px;">Wireframe to hi-fi</h3>
@@ -439,7 +448,7 @@
 
     <!-- Outcome -->
     <section class="project-section">
-      <span class="section-tag">The Outcome</span>
+      <span class="section-tag">Impact</span>
       <h2>From Admin Fatigue to Operational Autonomy</h2>
       <ul>
         <li><strong>Professional Identity:</strong> The site positions Studio88 as a premier, modern choice in the competitive DMV music market.</li>
@@ -453,6 +462,8 @@
       </div>
     </section>
 
+    </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-grid">
@@ -462,7 +473,7 @@
               <span style="font-weight: 600; font-size: 16px">Destinee Young</span>
             </div>
             <p style="color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 280px;">
-              Designer building websites and digital products rooted in how people actually think. ₊˚⊹♡
+              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions. ₊˚⊹♡
             </p>
           </div>
           <div class="footer-nav">
@@ -478,7 +489,7 @@
             <div class="footer-col">
               <h4>Connect</h4>
               <ul>
-                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">LinkedIn</a></li>
                 <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
               </ul>
             </div>
@@ -495,6 +506,7 @@
           </div>
         </div>
         <div class="footer-bottom">© <span id="year"></span> Destinee Young</div>
+        <p class="a11y-statement">This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.</p>
       </div>
     </footer>
 

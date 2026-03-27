@@ -318,6 +318,13 @@
         border-radius: 0 0 4px 0;
         transition: top 0.2s ease;
       }
+      .a11y-statement {
+        margin-top: 12px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.45);
+        max-width: 640px;
+        line-height: 1.6;
+      }
       .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
         </style>
   </head>
@@ -346,28 +353,28 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- Outcome banner -->
-    <div id="main-content" class="outcome-banner">
+    <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
-          <span class="label">I designed a central website that automatically organizes data coming in from the field. I made sure critical "failing" assets stand out instantly and linked them directly to photos taken by the inspectors.</span>
+          <span class="label">I designed the web counterpart to the VDOT MRP mobile field app, a platform that takes raw inspection data collected in the field and surfaces it in map-based and tabular views so district staff can track, review, and act on asset conditions across Virginia.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
           <span class="number">The Result</span>
-          <span class="label">Office staff and contractors no longer have to hunt through spreadsheets to find problems. They can see exactly what is broken and where the moment an inspector hits "submit," cutting down the time it takes to start repairs.</span>
+          <span class="label">The platform gives district managers a single interface to view inspection records by geography or by list, manage user access across districts, and monitor project assignments, replacing the manual aggregation that currently sits between field collection and office action.</span>
         </div>
       </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
-      <h1>VDOT MRP: Operations &amp; Transparency Platform 🖥️</h1>
+      <h1>Empowering government stakeholders with real-time data to prioritize infrastructure maintenance and resource allocation</h1>
       <p>
-        I designed a real-time data hub that connects field inspections to office operations. I replaced a
-        "black box" reporting system with a transparent platform where staff and contractors can instantly
-        verify and act on the data captured by inspectors.
+        Field data was trapped in paper forms and delayed spreadsheets, making it impossible for district leadership to identify high-priority maintenance needs quickly. I transformed disparate data sources into a centralized platform that gives government stakeholders real-time visibility and clear prioritization signals.
       </p>
     </header>
 
@@ -382,22 +389,30 @@
       </div>
       <div class="meta-item">
         <div class="meta-label">Timeframe</div>
-        <div class="meta-value">8+ months</div>
+        <div class="meta-value">In Production</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">My Role</div>
-        <div class="meta-value">Lead UX Designer</div>
+        <div class="meta-value">Lead UX Designer &amp; Front-End Development Support</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Team</div>
         <div class="meta-value">PM, Solutions Architect, 2 Engineers</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Tools</div>
+        <div class="meta-value">Figma</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Methodology</div>
+        <div class="meta-value">Agile Product Delivery</div>
       </div>
     </div>
 
     <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px;">
       <div class="media-tape">
         <div class="media-well">
-          <img src="imgs/dashboard1.png" alt="VDOT MRP management analytics dashboard" />
+          <img src="imgs/dashboard1.png" alt="VDOT MRP operations hub dashboard showing infrastructure condition scores, maintenance priority queue, and role-based data filters" />
         </div>
       </div>
     </div>
@@ -409,17 +424,17 @@
 
       <div class="design-decision">
         <h3>The User</h3>
-        <p>VDOT operational staff and maintenance contractors.</p>
+        <p>Three distinct roles with different needs: regular users (field inspectors reviewing their own projects and assignments), admins (district-level staff managing records for their specific district), and super admins (overseeing the full system, approving new users, and assigning roles and projects).</p>
       </div>
 
       <div class="design-decision">
         <h3>The Challenge</h3>
-        <p>Field data was historically trapped in paper forms or delayed spreadsheets. Users needed to see what was happening on the roads <em>now</em> to stay compliant with state maintenance standards.</p>
+        <p>Field data was being collected on the mobile app, but there was no centralized interface for office staff to view, filter, or act on that data. The platform needed to serve three user roles with very different permission levels and workflows, all within the same interface.</p>
       </div>
 
       <div class="design-decision">
         <h3>My Role</h3>
-        <p>Lead UX Designer. I designed the web experience to ensure high-density field data was easy to filter, verify, and transform into maintenance work orders.</p>
+        <p>Lead UX Designer. I owned the full design of the web platform and contributed to front-end development. Design work was delivered in sprint-aligned increments, with stakeholder feedback sessions during sprint reviews to refine information hierarchy and ensure the design met operational requirements.</p>
       </div>
 
       <div class="system-callout" style="margin-top: 20px;">
@@ -432,122 +447,81 @@
       </div>
     </section>
 
-    <!-- Designing Without a Research Budget -->
+    <!-- Two Ways to See the Same Data -->
     <section class="project-section">
-      <span class="section-tag">Design Strategy</span>
-      <h2>Designing Without a Research Budget</h2>
+      <span class="section-tag">Design</span>
+      <h2>Two Ways to See the Same Data</h2>
       <p>
-        In a high-velocity development cycle, I used Predictive Design to de-risk the platform. I treated
-        the VDOT Standard Operating Procedure (SOP) as the "Primary User," ensuring that the interface
-        mirrored the legal and operational logic the staff already uses.
+        Inspectors and managers think about assets differently depending on the task. Sometimes they need geographic context, and sometimes they need to scan a structured list. I prioritized two primary views:
       </p>
 
-      <h3>How I De-Risked the Design (The HCI Strategy)</h3>
-
       <div class="design-decision">
-        <h4>Heuristic Evaluation</h4>
-        <p>I audited the platform for Visibility of System Status. I ensured that when an inspector posts from the app, the web user sees a clear status indicator, reducing the uncertainty of "did they finish that route yet?"</p>
+        <h3>Map View</h3>
+        <p>Field inspection data represented as pins on the map, letting users visually scan asset conditions by location. This mirrors the spatial mental model inspectors already have from their physical walk-arounds in the field.</p>
       </div>
 
       <div class="design-decision">
-        <h4>Operational Mapping</h4>
-        <p>The website is organized to mirror the IMCS-626 (Asset Condition) and IMCS-627 (Failing Assets) forms. I ensured that the table headers and data fields on-screen perfectly match the legal paperwork users are required to track.</p>
-      </div>
-
-      <div class="design-decision">
-        <h4>Predictive Search &amp; Filtering</h4>
-        <p>Knowing that users often hunt for specific "Sample Sites" or "Asset IDs" during audits, I built a robust filtering system that allows a user to locate a single failing guardrail out of thousands of records in two clicks.</p>
+        <h3>Tabular View</h3>
+        <p>The same data in a filterable list format for users who need to scan, sort, or export records. Admins use this view most heavily when reviewing district-level asset records.</p>
       </div>
     </section>
 
-    <!-- Behavioral Science Formula -->
+    <!-- Role-Based Access -->
     <section class="project-section">
-      <span class="section-tag">The Behavioral Science Formula</span>
-      <h2>How Psychology Made Field Data Useful</h2>
-      <p style="margin-bottom: 20px;">
-        Skim the bold headers for the 30-second version, or read the Science column to see the depth behind each choice.
-      </p>
-
-      <table class="behavioral-table">
-        <thead>
-          <tr>
-            <th>The User Challenge</th>
-            <th>My Design Solution</th>
-            <th>The Science (The "DNA")</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Data Fragmentation: Inspection records were historically scattered across physical folders and fragmented files.</td>
-            <td>Centralized Data Tables: I designed a "Master View" that pulls all field posts into one searchable grid.</td>
-            <td><strong>Chunking:</strong> By grouping related data points (Date, Asset ID, Status) into a single row, I reduced the mental effort required to scan for specific information.</td>
-          </tr>
-          <tr>
-            <td>Trust Gaps: Office staff often wonder if a "Failing" rating in the field was subjective or accurate.</td>
-            <td>Direct Photo Integration: I placed field-captured photos directly alongside the rating data in a split-screen view.</td>
-            <td><strong>Visual Proof:</strong> Humans process images 60,000x faster than text. Seeing the "why" behind a "Fail" rating builds instant trust and speeds up the repair approval process.</td>
-          </tr>
-          <tr>
-            <td>Mental Fatigue: Reviewing hundreds of "Passing" ratings to find the few critical "Failures" is exhausting.</td>
-            <td>High-Signal Status Badges: I used high-contrast "Safety Red" badges for failures and "Neutral Gray" for routine passing items.</td>
-            <td><strong>Signal Detection Theory:</strong> I optimized the UI so the "Signal" (the problems) stands out against the "Noise" (the routine data), preventing "alarm fatigue."</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- Closing the Loop -->
-    <section class="project-section">
-      <span class="section-tag">From the Shoulder to the Screen</span>
-      <h2>Closing the Loop</h2>
+      <span class="section-tag">Design</span>
+      <h2>Role-Based Access</h2>
       <p>
-        The web platform acts as the "Receiver" for the VDOT Mobile App. I designed the interaction to be a seamless feedback loop:
+        Rather than building three separate interfaces, I structured a single platform with role-gated views:
       </p>
 
       <div class="design-decision">
-        <h3>Macro-Level Overview</h3>
-        <p>Users see a statewide or regional map showing the status of all current inspection cycles.</p>
+        <h3>Regular Users</h3>
+        <p>See their assigned projects, roles, and submitted inspection records.</p>
       </div>
 
       <div class="design-decision">
-        <h3>The "Drill-Down" Flow</h3>
-        <p>Clicking a region opens a list of Sample Sites. Clicking a site opens the specific IMCS-626/627 data captured by the mobile app.</p>
+        <h3>Admins</h3>
+        <p>See their district's asset records and can manage assignments within their region.</p>
       </div>
 
       <div class="design-decision">
-        <h3>Photo-Backed Auditing</h3>
-        <p>For any failing asset, the user can instantly open the high-resolution photo taken on the highway shoulder for immediate verification.</p>
+        <h3>Super Admins</h3>
+        <p>Get full system access, approving new users, assigning roles and projects, and viewing data across all districts.</p>
       </div>
     </section>
 
-    <!-- Validation -->
+    <!-- Navigation Problem -->
     <section class="project-section">
-      <span class="section-tag green">Validation</span>
-      <h2>Validation: Approval on the First Pass</h2>
+      <span class="section-tag">Design</span>
+      <h2>Solving the Navigation Problem</h2>
       <p>
-        We are currently in the development phase. When these designs were presented to VDOT stakeholders
-        and contractors, they were <strong>approved immediately with zero requests for changes.</strong>
+        The hardest design decision was helping regular users orient themselves from the home page. With multiple projects, roles, and views available, it wasn't obvious where to go first.
       </p>
       <p>
-        In a project with no research budget, this "No Feedback" result is the ultimate validation of my
-        HCI approach. It proves that by mirroring the SOP logic and using established behavioral principles,
-        I created a tool that felt so "correct" it required no additional explanation or iteration.
+        I solved this with a hover menu anchored to the profile tab, giving users a quick, contextual entry point to their projects and role-specific views without cluttering the main navigation. This kept the interface clean for power users (admins) while reducing the "where do I start?" friction for inspectors who only visit the platform occasionally.
       </p>
     </section>
 
-    <!-- Final Word -->
+    <!-- Shared Design Language -->
     <section class="project-section">
-      <span class="section-tag">The Outcome</span>
-      <h2>The Final Word</h2>
+      <span class="section-tag">Design System</span>
+      <h2>Shared Design Language</h2>
       <p>
-        The VDOT MRP Web Platform proves that transparency is the key to successful operations. By using
-        Behavioral Science to organize field data, I built a platform that allows VDOT staff and contractors
-        to stop hunting for information and start acting on it.
+        Because this platform is the web counterpart to the mobile field app, I established and maintained a shared component library in Figma with status colors, typography, and interaction patterns consistent across both products. An inspector who rates an asset as "failing" on their phone sees the same visual language when that record appears on the dashboard.
+      </p>
+    </section>
+
+    <!-- The Outcome -->
+    <section class="project-section">
+      <span class="section-tag">Impact</span>
+      <h2>Impact</h2>
+      <p>
+        Designing a centralized web platform that connects directly to the mobile field app, giving district staff real-time visibility into inspection data. The role-based architecture scales cleanly as VDOT adds new districts and users, and the shared design system ensures consistency across the full MRP ecosystem.
       </p>
       <ul style="margin-top: 14px;">
-        <li>Real-time visibility: field results available the moment an inspector submits</li>
-        <li>Evidence-based accountability: every failing asset backed by GPS-tagged photos</li>
-        <li>Streamlined audit trails: federal compliance automated as a byproduct of the workflow</li>
+        <li>Field-to-office connection: inspection data flows from the mobile app into map and tabular views with no manual re-entry</li>
+        <li>Role-based access: three permission levels serving distinct workflows within a single interface</li>
+        <li>Front-end contribution: I supported development alongside design, closing the gap between prototype and production</li>
         <li>Part of a connected system. See the <a href="vdot-mobile-app.html" style="text-decoration: underline">Field Inspection App case study</a> for the other half</li>
       </ul>
     </section>
@@ -570,6 +544,8 @@
       </div>
     </section>
 
+    </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-grid">
@@ -579,7 +555,7 @@
               <span style="font-weight: 600; font-size: 16px">Destinee Young</span>
             </div>
             <p style="color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 280px;">
-              Designer building websites and digital products rooted in how people actually think. ₊˚⊹♡
+              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions. ₊˚⊹♡
             </p>
           </div>
           <div class="footer-nav">
@@ -595,7 +571,7 @@
             <div class="footer-col">
               <h4>Connect</h4>
               <ul>
-                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">LinkedIn</a></li>
                 <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
               </ul>
             </div>
@@ -611,6 +587,7 @@
           </div>
         </div>
         <div class="footer-bottom">© <span id="year"></span> Destinee Young</div>
+        <p class="a11y-statement">This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.</p>
       </div>
     </footer>
 

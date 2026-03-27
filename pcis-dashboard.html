@@ -294,6 +294,13 @@
         border-radius: 0 0 4px 0;
         transition: top 0.2s ease;
       }
+      .a11y-statement {
+        margin-top: 12px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.45);
+        max-width: 640px;
+        line-height: 1.6;
+      }
       .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
         </style>
   </head>
@@ -322,8 +329,10 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- Outcome banner -->
-    <div id="main-content" class="outcome-banner">
+    <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
@@ -339,11 +348,9 @@
 
     <!-- Hero -->
     <header class="hero">
-      <h1>Helping Ports Talk to Each Other</h1>
+      <h1>Streamlining complex enterprise case management to reduce processing time and administrative friction</h1>
       <p>
-        I designed a trusted dashboard that connects port operators, truck dispatchers, and
-        cargo owners, replacing a system of endless phone calls and data-hoarding with a
-        single, secure source of truth.
+        Port operators were managing complex cargo workflows across competing organizations through manual processes and phone calls, creating costly delays and cognitive overload. I transformed this fragmented system into a unified digital platform — aligning stakeholder needs, reducing coordination friction, and giving each user role exactly the information they needed to act.
       </p>
     </header>
 
@@ -372,12 +379,20 @@
         <div class="meta-label">Team</div>
         <div class="meta-value">PM, Solutions Architect, 2 Engineers</div>
       </div>
+      <div class="meta-item">
+        <div class="meta-label">Tools</div>
+        <div class="meta-value">Figma</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Methodology</div>
+        <div class="meta-value">Agile Product Delivery</div>
+      </div>
     </div>
 
     <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px;">
       <div class="media-tape">
         <div class="media-well">
-          <img src="imgs/pcis-dashboard.png" alt="PCIS logistics platform overview" />
+          <img src="imgs/pcis-dashboard.png" alt="PCIS port logistics platform dashboard displaying shipment status cards, hazardous cargo flags, and role-based navigation for terminal operators and dispatchers" />
         </div>
       </div>
     </div>
@@ -439,7 +454,7 @@
 
       <h3 style="margin-top: 28px; margin-bottom: 10px;">From Spreadsheets to Action Cards</h3>
       <p>
-        I replaced high-density, 15-column tables with a structured Card-Based Architecture. By placing the Cargo Unit ID in the top-left corner — the natural starting point for the human eye — I ensured that the most critical data point acts as an anchor for the user. This spatial "chunking" allows operators to process one shipment at a time, eliminating the row-blur that leads to errors in traditional spreadsheet views.
+        I simplified high-density, 15-column tables into a structured Card-Based Architecture. By placing the Cargo Unit ID in the top-left corner — the natural starting point for the human eye — I ensured that the most critical data point acts as an anchor for the user. This spatial "chunking" allows operators to process one shipment at a time, eliminating the row-blur that leads to errors in traditional spreadsheet views.
       </p>
 
       <h3 style="margin-top: 28px; margin-bottom: 10px;">Design for High-Stakes Environments</h3>
@@ -449,6 +464,11 @@
         <li><strong>Redundant Status Coding:</strong> To support users with color vision deficiencies and improve recognition speed, I paired color-coded statuses with distinct iconography and specific spatial placement.</li>
         <li><strong>Touch-Target Optimization:</strong> Recognizing that many users interact via ruggedized tablets or while wearing gloves, I ensured all interactive elements meet minimum size requirements to prevent "fat-finger" errors.</li>
       </ul>
+      <div class="design-decision" style="margin-top: 28px;">
+        <h3>Scalable Component Architecture</h3>
+        <p>With three distinct user roles and Phase 2 expansion on the roadmap, I structured the UI around a reusable component system: standardized card templates, status indicators, and alert patterns that flex across the Terminal Operator, Cargo Owner, and Dispatcher views without requiring custom builds for each role.</p>
+      </div>
+
       <div style="margin-top: 36px; display: flex; flex-direction: column; gap: 48px;">
 
         <!-- Comparison 1: Wall of Text -->
@@ -457,11 +477,11 @@
           <p style="color: var(--muted); font-size: 14px; margin: 0 0 16px;">Legacy systems use tiny, cramped rows where every line looks identical. To find one container, you have to read 50 lines of the same text.</p>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
             <div>
-              <img src="imgs/l1.png" alt="Legacy system: high-density table where all rows look identical" style="width: 100%; border-radius: 10px; border: 1px solid var(--line);" />
+              <img src="imgs/l1.png" alt="Legacy PCIS interface: dense spreadsheet-style table with uniform rows showing shipment data, making it difficult to distinguish priority items at a glance" style="width: 100%; border-radius: 10px; border: 1px solid var(--line);" />
               <p style="font-size: 12px; color: var(--muted); margin: 8px 0 0; line-height: 1.5;">Legacy systems bury critical info in high-density tables, making it hard to spot emergencies.</p>
             </div>
             <div>
-              <img src="imgs/bco2.png" alt="PCIS card-based layout: each shipment is a distinct scannable object" style="width: 100%; border-radius: 10px; border: 1px solid var(--line);" />
+              <img src="imgs/bco2.png" alt="Redesigned PCIS card layout: each shipment rendered as a distinct visual card with status badge, action button, and color-coded priority indicator" style="width: 100%; border-radius: 10px; border: 1px solid var(--line);" />
               <p style="font-size: 12px; color: var(--muted); margin: 8px 0 0; line-height: 1.5;">My design uses a card-based layout to highlight the Status, making the screen scannable in high-stress environments.</p>
             </div>
           </div>
@@ -494,9 +514,9 @@
     <!-- Validation -->
     <section class="project-section">
       <span class="section-tag green">Validation</span>
-      <h2>Remote Usability Study</h2>
+      <h2>Stakeholder Validation</h2>
       <p>
-        I validated the design with 7 key stakeholders — Terminal Operators and Vendors — across three states using remote, task-based walkthroughs via Teams. I used a mix of System Usability Scale assessments and open-ended qualitative feedback to capture both the numbers and the nuance.
+        I presented the design to 7 key stakeholders, Terminal Operators and Vendors, across three states through remote task-based walkthroughs via Teams. I facilitated each session, gathered feedback in real time, and used a mix of System Usability Scale assessments and open-ended qualitative feedback to capture both the numbers and the nuance.
       </p>
 
       <h3 style="margin-top: 28px; margin-bottom: 16px;">The Final Scorecard</h3>
@@ -522,9 +542,9 @@
         <table class="bs-grid" aria-label="Evidence-based iteration decisions">
           <thead>
             <tr>
-              <th>Focus Area</th>
-              <th>Stakeholder Feedback</th>
-              <th>UX Strategy Response</th>
+              <th scope="col">Focus Area</th>
+              <th scope="col">Stakeholder Feedback</th>
+              <th scope="col">UX Strategy Response</th>
             </tr>
           </thead>
           <tbody>
@@ -561,6 +581,7 @@
         <p style="margin: 0; font-weight: 700; font-size: 15px; color: var(--pink-dark);">"Design is never finished."</p>
       </div>
       <p>Based on our UAT findings, I am currently leading the Phase 2 Expansion, focusing on:</p>
+      <p>I'm currently leading Phase 2 design within an agile delivery cadence, breaking complex workflows into sprint-sized design increments and participating in refinement sessions with engineering to scope feasibility before committing to a sprint.</p>
       <ul>
         <li><strong>Workflow Agility:</strong> Moving from static lists to Visual Graphs so managers can anticipate bottlenecks hours before they happen.</li>
         <li><strong>Massive Scaling:</strong> Ensuring the UI stays performant while handling real-time data for 300+ simultaneous truck operators.</li>
@@ -574,6 +595,8 @@
       </div>
     </section>
 
+    </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-grid">
@@ -583,7 +606,7 @@
               <span style="font-weight: 600; font-size: 16px">Destinee Young</span>
             </div>
             <p style="color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 280px;">
-              Designer building websites and digital products rooted in how people actually think. ₊˚⊹♡
+              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions. ₊˚⊹♡
             </p>
           </div>
           <div class="footer-nav">
@@ -599,7 +622,7 @@
             <div class="footer-col">
               <h4>Connect</h4>
               <ul>
-                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">LinkedIn</a></li>
                 <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
               </ul>
             </div>
@@ -615,6 +638,7 @@
           </div>
         </div>
         <div class="footer-bottom">© <span id="year"></span> Destinee Young</div>
+        <p class="a11y-statement">This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.</p>
       </div>
     </footer>
 

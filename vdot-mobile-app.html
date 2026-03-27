@@ -717,6 +717,13 @@
         border-radius: 0 0 4px 0;
         transition: top 0.2s ease;
       }
+      .a11y-statement {
+        margin-top: 12px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.45);
+        max-width: 640px;
+        line-height: 1.6;
+      }
       .skip-link:focus {
         top: 0;
         outline: 2px solid #fff;
@@ -752,24 +759,26 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- Outcome banner (top) -->
-    <div id="main-content" class="outcome-banner">
+    <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
-          <span class="label">I translated an 80-page technical manual into a high-contrast mobile app. I replaced manual paper forms with a guided workflow that ensures 100% data accuracy, even when standing feet away from 60mph highway traffic.</span>
+          <span class="label">I took a complex, 15-year-old manual process and transformed an 80-page technical rulebook into a step-by-step mobile workflow. I prioritized high-contrast visuals and oversized touch targets so the app stays usable in bright sunlight, heavy rain, and when the inspector is wearing work gloves.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
           <span class="number">The Result</span>
-          <span class="label">Inspectors can now finish their work without carrying heavy binders or paper forms. Because the app checks their work as they go, they can't accidentally skip a required field, ensuring 100% accurate data before they leave the highway.</span>
+          <span class="label">Inspectors can now complete their work without carrying heavy binders or paper forms. Because the app validates their inputs as they go, they can't accidentally skip a required field, improving data accuracy before they leave the highway.</span>
         </div>
       </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
-      <h1>VDOT MRP: Safety-Critical Field Inspection 🚜</h1>
+      <h1>Helping field inspectors complete safety-critical inspections faster and with fewer errors in high-risk environments</h1>
       <p>
         I translated an 80-page technical manual into a high-contrast mobile
         app. I replaced manual paper forms with a guided workflow that ensures
@@ -799,6 +808,14 @@
         <div class="meta-label">Team</div>
         <div class="meta-value">PM, Solutions Architect, 2 Engineers</div>
       </div>
+      <div class="meta-item">
+        <div class="meta-label">Tools</div>
+        <div class="meta-value">Figma</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Methodology</div>
+        <div class="meta-value">Agile Product Delivery</div>
+      </div>
     </div>
 
     <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px">
@@ -806,7 +823,7 @@
         <div class="media-well tall">
           <img
             src="imgs/vdotapp1.png"
-            alt="VDOT mobile field inspection app screens"
+            alt="VDOT MRP mobile inspection app: stepped rating workflow screen, asset detail view, and on-screen IMCS-626 criteria reference"
           />
         </div>
       </div>
@@ -819,34 +836,25 @@
 
       <div class="design-decision">
         <h3>The User</h3>
-        <p>
-          Field inspectors standing on highway shoulders in rain, heat, and
-          high-speed traffic.
-        </p>
+        <p>Field inspectors working in high-risk environments where speed, accuracy, and safety are critical.</p>
       </div>
 
       <div class="design-decision">
         <h3>The Challenge</h3>
-        <p>
-          Assessing dozens of assets (Pavement, Signs, Guardrails) while
-          following strict federal audit rules, on paper forms, in the field.
-        </p>
+        <p>Inspectors were managing complex asset assessments, strict audit requirements, and paper-based documentation in the field, creating friction, slowing down workflows, and increasing the risk of missed steps.</p>
       </div>
 
       <div class="design-decision">
         <h3>My Role</h3>
-        <p>
-          Lead UX Designer. I owned the full transition from the Standard
-          Operating Procedure (SOP) to the final mobile interface.
-        </p>
+        <p>As Lead UX Designer, I led the end-to-end transformation of a manual process into a mobile product, defining workflows, prioritizing critical actions, and designing for real-world constraints like weather, visibility, and time pressure. Design work was delivered in two-week sprint cycles alongside engineering.</p>
       </div>
     </section>
 
 
     <!-- Behavioral Science Formula -->
     <section class="project-section">
-      <span class="section-tag">The Behavioral Science Formula</span>
-      <h2>How Psychology Drove Every Design Decision</h2>
+      <span class="section-tag">Design Decisions</span>
+      <h2>Key Decisions That Reduced Risk and Improved Usability</h2>
       <p style="margin-bottom: 20px">
         Skim the bold headers for the 30-second version, or read the Science
         column to see the depth behind each choice.
@@ -864,8 +872,7 @@
             rain.
           </div>
           <div>
-            Ultra-High Contrast UI: Deep-sea blue background with vibrant
-            "Safety Green/Red" buttons.
+            Ultra-High Contrast UI: Increased visibility in bright sunlight and rain, helping inspectors read and act quickly in safety-critical conditions.
           </div>
           <div class="bg-science">
             <strong>Visual Perception:</strong> Under physical stress and glare,
@@ -879,7 +886,7 @@
             rules.
           </div>
           <div>
-            Criteria-at-a-Glance: I placed the specific passing/failing criteria directly on the rating screen.
+            Criteria-at-a-Glance: I placed the specific passing/failing criteria directly on the rating screen, reducing the need to recall rules from memory.
           </div>
           <div class="bg-science">
             <strong>Recognition over Recall:</strong> It is easier for the brain
@@ -893,8 +900,7 @@
             "miss-taps."
           </div>
           <div>
-            Oversized Hit Zones: Every primary action button (Pass/Fail) is a
-            large, full-width target.
+            Oversized Hit Zones: Every primary action button is a large, full-width target, reducing errors for users with limited dexterity.
           </div>
           <div class="bg-science">
             <strong>Fitts's Law:</strong> The time to hit a target is a function
@@ -908,12 +914,10 @@
             hundreds.
           </div>
           <div>
-            The "Stop &amp; Check": The app flags missing required inputs before an inspector can advance.
+            The "Stop &amp; Check": The app flags missing required inputs before an inspector can advance, preventing hours of manual data correction later.
           </div>
           <div class="bg-science">
-            <strong>Forcing Functions:</strong> By creating a small, intentional
-            "speed bump," I prevented hours of manual data correction work
-            later.
+            <strong>Forcing Functions:</strong> By creating a small, intentional "speed bump," I prevented costly downstream errors.
           </div>
         </div>
       </div>
@@ -945,39 +949,43 @@
           and a maintenance note. No offline reconciliation needed.
         </p>
       </div>
+
+      <div class="design-decision">
+        <h3>Shared Design Language</h3>
+        <p>Because the mobile app feeds directly into the management dashboard, I established a shared component library in Figma with status colors, typography scales, and interaction patterns that stay consistent whether a user is rating an asset on a phone or reviewing results on desktop.</p>
+      </div>
     </section>
 
     <!-- Validation -->
     <section class="project-section">
       <span class="section-tag">Validation</span>
       <h2>Usability Study</h2>
-      <p>
-        After the initial beta launch confirmed technical stability, I designed and ran a usability study through Maze to pressure-test the three core inspection workflows on mobile devices.
-      </p>
+      <p>I validated the product in real-world inspection scenarios to confirm that the simplified workflow improved usability in the field.</p>
+      <p>I recruited 8 participants via Prolific to complete three goal-based missions on their own phones, mirroring real field conditions.</p>
 
       <div class="design-decision">
-        <h4>Study Design</h4>
+        <h3>Study Design</h3>
         <p>
           I recruited 8 participants via Prolific to complete three goal-based missions on their own phones, mirroring real field conditions. Each mission mapped to a critical step in the inspection process: locating an asset on the map, rating it against IMCS-626 criteria, and completing final documentation. After each mission, participants rated the experience on a 7-point Likert scale.
         </p>
       </div>
 
       <div class="design-decision">
-        <h4>What the Data Confirmed</h4>
+        <h3>What the Data Confirmed</h3>
         <p>
           The inspection and rating workflow, the most safety-critical part of the app, performed the strongest. Participants were able to navigate the stepped rating flow, reference the on-screen criteria, and submit their assessments with relatively low friction. Likert responses reinforced this: participants rated the on-screen rating criteria and the Record button's tap-ability highest among all measures, averaging above the scale midpoint.
         </p>
       </div>
 
       <div class="design-decision">
-        <h4>Where the Data Pointed Next</h4>
+        <h3>Where the Data Pointed Next</h3>
         <p>
           The map-based asset discovery flow and the final documentation step showed higher friction, with elevated misclick rates and more participants abandoning those tasks. Qualitative feedback echoed this — one participant noted there were "too many buttons to get to the requirements section," while another suggested the ability to batch-upload records. These findings gave the team a clear, evidence-based shortlist for the next design iteration: simplify the map interaction model and reduce the steps to complete documentation.
         </p>
       </div>
 
       <div class="design-decision">
-        <h4>The Takeaway</h4>
+        <h3>The Takeaway</h3>
         <p>
           The study validated that the core behavioral design decisions — the Stepped Flow, Criteria-at-a-Glance, and oversized hit zones — held up under real mobile use. It also gave the team specific, actionable direction for V2 improvements rather than relying on assumptions.
         </p>
@@ -986,17 +994,18 @@
 
     <!-- Final Word -->
     <section class="project-section">
-      <span class="section-tag">The Outcome</span>
-      <h2>The Final Word</h2>
+      <span class="section-tag">Impact</span>
+      <h2>Impact</h2>
       <p>
         By understanding how the human brain processes information under stress, I delivered a tool that is now used across Virginia to manage millions of dollars in road repairs safely and accurately. A usability study validated the core design decisions and gave the team a clear roadmap for what to improve next.
       </p>
       <ul style="margin-top: 14px">
-        <li>100% digital: eliminated all paper forms and manual re-entry</li>
-        <li>Enhanced safety: lower mental tax lets inspectors stay aware of their surroundings</li>
-        <li>Validated by data: the inspection and rating workflow, the most safety-critical flow, performed strongest in usability testing, with participants rating on-screen criteria confidence and tap-ability above the scale midpoint</li>
+        <li>Reduced reliance on paper manuals, improving speed and accuracy in the field</li>
+        <li>Increased inspector confidence in high-risk environments by surfacing criteria on-screen and eliminating the need to recall rules from memory</li>
+        <li>Simplified a complex 80-page process into a scalable mobile workflow that can extend to additional asset types and districts</li>
+        <li>Validated by data: the inspection and rating workflow, the most safety-critical flow, performed strongest in usability testing — confirming the stepped design decisions held up under real mobile use</li>
         <li>Clear next steps: the study surfaced specific friction points in map discovery and documentation, giving the team an evidence-based backlog for V2</li>
-        <li>Part of a connected system. See the <a href="vdot-dashboard.html" style="text-decoration: underline">Management Dashboard case study</a> for the other half</li>
+        <li>Part of a connected system. See the <a href="vdot-dashboard.html" style="text-decoration: underline">Operations Hub case study</a> for the other half</li>
       </ul>
     </section>
 
@@ -1011,7 +1020,7 @@
       <div class="media-well" style="aspect-ratio: 16/10; margin-top: 20px">
         <img
           src="imgs/alphateam.png"
-          alt="Alpha Team collaboration for VDOT MRP"
+          alt="Five-person Alpha Team at Leidos gathered around a table during a VDOT MRP project working session"
         />
       </div>
 
@@ -1022,6 +1031,8 @@
         >
       </div>
     </section>
+
+    </main>
 
     <footer>
       <div class="footer-content">
@@ -1052,8 +1063,7 @@
                 max-width: 280px;
               "
             >
-              Designer building websites and digital products rooted in how
-              people actually think. ₊˚⊹♡
+              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions. ₊˚⊹♡
             </p>
           </div>
 
@@ -1076,7 +1086,8 @@
                   <a
                     href="https://www.linkedin.com/in/destineeyoung/"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn (opens in new tab)"
                     >LinkedIn</a
                   >
                 </li>
@@ -1097,6 +1108,9 @@
         <div class="footer-bottom">
           © <span id="year"></span> Destinee Young
         </div>
+        <p class="a11y-statement">
+          This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.
+        </p>
       </div>
     </footer>
 

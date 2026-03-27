@@ -56,6 +56,7 @@
       html,
       body {
         height: 100%;
+        scroll-behavior: smooth;
       }
       body {
         margin: 0;
@@ -166,7 +167,7 @@
 
       /* Hero */
       .hero {
-        padding: 88px 0 64px;
+        padding: 48px 0 64px;
         background-image: radial-gradient(
           circle,
           rgba(0, 0, 0, 0.055) 1px,
@@ -179,7 +180,7 @@
         line-height: 1.08;
         margin: 0 0 0.4em;
         font-weight: 400;
-        max-width: 880px;
+        max-width: 100%;
       }
       .hero h1 em {
         color: var(--pink);
@@ -254,7 +255,7 @@
       .hero-subtext {
         font-size: clamp(16px, 2vw, 18px);
         color: var(--muted);
-        max-width: 680px;
+        max-width: 100%;
         line-height: 1.65;
         margin: 0 0 20px;
       }
@@ -414,6 +415,12 @@
         margin: 0 0 18px;
         line-height: 1.55;
       }
+      .work-desc {
+        font-size: 15px;
+        color: var(--muted);
+        margin: 0 0 18px;
+        line-height: 1.6;
+      }
       .outcome-badge {
         display: inline-flex;
         align-items: center;
@@ -431,7 +438,23 @@
       .work-meta {
         font-size: 13px;
         color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .work-tools {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
         margin-bottom: 18px;
+      }
+      .tool-tag {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        color: var(--muted);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 3px 8px;
       }
       .work-link {
         display: inline-flex;
@@ -685,6 +708,13 @@
         border-radius: 0 0 4px 0;
         transition: top 0.2s ease;
       }
+      .a11y-statement {
+        margin-top: 12px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.45);
+        max-width: 640px;
+        line-height: 1.6;
+      }
       .skip-link:focus {
         top: 0;
         outline: 2px solid #fff;
@@ -720,19 +750,19 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- Hero -->
-    <header id="main-content" class="section hero">
+    <header class="section hero">
       <div class="container">
         <h1>
-          I don't design for screens, I design for the <em>person</em> behind
-          them.♡
+I help organizations improve complex digital experiences by identifying where users get stuck and turning those insights into prioritized, high-impact product decisions.
         </h1>
         <p class="hero-subtext">
-          I'm Destinee Young, a designer who builds websites and digital
-          products that are easy to use, beautiful to look at, and built to
-          convert. With a background in psychology and human-computer
-          interaction, I bring a research-informed approach to everything from
-          small business websites to complex enterprise platforms.
+          I'm Destinee Young. I focus on uncovering friction in workflows, aligning user needs with business goals, and driving solutions that improve efficiency and deliver measurable results.
+        </p>
+        <p class="hero-subtext">
+          With a background in psychology and human-computer interaction, I partner closely with product, engineering, and stakeholders to translate insights into scalable solutions that move products forward.
         </p>
         <div class="hero-dna">
           My background is in behavioral research and psychology, which means
@@ -741,19 +771,18 @@
           expected to.
         </div>
         <div class="hero-cta">
-          <a class="btn" href="#projects">View my work</a>
+          <a class="btn" href="#projects">View Case Studies</a>
           <a class="btn ghost" href="contact.html">Get in touch</a>
         </div>
       </div>
     </header>
 
     <!-- Work -->
-    <section id="projects" class="section" aria-label="Selected Work">
+    <section id="projects" class="section" aria-label="Selected Case Studies">
       <div class="container">
-        <h2>Selected Work</h2>
+        <h2 id="case-studies-heading" tabindex="-1">Selected Case Studies</h2>
         <p class="section-lede">
-          From small business brands to enterprise platforms, design that works
-          for real people.
+          Transforming complex enterprise workflows into intuitive digital solutions that improve operational efficiency.
         </p>
 
         <div class="work-grid">
@@ -762,25 +791,24 @@
             <div class="work-img">
               <img
                 src="imgs/vdotapp1.png"
-                alt="VDOT MRP mobile field inspection app screens"
+                alt="VDOT MRP mobile field inspection app: stepped inspection workflow and on-screen criteria reference"
               />
             </div>
             <div class="work-body">
               <p class="work-label">Government / Transportation · Real Work</p>
               <h3 class="work-title">VDOT MRP, Field Inspection App</h3>
-              <p class="work-problem">
-                Inspectors were standing feet away from 60mph traffic, juggling
-                80-page manuals and paper forms while trying to stay safe.
-              </p>
-              <p class="work-solution">
-                I designed a high-contrast, "stepped flow" app that guides
-                inspectors through complex ratings so they can focus on the
-                road, not the screen.
-              </p>
+              <p class="work-desc">Streamlining field inspection workflows to improve accuracy and safety in high-risk environments.</p>
               <div class="outcome-badge">
                 ✓ 100% digital data capture with zero "slip errors"
               </div>
-              <p class="work-meta">Lead UX Designer · Team of 5 · 8+ months</p>
+              <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+              <div class="work-tools">
+                <span class="tool-tag">Figma</span>
+                <span class="tool-tag">Comp Analysis</span>
+                <span class="tool-tag">Agile</span>
+                <span class="tool-tag">User Research</span>
+                <span class="tool-tag">Section 508</span>
+              </div>
               <a class="work-link" href="vdot-mobile-app.html"
                 >View case study →</a
               >
@@ -792,7 +820,7 @@
             <div class="work-img">
               <img
                 src="imgs/studio88.png"
-                alt="Studio88 Keys website homepage and interior pages"
+                alt="Studio88 Keys website: homepage hero and lesson pricing pages for a piano studio"
               />
             </div>
             <div class="work-body">
@@ -814,6 +842,11 @@
                 ✓ Full 7-page site · Figma to Framer production build
               </div>
               <p class="work-meta">Web Designer (Freelance) · Studio88 Keys</p>
+              <div class="work-tools">
+                <span class="tool-tag">Figma</span>
+                <span class="tool-tag">Comp Analysis</span>
+                <span class="tool-tag">Framer</span>
+              </div>
               <a class="work-link" href="studio88.html">View case study →</a>
             </div>
           </article>
@@ -823,26 +856,24 @@
             <div class="work-img">
               <img
                 src="imgs/dashboard1.png"
-                alt="VDOT MRP management analytics dashboard"
+                alt="VDOT MRP operations hub: infrastructure condition scores and maintenance priority dashboard"
               />
             </div>
             <div class="work-body">
               <p class="work-label">Government / Transportation · Real Work</p>
               <h3 class="work-title">VDOT MRP, Operations Hub</h3>
-              <p class="work-problem">
-                Staff and contractors had zero visibility into real-time field
-                data, leading to massive delays in maintenance verification and
-                audits.
-              </p>
-              <p class="work-solution">
-                I designed a transparency-first hub that links GPS-tagged field
-                photos directly to ratings, surfacing critical failures in the
-                first 10 seconds.
-              </p>
+              <p class="work-desc">Empowering stakeholders with real-time data to prioritize infrastructure maintenance.</p>
               <div class="outcome-badge">
                 ✓ Real-time field-to-office operational transparency
               </div>
-              <p class="work-meta">Lead UX Designer · Team of 5 · 8+ months</p>
+              <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+              <div class="work-tools">
+                <span class="tool-tag">Figma</span>
+                <span class="tool-tag">Comp Analysis</span>
+                <span class="tool-tag">Agile</span>
+                <span class="tool-tag">User Research</span>
+                <span class="tool-tag">Section 508</span>
+              </div>
               <a class="work-link" href="vdot-dashboard.html"
                 >View case study →</a
               >
@@ -854,7 +885,7 @@
             <div class="work-img">
               <img
                 src="imgs/pcis-dashboard.png"
-                alt="PCIS port logistics platform dashboard"
+                alt="PCIS platform: card-based shipment management dashboard for port logistics operators"
               />
             </div>
             <div class="work-body">
@@ -862,21 +893,18 @@
               <h3 class="work-title">
                 PCIS, Helping Ports Talk to Each Other
               </h3>
-              <p class="work-problem">
-                Everyone at the port needed each other's data, but nobody would
-                share it. Endless phone calls, wasted truck trips, and a system
-                held together by fear of losing competitive edge.
-              </p>
-              <p class="work-solution">
-                I used behavioral science to solve a trust problem, not just a
-                UI problem. Privacy-first data masking, exception-based alerts,
-                and real-time sync, each tied to a specific psychological
-                principle.
-              </p>
+              <p class="work-desc">Simplifying enterprise case management to reduce administrative friction and cognitive load.</p>
               <div class="outcome-badge">
                 ✓ 85% task success · 50% faster to find delays
               </div>
-              <p class="work-meta">Lead UX Designer · Leidos</p>
+              <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+              <div class="work-tools">
+                <span class="tool-tag">Figma</span>
+                <span class="tool-tag">Comp Analysis</span>
+                <span class="tool-tag">Agile</span>
+                <span class="tool-tag">User Research</span>
+                <span class="tool-tag">Section 508</span>
+              </div>
               <a class="work-link" href="pcis-dashboard.html"
                 >View case study →</a
               >
@@ -888,25 +916,23 @@
             <div class="work-img">
               <img
                 src="imgs/telematics2.png"
-                alt="Telematics mobile prototype screens"
+                alt="Telematics mobile prototype: vehicle alert prioritization and field data summary screens"
               />
             </div>
             <div class="work-body">
               <p class="work-label">Transportation Research · Real Work</p>
               <h3 class="work-title">Telematics, Mobile Decision Tool</h3>
-              <p class="work-problem">
-                Research teams were trying to interpret live vehicle telemetry
-                on dense desktop screens, from inside a moving vehicle.
-              </p>
-              <p class="work-solution">
-                I redesigned the experience as a glanceable mobile tool built
-                for field decision-making, prioritizing situational awareness
-                over data density.
-              </p>
+              <p class="work-desc">Translating complex IoT data into actionable insights for fleet operational efficiency.</p>
               <div class="outcome-badge">
                 ✓ Mobile-first field research tool
               </div>
-              <p class="work-meta">UI/UX Designer · Leidos / CARMA Program</p>
+              <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+              <div class="work-tools">
+                <span class="tool-tag">Figma</span>
+                <span class="tool-tag">Comp Analysis</span>
+                <span class="tool-tag">Agile</span>
+                <span class="tool-tag">Functional Analysis</span>
+              </div>
               <a class="work-link" href="telematics.html">View case study →</a>
             </div>
           </article>
@@ -928,9 +954,7 @@
             <p class="approach-number">01</p>
             <h3 class="approach-title">Research</h3>
             <p class="approach-desc">
-              User interviews, task analysis, competitive review, behavioral
-              observation. I map what people actually do, including the
-              workarounds and friction points that documentation misses.
+              Stakeholder interviews, task analysis, competitive audits, behavioral observation. I map what people actually do, including the workarounds and friction points that documentation misses.
             </p>
           </div>
           <div class="approach-item">
@@ -947,9 +971,7 @@
             <p class="approach-number">03</p>
             <h3 class="approach-title">Validation</h3>
             <p class="approach-desc">
-              Usability testing, heuristic evaluation, iteration. I watch where
-              people hesitate, what they misread, and what the patterns reveal
-              about the design's assumptions.
+              Usability testing, heuristic evaluation, iteration. I watch where people hesitate, what they misread, and what the patterns reveal about the design's assumptions, then prioritize what to fix first.
             </p>
           </div>
           <div class="approach-item">
@@ -990,6 +1012,8 @@
       </div>
     </section>
 
+    </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-grid">
@@ -1019,8 +1043,7 @@
                 max-width: 280px;
               "
             >
-              Designer building websites and digital products rooted in how
-              people actually think. ₊˚⊹♡
+              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions. ₊˚⊹♡
             </p>
           </div>
 
@@ -1042,7 +1065,8 @@
                   <a
                     href="https://www.linkedin.com/in/destineeyoung/"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn (opens in new tab)"
                     >LinkedIn</a
                   >
                 </li>
@@ -1066,11 +1090,24 @@
         <div class="footer-bottom">
           © <span id="year"></span> Destinee Young
         </div>
+        <p class="a11y-statement">
+          This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.
+        </p>
       </div>
     </footer>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Focus management: move keyboard focus to section heading after anchor scroll
+      document.querySelectorAll('a[href="#projects"]').forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(() => {
+            const heading = document.getElementById('case-studies-heading');
+            if (heading) heading.focus();
+          }, 100);
+        });
+      });
       document.querySelectorAll(".mobile-nav").forEach((nav) => {
         nav.addEventListener("keydown", (e) => {
           if (e.key === "Escape" && nav.open) {

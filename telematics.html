@@ -241,6 +241,13 @@
         border-radius: 0 0 4px 0;
         transition: top 0.2s ease;
       }
+      .a11y-statement {
+        margin-top: 12px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.45);
+        max-width: 640px;
+        line-height: 1.6;
+      }
       .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
         </style>
   </head>
@@ -269,8 +276,10 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- Outcome banner -->
-    <div id="main-content" class="outcome-banner">
+    <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
@@ -286,10 +295,9 @@
 
     <!-- Hero -->
     <header class="hero">
-      <h1>Telematics Mobile Prototype</h1>
+      <h1>Improving fleet operational efficiency by translating complex telematics data into actionable insights</h1>
       <p>
-        System redesign focused on migrating complex vehicle telemetry from a
-        legacy web platform to a mobile-first decision tool.
+        Research teams were data-rich but insight-poor, struggling to identify which vehicles required immediate attention from dense desktop screens inside a moving vehicle. I restructured the experience as a mobile-first tool that surfaces critical alerts and puts the most important information first.
       </p>
     </header>
 
@@ -310,12 +318,20 @@
         <div class="meta-label">My Role</div>
         <div class="meta-value">UI/UX Designer</div>
       </div>
+      <div class="meta-item">
+        <div class="meta-label">Tools</div>
+        <div class="meta-value">Figma</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Methodology</div>
+        <div class="meta-value">Agile Product Delivery</div>
+      </div>
     </div>
 
     <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px;">
       <div class="media-tape">
         <div class="media-well">
-          <img src="imgs/telematics2.png" alt="Telematics mobile screens overview" />
+          <img src="imgs/telematics2.png" alt="Telematics mobile prototype: vehicle status list with alert prioritization, detail view showing GPS and engine data, and simplified navigation for field use" />
         </div>
       </div>
     </div>
@@ -325,11 +341,7 @@
       <span class="section-tag">Overview</span>
       <h2>The redesign</h2>
       <p>
-        This redesign reframed a dense desktop telematics experience into a
-        mobile HSI that supports field research decisions under time pressure.
-        The work centered on translating established patterns from comparable
-        systems into a simpler interaction model optimized for in-vehicle and
-        roadside contexts.
+        This redesign reframed a dense desktop telematics experience into a mobile human-system interface that supports field research decisions under time pressure. I worked within a compressed agile sprint, leveraging competitive references and heuristic findings to drive redesign priorities where direct primary research was limited in this phase.
       </p>
     </section>
 
@@ -358,7 +370,7 @@
       </ul>
       <div class="media-tape green-tape" style="margin-top: 24px;">
         <div class="media-well">
-          <img src="imgs/Topicmanagement1.png" alt="Mobile telematics interface screens" />
+          <img src="imgs/Topicmanagement1.png" alt="Side-by-side telematics screens showing the vehicle list grouped by alert severity and the individual vehicle data panel with critical metrics highlighted" />
         </div>
       </div>
     </section>
@@ -409,6 +421,11 @@
         <h3>Terminology consistency</h3>
         <p>Kept all labels and terminology aligned with the existing web platform so experienced users don't have to re-learn the system, just the interaction model.</p>
       </div>
+
+      <div class="design-decision">
+        <h3>Pattern reuse from the legacy platform</h3>
+        <p>Where possible, I carried over established component patterns from the existing web system — data cards, status indicators, alert hierarchies — and adapted them for mobile constraints rather than redesigning from scratch. This reduced the learning curve for teams already familiar with the desktop tool.</p>
+      </div>
     </section>
 
     <!-- Team -->
@@ -441,6 +458,8 @@
       </div>
     </section>
 
+    </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-grid">
@@ -450,7 +469,7 @@
               <span style="font-weight: 600; font-size: 16px">Destinee Young</span>
             </div>
             <p style="color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 280px;">
-              Designer building websites and digital products rooted in how people actually think. ₊˚⊹♡
+              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions. ₊˚⊹♡
             </p>
           </div>
           <div class="footer-nav">
@@ -466,7 +485,7 @@
             <div class="footer-col">
               <h4>Connect</h4>
               <ul>
-                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/destineeyoung/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">LinkedIn</a></li>
                 <li><a href="mailto:destinee.young99@gmail.com">Email</a></li>
               </ul>
             </div>
@@ -482,6 +501,7 @@
           </div>
         </div>
         <div class="footer-bottom">© <span id="year"></span> Destinee Young</div>
+        <p class="a11y-statement">This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.</p>
       </div>
     </footer>
 

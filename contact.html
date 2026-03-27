@@ -435,6 +435,13 @@
         border-radius: 0 0 4px 0;
         transition: top 0.2s ease;
       }
+      .a11y-statement {
+        margin-top: 12px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.45);
+        max-width: 640px;
+        line-height: 1.6;
+      }
       .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
         </style>
   </head>
@@ -468,8 +475,10 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- Contact content -->
-    <section id="main-content" class="section hero">
+    <section class="section hero">
       <div class="container">
         <h1>Contact</h1>
         <p class="intro-text">
@@ -478,31 +487,34 @@
 
         <div class="contact-details">
           <div class="contact-item">
-            <div class="label">📧 Email</div>
+            <div class="label"><span aria-hidden="true">📧</span> Email</div>
             <a href="mailto:destinee.young99@gmail.com"
               >destinee.young99@gmail.com</a
             >
           </div>
 
           <div class="contact-item">
-            <div class="label">💼 LinkedIn</div>
+            <div class="label"><span aria-hidden="true">💼</span> LinkedIn</div>
             <div class="links">
               <a
                 href="https://www.linkedin.com/in/destineeyoung/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
+                aria-label="@destineeyoung on LinkedIn (opens in new tab)"
                 >@destineeyoung</a
               >
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="label">📍 Location</div>
+            <div class="label"><span aria-hidden="true">📍</span> Location</div>
             <div class="contact-value">Washington, DC · EST</div>
           </div>
         </div>
       </div>
     </section>
+
+    </main>
 
     <footer>
       <div class="footer-content">
@@ -530,8 +542,7 @@
                 max-width: 280px;
               "
             >
-              Designer building websites and digital products rooted in how people actually think.
-            </p>
+              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions. ₊˚⊹♡</p>
           </div>
 
           <div class="footer-nav">
@@ -576,6 +587,9 @@
         <div class="footer-bottom">
           © <span id="year"></span> Destinee Young
         </div>
+        <p class="a11y-statement">
+          This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.
+        </p>
       </div>
     </footer>
 
