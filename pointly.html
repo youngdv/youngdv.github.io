@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VDOT MRP Field Inspection App | Destinee Young</title>
+    <title>Pointly, Subscription Rewards Tracker | Destinee Young</title>
     <link rel="icon" type="image/png" href="favicon/favicon-48x48.png" />
     <script
       async
@@ -40,7 +40,6 @@
         --green-dark: #166534;
         --green-border: #bbf7d0;
       }
-      /* Logo pink tint */
       .brand img {
         filter: brightness(0) saturate(100%) invert(18%) sepia(89%)
           saturate(1100%) hue-rotate(306deg) brightness(84%);
@@ -337,101 +336,6 @@
         margin-bottom: 0;
       }
 
-      /* Info hierarchy */
-      .hierarchy-box {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: #fafafa;
-        padding: 18px 20px;
-        margin-top: 16px;
-      }
-      .hierarchy-box ul {
-        list-style: none;
-        padding: 0;
-      }
-      .hierarchy-box li {
-        margin: 10px 0;
-        padding: 10px 14px;
-        border-radius: 10px;
-        border: 1px solid var(--line);
-        background: #fff;
-      }
-      .h-primary {
-        border-left: 4px solid #111;
-      }
-      .h-secondary {
-        border-left: 4px solid #6b7280;
-      }
-      .h-tertiary {
-        border-left: 4px solid #94a3b8;
-      }
-
-      /* Behavioral formula grid */
-      .behavioral-grid {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        overflow: hidden;
-        margin: 24px 0;
-        font-size: 14px;
-      }
-      .bg-header {
-        display: grid;
-        grid-template-columns: 1fr 1.4fr 1.6fr;
-        gap: 16px;
-        background: #fafafa;
-        border-bottom: 1px solid var(--line);
-        padding: 12px 16px;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: var(--muted);
-      }
-      .bg-row {
-        display: grid;
-        grid-template-columns: 1fr 1.4fr 1.6fr;
-        gap: 16px;
-        padding: 16px;
-        border-bottom: 1px solid var(--line);
-        line-height: 1.65;
-        align-items: start;
-      }
-      .bg-row:last-child {
-        border-bottom: none;
-      }
-      .bg-row:nth-child(odd) {
-        background: #fafafa;
-      }
-      .bg-problem {
-        font-weight: 600;
-        color: var(--text);
-      }
-      .bg-science {
-        color: var(--muted);
-      }
-      .bg-science strong {
-        color: var(--pink-dark);
-        font-style: normal;
-      }
-      @media (max-width: 768px) {
-        .bg-header {
-          display: none;
-        }
-        .bg-row {
-          grid-template-columns: 1fr;
-          gap: 10px;
-          padding: 14px 16px;
-        }
-        .bg-row::before {
-          content: attr(data-label);
-          font-size: 10px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          color: var(--muted);
-        }
-      }
-
       /* Section label tag, sticker style */
       .section-tag {
         display: inline-block;
@@ -457,6 +361,7 @@
         background: var(--green-light);
         border-color: var(--green-border);
       }
+
       /* Tape on images */
       .media-tape {
         position: relative;
@@ -523,6 +428,162 @@
         font-size: 13px;
         font-style: italic;
         margin: 0;
+      }
+
+      /* v1 → v2 side-by-side comparison */
+      .mockup-compare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 24px 0;
+        align-items: start;
+      }
+      .mockup-compare-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .compare-label {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-radius: 999px;
+        padding: 3px 10px;
+        width: fit-content;
+      }
+      .compare-label.before {
+        color: var(--muted);
+        background: #f0f0ef;
+        border: 1px solid #d8d8d6;
+      }
+      .compare-label.after {
+        color: var(--pink-dark);
+        background: var(--pink-light);
+        border: 1px solid var(--pink-border);
+      }
+      .compare-well {
+        width: 100%;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(0, 0, 0, 0.05);
+      }
+      .compare-well img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Strategy — 3-column principle cards */
+      .principle-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 24px;
+      }
+      .principle-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .principle-number {
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--pink);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .principle-card h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 10px;
+        color: var(--text);
+      }
+      .principle-card > p {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.65;
+        margin: 0 0 auto;
+        padding-bottom: 16px;
+      }
+      .principle-card img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        display: block;
+        margin-top: 16px;
+      }
+      .principle-card .media-caption {
+        font-size: 12px;
+        text-align: left;
+        margin-top: 8px;
+        color: var(--muted);
+      }
+
+      /* Pull-quote */
+      .pull-quote {
+        border-left: 3px solid var(--pink);
+        background: var(--pink-light);
+        border-radius: 0 12px 12px 0;
+        padding: 18px 22px;
+        margin: 20px 0;
+      }
+      .pull-quote p.pq-text {
+        font-size: 18px;
+        font-style: italic;
+        line-height: 1.55;
+        color: var(--text);
+        margin: 0 0 8px;
+      }
+      .pull-quote cite {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        font-style: normal;
+        margin-bottom: 12px;
+      }
+      .pull-quote p.pq-context {
+        font-size: 14px;
+        color: var(--text);
+        margin: 0;
+        line-height: 1.65;
+      }
+
+      /* Validation stat row */
+      .validation-stats {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin: 16px 0 8px;
+      }
+      .v-stat {
+        flex: 1;
+        min-width: 140px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .v-stat-number {
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--pink-dark);
+        line-height: 1;
+      }
+      .v-stat-label {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.4;
       }
 
       /* Nav between case studies */
@@ -658,6 +719,9 @@
         .outcome-divider {
           display: none;
         }
+        .validation-stats {
+          gap: 16px;
+        }
       }
       @media (max-width: 768px) {
         .nav-links {
@@ -671,18 +735,6 @@
           gap: 16px;
         }
       }
-      /* 2-screen side-by-side strip */
-      .screen-strip {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        margin: 20px 0 0;
-      }
-      .screen-strip-item {
-        display: flex;
-        flex-direction: column;
-      }
-
       @media (max-width: 640px) {
         .footer-nav {
           grid-template-columns: 1fr;
@@ -699,7 +751,13 @@
           border-radius: 16px;
           padding: 24px 20px;
         }
-        .screen-strip {
+        .validation-stats {
+          flex-direction: column;
+        }
+        .mockup-compare {
+          grid-template-columns: 1fr;
+        }
+        .principle-row {
           grid-template-columns: 1fr;
         }
       }
@@ -712,13 +770,11 @@
         .section-tag {
           transform: none !important;
         }
-        .section-tag:hover,
-        .design-decision:hover {
+        .section-tag:hover {
           transform: none !important;
           box-shadow: none !important;
         }
       }
-      /* Cognitive load reduction — readability */
       .project-section p,
       .about-text p,
       .about-section p {
@@ -795,225 +851,207 @@
 
     <main id="main-content">
 
-    <!-- Outcome banner (top) -->
+    <!-- Outcome banner -->
     <div class="outcome-banner">
       <div class="outcome-banner-inner">
         <div class="outcome-stat">
           <span class="number">What I Did</span>
-          <span class="label">I took a complex, 15-year-old manual process and transformed an 80-page technical rulebook into a step-by-step mobile workflow. I prioritized high-contrast visuals and oversized touch targets so the app stays usable in bright sunlight, heavy rain, and when the inspector is wearing work gloves.</span>
+          <span class="label">I ran a needs-validation survey, designed wireframes and a high-fidelity prototype, tested it with users, and redesigned the redemption flow based on what I learned. Early research showed people reject automatic point redemption, so I built the product around manual approval, visible progress, and easy pause/disable controls.</span>
         </div>
         <div class="outcome-divider"></div>
         <div class="outcome-stat">
           <span class="number">The Result</span>
-          <span class="label">Inspectors can now complete their work without carrying heavy binders or paper forms. Because the app validates their inputs as they go, they can't accidentally skip a required field, improving data accuracy before they leave the highway.</span>
+          <span class="label">A validated, end-to-end prototype that users understood and completed on the first try. Currently in development.</span>
         </div>
       </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
-      <h1>Helping field inspectors complete safety-critical inspections faster and with fewer errors in high-risk environments</h1>
+      <h1>Turning everyday credit card points into the subscriptions people already pay for</h1>
       <p>
-        I translated an 80-page technical manual into a high-contrast mobile
-        app. I replaced manual paper forms with a guided workflow that ensures
-        100% data accuracy, even when standing feet away from 60mph highway
-        traffic.
+        I designed Pointly, a mobile app that tracks credit card reward points
+        and lets users redeem them for subscriptions like Netflix and Spotify,
+        with full manual control over every redemption.
       </p>
     </header>
 
+    <!-- Meta card -->
     <div class="project-meta">
       <div class="meta-item">
         <div class="meta-label">Industry</div>
-        <div class="meta-value">Government / Transportation</div>
+        <div class="meta-value">Fintech / Consumer Mobile</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Client</div>
-        <div class="meta-value">Virginia DOT</div>
+        <div class="meta-value">Self-directed project</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Timeframe</div>
-        <div class="meta-value">8+ months</div>
+        <div class="meta-value">2026 – Present</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">My Role</div>
-        <div class="meta-value">Lead UX Designer</div>
+        <div class="meta-value">Product Designer (research, UX, UI)</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Team</div>
-        <div class="meta-value">PM, Solutions Architect, 2 Engineers</div>
+        <div class="meta-value">Solo (designer); partnering with a developer for build</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Tools</div>
-        <div class="meta-value">Figma</div>
+        <div class="meta-value">Figma, Maze</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Methodology</div>
-        <div class="meta-value">Agile Product Delivery</div>
+        <div class="meta-value">Survey → wireframe → prototype → usability testing → redesign</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Status</div>
+        <div class="meta-value">Design complete · validated · in development</div>
       </div>
     </div>
 
+    <!-- Top hero image (swap imgs/pointly1.png when ready) -->
     <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px">
       <div class="media-tape">
         <div class="media-well tall">
           <img
-            src="imgs/vdotapp1.png"
-            alt="VDOT MRP mobile inspection app: stepped rating workflow screen, asset detail view, and on-screen IMCS-626 criteria reference"
+            src="imgs/pointly1.png"
+            alt="Pointly app screens, placeholder; swap in exported Figma screens"
           />
         </div>
       </div>
     </div>
 
-    <!-- The Project at a Glance -->
+    <!-- The Challenge -->
     <section class="project-section">
-      <span class="section-tag">The Project at a Glance</span>
-      <h2>The User, The Challenge, My Role</h2>
-
-      <div class="design-decision">
-        <h3>The User</h3>
-        <p>Field inspectors working in high-risk environments where speed, accuracy, and safety are critical.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>The Challenge</h3>
-        <p>Inspectors were managing complex asset assessments, strict audit requirements, and paper-based documentation in the field, creating friction, slowing down workflows, and increasing the risk of missed steps.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>My Role</h3>
-        <p>As Lead UX Designer, I owned the end-to-end transformation of a manual process into a mobile product. I defined workflows, prioritized critical actions, and designed for real-world constraints like weather, glare, and time pressure.</p>
-        <p>Design was delivered in two-week sprint cycles alongside engineering.</p>
-      </div>
-    </section>
-
-
-    <!-- Behavioral Science Formula -->
-    <section class="project-section">
-      <span class="section-tag">Design Decisions</span>
-      <h2>Key Decisions That Reduced Risk and Improved Usability</h2>
-      <p style="margin-bottom: 20px">
-        Skim the bold headers for the 30-second version, or read the Science
-        column to see the depth behind each choice.
-      </p>
-
-      <div class="behavioral-grid">
-        <div class="bg-header">
-          <div>The Field Challenge</div>
-          <div>My Design Solution</div>
-          <div>The Science (The "DNA")</div>
-        </div>
-        <div class="bg-row">
-          <div class="bg-problem">
-            Environmental Glare: Screens wash out in direct sunlight or heavy
-            rain.
-          </div>
-          <div>
-            Ultra-High Contrast UI: Increased visibility in bright sunlight and rain, helping inspectors read and act quickly in safety-critical conditions.
-          </div>
-          <div class="bg-science">
-            <strong>Visual Perception:</strong> Under physical stress and glare,
-            the eye struggles with subtle shades. I optimized for maximum
-            legibility under load.
-          </div>
-        </div>
-        <div class="bg-row">
-          <div class="bg-problem">
-            Complex Rules: Inspectors had to remember 80+ pages of "Passing"
-            rules.
-          </div>
-          <div>
-            Criteria-at-a-Glance: I placed the specific passing/failing criteria directly on the rating screen, reducing the need to recall rules from memory.
-          </div>
-          <div class="bg-science">
-            <strong>Recognition over Recall:</strong> It is easier for the brain
-            to recognize a rule on a screen than to recall it from memory while
-            distracted by traffic.
-          </div>
-        </div>
-        <div class="bg-row">
-          <div class="bg-problem">
-            Physical Limits: Inspectors wear heavy gloves. Small buttons lead to
-            "miss-taps."
-          </div>
-          <div>
-            Oversized Hit Zones: Every primary action button is a large, full-width target, reducing errors for users with limited dexterity.
-          </div>
-          <div class="bg-science">
-            <strong>Fitts's Law:</strong> The time to hit a target is a function
-            of its size. Large buttons reduce errors for users with limited
-            dexterity.
-          </div>
-        </div>
-        <div class="bg-row">
-          <div class="bg-problem">
-            Slip-Errors: In a rush, it is easy to forget to rate one asset among
-            hundreds.
-          </div>
-          <div>
-            The "Stop &amp; Check": The app flags missing required inputs before an inspector can advance, preventing hours of manual data correction later.
-          </div>
-          <div class="bg-science">
-            <strong>Forcing Functions:</strong> By creating a small, intentional "speed bump," I prevented costly downstream errors.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Turning the SOP into a Product -->
-    <section class="project-section">
-      <span class="section-tag">From Manual to Mobile</span>
-      <h2>Turning the Manual (SOP) into a Product</h2>
+      <span class="section-tag">The Challenge</span>
+      <h2>The Problem Was Trust, Not Just UI</h2>
       <p>
-        The original VDOT SOP was a dense technical document. I broke it down
-        into a Stepped Flow that mirrors the inspector's physical walk-around:
+        Reward points are valuable, but most people let them expire or never
+        figure out how to use them. Existing redemption flows are buried,
+        confusing, and feel risky.
+      </p>
+      <p>
+        The hard part wasn't the UI. It was trust: people don't want their
+        points spent automatically without their say-so. Any solution that
+        removed control (even to make things easier) would fail.
+      </p>
+    </section>
+
+    <!-- Research -->
+    <section class="project-section">
+      <span class="section-tag">Research</span>
+      <h2>What the Survey Revealed</h2>
+      <p>
+        A needs-validation survey confirmed the problem and surfaced the key
+        constraint: users reject automatic redemption by default.
       </p>
 
-      <div class="design-decision">
-        <h3>Guided Rating</h3>
+      <div class="research-highlight">
+        <p class="rh-label">Key Finding</p>
         <p>
-          By using a Stepped Flow, I break the inspection into logical "chunks"
-          (Pavement → Drainage → Traffic Services). This follows Miller's Law,
-          keeping the number of items a user has to remember at any one time to
-          a minimum.
+          Users want to stay in control: approve each redemption, see their
+          progress, and be able to pause or turn it off. These findings became
+          the core design requirements.
         </p>
-        <p style="margin-top: 14px">
-          Each inspection is chunked into stages — category, then on-screen
-          criteria — keeping what the inspector must hold in memory to a minimum
-          (Miller's Law). The specific passing criteria (e.g. '201 ≤25% diameter
-          closed') appear on the rating screen itself, so inspectors recognize
-          the standard rather than recall it from the 80-page manual.
-        </p>
-        <div class="screen-strip">
-          <div class="screen-strip-item">
-            <div class="media-well tall" style="margin: 12px 0 0">
-              <img src="imgs/step1.png" alt="Category selection — Roadside, Drainage, Traffic, Roadway, Bridge, Service" />
-            </div>
-            <p class="media-caption" style="text-align: left; margin-left: 0; margin-right: 0">Start broad: pick a category (Roadside, Drainage, Traffic, Roadway, Bridge, Service).</p>
-          </div>
-          <div class="screen-strip-item">
-            <div class="media-well tall" style="margin: 12px 0 0">
-              <img src="imgs/selectedstep4.png" alt="Asset rating screen showing pass/fail criteria directly on screen" />
-            </div>
-            <p class="media-caption" style="text-align: left; margin-left: 0; margin-right: 0">Then rate the asset against pass/fail criteria shown directly on screen.</p>
+      </div>
+
+    </section>
+
+    <!-- Strategy -->
+    <section class="project-section">
+      <span class="section-tag">Strategy</span>
+      <h2>Three Principles from the Research</h2>
+      <p style="margin-bottom: 20px">
+        Every decision traces back to one of these three research-driven principles.
+      </p>
+
+      <div class="principle-row">
+        <div class="principle-card">
+          <p class="principle-number">01</p>
+          <h3>Manual Approval</h3>
+          <p>Every redemption requires explicit confirmation via a clear "Use Points" action. Nothing happens without the user's say-so.</p>
+          <img src="imgs/strategy-manual-approval.png" alt="The redemption confirmation step" />
+          <p class="media-caption">The redemption confirmation step — nothing is applied until the user explicitly approves.</p>
+        </div>
+        <div class="principle-card">
+          <p class="principle-number">02</p>
+          <h3>Visible Progress</h3>
+          <p>Progress indicators show points building toward a redeemable subscription. Users can see where they are and what they're working toward.</p>
+          <img src="imgs/strategy-visible-progress.png" alt="Progress toward covering a subscription" />
+          <p class="media-caption">Progress toward covering a subscription stays visible, so points never feel like they vanish.</p>
+        </div>
+        <div class="principle-card">
+          <p class="principle-number">03</p>
+          <h3>Easy Control</h3>
+          <p>Pause and disable are always accessible. Users can opt out of any subscription pairing at any time without hunting through settings.</p>
+          <img src="imgs/strategy-easy-control.png" alt="Pause and resume on each subscription" />
+          <p class="media-caption">Pause and resume live directly on each subscription — no digging through settings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design (large mockup) -->
+    <section class="project-section">
+      <span class="section-tag">Design</span>
+      <h2>High-Fidelity Prototype</h2>
+      <p>
+        The prototype was designed in Figma and covered the full user journey:
+        connecting a card, viewing point balances, understanding progress toward
+        a subscription, and completing a manual redemption via the "Use Points"
+        flow.
+      </p>
+
+      <!-- Large phone mockup: swap imgs/pointly1.png with your exported screens -->
+      <div style="padding: 0; max-width: 780px; margin: 28px auto 0">
+        <div class="media-tape">
+          <div class="media-well tall" style="max-width: 100%">
+            <img
+              src="imgs/pointly1.png"
+              alt="Pointly high-fidelity prototype screens, placeholder; swap in exported Figma screens"
+            />
           </div>
         </div>
       </div>
 
-      <div class="design-decision">
-        <h3>Instant Failing Reports</h3>
-        <p>
-          If an asset fails, the app immediately triggers a request for a photo
-          and a maintenance note. No offline reconciliation needed.
-        </p>
-        <div class="media-well tall" style="margin: 16px auto 0; max-width: 560px">
-          <img src="imgs/recorddetails.png" alt="Record details screen with photo, MRP requirement, and geolocation" />
-        </div>
-        <p class="media-caption" style="margin-top: 10px">Each record captures a photo, the relevant MRP requirement, and geolocation inline — no offline reconciliation needed back at the office.</p>
-      </div>
+      <p style="margin-top: 24px">
+        Testing confirmed the core flow worked: all four participants completed every
+        task. So v2 wasn't about fixing broken flows; it was about raising the ceiling.
+        Guided by the one piece of qualitative feedback and my own heuristic review, I
+        focused the redesign on making the trust-and-control model explicit, adding
+        clear coverage status, and enriching the subscription view.
+      </p>
 
-      <div class="design-decision">
-        <h3>Shared Design Language</h3>
-        <p>The mobile app feeds directly into the management dashboard. To keep both products consistent, I built a shared component library in Figma.</p>
-        <p>Status colors, typography scales, and interaction patterns stay the same whether a user is rating an asset on their phone or reviewing results on a desktop screen.</p>
+      <h3 style="margin-top: 28px">What Changed in v2</h3>
+      <p>Each change traces back to the research insight that users need to feel in control, so v2 surfaces control and status that v1 only implied.</p>
+
+      <div class="mockup-compare">
+        <div class="mockup-compare-item">
+          <span class="compare-label before">Before · v1</span>
+          <div class="compare-well">
+            <img
+              src="imgs/pointly-v1.png"
+              alt="Pointly v1 screens, placeholder; swap in exported Figma screens"
+            />
+          </div>
+          <p class="media-caption" style="text-align: left; margin: 0">
+            v1 — Concept validated. The flow worked, but trust signals and subscription status were minimal.
+          </p>
+        </div>
+        <div class="mockup-compare-item">
+          <span class="compare-label after">After · v2</span>
+          <div class="compare-well">
+            <img
+              src="imgs/pointly-v2.png"
+              alt="Pointly v2 screens, placeholder; swap in exported Figma screens"
+            />
+          </div>
+          <p class="media-caption" style="text-align: left; margin: 0">
+            v2 — Control made explicit. A 'Manual control, always' banner up top, coverage badges (65% covered / Fully covered), service branding, and clear per-subscription actions (Apply / Pause / Resume).
+          </p>
+        </div>
       </div>
     </section>
 
@@ -1021,81 +1059,96 @@
     <section class="project-section">
       <span class="section-tag">Validation</span>
       <h2>Usability Study</h2>
+
       <div class="design-decision">
         <h3>Study Design</h3>
-        <p>8 participants recruited via Prolific completed three goal-based missions on their own phones, mirroring real field conditions.</p>
-        <p>Each mission mapped to a critical inspection step:</p>
-        <ul>
-          <li>Locating an asset on the map</li>
-          <li>Rating it against IMCS-626 criteria</li>
-          <li>Completing final documentation</li>
-        </ul>
-        <p>After each mission, participants rated the experience on a 7-point Likert scale.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>What the Data Confirmed</h3>
-        <p>The inspection and rating workflow performed the strongest. It's the most safety-critical part of the app.</p>
-        <p>Participants navigated the stepped flow, referenced on-screen criteria, and submitted assessments with low friction.</p>
-        <p>Likert scores confirmed it: on-screen criteria and the Record button's tap-ability rated highest across all measures.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>Where the Data Pointed Next</h3>
-        <p>Two flows showed higher friction: map-based asset discovery and final documentation.</p>
-        <p>Qualitative feedback surfaced clear patterns:</p>
-        <ul>
-          <li>"Too many buttons to get to the requirements section"</li>
-          <li>Request for batch-upload of records</li>
-        </ul>
-        <p><strong>V2 priorities:</strong> simplify the map interaction model and reduce documentation steps.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>The Takeaway</h3>
         <p>
-          The study validated that the core behavioral design decisions, the Stepped Flow, Criteria-at-a-Glance, and oversized hit zones, held up under real mobile use. It also gave the team specific, actionable direction for V2 improvements rather than relying on assumptions.
+          4 participants completed three goal-based tasks on their own phones
+          via Maze (unmoderated), mirroring real conditions. Tasks mapped to
+          the core requirements:
+        </p>
+        <ul>
+          <li>Understanding the value/progress concept</li>
+          <li>Completing the "Use Points" redemption flow</li>
+          <li>Finding the pause/disable controls</li>
+        </ul>
+        <p>Participants rated each task on a 7-point scale.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>Results</h3>
+        <div class="validation-stats">
+          <div class="v-stat">
+            <span class="v-stat-number">4 / 4</span>
+            <span class="v-stat-label">Concept comprehension: understood the value/progress model</span>
+          </div>
+          <div class="v-stat">
+            <span class="v-stat-number">4 / 4</span>
+            <span class="v-stat-label">Task completion: completed all three goal-based tasks</span>
+          </div>
+          <div class="v-stat">
+            <span class="v-stat-number">4.25 / 5</span>
+            <span class="v-stat-label">Likelihood to use, average across all participants</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mockup-compare" style="margin: 20px 0 8px">
+        <div class="mockup-compare-item">
+          <div class="compare-well">
+            <img src="imgs/Misclick1.png" alt="Maze results for the Pause Redemption task" />
+          </div>
+          <p class="media-caption" style="text-align: left; margin: 6px 0 0">Maze results — Pause Redemption task: 100% success, 0% drop-off, 31% misclick.</p>
+        </div>
+        <div class="mockup-compare-item">
+          <div class="compare-well">
+            <img src="imgs/Misclick2.png" alt="Navigation paths for the Pause Redemption task" />
+          </div>
+          <p class="media-caption" style="text-align: left; margin: 6px 0 0">Navigation paths for the same task — every participant reached the paused state, but via routes of different lengths.</p>
+        </div>
+      </div>
+      <p style="font-size: 15px; line-height: 1.75; margin: 4px 0 20px">Every participant successfully paused the subscription, but a 31% misclick rate and the navigation paths told a subtler story: people reached the control by different routes, some looping between the rewards view and the pause screen before finding it. The task succeeded, but the path wasn't direct. That signal — alongside the qualitative feedback — directly informed making controls more prominent and the pause action more discoverable in v2.</p>
+
+      <div class="pull-quote">
+        <p class="pq-text">"I would have liked some more options for things to do with my points."</p>
+        <cite>One participant, post-test feedback</cite>
+        <p class="pq-context">With only one open comment across four participants, I treat this as a single signal rather than a trend, but it pointed directly at v2's direction: giving users more to do with their points.</p>
+      </div>
+
+      <div class="design-decision">
+        <h3>What It Validated &amp; What's Next</h3>
+        <p>
+          The study validated first-pass usability and comprehension: new
+          users understood Pointly and completed the core flow without help.
+        </p>
+        <p>
+          It does <strong>not</strong> establish market demand or long-term
+          behavior. The planned next steps are moderated interviews to
+          understand the "why" behind usage and technical feasibility research
+          toward an MVP.
         </p>
       </div>
     </section>
 
-    <!-- Final Word -->
+    <!-- Impact / Next -->
     <section class="project-section">
-      <span class="section-tag">Impact</span>
-      <h2>Impact</h2>
+      <span class="section-tag">Impact / Next</span>
+      <h2>Where Pointly Is Headed</h2>
       <p>
-        By understanding how the human brain processes information under stress, I delivered a tool that is now used across Virginia to manage millions of dollars in road repairs safely and accurately. A usability study validated the core design decisions and gave the team a clear roadmap for what to improve next.
+        The validated prototype confirmed the concept is learnable and the
+        manual-control model resonates. Pointly is now moving toward technical
+        feasibility and development, with moderated research planned to deepen
+        behavioral insight before an MVP.
       </p>
       <ul style="margin-top: 14px">
-        <li>Reduced reliance on paper manuals, improving speed and accuracy in the field</li>
-        <li>Increased inspector confidence in high-risk environments by surfacing criteria on-screen and eliminating the need to recall rules from memory</li>
-        <li>Simplified a complex 80-page process into a scalable mobile workflow that can extend to additional asset types and districts</li>
-        <li>Validated by data: the inspection and rating workflow, the most safety-critical flow, performed strongest in usability testing, confirming the stepped design decisions held up under real mobile use</li>
-        <li>Clear next steps: the study surfaced specific friction points in map discovery and documentation, giving the team an evidence-based backlog for V2</li>
-        <li>Part of a connected system. See the <a href="vdot-dashboard.html" style="text-decoration: underline">Operations Hub case study</a> for the other half</li>
+        <li>First-pass usability and comprehension validated: new users completed the full core flow without assistance</li>
+        <li>Manual-approval model confirmed as the right framing; no participants tried to find an "automatic" mode</li>
+        <li>Refined v2 to make control and coverage status more discoverable — building on a validated flow, informed by misclick paths and qualitative feedback.</li>
+        <li>Next: moderated interviews to understand behavioral "why" and technical feasibility research toward MVP</li>
       </ul>
-    </section>
-
-    <!-- Team -->
-    <section class="project-section">
-      <span class="section-tag">The Team</span>
-      <h2>The Team</h2>
-      <p style="font-size: 15px; color: var(--muted); font-weight: 500">
-        Sole UX Designer on a 5-person Alpha Team at Leidos: PM, Solutions
-        Architect, Software Engineer, and Engineering Intern.
-      </p>
-      <div class="media-well" style="aspect-ratio: 16/10; margin-top: 20px">
-        <img
-          src="imgs/alphateam.png"
-          alt="Five-person Alpha Team at Leidos gathered around a table during a VDOT MRP project working session"
-        />
-      </div>
 
       <div class="case-nav" style="margin-top: 28px">
         <a class="secondary" href="index.html">← Back to work</a>
-        <a class="primary" href="vdot-dashboard.html"
-          >View Dashboard case study →</a
-        >
       </div>
     </section>
 
@@ -1168,6 +1221,7 @@
                 <li><a href="vdot-dashboard.html">VDOT Dashboard</a></li>
                 <li><a href="pcis-dashboard.html">PCIS Platform</a></li>
                 <li><a href="telematics.html">Telematics</a></li>
+                <li><a href="studio88.html">Studio88 Keys</a></li>
                 <li><a href="pointly.html">Pointly</a></li>
               </ul>
             </div>
