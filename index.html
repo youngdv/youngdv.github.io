@@ -49,7 +49,9 @@
         filter: brightness(0) saturate(100%) invert(18%) sepia(89%)
           saturate(1100%) hue-rotate(306deg) brightness(84%);
       }
-      .footer-brand img { filter: brightness(0) invert(1); }
+      .footer-brand img {
+        filter: brightness(0) invert(1);
+      }
       * {
         box-sizing: border-box;
       }
@@ -133,9 +135,15 @@
       .nav-links a:focus-visible::after {
         width: 100%;
       }
-      .nav-links a[aria-current="page"] { font-weight: 600; }
-      .nav-links a[aria-current="page"]::after { width: 100%; }
-      .mobile-menu a[aria-current="page"] { font-weight: 600; }
+      .nav-links a[aria-current="page"] {
+        font-weight: 600;
+      }
+      .nav-links a[aria-current="page"]::after {
+        width: 100%;
+      }
+      .mobile-menu a[aria-current="page"] {
+        font-weight: 600;
+      }
       .btn {
         display: inline-flex;
         align-items: center;
@@ -259,16 +267,17 @@
         white-space: nowrap;
       }
       .name-anim::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: -2px;
         width: 100%;
         height: 2px;
-        background: #AF1861;
+        background: #af1861;
         transform: scaleX(0);
         transform-origin: left center;
-        animation: name-underline 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+        animation: name-underline 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.5s
+          forwards;
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .name-anim.scrolled-out::after {
@@ -276,7 +285,9 @@
         transform-origin: right center;
       }
       @keyframes name-underline {
-        to { transform: scaleX(1); }
+        to {
+          transform: scaleX(1);
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         .name-anim::after {
@@ -767,7 +778,7 @@
       .a11y-statement {
         margin-top: 12px;
         font-size: 12px;
-        color: rgba(255,255,255,0.45);
+        color: rgba(255, 255, 255, 0.45);
         max-width: 640px;
         line-height: 1.6;
       }
@@ -807,291 +818,337 @@
     </nav>
 
     <main id="main-content">
-
-    <!-- Hero -->
-    <header class="section hero">
-      <div class="container">
-        <h1>
-I help organizations improve complex digital experiences by identifying where users get stuck and turning those insights into prioritized, high-impact product decisions.
-        </h1>
-        <p class="hero-subtext">
-          I'm <span class="name-anim">Destinee Young</span>, a UX designer with a background in <strong>psychology</strong> and <strong>human-computer interaction</strong>. Every design decision I make is grounded in how people actually think, not how they're expected to. I partner with product, engineering, and stakeholders to turn behavioral insights into scalable solutions that deliver measurable results.
-        </p>
-        <div class="hero-dna">
-          Most recently, I used behavioral science to get competing port operators to willingly share data, then validated it with real users. <strong>85% found the system easy to use on their first try.</strong>
-        </div>
-        <div class="hero-cta">
-          <a class="btn" href="#projects">View Case Studies</a>
-          <a class="btn ghost" href="contact.html">Get in touch</a>
-        </div>
-      </div>
-    </header>
-
-    <!-- Work -->
-    <section id="projects" class="section" aria-label="Selected Case Studies">
-      <div class="container">
-        <h2 id="case-studies-heading" tabindex="-1">Selected Case Studies</h2>
-
-        <div class="work-grid">
-          <!-- Card 1: PCIS -->
-          <article class="work-card">
-            <div class="work-img">
-              <img
-                src="imgs/pcis-dashboard.png"
-                alt="PCIS platform: card-based shipment management dashboard for port logistics operators"
-              />
-            </div>
-            <div class="work-body">
-              <p class="work-label">Port Logistics / Government · Real Work</p>
-              <h3 class="work-title">
-                PCIS, Helping Ports Talk to Each Other
-              </h3>
-              <p class="work-desc">Simplifying enterprise case management to reduce administrative friction and cognitive load.</p>
-              <div class="outcome-badge">
-                ✓ 85% task success · 50% faster to find delays
-              </div>
-              <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
-              <div class="work-tools">
-                <span class="tool-tag">Figma</span>
-                <span class="tool-tag">Comp Analysis</span>
-                <span class="tool-tag">Agile</span>
-                <span class="tool-tag">User Research</span>
-                <span class="tool-tag">Section 508</span>
-              </div>
-              <a class="work-link" href="pcis-dashboard.html"
-                >View case study →</a
-              >
-            </div>
-          </article>
-
-          <!-- Card 2: VDOT Mobile App -->
-          <article class="work-card">
-            <div class="work-img">
-              <img
-                src="imgs/vdotapp1.png"
-                alt="VDOT MRP mobile field inspection app: stepped inspection workflow and on-screen criteria reference"
-              />
-            </div>
-            <div class="work-body">
-              <p class="work-label">Government / Transportation · Real Work</p>
-              <h3 class="work-title">VDOT MRP, Field Inspection App</h3>
-              <p class="work-desc">Streamlining field inspection workflows to improve accuracy and safety in high-risk environments.</p>
-              <div class="outcome-badge">
-                ✓ 100% digital data capture with zero "slip errors"
-              </div>
-              <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
-              <div class="work-tools">
-                <span class="tool-tag">Figma</span>
-                <span class="tool-tag">Comp Analysis</span>
-                <span class="tool-tag">Agile</span>
-                <span class="tool-tag">User Research</span>
-                <span class="tool-tag">Section 508</span>
-              </div>
-              <a class="work-link" href="vdot-mobile-app.html"
-                >View case study →</a
-              >
-            </div>
-          </article>
-
-          <!-- Card 3: VDOT Dashboard -->
-          <article class="work-card">
-            <div class="work-img">
-              <img
-                src="imgs/dashboard1.png"
-                alt="VDOT MRP operations hub: infrastructure condition scores and maintenance priority dashboard"
-              />
-            </div>
-            <div class="work-body">
-              <p class="work-label">Government / Transportation · Real Work</p>
-              <h3 class="work-title">VDOT MRP, Operations Hub</h3>
-              <p class="work-desc">Empowering stakeholders with real-time data to prioritize infrastructure maintenance.</p>
-              <div class="outcome-badge">
-                ✓ Real-time field-to-office operational transparency
-              </div>
-              <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
-              <div class="work-tools">
-                <span class="tool-tag">Figma</span>
-                <span class="tool-tag">Comp Analysis</span>
-                <span class="tool-tag">Agile</span>
-                <span class="tool-tag">User Research</span>
-                <span class="tool-tag">Section 508</span>
-              </div>
-              <a class="work-link" href="vdot-dashboard.html"
-                >View case study →</a
-              >
-            </div>
-          </article>
-
-          <!-- Card 4: Telematics -->
-          <article class="work-card">
-            <div class="work-img">
-              <img
-                src="imgs/telematics2.png"
-                alt="Telematics mobile prototype: vehicle alert prioritization and field data summary screens"
-              />
-            </div>
-            <div class="work-body">
-              <p class="work-label">Transportation Research · Real Work</p>
-              <h3 class="work-title">Telematics, Mobile Decision Tool</h3>
-              <p class="work-desc">Translating complex IoT data into actionable insights for fleet operational efficiency.</p>
-              <div class="outcome-badge">
-                ✓ Mobile-first field research tool
-              </div>
-              <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
-              <div class="work-tools">
-                <span class="tool-tag">Figma</span>
-                <span class="tool-tag">Comp Analysis</span>
-                <span class="tool-tag">Agile</span>
-                <span class="tool-tag">Functional Analysis</span>
-              </div>
-              <a class="work-link" href="telematics.html">View case study →</a>
-            </div>
-          </article>
-
-          <!-- Card 5: Studio88 Keys -->
-          <article class="work-card">
-            <div class="work-img">
-              <img
-                src="imgs/studio88.png"
-                alt="Studio88 Keys website: homepage hero and lesson pricing pages for a piano studio"
-              />
-            </div>
-            <div class="work-body">
-              <p class="work-label">
-                Music Education / Small Business · Freelance
-              </p>
-              <h3 class="work-title">Studio88 Keys, Freelance Web Design</h3>
-              <p class="work-problem">
-                McKenzie was growing her piano studio entirely through word of
-                mouth with no website and no way for prospective families to
-                learn about the studio on their own time.
-              </p>
-              <p class="work-solution">
-                I designed and built a full 7-page marketing site in Figma and
-                Framer: warm, conversion-focused, with transparent pricing and a
-                founder-forward story that builds trust before the first call.
-              </p>
-              <div class="outcome-badge">
-                ✓ Full 7-page site · Figma to Framer production build
-              </div>
-              <p class="work-meta">Web Designer (Freelance) · Studio88 Keys</p>
-              <div class="work-tools">
-                <span class="tool-tag">Figma</span>
-                <span class="tool-tag">Comp Analysis</span>
-                <span class="tool-tag">Framer</span>
-              </div>
-              <a class="work-link" href="studio88.html">View case study →</a>
-            </div>
-          </article>
-
-          <!-- Card 6: Pointly -->
-          <article class="work-card">
-            <div class="work-img">
-              <img
-                src="imgs/pointly1.png"
-                alt="Pointly mobile app: subscription rewards tracker with manual redemption controls"
-              />
-            </div>
-            <div class="work-body">
-              <p class="work-label">Fintech / Consumer Mobile · Self-Directed</p>
-              <h3 class="work-title">Pointly, Subscription Rewards Tracker</h3>
-              <p class="work-problem">
-                Most people let their credit card points expire because existing
-                redemption flows are buried, confusing, and feel risky.
-              </p>
-              <p class="work-solution">
-                I designed a mobile app that automatically tracks points and lets
-                users redeem them for subscriptions — with manual approval and
-                visible progress at every step.
-              </p>
-              <div class="outcome-badge">
-                ✓ Validated prototype · In development
-              </div>
-              <p class="work-meta">Product Designer · Figma, Maze · 2026 – Present</p>
-              <div class="work-tools">
-                <span class="tool-tag">Figma</span>
-                <span class="tool-tag">Maze</span>
-                <span class="tool-tag">User Research</span>
-              </div>
-              <a class="work-link" href="pointly.html">View case study →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- How I Work -->
-    <section id="approach" class="section" aria-label="How I Work">
-      <div class="container">
-        <h2>How I Work</h2>
-        <p class="section-lede">
-          Every project starts with understanding your users and their context
-          before I touch a design tool.
-        </p>
-
-        <div class="approach-grid">
-          <div class="approach-item">
-            <p class="approach-number">01</p>
-            <h3 class="approach-title">Research</h3>
-            <p class="approach-desc">
-              Stakeholder interviews, task analysis, competitive audits, behavioral observation. I map what people actually do, including the workarounds and friction points that documentation misses.
-            </p>
+      <!-- Hero -->
+      <header class="section hero">
+        <div class="container">
+          <h1>
+            I help organizations improve complex digital experiences by
+            identifying where users get stuck and turning those insights into
+            prioritized, high-impact product decisions.
+          </h1>
+          <p class="hero-subtext">
+            I'm <span class="name-anim">Destinee Young</span>, a UX designer
+            with a background in <strong>psychology</strong> and
+            <strong>human-computer interaction</strong>. Every design decision I
+            make is grounded in how people actually think, not how they're
+            expected to. I partner with product, engineering, and stakeholders
+            to turn behavioral insights into scalable solutions that deliver
+            measurable results.
+          </p>
+          <div class="hero-dna">
+            Most recently, I used behavioral science to get competing port
+            operators to willingly share data, then validated it with real
+            users.
+            <strong
+              >85% found the system easy to use on their first try.</strong
+            >
           </div>
-          <div class="approach-item">
-            <p class="approach-number">02</p>
-            <h3 class="approach-title">Design</h3>
-            <p class="approach-desc">
-              Wireframes, prototypes, design systems. Every decision traces back
-              to a research finding. I design for the real context of use,
-              whether that's a busy parent on a phone or a field technician
-              under time pressure.
-            </p>
-          </div>
-          <div class="approach-item">
-            <p class="approach-number">03</p>
-            <h3 class="approach-title">Validation</h3>
-            <p class="approach-desc">
-              Usability testing, heuristic evaluation, iteration. I watch where people hesitate, what they misread, and what the patterns reveal about the design's assumptions, then prioritize what to fix first.
-            </p>
-          </div>
-          <div class="approach-item">
-            <p class="approach-number">04</p>
-            <h3 class="approach-title">Accessibility</h3>
-            <p class="approach-desc">
-              WCAG 2.1 AA standards, Section 508 for government work. I build
-              accessibility into the architecture from day one, not bolted on at
-              the end.
-            </p>
+          <div class="hero-cta">
+            <a class="btn" href="#projects">View Case Studies</a>
+            <a class="btn ghost" href="contact.html">Get in touch</a>
           </div>
         </div>
-      </div>
-    </section>
+      </header>
 
-    <!-- Experience snippet -->
-    <section class="section" aria-label="Experience">
-      <div class="container">
-        <div class="exp-strip">
-          <div class="exp-text">
-            <p>
-              <strong>Currently:</strong> UI/UX Designer at Leidos, designing
-              human-system interfaces for government transportation and
-              logistics programs.
-            </p>
-            <p style="margin-top: 8px">
-              Previously: Human Factors Research Scientist at Leidos,
-              eye-tracking systems, driving simulators, controlled behavioral
-              studies.
-            </p>
-          </div>
-          <div
-            style="display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0"
-          >
-            <a class="btn ghost" href="about.html">About me</a>
+      <!-- Work -->
+      <section id="projects" class="section" aria-label="Selected Case Studies">
+        <div class="container">
+          <h2 id="case-studies-heading" tabindex="-1">Selected Case Studies</h2>
+
+          <div class="work-grid">
+            <!-- Card 1: PCIS -->
+            <article class="work-card">
+              <div class="work-img">
+                <img
+                  src="imgs/pcis-dashboard.png"
+                  alt="PCIS platform: card-based shipment management dashboard for port logistics operators"
+                />
+              </div>
+              <div class="work-body">
+                <p class="work-label">
+                  Port Logistics / Government · Real Work
+                </p>
+                <h3 class="work-title">
+                  PCIS, Helping Ports Talk to Each Other
+                </h3>
+                <p class="work-desc">
+                  Simplifying enterprise case management to reduce
+                  administrative friction and cognitive load.
+                </p>
+                <div class="outcome-badge">
+                  ✓ 85% task success · 50% faster to find delays
+                </div>
+                <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+                <div class="work-tools">
+                  <span class="tool-tag">Figma</span>
+                  <span class="tool-tag">Comp Analysis</span>
+                  <span class="tool-tag">Agile</span>
+                  <span class="tool-tag">User Research</span>
+                  <span class="tool-tag">Section 508</span>
+                </div>
+                <a class="work-link" href="pcis-dashboard.html"
+                  >View case study →</a
+                >
+              </div>
+            </article>
+
+            <!-- Card 2: VDOT Mobile App -->
+            <article class="work-card">
+              <div class="work-img">
+                <img
+                  src="imgs/vdotapp1.png"
+                  alt="VDOT MRP mobile field inspection app: stepped inspection workflow and on-screen criteria reference"
+                />
+              </div>
+              <div class="work-body">
+                <p class="work-label">
+                  Government / Transportation · Real Work
+                </p>
+                <h3 class="work-title">VDOT MRP, Field Inspection App</h3>
+                <p class="work-desc">
+                  Streamlining field inspection workflows to improve accuracy
+                  and safety in high-risk environments.
+                </p>
+                <div class="outcome-badge">
+                  ✓ 100% digital data capture with zero "slip errors"
+                </div>
+                <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+                <div class="work-tools">
+                  <span class="tool-tag">Figma</span>
+                  <span class="tool-tag">Comp Analysis</span>
+                  <span class="tool-tag">Agile</span>
+                  <span class="tool-tag">User Research</span>
+                  <span class="tool-tag">Section 508</span>
+                </div>
+                <a class="work-link" href="vdot-mobile-app.html"
+                  >View case study →</a
+                >
+              </div>
+            </article>
+
+            <!-- Card 3: VDOT Dashboard -->
+            <article class="work-card">
+              <div class="work-img">
+                <img
+                  src="imgs/dashboard1.png"
+                  alt="VDOT MRP operations hub: infrastructure condition scores and maintenance priority dashboard"
+                />
+              </div>
+              <div class="work-body">
+                <p class="work-label">
+                  Government / Transportation · Real Work
+                </p>
+                <h3 class="work-title">VDOT MRP, Operations Hub</h3>
+                <p class="work-desc">
+                  Empowering stakeholders with real-time data to prioritize
+                  infrastructure maintenance.
+                </p>
+                <div class="outcome-badge">
+                  ✓ Real-time field-to-office operational transparency
+                </div>
+                <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+                <div class="work-tools">
+                  <span class="tool-tag">Figma</span>
+                  <span class="tool-tag">Comp Analysis</span>
+                  <span class="tool-tag">Agile</span>
+                  <span class="tool-tag">User Research</span>
+                  <span class="tool-tag">Section 508</span>
+                </div>
+                <a class="work-link" href="vdot-dashboard.html"
+                  >View case study →</a
+                >
+              </div>
+            </article>
+
+            <!-- Card 4: Telematics -->
+            <article class="work-card">
+              <div class="work-img">
+                <img
+                  src="imgs/telematics2.png"
+                  alt="Telematics mobile prototype: vehicle alert prioritization and field data summary screens"
+                />
+              </div>
+              <div class="work-body">
+                <p class="work-label">Transportation Research · Real Work</p>
+                <h3 class="work-title">Telematics, Mobile Decision Tool</h3>
+                <p class="work-desc">
+                  Translating complex IoT data into actionable insights for
+                  fleet operational efficiency.
+                </p>
+                <div class="outcome-badge">
+                  ✓ Mobile-first field research tool
+                </div>
+                <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+                <div class="work-tools">
+                  <span class="tool-tag">Figma</span>
+                  <span class="tool-tag">Comp Analysis</span>
+                  <span class="tool-tag">Agile</span>
+                  <span class="tool-tag">Functional Analysis</span>
+                </div>
+                <a class="work-link" href="telematics.html"
+                  >View case study →</a
+                >
+              </div>
+            </article>
+
+            <!-- Card 5: Studio88 Keys -->
+            <article class="work-card">
+              <div class="work-img">
+                <img
+                  src="imgs/studio88.png"
+                  alt="Studio88 Keys website: homepage hero and lesson pricing pages for a piano studio"
+                />
+              </div>
+              <div class="work-body">
+                <p class="work-label">
+                  Music Education / Small Business · Freelance
+                </p>
+                <h3 class="work-title">Studio88 Keys, Freelance Web Design</h3>
+                <p class="work-problem">
+                  McKenzie was growing her piano studio entirely through word of
+                  mouth with no website and no way for prospective families to
+                  learn about the studio on their own time.
+                </p>
+                <p class="work-solution">
+                  I designed and built a full 7-page marketing site in Figma and
+                  Framer: warm, conversion-focused, with transparent pricing and
+                  a founder-forward story that builds trust before the first
+                  call.
+                </p>
+                <div class="outcome-badge">
+                  ✓ Full 7-page site · Figma to Framer production build
+                </div>
+                <p class="work-meta">
+                  Web Designer (Freelance) · Studio88 Keys
+                </p>
+                <div class="work-tools">
+                  <span class="tool-tag">Figma</span>
+                  <span class="tool-tag">Comp Analysis</span>
+                  <span class="tool-tag">Framer</span>
+                </div>
+                <a class="work-link" href="studio88.html">View case study →</a>
+              </div>
+            </article>
+
+            <!-- Card 6: Pointly -->
+            <article class="work-card">
+              <div class="work-img">
+                <img
+                  src="imgs/pointlynew.png"
+                  alt="Pointly mobile app: subscription rewards tracker with manual redemption controls"
+                />
+              </div>
+              <div class="work-body">
+                <p class="work-label">
+                  Fintech / Consumer Mobile · Self-Directed
+                </p>
+                <h3 class="work-title">
+                  Pointly, Subscription Rewards Tracker
+                </h3>
+                <p class="work-problem">
+                  Most people let their credit card points expire because
+                  existing redemption flows are buried, confusing, and feel
+                  risky.
+                </p>
+                <p class="work-solution">
+                  I designed a mobile app that automatically tracks points and
+                  lets users redeem them for subscriptions — with manual
+                  approval and visible progress at every step.
+                </p>
+                <div class="outcome-badge">
+                  ✓ Validated prototype · In development
+                </div>
+                <p class="work-meta">
+                  Product Designer · Figma, Maze · 2026 – Present
+                </p>
+                <div class="work-tools">
+                  <span class="tool-tag">Figma</span>
+                  <span class="tool-tag">Maze</span>
+                  <span class="tool-tag">User Research</span>
+                </div>
+                <a class="work-link" href="pointly.html">View case study →</a>
+              </div>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- How I Work -->
+      <section id="approach" class="section" aria-label="How I Work">
+        <div class="container">
+          <h2>How I Work</h2>
+          <p class="section-lede">
+            Every project starts with understanding your users and their context
+            before I touch a design tool.
+          </p>
+
+          <div class="approach-grid">
+            <div class="approach-item">
+              <p class="approach-number">01</p>
+              <h3 class="approach-title">Research</h3>
+              <p class="approach-desc">
+                Stakeholder interviews, task analysis, competitive audits,
+                behavioral observation. I map what people actually do, including
+                the workarounds and friction points that documentation misses.
+              </p>
+            </div>
+            <div class="approach-item">
+              <p class="approach-number">02</p>
+              <h3 class="approach-title">Design</h3>
+              <p class="approach-desc">
+                Wireframes, prototypes, design systems. Every decision traces
+                back to a research finding. I design for the real context of
+                use, whether that's a busy parent on a phone or a field
+                technician under time pressure.
+              </p>
+            </div>
+            <div class="approach-item">
+              <p class="approach-number">03</p>
+              <h3 class="approach-title">Validation</h3>
+              <p class="approach-desc">
+                Usability testing, heuristic evaluation, iteration. I watch
+                where people hesitate, what they misread, and what the patterns
+                reveal about the design's assumptions, then prioritize what to
+                fix first.
+              </p>
+            </div>
+            <div class="approach-item">
+              <p class="approach-number">04</p>
+              <h3 class="approach-title">Accessibility</h3>
+              <p class="approach-desc">
+                WCAG 2.1 AA standards, Section 508 for government work. I build
+                accessibility into the architecture from day one, not bolted on
+                at the end.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience snippet -->
+      <section class="section" aria-label="Experience">
+        <div class="container">
+          <div class="exp-strip">
+            <div class="exp-text">
+              <p>
+                <strong>Currently:</strong> UI/UX Designer at Leidos, designing
+                human-system interfaces for government transportation and
+                logistics programs.
+              </p>
+              <p style="margin-top: 8px">
+                Previously: Human Factors Research Scientist at Leidos,
+                eye-tracking systems, driving simulators, controlled behavioral
+                studies.
+              </p>
+            </div>
+            <div
+              style="display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0"
+            >
+              <a class="btn ghost" href="about.html">About me</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -1123,7 +1180,9 @@ I help organizations improve complex digital experiences by identifying where us
                 max-width: 280px;
               "
             >
-              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions.
+              I help organizations improve complex digital experiences by
+              identifying friction and turning insights into high-impact product
+              decisions.
             </p>
           </div>
 
@@ -1172,7 +1231,9 @@ I help organizations improve complex digital experiences by identifying where us
           © <span id="year"></span> Destinee Young
         </div>
         <p class="a11y-statement">
-          This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.
+          This portfolio is designed with inclusion in mind, aiming for WCAG 2.2
+          AA compliance. I use semantic HTML and ARIA patterns to ensure a
+          seamless experience for users of assistive technology.
         </p>
       </div>
     </footer>
@@ -1181,24 +1242,24 @@ I help organizations improve complex digital experiences by identifying where us
       document.getElementById("year").textContent = new Date().getFullYear();
 
       // Focus management: move keyboard focus to section heading after anchor scroll
-      document.querySelectorAll('a[href="#projects"]').forEach(link => {
-        link.addEventListener('click', () => {
+      document.querySelectorAll('a[href="#projects"]').forEach((link) => {
+        link.addEventListener("click", () => {
           setTimeout(() => {
-            const heading = document.getElementById('case-studies-heading');
+            const heading = document.getElementById("case-studies-heading");
             if (heading) heading.focus();
           }, 100);
         });
       });
       // Name underline: draw in on load, retract when hero scrolls out
-      const nameEl = document.querySelector('.name-anim');
+      const nameEl = document.querySelector(".name-anim");
       if (nameEl) {
         const observer = new IntersectionObserver(
           ([entry]) => {
-            nameEl.classList.toggle('scrolled-out', !entry.isIntersecting);
+            nameEl.classList.toggle("scrolled-out", !entry.isIntersecting);
           },
-          { threshold: 0.1 }
+          { threshold: 0.1 },
         );
-        observer.observe(nameEl.closest('header') || nameEl);
+        observer.observe(nameEl.closest("header") || nameEl);
       }
 
       document.querySelectorAll(".mobile-nav").forEach((nav) => {

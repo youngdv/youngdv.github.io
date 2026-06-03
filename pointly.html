@@ -44,7 +44,9 @@
         filter: brightness(0) saturate(100%) invert(18%) sepia(89%)
           saturate(1100%) hue-rotate(306deg) brightness(84%);
       }
-      .footer-brand img { filter: brightness(0) invert(1); }
+      .footer-brand img {
+        filter: brightness(0) invert(1);
+      }
       * {
         box-sizing: border-box;
         margin: 0;
@@ -120,9 +122,15 @@
       .nav-links a:focus-visible::after {
         width: 100%;
       }
-      .nav-links a[aria-current="page"] { font-weight: 600; }
-      .nav-links a[aria-current="page"]::after { width: 100%; }
-      .mobile-menu a[aria-current="page"] { font-weight: 600; }
+      .nav-links a[aria-current="page"] {
+        font-weight: 600;
+      }
+      .nav-links a[aria-current="page"]::after {
+        width: 100%;
+      }
+      .mobile-menu a[aria-current="page"] {
+        font-weight: 600;
+      }
 
       .btn {
         display: inline-flex;
@@ -467,7 +475,9 @@
         width: 100%;
         border-radius: 14px;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(0, 0, 0, 0.05);
+        box-shadow:
+          0 4px 20px rgba(0, 0, 0, 0.1),
+          0 0 0 1px rgba(0, 0, 0, 0.05);
       }
       .compare-well img {
         width: 100%;
@@ -613,7 +623,7 @@
         background: #1e2028;
         border-top: none;
         padding: 56px 20px 24px;
-        color: rgba(255,255,255,0.85);
+        color: rgba(255, 255, 255, 0.85);
       }
       .footer-content {
         max-width: 1200px;
@@ -630,7 +640,9 @@
         display: flex;
         flex-direction: column;
       }
-      .footer-brand p { color: rgba(255,255,255,0.6) !important; }
+      .footer-brand p {
+        color: rgba(255, 255, 255, 0.6) !important;
+      }
       .footer-nav {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -810,7 +822,7 @@
       .a11y-statement {
         margin-top: 12px;
         font-size: 12px;
-        color: rgba(255,255,255,0.45);
+        color: rgba(255, 255, 255, 0.45);
         max-width: 640px;
         line-height: 1.6;
       }
@@ -850,308 +862,409 @@
     </nav>
 
     <main id="main-content">
-
-    <!-- Outcome banner -->
-    <div class="outcome-banner">
-      <div class="outcome-banner-inner">
-        <div class="outcome-stat">
-          <span class="number">What I Did</span>
-          <span class="label">I ran a needs-validation survey, designed wireframes and a high-fidelity prototype, tested it with users, and redesigned the redemption flow based on what I learned. Early research showed people reject automatic point redemption, so I built the product around manual approval, visible progress, and easy pause/disable controls.</span>
-        </div>
-        <div class="outcome-divider"></div>
-        <div class="outcome-stat">
-          <span class="number">The Result</span>
-          <span class="label">A validated, end-to-end prototype that users understood and completed on the first try. Currently in development.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Hero -->
-    <header class="hero">
-      <h1>Turning everyday credit card points into the subscriptions people already pay for</h1>
-      <p>
-        I designed Pointly, a mobile app that tracks credit card reward points
-        and lets users redeem them for subscriptions like Netflix and Spotify,
-        with full manual control over every redemption.
-      </p>
-    </header>
-
-    <!-- Meta card -->
-    <div class="project-meta">
-      <div class="meta-item">
-        <div class="meta-label">Industry</div>
-        <div class="meta-value">Fintech / Consumer Mobile</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Client</div>
-        <div class="meta-value">Self-directed project</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Timeframe</div>
-        <div class="meta-value">2026 – Present</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">My Role</div>
-        <div class="meta-value">Product Designer (research, UX, UI)</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Team</div>
-        <div class="meta-value">Solo (designer); partnering with a developer for build</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Tools</div>
-        <div class="meta-value">Figma, Maze</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Methodology</div>
-        <div class="meta-value">Survey → wireframe → prototype → usability testing → redesign</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Status</div>
-        <div class="meta-value">Design complete · validated · in development</div>
-      </div>
-    </div>
-
-    <!-- Top hero image (swap imgs/pointly1.png when ready) -->
-    <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px">
-      <div class="media-tape">
-        <div class="media-well tall">
-          <img
-            src="imgs/pointly1.png"
-            alt="Pointly app screens, placeholder; swap in exported Figma screens"
-          />
+      <!-- Outcome banner -->
+      <div class="outcome-banner">
+        <div class="outcome-banner-inner">
+          <div class="outcome-stat">
+            <span class="number">What I Did</span>
+            <span class="label"
+              >I ran a needs-validation survey, designed wireframes and a
+              high-fidelity prototype, tested it with users, and redesigned the
+              redemption flow based on what I learned. Early research showed
+              people reject automatic point redemption, so I built the product
+              around manual approval, visible progress, and easy pause/disable
+              controls.</span
+            >
+          </div>
+          <div class="outcome-divider"></div>
+          <div class="outcome-stat">
+            <span class="number">The Result</span>
+            <span class="label"
+              >A validated, end-to-end prototype that users understood and
+              completed on the first try. Currently in development.</span
+            >
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- The Challenge -->
-    <section class="project-section">
-      <span class="section-tag">The Challenge</span>
-      <h2>The Problem Was Trust, Not Just UI</h2>
-      <p>
-        Reward points are valuable, but most people let them expire or never
-        figure out how to use them. Existing redemption flows are buried,
-        confusing, and feel risky.
-      </p>
-      <p>
-        The hard part wasn't the UI. It was trust: people don't want their
-        points spent automatically without their say-so. Any solution that
-        removed control (even to make things easier) would fail.
-      </p>
-    </section>
-
-    <!-- Research -->
-    <section class="project-section">
-      <span class="section-tag">Research</span>
-      <h2>What the Survey Revealed</h2>
-      <p>
-        A needs-validation survey confirmed the problem and surfaced the key
-        constraint: users reject automatic redemption by default.
-      </p>
-
-      <div class="research-highlight">
-        <p class="rh-label">Key Finding</p>
+      <!-- Hero -->
+      <header class="hero">
+        <h1>
+          Turning everyday credit card points into the subscriptions people
+          already pay for
+        </h1>
         <p>
-          Users want to stay in control: approve each redemption, see their
-          progress, and be able to pause or turn it off. These findings became
-          the core design requirements.
+          I designed Pointly, a mobile app that tracks credit card reward points
+          and lets users redeem them for subscriptions like Netflix and Spotify,
+          with full manual control over every redemption.
         </p>
+      </header>
+
+      <!-- Meta card -->
+      <div class="project-meta">
+        <div class="meta-item">
+          <div class="meta-label">Industry</div>
+          <div class="meta-value">Fintech / Consumer Mobile</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Client</div>
+          <div class="meta-value">Self-directed project</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Timeframe</div>
+          <div class="meta-value">2026 – Present</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">Product Designer (research, UX, UI)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Team</div>
+          <div class="meta-value">
+            Solo (designer); partnering with a developer for build
+          </div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Tools</div>
+          <div class="meta-value">Figma, Maze</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Methodology</div>
+          <div class="meta-value">
+            Survey → wireframe → prototype → usability testing → redesign
+          </div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Status</div>
+          <div class="meta-value">
+            Design complete · validated · in development
+          </div>
+        </div>
       </div>
 
-    </section>
-
-    <!-- Strategy -->
-    <section class="project-section">
-      <span class="section-tag">Strategy</span>
-      <h2>Three Principles from the Research</h2>
-      <p style="margin-bottom: 20px">
-        Every decision traces back to one of these three research-driven principles.
-      </p>
-
-      <div class="principle-row">
-        <div class="principle-card">
-          <p class="principle-number">01</p>
-          <h3>Manual Approval</h3>
-          <p>Every redemption requires explicit confirmation via a clear "Use Points" action. Nothing happens without the user's say-so.</p>
-          <img src="imgs/strategy-manual-approval.png" alt="The redemption confirmation step" />
-          <p class="media-caption">The redemption confirmation step — nothing is applied until the user explicitly approves.</p>
-        </div>
-        <div class="principle-card">
-          <p class="principle-number">02</p>
-          <h3>Visible Progress</h3>
-          <p>Progress indicators show points building toward a redeemable subscription. Users can see where they are and what they're working toward.</p>
-          <img src="imgs/strategy-visible-progress.png" alt="Progress toward covering a subscription" />
-          <p class="media-caption">Progress toward covering a subscription stays visible, so points never feel like they vanish.</p>
-        </div>
-        <div class="principle-card">
-          <p class="principle-number">03</p>
-          <h3>Easy Control</h3>
-          <p>Pause and disable are always accessible. Users can opt out of any subscription pairing at any time without hunting through settings.</p>
-          <img src="imgs/strategy-easy-control.png" alt="Pause and resume on each subscription" />
-          <p class="media-caption">Pause and resume live directly on each subscription — no digging through settings.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Design (large mockup) -->
-    <section class="project-section">
-      <span class="section-tag">Design</span>
-      <h2>High-Fidelity Prototype</h2>
-      <p>
-        The prototype was designed in Figma and covered the full user journey:
-        connecting a card, viewing point balances, understanding progress toward
-        a subscription, and completing a manual redemption via the "Use Points"
-        flow.
-      </p>
-
-      <!-- Large phone mockup: swap imgs/pointly1.png with your exported screens -->
-      <div style="padding: 0; max-width: 780px; margin: 28px auto 0">
+      <!-- Top hero image (swap imgs/pointly1.png when ready) -->
+      <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px">
         <div class="media-tape">
-          <div class="media-well tall" style="max-width: 100%">
+          <div class="media-well tall">
             <img
-              src="imgs/pointly1.png"
-              alt="Pointly high-fidelity prototype screens, placeholder; swap in exported Figma screens"
+              src="imgs/pointlynew.png"
+              alt="Pointly app screens, placeholder; swap in exported Figma screens"
             />
           </div>
         </div>
       </div>
 
-      <p style="margin-top: 24px">
-        Testing confirmed the core flow worked: all four participants completed every
-        task. So v2 wasn't about fixing broken flows; it was about raising the ceiling.
-        Guided by the one piece of qualitative feedback and my own heuristic review, I
-        focused the redesign on making the trust-and-control model explicit, adding
-        clear coverage status, and enriching the subscription view.
-      </p>
-
-      <h3 style="margin-top: 28px">What Changed in v2</h3>
-      <p>Each change traces back to the research insight that users need to feel in control, so v2 surfaces control and status that v1 only implied.</p>
-
-      <div class="mockup-compare">
-        <div class="mockup-compare-item">
-          <span class="compare-label before">Before · v1</span>
-          <div class="compare-well">
-            <img
-              src="imgs/pointly-v1.png"
-              alt="Pointly v1 screens, placeholder; swap in exported Figma screens"
-            />
-          </div>
-          <p class="media-caption" style="text-align: left; margin: 0">
-            v1 — Concept validated. The flow worked, but trust signals and subscription status were minimal.
-          </p>
-        </div>
-        <div class="mockup-compare-item">
-          <span class="compare-label after">After · v2</span>
-          <div class="compare-well">
-            <img
-              src="imgs/pointly-v2.png"
-              alt="Pointly v2 screens, placeholder; swap in exported Figma screens"
-            />
-          </div>
-          <p class="media-caption" style="text-align: left; margin: 0">
-            v2 — Control made explicit. A 'Manual control, always' banner up top, coverage badges (65% covered / Fully covered), service branding, and clear per-subscription actions (Apply / Pause / Resume).
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Validation -->
-    <section class="project-section">
-      <span class="section-tag">Validation</span>
-      <h2>Usability Study</h2>
-
-      <div class="design-decision">
-        <h3>Study Design</h3>
+      <!-- The Challenge -->
+      <section class="project-section">
+        <span class="section-tag">The Challenge</span>
+        <h2>The Problem Was Trust, Not Just UI</h2>
         <p>
-          4 participants completed three goal-based tasks on their own phones
-          via Maze (unmoderated), mirroring real conditions. Tasks mapped to
-          the core requirements:
+          Reward points are valuable, but most people let them expire or never
+          figure out how to use them. Existing redemption flows are buried,
+          confusing, and feel risky.
         </p>
-        <ul>
-          <li>Understanding the value/progress concept</li>
-          <li>Completing the "Use Points" redemption flow</li>
-          <li>Finding the pause/disable controls</li>
+        <p>
+          The hard part wasn't the UI. It was trust: people don't want their
+          points spent automatically without their say-so. Any solution that
+          removed control (even to make things easier) would fail.
+        </p>
+      </section>
+
+      <!-- Research -->
+      <section class="project-section">
+        <span class="section-tag">Research</span>
+        <h2>What the Survey Revealed</h2>
+        <p>
+          A needs-validation survey confirmed the problem and surfaced the key
+          constraint: users reject automatic redemption by default.
+        </p>
+
+        <div class="research-highlight">
+          <p class="rh-label">Key Finding</p>
+          <p>
+            Users want to stay in control: approve each redemption, see their
+            progress, and be able to pause or turn it off. These findings became
+            the core design requirements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Strategy -->
+      <section class="project-section">
+        <span class="section-tag">Strategy</span>
+        <h2>Three Principles from the Research</h2>
+        <p style="margin-bottom: 20px">
+          Every decision traces back to one of these three research-driven
+          principles.
+        </p>
+
+        <div class="principle-row">
+          <div class="principle-card">
+            <p class="principle-number">01</p>
+            <h3>Manual Approval</h3>
+            <p>
+              Every redemption requires explicit confirmation via a clear "Use
+              Points" action. Nothing happens without the user's say-so.
+            </p>
+            <img
+              src="imgs/strategy-manual-approval.png"
+              alt="The redemption confirmation step"
+            />
+            <p class="media-caption">
+              The redemption confirmation step — nothing is applied until the
+              user explicitly approves.
+            </p>
+          </div>
+          <div class="principle-card">
+            <p class="principle-number">02</p>
+            <h3>Visible Progress</h3>
+            <p>
+              Progress indicators show points building toward a redeemable
+              subscription. Users can see where they are and what they're
+              working toward.
+            </p>
+            <img
+              src="imgs/strategy-visible-progress.png"
+              alt="Progress toward covering a subscription"
+            />
+            <p class="media-caption">
+              Progress toward covering a subscription stays visible, so points
+              never feel like they vanish.
+            </p>
+          </div>
+          <div class="principle-card">
+            <p class="principle-number">03</p>
+            <h3>Easy Control</h3>
+            <p>
+              Pause and disable are always accessible. Users can opt out of any
+              subscription pairing at any time without hunting through settings.
+            </p>
+            <img
+              src="imgs/strategy-easy-control.png"
+              alt="Pause and resume on each subscription"
+            />
+            <p class="media-caption">
+              Pause and resume live directly on each subscription — no digging
+              through settings.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design (large mockup) -->
+      <section class="project-section">
+        <span class="section-tag">Design</span>
+        <h2>High-Fidelity Prototype</h2>
+        <p>
+          The prototype was designed in Figma and covered the full user journey:
+          connecting a card, viewing point balances, understanding progress
+          toward a subscription, and completing a manual redemption via the "Use
+          Points" flow.
+        </p>
+
+        <!-- Large phone mockup: swap imgs/pointly1.png with your exported screens -->
+        <div style="padding: 0; max-width: 780px; margin: 28px auto 0">
+          <div class="media-tape">
+            <div class="media-well tall" style="max-width: 100%">
+              <img
+                src="imgs/pointlynew.png"
+                alt="Pointly high-fidelity prototype screens, placeholder; swap in exported Figma screens"
+              />
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: 24px">
+          Testing confirmed the core flow worked: all four participants
+          completed every task. So v2 wasn't about fixing broken flows; it was
+          about raising the ceiling. Guided by the one piece of qualitative
+          feedback and my own heuristic review, I focused the redesign on making
+          the trust-and-control model explicit, adding clear coverage status,
+          and enriching the subscription view.
+        </p>
+
+        <h3 style="margin-top: 28px">What Changed in v2</h3>
+        <p>
+          Each change traces back to the research insight that users need to
+          feel in control, so v2 surfaces control and status that v1 only
+          implied.
+        </p>
+
+        <div class="mockup-compare">
+          <div class="mockup-compare-item">
+            <span class="compare-label before">Before · v1</span>
+            <div class="compare-well">
+              <img
+                src="imgs/pointly-v1.png"
+                alt="Pointly v1 screens, placeholder; swap in exported Figma screens"
+              />
+            </div>
+            <p class="media-caption" style="text-align: left; margin: 0">
+              v1 — Concept validated. The flow worked, but trust signals and
+              subscription status were minimal.
+            </p>
+          </div>
+          <div class="mockup-compare-item">
+            <span class="compare-label after">After · v2</span>
+            <div class="compare-well">
+              <img
+                src="imgs/pointly-v2.png"
+                alt="Pointly v2 screens, placeholder; swap in exported Figma screens"
+              />
+            </div>
+            <p class="media-caption" style="text-align: left; margin: 0">
+              v2 — Control made explicit. A 'Manual control, always' banner up
+              top, coverage badges (65% covered / Fully covered), service
+              branding, and clear per-subscription actions (Apply / Pause /
+              Resume).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Validation -->
+      <section class="project-section">
+        <span class="section-tag">Validation</span>
+        <h2>Usability Study</h2>
+
+        <div class="design-decision">
+          <h3>Study Design</h3>
+          <p>
+            4 participants completed three goal-based tasks on their own phones
+            via Maze (unmoderated), mirroring real conditions. Tasks mapped to
+            the core requirements:
+          </p>
+          <ul>
+            <li>Understanding the value/progress concept</li>
+            <li>Completing the "Use Points" redemption flow</li>
+            <li>Finding the pause/disable controls</li>
+          </ul>
+          <p>Participants rated each task on a 7-point scale.</p>
+        </div>
+
+        <div class="design-decision">
+          <h3>Results</h3>
+          <div class="validation-stats">
+            <div class="v-stat">
+              <span class="v-stat-number">4 / 4</span>
+              <span class="v-stat-label"
+                >Concept comprehension: understood the value/progress
+                model</span
+              >
+            </div>
+            <div class="v-stat">
+              <span class="v-stat-number">4 / 4</span>
+              <span class="v-stat-label"
+                >Task completion: completed all three goal-based tasks</span
+              >
+            </div>
+            <div class="v-stat">
+              <span class="v-stat-number">4.25 / 5</span>
+              <span class="v-stat-label"
+                >Likelihood to use, average across all participants</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-compare" style="margin: 20px 0 8px">
+          <div class="mockup-compare-item">
+            <div class="compare-well">
+              <img
+                src="imgs/Misclick1.png"
+                alt="Maze results for the Pause Redemption task"
+              />
+            </div>
+            <p class="media-caption" style="text-align: left; margin: 6px 0 0">
+              Maze results — Pause Redemption task: 100% success, 0% drop-off,
+              31% misclick.
+            </p>
+          </div>
+          <div class="mockup-compare-item">
+            <div class="compare-well">
+              <img
+                src="imgs/Misclick2.png"
+                alt="Navigation paths for the Pause Redemption task"
+              />
+            </div>
+            <p class="media-caption" style="text-align: left; margin: 6px 0 0">
+              Navigation paths for the same task — every participant reached the
+              paused state, but via routes of different lengths.
+            </p>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.75; margin: 4px 0 20px">
+          Every participant successfully paused the subscription, but a 31%
+          misclick rate and the navigation paths told a subtler story: people
+          reached the control by different routes, some looping between the
+          rewards view and the pause screen before finding it. The task
+          succeeded, but the path wasn't direct. That signal — alongside the
+          qualitative feedback — directly informed making controls more
+          prominent and the pause action more discoverable in v2.
+        </p>
+
+        <div class="pull-quote">
+          <p class="pq-text">
+            "I would have liked some more options for things to do with my
+            points."
+          </p>
+          <cite>One participant, post-test feedback</cite>
+          <p class="pq-context">
+            With only one open comment across four participants, I treat this as
+            a single signal rather than a trend, but it pointed directly at v2's
+            direction: giving users more to do with their points.
+          </p>
+        </div>
+
+        <div class="design-decision">
+          <h3>What It Validated &amp; What's Next</h3>
+          <p>
+            The study validated first-pass usability and comprehension: new
+            users understood Pointly and completed the core flow without help.
+          </p>
+          <p>
+            It does <strong>not</strong> establish market demand or long-term
+            behavior. The planned next steps are moderated interviews to
+            understand the "why" behind usage and technical feasibility research
+            toward an MVP.
+          </p>
+        </div>
+      </section>
+
+      <!-- Impact / Next -->
+      <section class="project-section">
+        <span class="section-tag">Impact / Next</span>
+        <h2>Where Pointly Is Headed</h2>
+        <p>
+          The validated prototype confirmed the concept is learnable and the
+          manual-control model resonates. Pointly is now moving toward technical
+          feasibility and development, with moderated research planned to deepen
+          behavioral insight before an MVP.
+        </p>
+        <ul style="margin-top: 14px">
+          <li>
+            First-pass usability and comprehension validated: new users
+            completed the full core flow without assistance
+          </li>
+          <li>
+            Manual-approval model confirmed as the right framing; no
+            participants tried to find an "automatic" mode
+          </li>
+          <li>
+            Refined v2 to make control and coverage status more discoverable —
+            building on a validated flow, informed by misclick paths and
+            qualitative feedback.
+          </li>
+          <li>
+            Next: moderated interviews to understand behavioral "why" and
+            technical feasibility research toward MVP
+          </li>
         </ul>
-        <p>Participants rated each task on a 7-point scale.</p>
-      </div>
 
-      <div class="design-decision">
-        <h3>Results</h3>
-        <div class="validation-stats">
-          <div class="v-stat">
-            <span class="v-stat-number">4 / 4</span>
-            <span class="v-stat-label">Concept comprehension: understood the value/progress model</span>
-          </div>
-          <div class="v-stat">
-            <span class="v-stat-number">4 / 4</span>
-            <span class="v-stat-label">Task completion: completed all three goal-based tasks</span>
-          </div>
-          <div class="v-stat">
-            <span class="v-stat-number">4.25 / 5</span>
-            <span class="v-stat-label">Likelihood to use, average across all participants</span>
-          </div>
+        <div class="case-nav" style="margin-top: 28px">
+          <a class="secondary" href="index.html">← Back to work</a>
         </div>
-      </div>
-
-      <div class="mockup-compare" style="margin: 20px 0 8px">
-        <div class="mockup-compare-item">
-          <div class="compare-well">
-            <img src="imgs/Misclick1.png" alt="Maze results for the Pause Redemption task" />
-          </div>
-          <p class="media-caption" style="text-align: left; margin: 6px 0 0">Maze results — Pause Redemption task: 100% success, 0% drop-off, 31% misclick.</p>
-        </div>
-        <div class="mockup-compare-item">
-          <div class="compare-well">
-            <img src="imgs/Misclick2.png" alt="Navigation paths for the Pause Redemption task" />
-          </div>
-          <p class="media-caption" style="text-align: left; margin: 6px 0 0">Navigation paths for the same task — every participant reached the paused state, but via routes of different lengths.</p>
-        </div>
-      </div>
-      <p style="font-size: 15px; line-height: 1.75; margin: 4px 0 20px">Every participant successfully paused the subscription, but a 31% misclick rate and the navigation paths told a subtler story: people reached the control by different routes, some looping between the rewards view and the pause screen before finding it. The task succeeded, but the path wasn't direct. That signal — alongside the qualitative feedback — directly informed making controls more prominent and the pause action more discoverable in v2.</p>
-
-      <div class="pull-quote">
-        <p class="pq-text">"I would have liked some more options for things to do with my points."</p>
-        <cite>One participant, post-test feedback</cite>
-        <p class="pq-context">With only one open comment across four participants, I treat this as a single signal rather than a trend, but it pointed directly at v2's direction: giving users more to do with their points.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>What It Validated &amp; What's Next</h3>
-        <p>
-          The study validated first-pass usability and comprehension: new
-          users understood Pointly and completed the core flow without help.
-        </p>
-        <p>
-          It does <strong>not</strong> establish market demand or long-term
-          behavior. The planned next steps are moderated interviews to
-          understand the "why" behind usage and technical feasibility research
-          toward an MVP.
-        </p>
-      </div>
-    </section>
-
-    <!-- Impact / Next -->
-    <section class="project-section">
-      <span class="section-tag">Impact / Next</span>
-      <h2>Where Pointly Is Headed</h2>
-      <p>
-        The validated prototype confirmed the concept is learnable and the
-        manual-control model resonates. Pointly is now moving toward technical
-        feasibility and development, with moderated research planned to deepen
-        behavioral insight before an MVP.
-      </p>
-      <ul style="margin-top: 14px">
-        <li>First-pass usability and comprehension validated: new users completed the full core flow without assistance</li>
-        <li>Manual-approval model confirmed as the right framing; no participants tried to find an "automatic" mode</li>
-        <li>Refined v2 to make control and coverage status more discoverable — building on a validated flow, informed by misclick paths and qualitative feedback.</li>
-        <li>Next: moderated interviews to understand behavioral "why" and technical feasibility research toward MVP</li>
-      </ul>
-
-      <div class="case-nav" style="margin-top: 28px">
-        <a class="secondary" href="index.html">← Back to work</a>
-      </div>
-    </section>
-
+      </section>
     </main>
 
     <footer>
@@ -1183,7 +1296,9 @@
                 max-width: 280px;
               "
             >
-              I help organizations improve complex digital experiences by identifying friction and turning insights into high-impact product decisions.
+              I help organizations improve complex digital experiences by
+              identifying friction and turning insights into high-impact product
+              decisions.
             </p>
           </div>
 
@@ -1231,7 +1346,9 @@
           © <span id="year"></span> Destinee Young
         </div>
         <p class="a11y-statement">
-          This portfolio is designed with inclusion in mind, aiming for WCAG 2.2 AA compliance. I use semantic HTML and ARIA patterns to ensure a seamless experience for users of assistive technology.
+          This portfolio is designed with inclusion in mind, aiming for WCAG 2.2
+          AA compliance. I use semantic HTML and ARIA patterns to ensure a
+          seamless experience for users of assistive technology.
         </p>
       </div>
     </footer>
