@@ -346,6 +346,13 @@
         line-height: 1.6;
       }
       .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
+
+      /* Before/After block — scoped; does not affect .media-well elsewhere */
+      .beforeafter-grid .insight-design-grid { align-items: start; }
+      .beforeafter-grid .media-well { aspect-ratio: 2 / 1; }
+      .beforeafter-grid .media-well img { object-fit: cover; object-position: center center; }
+      .beforeafter-grid .insight-design-grid > div:first-child .media-well img { object-fit: contain; }
+      .beforeafter-grid .insight-design-grid > div:last-child .media-well img { object-position: top center; }
         </style>
   </head>
   <body>
@@ -417,7 +424,7 @@
       </div>
       <div class="meta-item">
         <div class="meta-label">Team</div>
-        <div class="meta-value">PM, Solutions Architect, 2 Engineers</div>
+        <div class="meta-value">PM, Solutions Architect, Software Engineer, and Engineering Intern</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Tools</div>
@@ -541,6 +548,50 @@
       <p>
         An inspector who marks an asset "failing" on their phone sees that same visual language when the record appears on the dashboard.
       </p>
+    </section>
+
+    <!-- Front-End Contribution -->
+    <section class="project-section">
+      <span class="section-tag">Engineering</span>
+      <h2>Front-End Contribution</h2>
+      <p>
+        Working in the React codebase, I built the dashboard's front end: I translated my own Figma components into UI, including the status indicators, the map detail popover, and the filterable data table. I implemented the Map/Tabular view toggle and the responsive behavior of the Display Control Panel, and managed my revisions with Git so my work integrated cleanly with the team.
+      </p>
+      <p>
+        I built my React proficiency hands-on through pairing with the team's software engineer, AI-assisted development, and independent learning, ramping up fast enough to ship UI code within the sprint cadence rather than handing off static designs.
+      </p>
+
+      <p style="margin-top: 24px;">The dashboard went from a working prototype to a production interface. I owned that visual and front-end transformation.</p>
+      <div class="beforeafter-grid">
+      <div class="insight-design-grid">
+        <div>
+          <span class="section-tag">Before &middot; 2024</span>
+          <div class="media-well" style="margin-top: 8px;">
+            <img
+              src="imgs/VDOTMRP2024.png"
+              alt="Early VDOT MRP dashboard running in a development environment: a map view with default browser-style pin markers and a plain, unstyled side panel showing raw inspection data without visual hierarchy or branding."
+              loading="lazy"
+              width="3467"
+              height="1250"
+            />
+          </div>
+          <p style="font-size: 13px; color: var(--muted); margin-top: 8px; text-align: center;">Early functional prototype: default map markers, unstyled panels, running on a dev instance.</p>
+        </div>
+        <div>
+          <span class="section-tag">After &middot; 2026</span>
+          <div class="media-well" style="margin-top: 8px;">
+            <img
+              src="imgs/VDOTMRP2026.png"
+              alt="Current VDOT MRP production dashboard: a styled map with a highlighted asset location, a branded Display Control Panel on the left, and an open asset detail popover on the right showing an inline inspection photo, a failure code, and geolocation coordinates."
+              loading="lazy"
+              width="2878"
+              height="1624"
+            />
+          </div>
+          <p style="font-size: 13px; color: var(--muted); margin-top: 8px; text-align: center;">Current production UI: branded control panel and structured detail view, with inline photo, failure code, and geolocation.</p>
+        </div>
+      </div>
+      </div>
     </section>
 
     <!-- The Outcome -->
