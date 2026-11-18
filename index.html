@@ -788,6 +788,29 @@
         outline-offset: 2px;
       }
     </style>
+
+    <style>
+      /* Match case-study system (PCIS / VDOT pages) */
+      :root{--container:1120px}
+      .container{padding:0 24px}
+      .hero{padding-top:56px}
+      .hero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.01em}
+      .hero-subtext{font-size:19px;line-height:1.65;color:var(--muted);max-width:62ch}
+      .hero-dna{background:#fff;border:0;border-left:3px solid var(--pink);border-radius:0 18px 18px 0;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+      .hero-cta .btn{border-radius:999px;min-height:48px;padding:0 22px;display:inline-flex;align-items:center}
+      .home-label{display:block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+      .home-label b{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:28px;color:var(--pink);letter-spacing:0;margin-right:10px;vertical-align:-3px}
+      #projects h2,#approach h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em}
+      .work-card{border-radius:18px!important;border:0!important;box-shadow:0 1px 0 rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.08)!important;overflow:hidden}
+      .work-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.08)!important}
+      .work-title{font-family:"DM Serif Display",Georgia,serif!important;font-weight:400!important;font-size:26px!important;line-height:1.15!important}
+      .work-label{font-size:12px!important;font-weight:700!important;letter-spacing:.06em!important;color:var(--muted)!important}
+      .outcome-badge{border-radius:999px!important;font-weight:700!important;font-size:12px!important;background:var(--pink-light)!important;color:var(--pink-dark)!important;border:0!important}
+      .tool-tag{border-radius:999px!important;background:#fff!important;border:1px solid rgba(0,0,0,.08)!important;font-weight:600!important}
+      .work-link{border-radius:999px!important;min-height:44px;display:inline-flex!important;align-items:center}
+      .approach-item{border-radius:18px!important;border:0!important;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+      .exp-strip{border-radius:18px!important;background:#fff!important}
+    </style>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -836,10 +859,9 @@
           </p>
           <div class="hero-dna">
             Most recently, I used behavioral science to get competing port
-            operators to willingly share data, then validated it with real
-            users.
+            operators to willingly share data, then validated it with 7 stakeholders across three states.
             <strong
-              >85% found the system easy to use on their first try.</strong
+              >6 of 7 found it easy to understand and use.</strong
             >
           </div>
           <div class="hero-cta">
@@ -852,6 +874,7 @@
       <!-- Work -->
       <section id="projects" class="section" aria-label="Selected Case Studies">
         <div class="container">
+          <span class="home-label"><b>01</b>Work</span>
           <h2 id="case-studies-heading" tabindex="-1">Selected Case Studies</h2>
 
           <div class="work-grid">
@@ -859,8 +882,8 @@
             <article class="work-card">
               <div class="work-img">
                 <img
-                  src="imgs/pcis-dashboard.png"
-                  alt="PCIS platform: card-based shipment management dashboard for port logistics operators"
+                  src="imgs/pcis-concept-home.png"
+                  alt="PCIS terminal operator home, concept redesign with a summary strip and needs-attention list"
                 />
               </div>
               <div class="work-body">
@@ -875,9 +898,9 @@
                   administrative friction and cognitive load.
                 </p>
                 <div class="outcome-badge">
-                  ✓ 85% task success · 50% faster to find delays
+                  ✓ 6 of 7 stakeholders found it easy to use
                 </div>
-                <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+                <p class="work-meta">Lead UX Designer · Figma · 2025 – present</p>
                 <div class="work-tools">
                   <span class="tool-tag">Figma</span>
                   <span class="tool-tag">Comp Analysis</span>
@@ -909,7 +932,7 @@
                   and safety in high-risk environments.
                 </p>
                 <div class="outcome-badge">
-                  ✓ 100% digital data capture with zero "slip errors"
+                  ✓ 80-page manual turned into a guided mobile workflow
                 </div>
                 <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
                 <div class="work-tools">
@@ -943,9 +966,9 @@
                   infrastructure maintenance.
                 </p>
                 <div class="outcome-badge">
-                  ✓ Real-time field-to-office operational transparency
+                  ✓ Field data flows to the office with no re-entry
                 </div>
-                <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+                <p class="work-meta">Lead UX Designer, front-end support · Figma</p>
                 <div class="work-tools">
                   <span class="tool-tag">Figma</span>
                   <span class="tool-tag">Comp Analysis</span>
@@ -977,7 +1000,7 @@
                 <div class="outcome-badge">
                   ✓ Mobile-first field research tool
                 </div>
-                <p class="work-meta">Lead UX Designer · Figma · 8+ Mo</p>
+                <p class="work-meta">UI/UX Designer · Figma · Design sprint</p>
                 <div class="work-tools">
                   <span class="tool-tag">Figma</span>
                   <span class="tool-tag">Comp Analysis</span>
@@ -1075,6 +1098,7 @@
       <!-- How I Work -->
       <section id="approach" class="section" aria-label="How I Work">
         <div class="container">
+          <span class="home-label"><b>02</b>Process</span>
           <h2>How I Work</h2>
           <p class="section-lede">
             Every project starts with understanding your users and their context

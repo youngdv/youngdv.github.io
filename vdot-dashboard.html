@@ -380,256 +380,318 @@
       </div>
     </nav>
 
-    <main id="main-content">
+    <main id="main-content" class="cs">
+      <style>
+        .cs{--cs-max:1120px;--cs-ink:#0b0b0b;--cs-mute:#5f6575;--cs-line:rgba(0,0,0,.08);--cs-soft:#f7f7f5}
+        .cs *{box-sizing:border-box}
+        .cs .cs-wrap{max-width:var(--cs-max);margin:0 auto;padding:0 24px}
+        .cs h1,.cs h2{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+        .cs p{color:var(--cs-ink);font-size:17px;line-height:1.65;max-width:62ch}
+        .cs .cs-lead{font-size:19px;color:var(--cs-mute)}
+        .cs .cs-pill{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--pink-dark);background:var(--pink-light);border:1px solid var(--pink-border);border-radius:999px;padding:4px 12px}
+        /* Hero */
+        .cs-hero{padding:56px 0 32px}
+        .cs-hero .cs-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+        .cs-hero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:16px 0 18px}
+        .cs-hero .cs-wrap + .cs-wrap{display:block}
+        .cs-hero-img{background:#fff;border-radius:24px;padding:24px;box-shadow:0 2px 24px rgba(0,0,0,.06)}
+        .cs-hero-img img{width:100%;height:auto;display:block;border-radius:12px}
+        .cs-facts{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--cs-line);border-bottom:1px solid var(--cs-line);margin:24px 0 8px}
+        .cs-facts div{padding:18px 16px 18px 0}
+        .cs-facts dt{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cs-mute);margin-bottom:4px}
+        .cs-facts dd{margin:0;font-size:15px;font-weight:600}
+        /* Section */
+        .cs-sec{padding:72px 0;border-bottom:1px solid var(--cs-line)}
+        .cs-sec .cs-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px}
+        .cs-sec .cs-wrap > div{min-width:0}
+        .cs-label{position:sticky;top:96px;align-self:start}
+        .cs-num{font-family:"DM Serif Display",Georgia,serif;font-size:44px;line-height:1;color:var(--pink)}
+        .cs-label span{display:block;margin-top:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cs-mute)}
+        .cs-sec h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;margin:0 0 18px}
+        .cs-sec p+p{margin-top:12px}
+        .cs-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+        .cs-chip{font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--cs-line)}
+        /* Cards */
+        .cs-grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+        .cs-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+        .cs-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 0 0 1px var(--cs-line)}
+        .cs-card h3{font-size:19px;font-weight:700;margin:0 0 8px}
+        .cs-card p{font-size:15px;color:var(--cs-mute);margin:0}
+        .cs-card .cs-why{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--pink-dark);background:var(--pink-light);border-radius:999px;padding:3px 10px}
+        .cs-card.ok{border-top:4px solid #16a34a}.cs-card.warn{border-top:4px solid #d97706}
+        /* Phones */
+        .cs-phones{display:grid;gap:16px;margin-top:28px}
+        .cs-phones.two{grid-template-columns:1fr 1fr}
+        .cs-phones.four{grid-template-columns:repeat(4,1fr)}
+        .cs-phone{margin:0}
+        .cs-phone .frame{background:var(--cs-soft);border-radius:18px;padding:16px;display:flex;justify-content:center;align-items:flex-start;height:440px;overflow:hidden;box-shadow:0 0 0 1px var(--cs-line)}
+        .cs-phones.four .cs-phone .frame{height:380px}
+        .cs-phone img{max-height:100%;max-width:100%;width:auto;object-fit:contain;object-position:top;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+        .cs-phone figcaption{font-size:14px;line-height:1.5;color:var(--cs-mute);margin-top:10px}
+        .cs-phone figcaption b{color:var(--cs-ink)}
+        /* Stats */
+        .cs-stats{display:flex;gap:40px;flex-wrap:wrap;margin:24px 0 8px}
+        .cs-stat b{display:block;font-family:"DM Serif Display",Georgia,serif;font-size:48px;line-height:1;font-weight:400}
+        .cs-stat span{font-size:14px;color:var(--cs-mute)}
+        .cs-quote{margin-top:16px;padding-left:16px;border-left:3px solid var(--pink);font-style:italic;color:var(--cs-ink)}
+        /* Team */
+        .cs-team img{width:100%;height:auto;border-radius:18px;margin-top:20px;display:block}
+        .cs-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+        .cs-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:999px;font-weight:600;font-size:15px}
+        .cs-nav .primary{background:var(--pink);color:#fff}
+        .cs-nav .secondary{border:1px solid var(--cs-ink);color:var(--cs-ink)}
+        .cs .ds-block{margin-top:8px}
+        .cs-bars{margin:24px 0 8px;max-width:560px}
+        .cs-bar{margin-bottom:14px}
+        .cs-bar-top{display:flex;justify-content:space-between;font-size:15px;font-weight:600;margin-bottom:6px}
+        .cs-bar-top b{font-family:"DM Serif Display",Georgia,serif;font-size:28px;font-weight:400;line-height:1}
+        .cs-track{height:10px;border-radius:99px;background:#e6e6e2;overflow:hidden}
+        .cs-track i{display:block;height:100%;border-radius:99px}
+        .cs-bar.ok i{background:#216e00}.cs-bar.warn i{background:#b45309}.cs-bar.bad i{background:#b30000}
+        .cs-bar-note{font-size:13px!important;color:var(--cs-mute)!important}
+        .cs .cs-h3{font-size:20px;font-weight:700;margin:36px 0 8px}
+        .cs-phones.three{grid-template-columns:repeat(3,1fr)}
+        .cs-phones.three .cs-phone .frame{height:400px}
+        .cs-card p b{color:var(--cs-ink)}
+        @media (max-width:900px){
+          .cs-hero .cs-wrap,.cs-sec .cs-wrap{grid-template-columns:1fr;gap:20px}
+          .cs-label{position:static;display:flex;align-items:baseline;gap:12px}
+          .cs-label span{margin-top:0}
+          .cs-facts{grid-template-columns:repeat(2,1fr)}
+          .cs-grid2,.cs-grid3,.cs-phones.two,.cs-phones.three{grid-template-columns:1fr}
+          .cs-phones.four{grid-template-columns:1fr 1fr}
+          .cs-phone .frame,.cs-phones.four .cs-phone .frame{height:360px}
+          .cs-sec{padding:48px 0}
+        }
+        .cs-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+        .cs-shots.one{grid-template-columns:1fr}
+        .cs-shots figure{margin:0;background:#fff;border-radius:18px;padding:14px;box-shadow:0 0 0 1px var(--cs-line)}
+        .cs-shots img{width:100%;height:auto;display:block;border-radius:10px;margin-top:10px}
+        .cs-shots.one img{margin-top:0}
+        .cs-shots figcaption{font-size:14px;line-height:1.5;color:var(--cs-mute);margin-top:10px}
+        @media (max-width:900px){.cs-shots{grid-template-columns:1fr}}
+      </style>
 
-    <!-- Outcome banner -->
-    <div class="outcome-banner">
-      <div class="outcome-banner-inner">
-        <div class="outcome-stat">
-          <span class="number">What I Did</span>
-          <span class="label">I designed the web counterpart to the VDOT MRP mobile field app, a platform that takes raw inspection data collected in the field and surfaces it in map-based and tabular views so district staff can track, review, and act on asset conditions across Virginia.</span>
-        </div>
-        <div class="outcome-divider"></div>
-        <div class="outcome-stat">
-          <span class="number">The Result</span>
-          <span class="label">The platform gives district managers a single interface to view inspection records by geography or by list, manage user access across districts, and monitor project assignments, replacing the manual aggregation that currently sits between field collection and office action.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Hero -->
-    <header class="hero">
-      <h1>Empowering government stakeholders with real-time data to prioritize infrastructure maintenance and resource allocation</h1>
-      <p>
-        Field data was trapped in paper forms and delayed spreadsheets, making it impossible for district leadership to identify high-priority maintenance needs quickly. I transformed disparate data sources into a centralized platform that gives government stakeholders real-time visibility and clear prioritization signals.
-      </p>
-    </header>
-
-    <div class="project-meta">
-      <div class="meta-item">
-        <div class="meta-label">Industry</div>
-        <div class="meta-value">Government / Transportation</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Client</div>
-        <div class="meta-value">Virginia DOT</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Timeframe</div>
-        <div class="meta-value">In Production</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">My Role</div>
-        <div class="meta-value">Lead UX Designer &amp; Front-End Development Support</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Team</div>
-        <div class="meta-value">PM, Solutions Architect, Software Engineer, and Engineering Intern</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Tools</div>
-        <div class="meta-value">Figma</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Methodology</div>
-        <div class="meta-value">Agile Product Delivery</div>
-      </div>
-    </div>
-
-    <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px;">
-      <div class="media-tape">
-        <div class="media-well">
-          <img src="imgs/dashboard1.png" alt="VDOT MRP operations hub dashboard showing infrastructure condition scores, maintenance priority queue, and role-based data filters" />
-        </div>
-      </div>
-    </div>
-
-    <!-- The Project at a Glance -->
-    <section class="project-section">
-      <span class="section-tag">The Project at a Glance</span>
-      <h2>The User, The Challenge, My Role</h2>
-
-      <div class="design-decision">
-        <h3>The User</h3>
-        <p>Three distinct roles, each with different needs:</p>
-        <ul>
-          <li><strong>Regular Users:</strong> Field inspectors reviewing their own projects and assignments</li>
-          <li><strong>Admins:</strong> District-level staff managing records for their specific district</li>
-          <li><strong>Super Admins:</strong> Full system access, approving new users and assigning roles</li>
-        </ul>
-      </div>
-
-      <div class="design-decision">
-        <h3>The Challenge</h3>
-        <p>Field data was being collected on the mobile app, but there was no centralized interface for office staff to view, filter, or act on that data. The platform needed to serve three user roles with very different permission levels and workflows, all within the same interface.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>My Role</h3>
-        <p><strong>Lead UX Designer.</strong> I owned the full design of the web platform and contributed to front-end development.</p>
-        <p>Work was delivered in sprint-aligned increments. Stakeholder feedback sessions during sprint reviews helped refine information hierarchy and confirm the design met operational requirements.</p>
-      </div>
-
-      <div class="system-callout" style="margin-top: 20px;">
-        <p class="sc-label">Part of a connected system</p>
-        <p>
-          This platform is the office-side of the same system as the
-          <a href="vdot-mobile-app.html" style="text-decoration: underline">Field Inspection App</a>.
-          The design decisions on each side were made in relation to the other. They're not two separate products.
-        </p>
-      </div>
-    </section>
-
-    <!-- Two Ways to See the Same Data -->
-    <section class="project-section">
-      <span class="section-tag">Design</span>
-      <h2>Two Ways to See the Same Data</h2>
-      <p>
-        Inspectors and managers think about assets differently depending on the task. Sometimes they need geographic context, and sometimes they need to scan a structured list. I prioritized two primary views:
-      </p>
-
-      <div class="design-decision">
-        <h3>Map View</h3>
-        <p>Field inspection data represented as pins on the map, letting users visually scan asset conditions by location. This mirrors the spatial mental model inspectors already have from their physical walk-arounds in the field.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>Tabular View</h3>
-        <p>The same data in a filterable list format for users who need to scan, sort, or export records. Admins use this view most heavily when reviewing district-level asset records.</p>
-      </div>
-    </section>
-
-    <!-- Role-Based Access -->
-    <section class="project-section">
-      <span class="section-tag">Design</span>
-      <h2>Role-Based Access</h2>
-      <p>
-        Rather than building three separate interfaces, I structured a single platform with role-gated views:
-      </p>
-
-      <div class="design-decision">
-        <h3>Regular Users</h3>
-        <p>See their assigned projects, roles, and submitted inspection records.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>Admins</h3>
-        <p>See their district's asset records and can manage assignments within their region.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>Super Admins</h3>
-        <p>Get full system access, approving new users, assigning roles and projects, and viewing data across all districts.</p>
-      </div>
-    </section>
-
-    <!-- Navigation Problem -->
-    <section class="project-section">
-      <span class="section-tag">Design</span>
-      <h2>Solving the Navigation Problem</h2>
-      <p>
-        The hardest design decision was helping regular users orient themselves from the home page. With multiple projects, roles, and views available, it wasn't obvious where to go first.
-      </p>
-      <p>
-        I solved this with a hover menu anchored to the profile tab. It gives users a quick, contextual entry point to their projects and role-specific views without cluttering the main navigation.
-      </p>
-      <p>
-        This kept the interface clean for admins while reducing "where do I start?" friction for inspectors who visit only occasionally.
-      </p>
-    </section>
-
-    <!-- Shared Design Language -->
-    <section class="project-section">
-      <span class="section-tag">Design System</span>
-      <h2>Shared Design Language</h2>
-      <p>
-        This platform is the web counterpart to the mobile field app. I maintained a shared component library in Figma with consistent status colors, typography, and interaction patterns across both.
-      </p>
-      <p>
-        An inspector who marks an asset "failing" on their phone sees that same visual language when the record appears on the dashboard.
-      </p>
-    </section>
-
-    <!-- Front-End Contribution -->
-    <section class="project-section">
-      <span class="section-tag">Engineering</span>
-      <h2>Front-End Contribution</h2>
-      <p>
-        Working in the React codebase, I built the dashboard's front end: I translated my own Figma components into UI, including the status indicators, the map detail popover, and the filterable data table. I implemented the Map/Tabular view toggle and the responsive behavior of the Display Control Panel, and managed my revisions with Git so my work integrated cleanly with the team.
-      </p>
-      <p>
-        I built my React proficiency hands-on through pairing with the team's software engineer, AI-assisted development, and independent learning, ramping up fast enough to ship UI code within the sprint cadence rather than handing off static designs.
-      </p>
-
-      <p style="margin-top: 24px;">The dashboard went from a working prototype to a production interface. I owned that visual and front-end transformation.</p>
-      <div class="beforeafter-grid">
-      <div class="insight-design-grid">
-        <div>
-          <span class="section-tag">Before &middot; 2024</span>
-          <div class="media-well" style="margin-top: 8px;">
-            <img
-              src="imgs/VDOTMRP2024.png"
-              alt="Early VDOT MRP dashboard running in a development environment: a map view with default browser-style pin markers and a plain, unstyled side panel showing raw inspection data without visual hierarchy or branding."
-              loading="lazy"
-              width="3467"
-              height="1250"
-            />
+      <!-- Hero -->
+      <header class="cs-hero">
+        <div class="cs-wrap">
+          <div>
+            <span class="cs-pill">VDOT MRP &middot; Operations Hub</span>
+            <h1>One place to see, review and act on field inspections</h1>
+            <p class="cs-lead">I designed the web counterpart to the VDOT MRP field app. It takes inspection data collected on the highway and shows it on a map and in tables, so district staff can track asset conditions, manage access across districts, and act without re-entering data by hand.</p>
           </div>
-          <p style="font-size: 13px; color: var(--muted); margin-top: 8px; text-align: center;">Early functional prototype: default map markers, unstyled panels, running on a dev instance.</p>
-        </div>
-        <div>
-          <span class="section-tag">After &middot; 2026</span>
-          <div class="media-well" style="margin-top: 8px;">
-            <img
-              src="imgs/VDOTMRP2026.png"
-              alt="Current VDOT MRP production dashboard: a styled map with a highlighted asset location, a branded Display Control Panel on the left, and an open asset detail popover on the right showing an inline inspection photo, a failure code, and geolocation coordinates."
-              loading="lazy"
-              width="2878"
-              height="1624"
-            />
+          <div class="cs-hero-img">
+            <img src="imgs/dashboard1.png" alt="VDOT MRP Operations Hub dashboard showing inspection data on a map with a filter panel" />
           </div>
-          <p style="font-size: 13px; color: var(--muted); margin-top: 8px; text-align: center;">Current production UI: branded control panel and structured detail view, with inline photo, failure code, and geolocation.</p>
+        </div>
+        <div class="cs-wrap">
+          <dl class="cs-facts">
+            <div><dt>Role</dt><dd>Lead UX Designer, front-end support</dd></div>
+            <div><dt>Client</dt><dd>Virginia DOT</dd></div>
+            <div><dt>Users</dt><dd>3 roles across districts</dd></div>
+            <div><dt>Team</dt><dd>PM, Solutions Architect, Software Engineer, Engineering Intern</dd></div>
+            <div><dt>Status</dt><dd>In production</dd></div>
+          </dl>
+        </div>
+      </header>
+
+      <!-- 01 Problem -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">01</div><span>The problem</span></div>
+          <div>
+            <h2>Field data with nowhere to go</h2>
+            <p>Inspectors were collecting data on the mobile app, but office staff had no central place to view, filter or act on it. The platform had to serve three roles with very different permissions, all in one interface.</p>
+            <p>As Lead UX Designer, I owned the full design of the web platform and contributed to front-end development, refining the information hierarchy through stakeholder feedback at sprint reviews.</p>
+            <div class="cs-chips"><span class="cs-chip">Regular users: their own projects</span><span class="cs-chip">Admins: one district</span><span class="cs-chip">Super Admins: every district and user</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 Decisions -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">02</div><span>Design decisions</span></div>
+          <div>
+            <h2>One platform, built around how each role works</h2>
+            <div class="cs-grid3">
+              <div class="cs-card"><h3>Two views of the same data</h3><p>A map for geographic context, matching how inspectors already think about their walk-arounds, and a filterable table for scanning, sorting and exporting. Admins live in the table.</p><span class="cs-why">Match the mental model</span></div>
+              <div class="cs-card"><h3>Role-gated, not three apps</h3><p>One interface with views gated by role: users see their projects, Admins their district, Super Admins everything, including user approvals.</p><span class="cs-why">Consistency</span></div>
+              <div class="cs-card"><h3>A clear place to start</h3><p>Occasional users didn't know where to go first. A menu anchored to the profile tab gives a quick entry point to projects and role views without cluttering the main navigation.</p><span class="cs-why">Reduce "where do I start?"</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Prototype to production -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">03</div><span>Design to code</span></div>
+          <div>
+            <h2>From prototype to production</h2>
+            <p>Working in the React codebase, I built the dashboard's front end from my own Figma components: the status indicators, the map detail popover, the filterable data table, the Map/Tabular toggle and the responsive Display Control Panel. I managed my revisions with Git and ramped up on React by pairing with the team's software engineer, AI-assisted development and independent learning.</p>
+            <div class="cs-shots">
+              <figure><span class="cs-pill">Before &middot; 2024</span><img src="imgs/VDOTMRP2024.png" alt="Early VDOT MRP dashboard prototype with default map markers and an unstyled side panel" loading="lazy" /><figcaption>Early prototype: default markers, unstyled panels, on a dev instance.</figcaption></figure>
+              <figure><span class="cs-pill">After &middot; 2026</span><img src="imgs/VDOTMRP2026.png" alt="Production VDOT MRP dashboard with a branded control panel and an asset detail view showing a photo, failure code and location" loading="lazy" /><figcaption>Production: branded control panel and a structured detail view with photo, failure code and location.</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 Pre-launch iteration -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">04</div><span>Pre-launch iteration</span></div>
+          <div>
+            <h2>Redesigning account approvals</h2>
+            <p>Super Admins approve every new user, so the request queue is where access decisions happen. The admin platform hasn't launched yet, so before launch I reviewed my first version of these screens against usability heuristics and WCAG 2.1 AA and redesigned the approval flow.</p>
+            <div class="cs-shots">
+              <figure><span class="cs-pill">V1</span><img src="imgs/hub-v1-requests.png" alt="First version of the account requests screen with large stacked navigation cards and a three-step filter builder" loading="lazy" /></figure>
+              <figure><span class="cs-pill">V2</span><img src="imgs/hub-v2-requests.png" alt="Redesigned account requests screen with compact navigation, summary cards, one search and filter bar, a requested role column and bulk actions" loading="lazy" /></figure>
+            </div>
+            <div class="cs-grid2">
+              <div class="cs-card"><h3>Show what's being granted</h3><p>A Requested role column and summary cards for the requests that carry the most access: Admin roles and statewide jurisdiction.</p><span class="cs-why">Recognition rather than recall</span></div>
+              <div class="cs-card"><h3>Fewer steps to the right request</h3><p>A three-step filter builder became one bar with search plus Jurisdiction and Role filters. Bulk Approve and Deny clear a queue at once.</p><span class="cs-why">Flexibility and efficiency</span></div>
+              <div class="cs-card"><h3>Neutral decisions</h3><p>Approve and Deny share one neutral style and size on every row, so nothing nudges an admin toward granting access.</p><span class="cs-why">Error prevention</span></div>
+              <div class="cs-card"><h3>Accounts at a glance</h3><p>Status tabs with live counts, and a labeled "More" menu instead of an unlabeled icon, with a clear name for screen readers.</p><span class="cs-why">Visibility of status &middot; WCAG labels</span></div>
+            </div>
+            <div class="cs-shots one"><figure><img src="imgs/hub-v2-accounts.png" alt="Redesigned accounts screen with status tabs and a table of users with role, jurisdiction, status and last active date" loading="lazy" /><figcaption><b>V2 Accounts.</b> Status tabs with live counts and labeled actions.</figcaption></figure></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 Design system -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">05</div><span>Design system</span></div>
+          <div>
+            <h2>One system, two platforms</h2>
+            <p>The dashboard and the field app share one design system: Inter type, a navy and orange palette, and the same status logic. Tokens are sized per platform: 56px controls for gloved hands in the field, 35px so managers can scan dense tables at a desk. Every text color passes WCAG 2.1 AA, and status always carries a word.</p>
+      <div class="ds-block">
+        <style>
+          .ds-block{--ds-ink:#111;--ds-ink2:#444;--ds-line:#e3e3e3;--ds-soft:#f7f7f7;margin-top:28px}
+          .ds-block *{box-sizing:border-box}
+          .ds-block h3{font-size:18px;margin:32px 0 6px}
+          .ds-block .ds-sub{color:var(--ds-ink2);font-size:15px;line-height:1.6;margin:0 0 16px;max-width:68ch}
+          .ds-block .ds-mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--ds-ink2)}
+          .ds-block .ds-sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+          .ds-block .ds-sw{border:1px solid var(--ds-line);border-radius:12px;overflow:hidden;background:#fff}
+          .ds-block .ds-chip{height:64px;display:flex;align-items:flex-end;padding:8px 10px;font-weight:700;font-size:13px}
+          .ds-block .ds-sw-b{padding:10px 12px 12px;font-size:13px;line-height:1.45}
+          .ds-block .ds-sw-b b{display:block;font-size:13px}
+          .ds-block .ds-ratio{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:#ebf9f1;color:#216e00}
+          .ds-block .ds-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+          .ds-block .ds-badge{display:inline-flex;align-items:center;gap:8px;height:35px;padding:0 14px;border-radius:7px;border:1px solid;font:600 15px/1 Inter,system-ui,sans-serif}
+          .ds-block .ds-badge small{font-size:11px;font-weight:700;opacity:.9}
+          .ds-block .ds-table-wrap{overflow-x:auto;border:1px solid var(--ds-line);border-radius:12px}
+          .ds-block table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+          .ds-block th,.ds-block td{text-align:left;padding:10px 14px;border-top:1px solid var(--ds-line)}
+          .ds-block thead th{border-top:0;background:var(--ds-soft);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ds-ink2)}
+          .ds-block .ds-comps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+          .ds-block .ds-stage{background:var(--ds-soft);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;font-family:Inter,system-ui,sans-serif;margin-bottom:10px}
+          .ds-block .ds-btns{display:flex;gap:8px}
+          .ds-block .ds-btn{flex:1;height:56px;border-radius:16px;font:700 16px/1 Inter,system-ui,sans-serif;color:#fff;display:flex;align-items:center;justify-content:center;border:0}
+          .ds-block .ds-btn.o{background:#c43e00}.ds-block .ds-btn.n{background:#1b3a5c}
+          .ds-block .ds-btn.d{background:#fff;color:#b30000;border:3px solid #b30000}
+          .ds-block .ds-hub{height:35px;padding:0 14px;border-radius:7px;font:600 14px/1 Inter,system-ui,sans-serif;display:inline-flex;align-items:center;border:1px solid #d9d9d9;background:#f2f2f2;color:#444}
+          .ds-block .ds-card{background:#fff;border:1.5px solid #888;border-radius:18px;padding:12px 14px;font-size:15px;line-height:1.5}
+          .ds-block .ds-card.sel{background:#e8f0fe;border:2px solid #1b3a5c}
+          .ds-block .ds-note{font-size:14px;line-height:1.55;color:var(--ds-ink2);margin:0}
+          .ds-block .ds-note b{color:var(--ds-ink)}
+        </style>
+
+        <h3>Color</h3>
+        <p class="ds-sub">Navy and orange carry the brand. Every text pairing passes WCAG 2.1 AA (4.5:1), most pass 7:1, for reading in direct sun.</p>
+        <div class="ds-sw-grid">
+          <div class="ds-sw"><div class="ds-chip" style="background:#1b3a5c;color:#fff">Aa</div><div class="ds-sw-b"><b>brand/navy</b><span class="ds-mono">#1B3A5C</span><br>Headers, secondary actions, selection<br><span class="ds-ratio">White text 11.6:1</span></div></div>
+          <div class="ds-sw"><div class="ds-chip" style="background:#c43e00;color:#fff">Aa</div><div class="ds-sw-b"><b>action/primary</b><span class="ds-mono">#C43E00</span><br>The one main action per screen<br><span class="ds-ratio">White text 5.2:1</span></div></div>
+          <div class="ds-sw"><div class="ds-chip" style="background:#b30000;color:#fff">Aa</div><div class="ds-sw-b"><b>danger</b><span class="ds-mono">#B30000</span><br>Destructive actions, as an outline<br><span class="ds-ratio">On white 7.2:1</span></div></div>
+          <div class="ds-sw"><div class="ds-chip" style="background:#111;color:#fff">Aa</div><div class="ds-sw-b"><b>text/primary</b><span class="ds-mono">#111111 · #444444</span><br>Body and secondary text<br><span class="ds-ratio">18.9:1 · 9.7:1</span></div></div>
+          <div class="ds-sw"><div class="ds-chip" style="background:#e8f0fe;color:#1b3a5c;border-bottom:1px solid #e3e3e3">Aa</div><div class="ds-sw-b"><b>bg/selected</b><span class="ds-mono">#E8F0FE</span><br>Selected cards, paired with a navy border<br><span class="ds-ratio">Text 16.5:1</span></div></div>
+        </div>
+
+        <h3>Status</h3>
+        <p class="ds-sub">Each badge's text uses the same dark color as its border, so labels stay readable on the tinted fill. Status always carries a word, never color alone.</p>
+        <div class="ds-row">
+          <span class="ds-badge" style="background:#fff6df;border-color:#6d4e00;color:#6d4e00">Pending <small>7.1:1</small></span>
+          <span class="ds-badge" style="background:#ebf9f1;border-color:#216e00;color:#216e00">Active <small>5.9:1</small></span>
+          <span class="ds-badge" style="background:#f5d4d1;border-color:#9d0202;color:#9d0202">Blocked <small>6.2:1</small></span>
+        </div>
+
+        <h3>Type and sizing: one token, two platforms</h3>
+        <p class="ds-sub">Both products use Inter and share the same token names. Figma variables switch between an App mode and a Hub mode, so the field app gets larger targets and type, and the dashboard stays dense.</p>
+        <div class="ds-table-wrap">
+          <table>
+            <thead><tr><th scope="col">Token</th><th scope="col">App (field)</th><th scope="col">Hub (web)</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" class="ds-mono">text.heading</th><td style="font:800 22px Inter,system-ui">28 Extra Bold</td><td style="font:600 20px Inter,system-ui">24 Semi Bold</td></tr>
+              <tr><th scope="row" class="ds-mono">text.body-lg</th><td style="font:700 18px Inter,system-ui">18 Bold</td><td style="font:600 16px Inter,system-ui">16 Semi Bold</td></tr>
+              <tr><th scope="row" class="ds-mono">text.body</th><td style="font:600 16px Inter,system-ui">16 Semi Bold</td><td style="font:400 14px Inter,system-ui">14 Regular</td></tr>
+              <tr><th scope="row" class="ds-mono">control height</th><td>56px</td><td>35px</td></tr>
+              <tr><th scope="row" class="ds-mono">radius sm / md / lg</th><td>4 / 12 / 16</td><td>4 / 7 / 8</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Core components</h3>
+        <div class="ds-comps">
+          <div>
+            <div class="ds-stage">
+              <div class="ds-btns"><span class="ds-btn o">Show on Map</span><span class="ds-btn n">Requirements</span></div>
+              <div class="ds-btns"><span class="ds-btn d">Delete record</span></div>
+            </div>
+            <p class="ds-note"><b>Buttons.</b> Orange marks the one main action on a screen, navy supports it, and destructive actions are outlined in red. Keyboard focus shows a 3px blue ring.</p>
+          </div>
+          <div>
+            <div class="ds-stage">
+              <div class="ds-card"><b>Asset:</b> Drain<br><b>Code:</b> 102</div>
+              <div class="ds-card sel"><b>Asset:</b> Drain<br><b>Code:</b> 102</div>
+            </div>
+            <p class="ds-note"><b>Record card.</b> Selection changes both fill and border, so it still reads in glare.</p>
+          </div>
+          <div>
+            <div class="ds-stage">
+              <div class="ds-row"><span class="ds-hub">Approve</span><span class="ds-hub">Deny</span></div>
+            </div>
+            <p class="ds-note"><b>Paired decisions.</b> In the dashboard, Approve and Deny share one neutral style so neither looks like the default.</p>
+          </div>
         </div>
       </div>
-      </div>
-    </section>
-
-    <!-- The Outcome -->
-    <section class="project-section">
-      <span class="section-tag">Impact</span>
-      <h2>Impact</h2>
-      <p>
-        A centralized web platform that connects directly to the mobile field app. District staff get real-time visibility into inspection data with no manual re-entry.
-      </p>
-      <p>
-        The role-based architecture scales as VDOT adds districts and users. The shared design system keeps the full MRP ecosystem consistent.
-      </p>
-      <ul style="margin-top: 14px;">
-        <li>Field-to-office connection: inspection data flows from the mobile app into map and tabular views with no manual re-entry</li>
-        <li>Role-based access: three permission levels serving distinct workflows within a single interface</li>
-        <li>Front-end contribution: I supported development alongside design, closing the gap between prototype and production</li>
-        <li>Part of a connected system. See the <a href="vdot-mobile-app.html" style="text-decoration: underline">Field Inspection App case study</a> for the other half</li>
-      </ul>
-    </section>
-
-    <!-- Team -->
-    <section class="project-section">
-      <span class="section-tag">The Team</span>
-      <h2>The Team</h2>
-      <p style="font-size: 15px; color: var(--muted); font-weight: 500;">Sole UX Designer on a 5-person Alpha Team at Leidos: PM, Solutions Architect, Software Engineer, and Engineering Intern.</p>
-      <div class="media-tape" style="margin-top: 20px;">
-        <div class="media-well" style="aspect-ratio: 16/10;">
-          <img src="imgs/alphateam.png" alt="Alpha Team collaboration for VDOT MRP" />
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="case-nav" style="margin-top: 28px;">
-        <a class="secondary" href="index.html">← Back to work</a>
-        <a class="secondary" href="vdot-mobile-app.html">← Field App case study</a>
-        <a class="primary" href="pcis-dashboard.html">Next: PCIS Platform →</a>
-      </div>
-    </section>
+      <!-- 06 Impact -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">06</div><span>Impact</span></div>
+          <div>
+            <h2>Where it stands</h2>
+            <div class="cs-grid3">
+              <div class="cs-card"><h3>Field to office</h3><p>Inspection data flows from the mobile app into map and table views with no manual re-entry.</p></div>
+              <div class="cs-card"><h3>Built to scale</h3><p>Three permission levels in one interface, ready for more districts and users.</p></div>
+              <div class="cs-card"><h3>Design and code</h3><p>I supported development alongside design, closing the gap between prototype and production.</p></div>
+            </div>
+            <p style="margin-top:20px">Part of a connected system. See the <a href="vdot-mobile-app.html" style="text-decoration:underline">Field Inspection App case study</a> for the other half.</p>
+          </div>
+        </div>
+      </section>
 
+      <!-- Team -->
+      <section class="cs-sec" style="border-bottom:0">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">07</div><span>The team</span></div>
+          <div class="cs-team">
+            <h2>The Alpha Team</h2>
+            <p>Sole UX Designer on a 5-person team at Leidos: PM, Solutions Architect, Software Engineer, and Engineering Intern.</p>
+            <img src="imgs/alphateam.png" alt="Five-person Alpha Team at Leidos gathered around a table during a VDOT MRP project working session" loading="lazy" />
+            <div class="cs-nav">
+              <a class="secondary" href="index.html">&larr; Back to work</a>
+              <a class="primary" href="vdot-mobile-app.html">View Field App case study &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>

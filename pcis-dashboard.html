@@ -860,494 +860,303 @@
       </div>
     </nav>
 
-    <main id="main-content">
-      <!-- Outcome banner -->
-      <div class="outcome-banner">
-        <div class="outcome-banner-inner">
-          <div class="outcome-stat">
-            <span class="number">What I Did</span>
-            <span class="label"
-              >I took a messy, spreadsheet-heavy process for tracking cargo and
-              transformed it into a decision-making tool that 85% of users found
-              easy to use on their first try.</span
-            >
-          </div>
-          <div class="outcome-divider"></div>
-          <div class="outcome-stat">
-            <span class="number">The Result</span>
-            <span class="label"
-              >Phase 1 validated with an 85% ease-of-use rating and 100%
-              stakeholder alignment. The behavioral design approach made
-              competitors willing to share data, a problem no spreadsheet had
-              solved in years.</span
-            >
-          </div>
-        </div>
-      </div>
+    <main id="main-content" class="cs">
+      <style>
+        .cs{--cs-max:1120px;--cs-ink:#0b0b0b;--cs-mute:#5f6575;--cs-line:rgba(0,0,0,.08);--cs-soft:#f7f7f5}
+        .cs *{box-sizing:border-box}
+        .cs .cs-wrap{max-width:var(--cs-max);margin:0 auto;padding:0 24px}
+        .cs h1,.cs h2{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+        .cs p{color:var(--cs-ink);font-size:17px;line-height:1.65;max-width:62ch}
+        .cs .cs-lead{font-size:19px;color:var(--cs-mute)}
+        .cs .cs-pill{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--pink-dark);background:var(--pink-light);border:1px solid var(--pink-border);border-radius:999px;padding:4px 12px}
+        /* Hero */
+        .cs-hero{padding:56px 0 32px}
+        .cs-hero .cs-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+        .cs-hero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:16px 0 18px}
+        .cs-hero .cs-wrap + .cs-wrap{display:block}
+        .cs-hero-img{background:#fff;border-radius:24px;padding:24px;box-shadow:0 2px 24px rgba(0,0,0,.06)}
+        .cs-hero-img img{width:100%;height:auto;display:block;border-radius:12px}
+        .cs-hero-cap{font-size:13px!important;color:var(--cs-mute)!important;margin:10px 2px 0!important}
+        .cs-facts{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--cs-line);border-bottom:1px solid var(--cs-line);margin:24px 0 8px}
+        .cs-facts div{padding:18px 16px 18px 0}
+        .cs-facts dt{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cs-mute);margin-bottom:4px}
+        .cs-facts dd{margin:0;font-size:15px;font-weight:600}
+        /* Section */
+        .cs-sec{padding:72px 0;border-bottom:1px solid var(--cs-line)}
+        .cs-sec .cs-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px}
+        .cs-sec .cs-wrap > div{min-width:0}
+        .cs-label{position:sticky;top:96px;align-self:start}
+        .cs-num{font-family:"DM Serif Display",Georgia,serif;font-size:44px;line-height:1;color:var(--pink)}
+        .cs-label span{display:block;margin-top:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cs-mute)}
+        .cs-sec h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;margin:0 0 18px}
+        .cs-sec p+p{margin-top:12px}
+        .cs-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+        .cs-chip{font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--cs-line)}
+        /* Cards */
+        .cs-grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+        .cs-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+        .cs-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 0 0 1px var(--cs-line)}
+        .cs-card h3{font-size:19px;font-weight:700;margin:0 0 8px}
+        .cs-card p{font-size:15px;color:var(--cs-mute);margin:0}
+        .cs-card .cs-why{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--pink-dark);background:var(--pink-light);border-radius:999px;padding:3px 10px}
+        .cs-card.ok{border-top:4px solid #16a34a}.cs-card.warn{border-top:4px solid #d97706}
+        /* Phones */
+        .cs-phones{display:grid;gap:16px;margin-top:28px}
+        .cs-phones.two{grid-template-columns:1fr 1fr}
+        .cs-phones.four{grid-template-columns:repeat(4,1fr)}
+        .cs-phone{margin:0}
+        .cs-phone .frame{background:var(--cs-soft);border-radius:18px;padding:16px;display:flex;justify-content:center;align-items:flex-start;height:440px;overflow:hidden;box-shadow:0 0 0 1px var(--cs-line)}
+        .cs-phones.four .cs-phone .frame{height:380px}
+        .cs-phone img{max-height:100%;max-width:100%;width:auto;object-fit:contain;object-position:top;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+        .cs-phone figcaption{font-size:14px;line-height:1.5;color:var(--cs-mute);margin-top:10px}
+        .cs-phone figcaption b{color:var(--cs-ink)}
+        /* Stats */
+        .cs-stats{display:flex;gap:40px;flex-wrap:wrap;margin:24px 0 8px}
+        .cs-stat b{display:block;font-family:"DM Serif Display",Georgia,serif;font-size:48px;line-height:1;font-weight:400}
+        .cs-stat span{font-size:14px;color:var(--cs-mute)}
+        .cs-quote{margin-top:16px;padding-left:16px;border-left:3px solid var(--pink);font-style:italic;color:var(--cs-ink)}
+        /* Team */
+        .cs-team img{width:100%;height:auto;border-radius:18px;margin-top:20px;display:block}
+        .cs-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+        .cs-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:999px;font-weight:600;font-size:15px}
+        .cs-nav .primary{background:var(--pink);color:#fff}
+        .cs-nav .secondary{border:1px solid var(--cs-ink);color:var(--cs-ink)}
+        .cs .ds-block{margin-top:8px}
+        .cs-bars{margin:24px 0 8px;max-width:560px}
+        .cs-bar{margin-bottom:14px}
+        .cs-bar-top{display:flex;justify-content:space-between;font-size:15px;font-weight:600;margin-bottom:6px}
+        .cs-bar-top b{font-family:"DM Serif Display",Georgia,serif;font-size:28px;font-weight:400;line-height:1}
+        .cs-track{height:10px;border-radius:99px;background:#e6e6e2;overflow:hidden}
+        .cs-track i{display:block;height:100%;border-radius:99px}
+        .cs-bar.ok i{background:#216e00}.cs-bar.warn i{background:#b45309}.cs-bar.bad i{background:#b30000}
+        .cs-bar-note{font-size:13px!important;color:var(--cs-mute)!important}
+        .cs .cs-h3{font-size:20px;font-weight:700;margin:36px 0 8px}
+        .cs-phones.three{grid-template-columns:repeat(3,1fr)}
+        .cs-phones.three .cs-phone .frame{height:400px}
+        .cs-card p b{color:var(--cs-ink)}
+        @media (max-width:900px){
+          .cs-hero .cs-wrap,.cs-sec .cs-wrap{grid-template-columns:1fr;gap:20px}
+          .cs-label{position:static;display:flex;align-items:baseline;gap:12px}
+          .cs-label span{margin-top:0}
+          .cs-facts{grid-template-columns:repeat(2,1fr)}
+          .cs-grid2,.cs-grid3,.cs-phones.two,.cs-phones.three{grid-template-columns:1fr}
+          .cs-phones.four{grid-template-columns:1fr 1fr}
+          .cs-phone .frame,.cs-phones.four .cs-phone .frame{height:360px}
+          .cs-sec{padding:48px 0}
+        }
+        .cs-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+        .cs-shots.one{grid-template-columns:1fr}
+        .cs-shots figure{margin:0;background:#fff;border-radius:18px;padding:14px;box-shadow:0 0 0 1px var(--cs-line)}
+        .cs-shots img{width:100%;height:auto;display:block;border-radius:10px;margin-top:10px}
+        .cs-shots.one img{margin-top:0}
+        .cs-shots figcaption{font-size:14px;line-height:1.5;color:var(--cs-mute);margin-top:10px}
+        @media (max-width:900px){.cs-shots{grid-template-columns:1fr}}
+        .pc-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+        .pc-badge{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:6px;font:500 13px/1 Inter,system-ui,sans-serif;font-style:normal}
+        .pc-badge small{font-size:10px;font-weight:700;opacity:.85}
+        .pc-btn{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:6px;color:#fff;font:600 14px/1 Inter,system-ui,sans-serif}
+        .pc-btn.focus{box-shadow:0 0 0 3px #f2f2f0,0 0 0 6px #2563eb}
+        .pc-note{font-size:14px!important;color:var(--cs-mute)!important;margin-top:10px}
+        .pc-table{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px #e5e7eb;max-width:620px;font-family:Inter,system-ui,sans-serif}
+        .pc-th,.pc-tr{display:grid;grid-template-columns:1.4fr 1fr 1fr;align-items:center;padding:0 16px}
+        .pc-th{height:36px;background:#f3f4f6;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:#4b5563}
+        .pc-tr{min-height:44px;border-top:1px solid #e5e7eb;font-size:13px;padding-top:6px;padding-bottom:6px}
+        .pc-tr b{display:block;font-weight:500;color:#101828}.pc-tr i{font-style:normal;font-size:12px;color:#6b7280}
+      </style>
 
       <!-- Hero -->
-      <header class="hero">
-        <h1>
-          Helping competing port operators share cargo data by turning a
-          fragmented, phone-based workflow into a platform they actually trust
-          enough to use
-        </h1>
-        <p>
-          Port operators were managing cargo workflows across competing
-          organizations through phone calls and manual spreadsheets, creating
-          costly delays and cognitive overload.
-        </p>
-        <p>
-          I transformed this fragmented system into a unified digital platform.
-          Each user role gets exactly the information they need to act.
-        </p>
+      <header class="cs-hero">
+        <div class="cs-wrap">
+          <div>
+            <span class="cs-pill">PCIS &middot; Port Logistics Platform</span>
+            <h1>Getting competing port operators to share cargo data</h1>
+            <p class="cs-lead">Port operators coordinated cargo across competing companies with phone calls and spreadsheets. I designed a platform where each role sees exactly what it needs to act, and that competitors trust enough to actually use.</p>
+          </div>
+          <div class="cs-hero-img">
+            <img src="imgs/pcis-concept-home.png" alt="PCIS terminal operator home, concept redesign with a navy sidebar, summary strip and needs-attention list" />
+            <p class="cs-hero-cap">Self-initiated concept redesign. See section 07.</p>
+          </div>
+        </div>
+        <div class="cs-wrap">
+          <dl class="cs-facts">
+            <div><dt>Role</dt><dd>Lead UX Designer</dd></div>
+            <div><dt>Client</dt><dd>Leidos</dd></div>
+            <div><dt>Timeframe</dt><dd>2025 &ndash; present</dd></div>
+            <div><dt>Team</dt><dd>PM, Solutions Architect, 2 Engineers</dd></div>
+            <div><dt>Status</dt><dd>Phase 1 validated &middot; Phase 2 in design</dd></div>
+          </dl>
+        </div>
       </header>
 
-      <div class="project-meta">
-        <div class="meta-item">
-          <div class="meta-label">Industry</div>
-          <div class="meta-value">Transportation / Logistics</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Client</div>
-          <div class="meta-value">Leidos</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Timeframe</div>
-          <div class="meta-value">2025 – Present</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Status</div>
-          <div class="meta-value">
-            Phase 1 Validated · Phase 2 Design &amp; Integration Underway
-          </div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">My Role</div>
-          <div class="meta-value">Lead UX Designer</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Team</div>
-          <div class="meta-value">PM, Solutions Architect, 2 Engineers</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Tools</div>
-          <div class="meta-value">Figma</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Methodology</div>
-          <div class="meta-value">Agile Product Delivery</div>
-        </div>
-      </div>
-
-      <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px">
-        <div class="media-tape">
-          <div class="media-well">
-            <img
-              src="imgs/pcis-dashboard.png"
-              alt="PCIS port logistics platform dashboard displaying shipment status cards, hazardous cargo flags, and role-based navigation for terminal operators and dispatchers"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- The Challenge -->
-      <section class="project-section">
-        <span class="section-tag">The Challenge</span>
-        <h2>The Privacy Gap</h2>
-        <p>
-          Ports are competitive. Terminal operators and cargo owners are often
-          afraid to share data for fear of losing their edge. This leads to
-          endless phone calls, wasted truck trips, and massive delays.
-        </p>
-        <p>
-          My job was to design a system that felt safe enough for competitors to
-          share data, but simple enough for stressed operators to actually use.
-          I used <strong>Behavioral Science</strong> to solve a trust problem,
-          not just a UI problem.
-        </p>
-      </section>
-
-      <!-- Research -->
-      <section class="project-section">
-        <span class="section-tag green">Research</span>
-        <h2>Learning from the Competition</h2>
-        <p>
-          Before designing, I performed a Competitive Audit of 4 legacy port
-          management systems to understand why they were failing to solve this
-          problem.
-        </p>
-        <h3 style="margin-top: 24px; margin-bottom: 12px">
-          What I found in other systems
-        </h3>
-        <ul>
-          <li>
-            <strong>Information Overload:</strong> Most systems looked like
-            giant, messy spreadsheets. It was nearly impossible to find
-            emergencies in a mountain of data.
-          </li>
-          <li>
-            <strong>Reactive Design:</strong> They only showed what was
-            happening right now, with no way for managers to anticipate a busy
-            afternoon or plan ahead.
-          </li>
-        </ul>
-      </section>
-
-      <!-- User-Centered Strategy -->
-      <section class="project-section">
-        <span class="section-tag green">Strategy</span>
-        <h2>Three Users. Three Behavioral Principles.</h2>
-        <p>
-          I used Behavioral Science to solve a trust problem, not just a UI
-          problem. Each user had a distinct mental model and a specific reason
-          not to engage.
-        </p>
-        <div class="persona-grid">
-          <article class="persona-card terminal">
-            <h3>Carlos, Terminal Operator</h3>
-            <p>
-              <strong>Cognitive Load:</strong> I replaced his cluttered
-              spreadsheets with Exception-Based Alerts. Instead of seeing
-              thousands of containers, the UI only flags the issues that need
-              his attention right now.
-            </p>
-          </article>
-          <article class="persona-card bco">
-            <h3>David, Cargo Owner (BCO)</h3>
-            <p>
-              <strong>Psychological Safety:</strong> To fix the fear of data
-              leaks, I built Privacy-First Data Masking. He can share a status
-              (Ready/Delayed) without revealing the private value of his cargo
-              to competitors.
-            </p>
-          </article>
-          <article class="persona-card carrier">
-            <h3>Maria, Dispatcher</h3>
-            <p>
-              <strong>Reducing Uncertainty:</strong> I replaced her 20+ daily
-              phone calls with a Real-Time Sync dashboard, giving her total
-              control over truck scheduling without leaving her desk.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Design -->
-      <section class="project-section">
-        <span class="section-tag">Design</span>
-        <h2>Human-Centered Organization</h2>
-        <p>
-          I moved away from the "tabular fatigue" common in legacy port systems
-          by prioritizing how users scan for information under pressure.
-        </p>
-
-        <h3 style="margin-top: 28px; margin-bottom: 10px">
-          From Spreadsheets to Action Cards
-        </h3>
-        <p>
-          I replaced 15-column tables with a Card-Based Architecture. The Cargo
-          Unit ID anchors the top-left of each card, matching the natural
-          reading path of the human eye.
-        </p>
-        <p>
-          This spatial chunking lets operators process one shipment at a time,
-          eliminating the row-blur that causes errors in spreadsheet views.
-        </p>
-
-        <h3 style="margin-top: 28px; margin-bottom: 10px">
-          Design for High-Stakes Environments
-        </h3>
-        <p>
-          I approached Section 508 Compliance not just as a legal requirement,
-          but as a core safety feature for the port's unique physical
-          environment.
-        </p>
-        <ul>
-          <li>
-            <strong>Environmental Legibility:</strong> I utilized a
-            high-contrast color palette exceeding WCAG 2.1 AA standards to
-            ensure data remains readable on tablets used in direct sunlight or
-            on low-resolution outdoor monitors.
-          </li>
-          <li>
-            <strong>Redundant Status Coding:</strong> To support users with
-            color vision deficiencies and improve recognition speed, I paired
-            color-coded statuses with distinct iconography and specific spatial
-            placement.
-          </li>
-          <li>
-            <strong>Touch-Target Optimization:</strong> Recognizing that many
-            users interact via ruggedized tablets or while wearing gloves, I
-            ensured all interactive elements meet minimum size requirements to
-            prevent "fat-finger" errors.
-          </li>
-        </ul>
-        <div class="design-decision" style="margin-top: 28px">
-          <h3>Scalable Component Architecture</h3>
-          <p>Three distinct user roles. One shared component system.</p>
-          <p>
-            Standardized card templates, status indicators, and alert patterns
-            flex across Terminal Operator, Cargo Owner, and Dispatcher views
-            without custom builds for each.
-          </p>
-        </div>
-
-        <div
-          style="
-            margin-top: 36px;
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-          "
-        >
-          <!-- Comparison 1: Wall of Text -->
+      <!-- 01 Problem -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">01</div><span>The problem</span></div>
           <div>
-            <h3 style="margin: 0 0 6px">Breaking Up the Wall of Text</h3>
-            <p style="color: var(--muted); font-size: 14px; margin: 0 0 16px">
-              Legacy systems use tiny, cramped rows where every line looks
-              identical. To find one container, you have to read 50 lines of the
-              same text.
-            </p>
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-                align-items: start;
-              "
-            >
-              <div>
-                <img
-                  src="imgs/l1.png"
-                  alt="Legacy PCIS interface: dense spreadsheet-style table with uniform rows showing shipment data, making it difficult to distinguish priority items at a glance"
-                  style="
-                    width: 100%;
-                    border-radius: 10px;
-                    border: 1px solid var(--line);
-                  "
-                />
-                <p
-                  style="
-                    font-size: 12px;
-                    color: var(--muted);
-                    margin: 8px 0 0;
-                    line-height: 1.5;
-                  "
-                >
-                  Legacy systems bury critical info in high-density tables,
-                  making it hard to spot emergencies.
-                </p>
-              </div>
-              <div>
-                <img
-                  src="imgs/bco2.png"
-                  alt="Redesigned PCIS card layout: each shipment rendered as a distinct visual card with status badge, action button, and color-coded priority indicator"
-                  style="
-                    width: 100%;
-                    border-radius: 10px;
-                    border: 1px solid var(--line);
-                  "
-                />
-                <p
-                  style="
-                    font-size: 12px;
-                    color: var(--muted);
-                    margin: 8px 0 0;
-                    line-height: 1.5;
-                  "
-                >
-                  My design uses a card-based layout to highlight the Status,
-                  making the screen scannable in high-stress environments.
-                </p>
-              </div>
+            <h2>A trust problem, not just a UI problem</h2>
+            <p>Ports are competitive. Terminal operators and cargo owners hold back data for fear of losing their edge, which leads to endless phone calls, wasted truck trips and long delays. The platform had to feel safe enough for competitors to share data, and simple enough for stressed operators to use.</p>
+            <p>Before designing, I audited 4 legacy port management systems. Two patterns stood out:</p>
+            <div class="cs-grid2">
+              <div class="cs-card"><h3>Information overload</h3><p>Most looked like giant spreadsheets. Emergencies were buried in a mountain of rows.</p></div>
+              <div class="cs-card"><h3>Reactive only</h3><p>They showed what was happening now, with no way to see a busy afternoon coming.</p></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Hazardous Cargo -->
-      <section class="project-section" style="display: none">
-        <span class="section-tag">Safety Design</span>
-        <h2>The Hazardous Cargo Workflow</h2>
-        <p>
-          Hazmat is the highest-stakes workflow in the port ecosystem. Different
-          regulations, different handling requirements, different approval
-          chains. A mistake here has real safety consequences.
-        </p>
-        <ul>
-          <li>
-            <strong>Visual differentiation:</strong> Hazmat containers flagged
-            with persistent warning indicators, not just color, but iconography
-            and placement changes that make them impossible to miss
-          </li>
-          <li>
-            <strong>Mandatory confirmation steps:</strong> Approval workflows
-            require explicit acknowledgment of cargo class before any status
-            change
-          </li>
-          <li>
-            <strong>Cross-stakeholder visibility:</strong> When hazmat status
-            changes, all relevant stakeholders get proactive notifications, not
-            just the next person in the chain
-          </li>
-          <li>
-            <strong>Audit trail:</strong> Every action logged with timestamps
-            and actor ID for compliance
-          </li>
-        </ul>
-        <div class="media-tape" style="margin-top: 24px">
-          <div class="media-well">
-            <img
-              src="imgs/Hazardouscargo.png"
-              alt="Hazardous cargo workflow showing approval chain and safety checkpoints"
-            />
+      <!-- 02 Users -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">02</div><span>Users</span></div>
+          <div>
+            <h2>Three roles, three reasons not to engage</h2>
+            <div class="cs-grid3">
+              <div class="cs-card"><h3>Carlos, Terminal Operator</h3><p>Instead of thousands of containers, he sees exception alerts: only the issues that need him now.</p><span class="cs-why">Cognitive load</span></div>
+              <div class="cs-card"><h3>David, Cargo Owner</h3><p>He can share a status like Ready or Delayed without revealing his cargo's value to competitors.</p><span class="cs-why">Psychological safety</span></div>
+              <div class="cs-card"><h3>Maria, Dispatcher</h3><p>A live dashboard replaces her 20+ daily phone calls, so she can schedule trucks from her desk.</p><span class="cs-why">Reducing uncertainty</span></div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Validation -->
-      <section class="project-section">
-        <span class="section-tag green">Validation</span>
-        <h2>Stakeholder Validation</h2>
-        <p>
-          I presented the design to 7 stakeholders across three states via
-          remote task-based walkthroughs. Participants included Terminal
-          Operators and Vendors.
-        </p>
-        <p>
-          I facilitated each session and gathered real-time feedback using
-          System Usability Scale assessments and open-ended qualitative
-          questions.
-        </p>
-
-        <h3 style="margin-top: 28px; margin-bottom: 16px">
-          The Final Scorecard
-        </h3>
-        <p style="color: var(--muted); font-size: 15px; margin-bottom: 20px">
-          The system passed the validation criteria, proving that the Behavioral
-          Design approach effectively lowered the barrier to data sharing.
-        </p>
-        <div class="scorecard">
-          <div class="scorecard-item">
-            <span class="score-number">85%</span>
-            <span class="score-label"
-              >Ease of Use, 6 out of 7 stakeholders agreed the system was easy
-              to understand and use</span
-            >
+      <!-- 03 Design -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">03</div><span>Phase 1 design</span></div>
+          <div>
+            <h2>From spreadsheet rows to scannable status</h2>
+            <p>Legacy systems use cramped rows where every line looks the same; to find one container you read fifty. Phase 1 replaced 15-column tables with cards anchored by the cargo unit ID, so operators handle one shipment at a time and the status stands out.</p>
+            <div class="cs-shots">
+              <figure><span class="cs-pill">Legacy</span><img src="imgs/l1.png" alt="Legacy port system with a dense, high-density table" loading="lazy" /><figcaption>Critical info buried in identical rows.</figcaption></figure>
+              <figure><span class="cs-pill">Phase 1</span><img src="imgs/bco2.png" alt="PCIS Phase 1 card layout highlighting status" loading="lazy" /><figcaption>Cards that put status first.</figcaption></figure>
+            </div>
+            <h3 class="cs-h3">Built for the port floor</h3>
+            <div class="cs-chips"><span class="cs-chip">WCAG 2.1 AA contrast for tablets in sunlight</span><span class="cs-chip">Status = color + icon + placement</span><span class="cs-chip">Touch targets sized for gloves</span></div>
+            <h3 class="cs-h3">The hazardous cargo workflow</h3>
+            <p>Hazmat is the highest-stakes workflow in the port. Flagged containers carry persistent warnings, any status change requires confirming the cargo class, every relevant stakeholder is notified, and every action is logged with a timestamp and actor.</p>
+            <div class="cs-shots one"><figure><img src="imgs/Hazardouscargo.png" alt="PCIS hazardous cargo workflow with warnings, approval chain and safety checkpoints" loading="lazy" /></figure></div>
           </div>
-          <div class="scorecard-item">
-            <span class="score-number">100%</span>
-            <span class="score-label"
-              >Alignment: Every participant confirmed the platform successfully
-              met their high-stakes professional requirements.</span
-            >
-          </div>
-          <div class="scorecard-item">
-            <span class="score-number">57%</span>
-            <span class="score-label"
-              >Immediate Benefit: Over half the group identified specific
-              performance gains for their home ports within the first
-              walkthrough.</span
-            >
-          </div>
-        </div>
-
-        <h3 style="margin-top: 36px; margin-bottom: 16px">
-          Evidence-Based Iterations
-        </h3>
-        <p style="color: var(--muted); font-size: 15px; margin-bottom: 20px">
-          The study transformed the project from a Proof of Concept into a
-          Roadmap by identifying key friction points.
-        </p>
-        <div class="bs-grid-wrap">
-          <table
-            class="bs-grid"
-            aria-label="Evidence-based iteration decisions"
-          >
-            <thead>
-              <tr>
-                <th scope="col">Focus Area</th>
-                <th scope="col">Stakeholder Feedback</th>
-                <th scope="col">UX Strategy Response</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Industry Jargon</strong></td>
-                <td>
-                  Preferred "Appointment" over "Booking" for cargo pickup.
-                </td>
-                <td>
-                  <strong>Standardized Mental Models:</strong> Aligned UI copy
-                  with literal port floor vocabulary.
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Workflow Tracking</strong></td>
-                <td>
-                  Users wanted to see their "spot" in the overall process.
-                </td>
-                <td>
-                  <strong>Process Visualization:</strong> Redesigned the header
-                  to show a linear status indicator.
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Operational Scaling</strong></td>
-                <td>Must handle up to 300 separate truck operators.</td>
-                <td>
-                  <strong>Performance Design:</strong> Validated that the card
-                  layout remains scannable under high data loads.
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </section>
 
-      <!-- Impact & Future Roadmap -->
-      <section class="project-section">
-        <span class="section-tag green">Impact</span>
-        <h2>Impact &amp; Future Roadmap</h2>
-        <p>
-          Phase 1 success secured immediate investment and an expanded scope.
-        </p>
-        <p>
-          PCIS evolved from a contested data-sharing concept into a validated,
-          508-compliant platform with multi-state buy-in.
-        </p>
+      <!-- 04 Validation -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">04</div><span>Validation</span></div>
+          <div>
+            <h2>What stakeholders said</h2>
+            <p>Our team ran remote, task-based walkthroughs with 7 stakeholders across three states, including terminal operators and vendors, using the System Usability Scale and open-ended questions. I helped write the tasks and coded the results.</p>
+            <div class="cs-stats">
+              <div class="cs-stat"><b>6 of 7</b><span>found it easy to understand and use</span></div>
+              <div class="cs-stat"><b>7 of 7</b><span>said it met their professional requirements</span></div>
+              <div class="cs-stat"><b>4 of 7</b><span>named a specific gain for their own port</span></div>
+            </div>
+            <div class="cs-grid3">
+              <div class="cs-card"><h3>Their words, not ours</h3><p>Stakeholders said "Appointment," not "Booking." UI copy now uses port-floor vocabulary.</p></div>
+              <div class="cs-card"><h3>Show my place in line</h3><p>Users wanted to see where they were in the process, so the header gained a linear status indicator.</p></div>
+              <div class="cs-card"><h3>Built for real volume</h3><p>The platform must handle up to 300 truck operators. That finding shaped Phase 2.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <h3 style="margin-top: 28px; margin-bottom: 14px">
-          The Future Roadmap
-        </h3>
-        <p>
-          Based on usability findings, I'm currently leading Phase 2 design
-          within an agile cadence. I collaborate with engineering in refinement
-          sessions to scope feasibility before committing to a sprint.
-        </p>
-        <p>Phase 2 is focused on:</p>
-        <ul>
-          <li>
-            <strong>Workflow Agility:</strong> Moving from static lists to
-            Visual Graphs so managers can anticipate bottlenecks hours before
-            they happen.
-          </li>
-          <li>
-            <strong>Massive Scaling:</strong> Ensuring the UI stays performant
-            while handling real-time data for 300+ simultaneous truck operators.
-          </li>
-          <li>
-            <strong>Process-Oriented Flow:</strong> Transitioning from tables to
-            a visual lifecycle view, ensuring users always know exactly where
-            their cargo is without hunting through text.
-          </li>
-        </ul>
+      <!-- 05 Phase 2 -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">05</div><span>Phase 2 &middot; In design</span></div>
+          <div>
+            <h2>Designing for scale</h2>
+            <p>My first designs leaned so far away from spreadsheets that they were too minimal for real data volumes. When stakeholders said PCIS has to handle 300+ truck operators, I mocked up realistic volumes and redesigned for scale. In Phase 2, I'm the sole designer across 12+ personas, and data-heavy views use standardized tables that stay scannable.</p>
+            <div class="cs-shots one"><figure><img src="imgs/pcis-p2-vessel-activity.png" alt="PCIS Phase 2 Vessel Activity table with All, Inbound and Outbound tabs, filter chips with counts, inline date fields, status badges and pagination" loading="lazy" /><figcaption><b>Vessel Activity.</b> Inbound and outbound vessels consolidated into one page with tabs, filter chips with live counts, and one consistent status language.</figcaption></figure></div>
+            <div class="cs-shots">
+              <figure><img src="imgs/pcis-p2-cargo-reservations.png" alt="PCIS Phase 2 Cargo Reservations for a truck coordinator with a readiness delay alert and suggested alternative cargo" loading="lazy" /><figcaption><b>Cargo Reservations.</b> When cargo isn't ready, the system suggests alternative cargo so a driver isn't left idle.</figcaption></figure>
+              <figure><img src="imgs/pcis-p2-hazmat.png" alt="PCIS Phase 2 Hazardous Cargo page with summary counts and auto-flagged, non-compliant rows" loading="lazy" /><figcaption><b>Hazardous Cargo.</b> Manifests are scanned automatically and missing documentation is flagged at the top.</figcaption></figure>
+            </div>
+            <h3 class="cs-h3">A Table Style Guide as the source of truth</h3>
+            <p>To keep dozens of tables consistent across personas, I wrote a Table Style Guide: one term per state, five badge tones, two table types, and one word per action. Engineering builds new tables from it.</p>
+            <div class="cs-shots one"><figure><img src="imgs/pcis-table-style-guide.png" alt="PCIS Table Style Guide showing badge tones, header and row spec, filter chips, sub-tabs, row actions, two table types and a status lexicon" loading="lazy" /></figure></div>
+          </div>
+        </div>
+      </section>
 
-        <div class="case-nav" style="margin-top: 36px">
-          <a class="secondary" href="index.html">← Back to work</a>
-          <a class="secondary" href="vdot-dashboard.html">← VDOT Dashboard</a>
-          <a class="primary" href="telematics.html">Next: Telematics →</a>
+      <!-- 06 Design system -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">06</div><span>Design system</span></div>
+          <div>
+            <h2>The system behind the tables</h2>
+            <p>The style guide's rules live as tokens and components in a Figma library, so every persona's screens share one status language. Every text pairing passes WCAG 2.1 AA, and the type scale has an 11px floor.</p>
+            <div class="pc-ds">
+              <h3 class="cs-h3">Status badges: one meaning per tone</h3>
+              <div class="pc-row">
+                <span class="pc-badge" style="background:#d1fae5;color:#065f46">Approved <small>6.8:1</small></span>
+                <span class="pc-badge" style="background:#fef9c3;color:#854d0e">Pending <small>6.4:1</small></span>
+                <span class="pc-badge" style="background:#fee2e2;color:#991b1b">Rejected <small>6.8:1</small></span>
+                <span class="pc-badge" style="background:#eff6ff;color:#1e40af">In Transit <small>8.0:1</small></span>
+                <span class="pc-badge" style="background:#f3f4f6;color:#4b5563">Cleared <small>6.9:1</small></span>
+              </div>
+              <p class="pc-note">Positive, attention, problem, in progress and neutral. The label is always there, so status never relies on color alone.</p>
+              <h3 class="cs-h3">Decision buttons</h3>
+              <div class="pc-row">
+                <span class="pc-btn" style="background:#101828">+ Add User</span>
+                <span class="pc-btn" style="background:#15803d">&#10003; Approve</span>
+                <span class="pc-btn" style="background:#dc2626">&#10005; Deny</span>
+                <span class="pc-btn focus" style="background:#101828">Focus</span>
+              </div>
+              <p class="pc-note">Approve uses green-700 so white text passes AA (5.0:1). Every button has a 3px blue focus ring for keyboard users.</p>
+              <h3 class="cs-h3">Readable data</h3>
+              <div class="pc-table">
+                <div class="pc-th"><span>Vessel / VA</span><span>Manifest</span><span>Status</span></div>
+                <div class="pc-tr"><span><b>MV Pacific Star</b><i>VA: Mark Wilson</i></span><span><em class="pc-badge" style="background:#d1fae5;color:#065f46">Submitted</em></span><span><em class="pc-badge" style="background:#eff6ff;color:#1e40af">Processing</em></span></div>
+                <div class="pc-tr"><span><b>MV Tidewater</b><i>VA: D. Okonkwo</i></span><span><em class="pc-badge" style="background:#fee2e2;color:#991b1b">Rejected</em></span><span><em class="pc-badge" style="background:#fee2e2;color:#991b1b">Returned</em></span></div>
+              </div>
+              <p class="pc-note">11px uppercase headers in gray-600 (6.9:1), 44px rows, and secondary text in gray-500 (4.8:1).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 Concept -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">07</div><span>Concept &middot; Self-initiated</span></div>
+          <div>
+            <h2>Pushing the Phase 2 screens further</h2>
+            <p>Looking back at my Phase 2 screens, they worked, but they read like a default UI kit: stock blues, a long flat nav, and tables with a column for every field. On my own, I redesigned four key screens as a concept to see how far a clearer identity and less density could go. This isn't shipped; it's where I'd push the next iteration.</p>
+            <div class="cs-grid3">
+              <div class="cs-card"><h3>A port identity</h3><p>Harbor navy, a deep teal for actions and an amber accent that echoes dock safety markings. Container IDs and UN numbers use a monospaced face, so O and 0 can't be confused.</p><span class="cs-why">Recognition</span></div>
+              <div class="cs-card"><h3>One shell, one language</h3><p>Every screen shares the same nav, header, filters and five status tones. Nav went from 11 flat links to 9 links in two groups: Operations and Planning.</p><span class="cs-why">Consistency</span></div>
+              <div class="cs-card"><h3>Fewer columns, one action</h3><p>Scheduled and actual times merge into one Arrival and one Departure column, a column every row shared is gone, and each row gets one clearly named action.</p><span class="cs-why">Cognitive load</span></div>
+            </div>
+            <div class="cs-shots one"><figure><img src="imgs/pcis-concept-home.png" alt="Concept redesign of the PCIS terminal operator home with a navy sidebar, summary strip, needs-attention list, today's priorities, terminal capacity and cargo readiness" loading="lazy" /><figcaption><b>Terminal Operator Home.</b> A summary strip, then what needs Carlos now, sorted by severity, with one action per alert.</figcaption></figure></div>
+            <div class="cs-shots one"><figure><img src="imgs/pcis-concept-vessel-activity.png" alt="Concept redesign of PCIS Vessel Activity with tabs, filter chips with counts, merged arrival and departure columns and status badges" loading="lazy" /><figcaption><b>Vessel Activity.</b> Four time columns became two, with actual arrival added inline under the scheduled time.</figcaption></figure></div>
+            <div class="cs-shots">
+              <figure><img src="imgs/pcis-concept-cargo-reservations.png" alt="Concept redesign of PCIS Cargo Reservations with a single delay banner suggesting a best-match container and a readiness table" loading="lazy" /><figcaption><b>Cargo Reservations.</b> The delay alert is one banner with a single best match and two clear choices.</figcaption></figure>
+              <figure><img src="imgs/pcis-concept-hazmat.png" alt="Concept redesign of PCIS Hazardous Cargo with summary counts, hazard class labels, UN numbers and documentation status" loading="lazy" /><figcaption><b>Hazardous Cargo.</b> Missing documentation sorts to the top, and the action says what it does: Request documents.</figcaption></figure>
+            </div>
+            <p style="margin-top:20px;font-size:14px;color:var(--cs-mute)">Every text pairing in the concept passes WCAG 2.1 AA (lowest 5.6:1), and every status keeps a text label next to its color.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 Next -->
+      <section class="cs-sec" style="border-bottom:0">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">08</div><span>Impact &amp; next</span></div>
+          <div>
+            <h2>Where it stands</h2>
+            <p>PCIS went from a contested data-sharing idea to a validated platform with multi-state buy-in, and I'm now leading Phase 2 design in refinement sessions with engineering.</p>
+            <div class="cs-grid3">
+              <div class="cs-card"><h3>See bottlenecks coming</h3><p>Moving from static lists to visual graphs so managers can spot a busy afternoon hours ahead.</p></div>
+              <div class="cs-card"><h3>Stay fast at volume</h3><p>Keeping the UI responsive with real-time data for 300+ truck operators.</p></div>
+              <div class="cs-card"><h3>Know where cargo is</h3><p>A visual lifecycle view, so users always see where their cargo is without hunting through text.</p></div>
+            </div>
+            <div class="cs-nav">
+              <a class="secondary" href="index.html">&larr; Back to work</a>
+              <a class="secondary" href="vdot-dashboard.html">&larr; VDOT Dashboard</a>
+              <a class="primary" href="telematics.html">Next: Telematics &rarr;</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>

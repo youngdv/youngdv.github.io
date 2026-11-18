@@ -793,312 +793,309 @@
       </div>
     </nav>
 
-    <main id="main-content">
+    <main id="main-content" class="cs">
+      <style>
+        .cs{--cs-max:1120px;--cs-ink:#0b0b0b;--cs-mute:#5f6575;--cs-line:rgba(0,0,0,.08);--cs-soft:#f7f7f5}
+        .cs *{box-sizing:border-box}
+        .cs .cs-wrap{max-width:var(--cs-max);margin:0 auto;padding:0 24px}
+        .cs h1,.cs h2{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+        .cs p{color:var(--cs-ink);font-size:17px;line-height:1.65;max-width:62ch}
+        .cs .cs-lead{font-size:19px;color:var(--cs-mute)}
+        .cs .cs-pill{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--pink-dark);background:var(--pink-light);border:1px solid var(--pink-border);border-radius:999px;padding:4px 12px}
+        /* Hero */
+        .cs-hero{padding:56px 0 32px}
+        .cs-hero .cs-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+        .cs-hero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:16px 0 18px}
+        .cs-hero .cs-wrap + .cs-wrap{display:block}
+        .cs-hero-img{background:#fff;border-radius:24px;padding:24px;box-shadow:0 2px 24px rgba(0,0,0,.06)}
+        .cs-hero-img img{width:100%;height:auto;display:block;border-radius:12px}
+        .cs-facts{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--cs-line);border-bottom:1px solid var(--cs-line);margin:24px 0 8px}
+        .cs-facts div{padding:18px 16px 18px 0}
+        .cs-facts dt{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cs-mute);margin-bottom:4px}
+        .cs-facts dd{margin:0;font-size:15px;font-weight:600}
+        /* Section */
+        .cs-sec{padding:72px 0;border-bottom:1px solid var(--cs-line)}
+        .cs-sec .cs-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px}
+        .cs-sec .cs-wrap > div{min-width:0}
+        .cs-label{position:sticky;top:96px;align-self:start}
+        .cs-num{font-family:"DM Serif Display",Georgia,serif;font-size:44px;line-height:1;color:var(--pink)}
+        .cs-label span{display:block;margin-top:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cs-mute)}
+        .cs-sec h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;margin:0 0 18px}
+        .cs-sec p+p{margin-top:12px}
+        .cs-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+        .cs-chip{font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--cs-line)}
+        /* Cards */
+        .cs-grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+        .cs-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+        .cs-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 0 0 1px var(--cs-line)}
+        .cs-card h3{font-size:19px;font-weight:700;margin:0 0 8px}
+        .cs-card p{font-size:15px;color:var(--cs-mute);margin:0}
+        .cs-card .cs-why{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--pink-dark);background:var(--pink-light);border-radius:999px;padding:3px 10px}
+        .cs-card.ok{border-top:4px solid #16a34a}.cs-card.warn{border-top:4px solid #d97706}
+        /* Phones */
+        .cs-phones{display:grid;gap:16px;margin-top:28px}
+        .cs-phones.two{grid-template-columns:1fr 1fr}
+        .cs-phones.four{grid-template-columns:repeat(4,1fr)}
+        .cs-phone{margin:0}
+        .cs-phone .frame{background:var(--cs-soft);border-radius:18px;padding:16px;display:flex;justify-content:center;align-items:flex-start;height:440px;overflow:hidden;box-shadow:0 0 0 1px var(--cs-line)}
+        .cs-phones.four .cs-phone .frame{height:380px}
+        .cs-phone img{max-height:100%;max-width:100%;width:auto;object-fit:contain;object-position:top;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+        .cs-phone figcaption{font-size:14px;line-height:1.5;color:var(--cs-mute);margin-top:10px}
+        .cs-phone figcaption b{color:var(--cs-ink)}
+        /* Stats */
+        .cs-stats{display:flex;gap:40px;flex-wrap:wrap;margin:24px 0 8px}
+        .cs-stat b{display:block;font-family:"DM Serif Display",Georgia,serif;font-size:48px;line-height:1;font-weight:400}
+        .cs-stat span{font-size:14px;color:var(--cs-mute)}
+        .cs-quote{margin-top:16px;padding-left:16px;border-left:3px solid var(--pink);font-style:italic;color:var(--cs-ink)}
+        /* Team */
+        .cs-team img{width:100%;height:auto;border-radius:18px;margin-top:20px;display:block}
+        .cs-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+        .cs-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:999px;font-weight:600;font-size:15px}
+        .cs-nav .primary{background:var(--pink);color:#fff}
+        .cs-nav .secondary{border:1px solid var(--cs-ink);color:var(--cs-ink)}
+        .cs .ds-block{margin-top:8px}
+        .cs-bars{margin:24px 0 8px;max-width:560px}
+        .cs-bar{margin-bottom:14px}
+        .cs-bar-top{display:flex;justify-content:space-between;font-size:15px;font-weight:600;margin-bottom:6px}
+        .cs-bar-top b{font-family:"DM Serif Display",Georgia,serif;font-size:28px;font-weight:400;line-height:1}
+        .cs-track{height:10px;border-radius:99px;background:#e6e6e2;overflow:hidden}
+        .cs-track i{display:block;height:100%;border-radius:99px}
+        .cs-bar.ok i{background:#216e00}.cs-bar.warn i{background:#b45309}.cs-bar.bad i{background:#b30000}
+        .cs-bar-note{font-size:13px!important;color:var(--cs-mute)!important}
+        .cs .cs-h3{font-size:20px;font-weight:700;margin:36px 0 8px}
+        .cs-phones.three{grid-template-columns:repeat(3,1fr)}
+        .cs-phones.three .cs-phone .frame{height:400px}
+        .cs-card p b{color:var(--cs-ink)}
+        @media (max-width:900px){
+          .cs-hero .cs-wrap,.cs-sec .cs-wrap{grid-template-columns:1fr;gap:20px}
+          .cs-label{position:static;display:flex;align-items:baseline;gap:12px}
+          .cs-label span{margin-top:0}
+          .cs-facts{grid-template-columns:repeat(2,1fr)}
+          .cs-grid2,.cs-grid3,.cs-phones.two,.cs-phones.three{grid-template-columns:1fr}
+          .cs-phones.four{grid-template-columns:1fr 1fr}
+          .cs-phone .frame,.cs-phones.four .cs-phone .frame{height:360px}
+          .cs-sec{padding:48px 0}
+        }
+      </style>
 
-    <!-- Outcome banner (top) -->
-    <div class="outcome-banner">
-      <div class="outcome-banner-inner">
-        <div class="outcome-stat">
-          <span class="number">What I Did</span>
-          <span class="label">I took a complex, 15-year-old manual process and transformed an 80-page technical rulebook into a step-by-step mobile workflow. I prioritized high-contrast visuals and oversized touch targets so the app stays usable in bright sunlight, heavy rain, and when the inspector is wearing work gloves.</span>
-        </div>
-        <div class="outcome-divider"></div>
-        <div class="outcome-stat">
-          <span class="number">The Result</span>
-          <span class="label">Inspectors can now complete their work without carrying heavy binders or paper forms. Because the app validates their inputs as they go, they can't accidentally skip a required field, improving data accuracy before they leave the highway.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Hero -->
-    <header class="hero">
-      <h1>Helping field inspectors complete safety-critical inspections faster and with fewer errors in high-risk environments</h1>
-      <p>
-        I translated an 80-page technical manual into a high-contrast mobile
-        app. I replaced manual paper forms with a guided workflow that ensures
-        100% data accuracy, even when standing feet away from 60mph highway
-        traffic.
-      </p>
-    </header>
-
-    <div class="project-meta">
-      <div class="meta-item">
-        <div class="meta-label">Industry</div>
-        <div class="meta-value">Government / Transportation</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Client</div>
-        <div class="meta-value">Virginia DOT</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Timeframe</div>
-        <div class="meta-value">8+ months</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">My Role</div>
-        <div class="meta-value">Lead UX Designer</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Team</div>
-        <div class="meta-value">PM, Solutions Architect, Software Engineer, and Engineering Intern</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Tools</div>
-        <div class="meta-value">Figma</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Methodology</div>
-        <div class="meta-value">Agile Product Delivery</div>
-      </div>
-    </div>
-
-    <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px">
-      <div class="media-tape">
-        <div class="media-well tall">
-          <img
-            src="imgs/vdotapp1.png"
-            alt="VDOT MRP mobile inspection app: stepped rating workflow screen, asset detail view, and on-screen IMCS-626 criteria reference"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- The Project at a Glance -->
-    <section class="project-section">
-      <span class="section-tag">The Project at a Glance</span>
-      <h2>The User, The Challenge, My Role</h2>
-
-      <div class="design-decision">
-        <h3>The User</h3>
-        <p>Field inspectors working in high-risk environments where speed, accuracy, and safety are critical.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>The Challenge</h3>
-        <p>Inspectors were managing complex asset assessments, strict audit requirements, and paper-based documentation in the field, creating friction, slowing down workflows, and increasing the risk of missed steps.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>My Role</h3>
-        <p>As Lead UX Designer, I owned the end-to-end transformation of a manual process into a mobile product. I defined workflows, prioritized critical actions, and designed for real-world constraints like weather, glare, and time pressure.</p>
-        <p>Design was delivered in two-week sprint cycles alongside engineering.</p>
-      </div>
-    </section>
-
-
-    <!-- Behavioral Science Formula -->
-    <section class="project-section">
-      <span class="section-tag">Design Decisions</span>
-      <h2>Key Decisions That Reduced Risk and Improved Usability</h2>
-      <p style="margin-bottom: 20px">
-        Skim the bold headers for the 30-second version, or read the Science
-        column to see the depth behind each choice.
-      </p>
-
-      <div class="behavioral-grid">
-        <div class="bg-header">
-          <div>The Field Challenge</div>
-          <div>My Design Solution</div>
-          <div>The Science (The "DNA")</div>
-        </div>
-        <div class="bg-row">
-          <div class="bg-problem">
-            Environmental Glare: Screens wash out in direct sunlight or heavy
-            rain.
-          </div>
+      <!-- Hero -->
+      <header class="cs-hero">
+        <div class="cs-wrap">
           <div>
-            Ultra-High Contrast UI: Increased visibility in bright sunlight and rain, helping inspectors read and act quickly in safety-critical conditions.
+            <span class="cs-pill">VDOT MRP &middot; Field App</span>
+            <h1>A field inspection app built for glare, rain, and gloves</h1>
+            <p class="cs-lead">I turned an 80-page technical manual into a step-by-step, high-contrast mobile app. Inspectors no longer carry binders or paper forms, and the app checks required fields as they go, so nothing gets skipped before they leave the highway.</p>
           </div>
-          <div class="bg-science">
-            <strong>Visual Perception:</strong> Under physical stress and glare,
-            the eye struggles with subtle shades. I optimized for maximum
-            legibility under load.
-          </div>
-        </div>
-        <div class="bg-row">
-          <div class="bg-problem">
-            Complex Rules: Inspectors had to remember 80+ pages of "Passing"
-            rules.
-          </div>
-          <div>
-            Criteria-at-a-Glance: I placed the specific passing/failing criteria directly on the rating screen, reducing the need to recall rules from memory.
-          </div>
-          <div class="bg-science">
-            <strong>Recognition over Recall:</strong> It is easier for the brain
-            to recognize a rule on a screen than to recall it from memory while
-            distracted by traffic.
+          <div class="cs-hero-img">
+            <img src="imgs/vdotapp1.png" alt="VDOT MRP mobile inspection app: record details, inspection history, and inspection map screens" />
           </div>
         </div>
-        <div class="bg-row">
-          <div class="bg-problem">
-            Physical Limits: Inspectors wear heavy gloves. Small buttons lead to
-            "miss-taps."
-          </div>
-          <div>
-            Oversized Hit Zones: Every primary action button is a large, full-width target, reducing errors for users with limited dexterity.
-          </div>
-          <div class="bg-science">
-            <strong>Fitts's Law:</strong> The time to hit a target is a function
-            of its size. Large buttons reduce errors for users with limited
-            dexterity.
-          </div>
+        <div class="cs-wrap">
+          <dl class="cs-facts">
+            <div><dt>Role</dt><dd>Lead UX Designer</dd></div>
+            <div><dt>Client</dt><dd>Virginia DOT</dd></div>
+            <div><dt>Timeframe</dt><dd>8+ months</dd></div>
+            <div><dt>Team</dt><dd>PM, Solutions Architect, Software Engineer, Engineering Intern</dd></div>
+            <div><dt>Status</dt><dd>In testing</dd></div>
+          </dl>
         </div>
-        <div class="bg-row">
-          <div class="bg-problem">
-            Slip-Errors: In a rush, it is easy to forget to rate one asset among
-            hundreds.
-          </div>
-          <div>
-            The "Stop &amp; Check": The app flags missing required inputs before an inspector can advance, preventing hours of manual data correction later.
-          </div>
-          <div class="bg-science">
-            <strong>Forcing Functions:</strong> By creating a small, intentional "speed bump," I prevented costly downstream errors.
-          </div>
-        </div>
-      </div>
-    </section>
+      </header>
 
-    <!-- Turning the SOP into a Product -->
-    <section class="project-section">
-      <span class="section-tag">From Manual to Mobile</span>
-      <h2>Turning the Manual (SOP) into a Product</h2>
-      <p>
-        The original VDOT SOP was a dense technical document. I broke it down
-        into a Stepped Flow that mirrors the inspector's physical walk-around:
-      </p>
+      <!-- 01 Problem -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">01</div><span>The problem</span></div>
+          <div>
+            <h2>Safety-critical work, done on paper</h2>
+            <p>Field inspectors rate road assets on highway shoulders, in glare, rain and traffic. They had to follow an 80-page manual and strict audit rules using paper forms, which slowed them down and made it easy to miss a step.</p>
+            <p>As Lead UX Designer, I owned the move from that manual process to a mobile product, designing in two-week sprints alongside engineering.</p>
+            <div class="cs-chips"><span class="cs-chip">Direct sun &amp; rain</span><span class="cs-chip">Work gloves</span><span class="cs-chip">60 mph traffic nearby</span><span class="cs-chip">80-page rulebook</span></div>
+          </div>
+        </div>
+      </section>
 
-      <div class="design-decision">
-        <h3>Guided Rating</h3>
-        <p>
-          By using a Stepped Flow, I break the inspection into logical "chunks"
-          (Pavement → Drainage → Traffic Services). This follows Miller's Law,
-          keeping the number of items a user has to remember at any one time to
-          a minimum.
-        </p>
-        <p style="margin-top: 14px">
-          Each inspection is chunked into stages: category, then on-screen
-          criteria, keeping what the inspector must hold in memory to a minimum
-          (Miller's Law). The specific passing criteria (e.g. '201 ≤25% diameter
-          closed') appear on the rating screen itself, so inspectors recognize
-          the standard rather than recall it from the 80-page manual.
-        </p>
-        <div class="screen-strip">
-          <div class="screen-strip-item">
-            <div class="media-well tall" style="margin: 12px 0 0">
-              <img src="imgs/step1.png" alt="Category selection: Roadside, Drainage, Traffic, Roadway, Bridge, Service" />
+      <!-- 02 Decisions -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">02</div><span>Design decisions</span></div>
+          <div>
+            <h2>Every choice answers a field condition</h2>
+            <div class="cs-grid2">
+              <div class="cs-card"><h3>High-contrast UI</h3><p>Screens wash out in sun and rain, so every view is built for maximum legibility under glare.</p><span class="cs-why">Visual perception</span></div>
+              <div class="cs-card"><h3>Criteria on screen</h3><p>Inspectors had to remember 80+ pages of passing rules. The rating screen now shows the exact criteria.</p><span class="cs-why">Recognition over recall</span></div>
+              <div class="cs-card"><h3>Oversized targets</h3><p>Small buttons cause miss-taps in heavy gloves. Every primary action is a large, full-width target.</p><span class="cs-why">Fitts's Law</span></div>
+              <div class="cs-card"><h3>Stop &amp; check</h3><p>In a rush it's easy to skip one asset among hundreds. The app flags missing required inputs before an inspector can move on.</p><span class="cs-why">Forcing function</span></div>
             </div>
-            <p class="media-caption" style="text-align: left; margin-left: 0; margin-right: 0">Start broad: pick a category (Roadside, Drainage, Traffic, Roadway, Bridge, Service).</p>
-          </div>
-          <div class="screen-strip-item">
-            <div class="media-well tall" style="margin: 12px 0 0">
-              <img src="imgs/selectedstep4.png" alt="Asset rating screen showing pass/fail criteria directly on screen" />
+            <div class="cs-phones two">
+              <figure class="cs-phone"><div class="frame"><img src="imgs/step1.png" alt="Category selection: Roadside, Drainage, Traffic, Roadway, Bridge, Service" loading="lazy" /></div><figcaption><b>Step 1.</b> Start broad: pick a category.</figcaption></figure>
+              <figure class="cs-phone"><div class="frame"><img src="imgs/selectedstep4.png" alt="Asset rating screen showing pass/fail criteria directly on screen" loading="lazy" /></div><figcaption><b>Step 2.</b> Rate the asset against the criteria shown on screen. A stepped flow keeps what inspectors hold in memory small (Miller's Law).</figcaption></figure>
             </div>
-            <p class="media-caption" style="text-align: left; margin-left: 0; margin-right: 0">Then rate the asset against pass/fail criteria shown directly on screen.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Study -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">03</div><span>Validation</span></div>
+          <div>
+            <h2>What the usability study showed</h2>
+            <p>I ran an unmoderated Maze study with 8 participants recruited via Prolific. On their own phones, they found an asset on the map, rated it against IMCS-626 criteria, and finished the documentation. With 8 people, I treated the results as direction, not proof.</p>
+            <div class="cs-bars">
+              <div class="cs-bar ok"><div class="cs-bar-top"><span>Rate the asset</span><b>75%</b></div><div class="cs-track"><i style="width:75%"></i></div></div>
+              <div class="cs-bar warn"><div class="cs-bar-top"><span>Finish documentation</span><b>50%</b></div><div class="cs-track"><i style="width:50%"></i></div></div>
+              <div class="cs-bar bad"><div class="cs-bar-top"><span>Find the asset on the map</span><b>38%</b></div><div class="cs-track"><i style="width:38%"></i></div></div>
+              <p class="cs-bar-note">Task success rate per mission</p>
+            </div>
+            <div class="cs-grid2">
+              <div class="cs-card ok"><h3>What worked</h3><p>Rating, the most safety-critical flow, had the highest success. Participants rated the on-screen criteria <b>4.9 / 7</b> for confidence and the Record button <b>5.2 / 7</b> for being easy to tap.</p></div>
+              <div class="cs-card warn"><h3>What needed work</h3><p>Finding an asset on the map was the hardest step, with about half of all taps landing as misclicks. Documentation came next.</p></div>
+            </div>
+            <p class="cs-quote">"Too many buttons to get to the requirements section"</p>
+            <p class="cs-quote">"Bundle records and upload them together"</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 V2 -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">04</div><span>V2 &middot; In testing</span></div>
+          <div>
+            <h2>Designing V2 from the data</h2>
+            <p>The study pointed at two flows. I started where success was lowest.</p>
+            <h3 class="cs-h3">Finding an asset: 38% success</h3>
+            <p>V1 used small, unlabeled pins that were easy to miss with a thumb. V2 adds search by route, mile marker or asset, labeled pins with 44px targets, a Near me shortcut, and a List view for anyone who'd rather not use the map. Tapping a pin opens a card with distance and a clear next step.</p>
+            <div class="cs-phones two">
+              <figure class="cs-phone"><div class="frame"><img src="imgs/mrp-v1-map.png" alt="V1 inspection map with small unlabeled pins and a Return Home button" loading="lazy" /></div><figcaption><b>V1.</b> Small pins, no labels, no list.</figcaption></figure>
+              <figure class="cs-phone"><div class="frame"><img src="imgs/mrp-v2-map.png" alt="V2 Find an asset screen with search, Map and List toggle, large labeled pins, and a selected-asset card with Details and Start inspection buttons" loading="lazy" /></div><figcaption><b>V2.</b> Search, labeled pins, Map or List, and a card for the selected asset.</figcaption></figure>
+            </div>
+            <h3 class="cs-h3">Documentation: 50% success</h3>
+            <p>Participants asked to bundle records instead of sending them one by one. V2 collects the day's records on one screen to upload together. A record missing a required photo is flagged and held back, so batch upload never skips a required step.</p>
+            <div class="cs-phones two">
+              <figure class="cs-phone"><div class="frame"><img src="imgs/mrp-v2-upload.png" alt="V2 Upload records screen listing four records, three selected and ready, one flagged as needing a photo, with an Upload 3 records button" loading="lazy" /></div><figcaption><b>V2.</b> Upload the day's records at once. Anything missing a photo waits.</figcaption></figure>
+              <figure class="cs-phone"><div class="frame"><img src="imgs/mrp-v2-requirements.png" alt="V2 requirements screen with search and category tiles" loading="lazy" /></div><figcaption><b>V2.</b> Requirements gets search and readable labels, answering "too many buttons to get to the requirements section."</figcaption></figure>
+            </div>
+            <h3 class="cs-h3">Also in V2</h3>
+            <div class="cs-phones three">
+              <figure class="cs-phone"><div class="frame"><img src="imgs/mrp-v2-home.png" alt="V2 home screen with Show on Map and Requirements pinned to the bottom" loading="lazy" /></div><figcaption><b>Home.</b> Main actions pinned in thumb reach; icon buttons labeled.</figcaption></figure>
+              <figure class="cs-phone"><div class="frame"><img src="imgs/mrp-v2-record.png" alt="V2 record details with the MRP requirement highlighted" loading="lazy" /></div><figcaption><b>Record details.</b> Requirement highlighted; Delete moved away from Show on Map.</figcaption></figure>
+              <figure class="cs-phone"><div class="frame"><img src="imgs/mrp-v2-delete-confirm.png" alt="Delete confirmation naming the asset and mile marker" loading="lazy" /></div><figcaption><b>Delete.</b> Asks first and names the exact asset.</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 Design system -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">05</div><span>Design system</span></div>
+          <div>
+            <h2>One system, two products</h2>
+            <p>The field app and the management dashboard share one design system, so a status, a color or a button means the same thing on a phone as on a desktop. Tokens are sized per context: 56px controls for gloved hands in the field, 35px for dense desk work.</p>
+      <!-- Design system visuals -->
+      <div class="ds-block">
+        <style>
+          .ds-block{--ds-ink:#111;--ds-ink2:#444;--ds-line:#e3e3e3;--ds-soft:#f7f7f7;margin-top:28px}
+          .ds-block *{box-sizing:border-box}
+          .ds-block h3{font-size:18px;margin:32px 0 6px}
+          .ds-block .ds-sub{color:var(--ds-ink2);font-size:15px;line-height:1.6;margin:0 0 16px;max-width:68ch}
+          .ds-block .ds-mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--ds-ink2)}
+          .ds-block .ds-sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+          .ds-block .ds-sw{border:1px solid var(--ds-line);border-radius:12px;overflow:hidden;background:#fff}
+          .ds-block .ds-chip{height:64px;display:flex;align-items:flex-end;padding:8px 10px;font-weight:700;font-size:13px}
+          .ds-block .ds-sw-b{padding:10px 12px 12px;font-size:13px;line-height:1.45}
+          .ds-block .ds-sw-b b{display:block;font-size:13px}
+          .ds-block .ds-ratio{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:#ebf9f1;color:#216e00}
+          .ds-block .ds-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+          .ds-block .ds-badge{display:inline-flex;align-items:center;gap:8px;height:35px;padding:0 14px;border-radius:7px;border:1px solid;font:600 15px/1 Inter,system-ui,sans-serif}
+          .ds-block .ds-badge small{font-size:11px;font-weight:700;opacity:.9}
+          .ds-block .ds-table-wrap{overflow-x:auto;border:1px solid var(--ds-line);border-radius:12px}
+          .ds-block table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+          .ds-block th,.ds-block td{text-align:left;padding:10px 14px;border-top:1px solid var(--ds-line)}
+          .ds-block thead th{border-top:0;background:var(--ds-soft);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ds-ink2)}
+          .ds-block .ds-comps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+          .ds-block .ds-stage{background:var(--ds-soft);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;font-family:Inter,system-ui,sans-serif;margin-bottom:10px}
+          .ds-block .ds-btns{display:flex;gap:8px}
+          .ds-block .ds-btn{flex:1;height:56px;border-radius:16px;font:700 16px/1 Inter,system-ui,sans-serif;color:#fff;display:flex;align-items:center;justify-content:center;border:0}
+          .ds-block .ds-btn.o{background:#c43e00}.ds-block .ds-btn.n{background:#1b3a5c}
+          .ds-block .ds-btn.d{background:#fff;color:#b30000;border:3px solid #b30000}
+          .ds-block .ds-hub{height:35px;padding:0 14px;border-radius:7px;font:600 14px/1 Inter,system-ui,sans-serif;display:inline-flex;align-items:center;border:1px solid #d9d9d9;background:#f2f2f2;color:#444}
+          .ds-block .ds-card{background:#fff;border:1.5px solid #888;border-radius:18px;padding:12px 14px;font-size:15px;line-height:1.5}
+          .ds-block .ds-card.sel{background:#e8f0fe;border:2px solid #1b3a5c}
+          .ds-block .ds-note{font-size:14px;line-height:1.55;color:var(--ds-ink2);margin:0}
+          .ds-block .ds-note b{color:var(--ds-ink)}
+        </style>
+
+        <h3>Color</h3>
+        <p class="ds-sub">Navy and orange carry the brand. Every text pairing passes WCAG 2.1 AA (4.5:1), most pass 7:1, for reading in direct sun.</p>
+        <div class="ds-sw-grid">
+          <div class="ds-sw"><div class="ds-chip" style="background:#1b3a5c;color:#fff">Aa</div><div class="ds-sw-b"><b>brand/navy</b><span class="ds-mono">#1B3A5C</span><br>Headers, secondary actions, selection<br><span class="ds-ratio">White text 11.6:1</span></div></div>
+          <div class="ds-sw"><div class="ds-chip" style="background:#c43e00;color:#fff">Aa</div><div class="ds-sw-b"><b>action/primary</b><span class="ds-mono">#C43E00</span><br>The one main action per screen<br><span class="ds-ratio">White text 5.2:1</span></div></div>
+          <div class="ds-sw"><div class="ds-chip" style="background:#b30000;color:#fff">Aa</div><div class="ds-sw-b"><b>danger</b><span class="ds-mono">#B30000</span><br>Destructive actions, as an outline<br><span class="ds-ratio">On white 7.2:1</span></div></div>
+          <div class="ds-sw"><div class="ds-chip" style="background:#111;color:#fff">Aa</div><div class="ds-sw-b"><b>text/primary</b><span class="ds-mono">#111111 · #444444</span><br>Body and secondary text<br><span class="ds-ratio">18.9:1 · 9.7:1</span></div></div>
+          <div class="ds-sw"><div class="ds-chip" style="background:#e8f0fe;color:#1b3a5c;border-bottom:1px solid #e3e3e3">Aa</div><div class="ds-sw-b"><b>bg/selected</b><span class="ds-mono">#E8F0FE</span><br>Selected cards, paired with a navy border<br><span class="ds-ratio">Text 16.5:1</span></div></div>
+        </div>
+
+        <h3>Core components</h3>
+        <div class="ds-comps">
+          <div>
+            <div class="ds-stage">
+              <div class="ds-btns"><span class="ds-btn o">Show on Map</span><span class="ds-btn n">Requirements</span></div>
+              <div class="ds-btns"><span class="ds-btn d">Delete record</span></div>
+            </div>
+            <p class="ds-note"><b>Buttons.</b> Orange marks the one main action on a screen, navy supports it, and destructive actions are outlined in red. Keyboard focus shows a 3px blue ring.</p>
+          </div>
+          <div>
+            <div class="ds-stage">
+              <div class="ds-card"><b>Asset:</b> Drain<br><b>Code:</b> 102</div>
+              <div class="ds-card sel"><b>Asset:</b> Drain<br><b>Code:</b> 102</div>
+            </div>
+            <p class="ds-note"><b>Record card.</b> Selection changes both fill and border, so it still reads in glare.</p>
+          </div>
+          <div>
+            <div class="ds-stage">
+              <div class="ds-row"><span class="ds-hub">Approve</span><span class="ds-hub">Deny</span></div>
+            </div>
+            <p class="ds-note"><b>Paired decisions.</b> In the dashboard, Approve and Deny share one neutral style so neither looks like the default.</p>
           </div>
         </div>
       </div>
-
-      <div class="design-decision">
-        <h3>Instant Failing Reports</h3>
-        <p>
-          If an asset fails, the app immediately triggers a request for a photo
-          and a maintenance note. No offline reconciliation needed.
-        </p>
-        <div class="media-well tall" style="margin: 16px auto 0; max-width: 560px">
-          <img src="imgs/recorddetails.png" alt="Record details screen with photo, MRP requirement, and geolocation" />
+          </div>
         </div>
-        <p class="media-caption" style="margin-top: 10px">Each record captures a photo, the relevant MRP requirement, and geolocation inline, no offline reconciliation needed back at the office.</p>
-      </div>
+      </section>
 
-      <div class="design-decision">
-        <h3>Shared Design Language</h3>
-        <p>The mobile app feeds directly into the management dashboard. To keep both products consistent, I built a shared component library in Figma.</p>
-        <p>Status colors, typography scales, and interaction patterns stay the same whether a user is rating an asset on their phone or reviewing results on a desktop screen.</p>
-      </div>
-    </section>
+      <!-- 06 Impact -->
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">06</div><span>Impact</span></div>
+          <div>
+            <h2>Where it stands</h2>
+            <div class="cs-grid3">
+              <div class="cs-card"><h3>In testing, and in demand</h3><p>Inspectors testing the app want to use it on more VDOT projects. It's organized by project (like FRED and NOVA I-66), so new ones fit right in.</p></div>
+              <div class="cs-card"><h3>Paper to mobile</h3><p>An 80-page manual became a guided workflow that surfaces criteria on screen and checks required fields as inspectors go.</p></div>
+              <div class="cs-card"><h3>Validated, with a clear V2</h3><p>The study confirmed the core decisions held up and pointed to exactly what to improve next.</p></div>
+            </div>
+            <p style="margin-top:20px">Part of a connected system. See the <a href="vdot-dashboard.html" style="text-decoration:underline">Operations Hub case study</a> for the other half.</p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Validation -->
-    <section class="project-section">
-      <span class="section-tag">Validation</span>
-      <h2>Usability Study</h2>
-      <div class="design-decision">
-        <h3>Study Design</h3>
-        <p>8 participants recruited via Prolific completed three goal-based missions on their own phones, mirroring real field conditions.</p>
-        <p>Each mission mapped to a critical inspection step:</p>
-        <ul>
-          <li>Locating an asset on the map</li>
-          <li>Rating it against IMCS-626 criteria</li>
-          <li>Completing final documentation</li>
-        </ul>
-        <p>After each mission, participants rated the experience on a 7-point Likert scale.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>What the Data Confirmed</h3>
-        <p>The inspection and rating workflow performed the strongest. It's the most safety-critical part of the app.</p>
-        <p>Participants navigated the stepped flow, referenced on-screen criteria, and submitted assessments with low friction.</p>
-        <p>Likert scores confirmed it: on-screen criteria and the Record button's tap-ability rated highest across all measures.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>Where the Data Pointed Next</h3>
-        <p>Two flows showed higher friction: map-based asset discovery and final documentation.</p>
-        <p>Qualitative feedback surfaced clear patterns:</p>
-        <ul>
-          <li>"Too many buttons to get to the requirements section"</li>
-          <li>Request for batch-upload of records</li>
-        </ul>
-        <p><strong>V2 priorities:</strong> simplify the map interaction model and reduce documentation steps.</p>
-      </div>
-
-      <div class="design-decision">
-        <h3>The Takeaway</h3>
-        <p>
-          The study validated that the core behavioral design decisions, the Stepped Flow, Criteria-at-a-Glance, and oversized hit zones, held up under real mobile use. It also gave the team specific, actionable direction for V2 improvements rather than relying on assumptions.
-        </p>
-      </div>
-    </section>
-
-    <!-- Final Word -->
-    <section class="project-section">
-      <span class="section-tag">Impact</span>
-      <h2>Impact</h2>
-      <p>
-        By understanding how the human brain processes information under stress, I delivered a tool that is now used across Virginia to manage millions of dollars in road repairs safely and accurately. A usability study validated the core design decisions and gave the team a clear roadmap for what to improve next.
-      </p>
-      <ul style="margin-top: 14px">
-        <li>Reduced reliance on paper manuals, improving speed and accuracy in the field</li>
-        <li>Increased inspector confidence in high-risk environments by surfacing criteria on-screen and eliminating the need to recall rules from memory</li>
-        <li>Simplified a complex 80-page process into a scalable mobile workflow that can extend to additional asset types and districts</li>
-        <li>Validated by data: the inspection and rating workflow, the most safety-critical flow, performed strongest in usability testing, confirming the stepped design decisions held up under real mobile use</li>
-        <li>Clear next steps: the study surfaced specific friction points in map discovery and documentation, giving the team an evidence-based backlog for V2</li>
-        <li>Part of a connected system. See the <a href="vdot-dashboard.html" style="text-decoration: underline">Operations Hub case study</a> for the other half</li>
-      </ul>
-    </section>
-
-    <!-- Team -->
-    <section class="project-section">
-      <span class="section-tag">The Team</span>
-      <h2>The Team</h2>
-      <p style="font-size: 15px; color: var(--muted); font-weight: 500">
-        Sole UX Designer on a 5-person Alpha Team at Leidos: PM, Solutions
-        Architect, Software Engineer, and Engineering Intern.
-      </p>
-      <div class="media-well" style="aspect-ratio: 16/10; margin-top: 20px">
-        <img
-          src="imgs/alphateam.png"
-          alt="Five-person Alpha Team at Leidos gathered around a table during a VDOT MRP project working session"
-        />
-      </div>
-
-      <div class="case-nav" style="margin-top: 28px">
-        <a class="secondary" href="index.html">← Back to work</a>
-        <a class="primary" href="vdot-dashboard.html"
-          >View Dashboard case study →</a
-        >
-      </div>
-    </section>
-
+      <!-- Team -->
+      <section class="cs-sec" style="border-bottom:0">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">07</div><span>The team</span></div>
+          <div class="cs-team">
+            <h2>The Alpha Team</h2>
+            <p>Sole UX Designer on a 5-person team at Leidos: PM, Solutions Architect, Software Engineer, and Engineering Intern.</p>
+            <img src="imgs/alphateam.png" alt="Five-person Alpha Team at Leidos gathered around a table during a VDOT MRP project working session" loading="lazy" />
+            <div class="cs-nav">
+              <a class="secondary" href="index.html">&larr; Back to work</a>
+              <a class="primary" href="vdot-dashboard.html">View Dashboard case study &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>

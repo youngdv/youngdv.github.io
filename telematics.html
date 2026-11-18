@@ -270,6 +270,7 @@
       }
       .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
         </style>
+      <link rel="stylesheet" href="css/case-study.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -296,189 +297,92 @@
       </div>
     </nav>
 
-    <main id="main-content">
-
-    <!-- Outcome banner -->
-    <div class="outcome-banner">
-      <div class="outcome-banner-inner">
-        <div class="outcome-stat">
-          <span class="number">What I Did</span>
-          <span class="label">I turned a messy, spreadsheet-style desktop system into a simple mobile app for research teams. I used Functional Analysis to separate critical safety alerts from basic info, ensuring the most important data is the easiest to see.</span>
+    <main id="main-content" class="cs">
+      <header class="cs-hero">
+        <div class="cs-wrap">
+          <div>
+            <span class="cs-pill">Telematics &middot; Mobile prototype</span>
+            <h1>Turning dense telematics data into decisions researchers can make on the road</h1>
+            <p class="cs-lead">Research teams were data-rich but insight-poor, trying to spot which vehicles needed attention from dense desktop screens inside a moving vehicle. I restructured the experience as a mobile-first tool that surfaces critical alerts and puts the most important information first.</p>
+          </div>
+          <div class="cs-hero-img"><img src="imgs/telematics2.png" alt="Telematics mobile prototype: vehicle status list with alert prioritization, detail view showing GPS and engine data, and simplified navigation for field use" /></div>
         </div>
-        <div class="outcome-divider"></div>
-        <div class="outcome-stat">
-          <span class="number">The Result</span>
-          <span class="label">Researchers can now check vehicle data and make quick decisions while on the road without getting overwhelmed by a crowded screen. By simplifying 5-step tasks into single taps, I made the system much safer and faster to use in active field conditions.</span>
+        <div class="cs-wrap">
+          <dl class="cs-facts"><div><dt>Role</dt><dd>UI/UX Designer</dd></div><div><dt>Client</dt><dd>Leidos / CARMA Program</dd></div><div><dt>Timeframe</dt><dd>Design sprint</dd></div><div><dt>Tools</dt><dd>Figma</dd></div><div><dt>Method</dt><dd>Agile product delivery</dd></div></dl>
         </div>
-      </div>
-    </div>
+      </header>
 
-    <!-- Hero -->
-    <header class="hero">
-      <h1>Improving fleet operational efficiency by translating complex telematics data into actionable insights</h1>
-      <p>
-        Research teams were data-rich but insight-poor, struggling to identify which vehicles required immediate attention from dense desktop screens inside a moving vehicle. I restructured the experience as a mobile-first tool that surfaces critical alerts and puts the most important information first.
-      </p>
-    </header>
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">01</div><span>The problem</span></div>
+          <div>
+            <h2>Dense desktop screens, used from a moving vehicle</h2>
 
-    <div class="project-meta">
-      <div class="meta-item">
-        <div class="meta-label">Industry</div>
-        <div class="meta-value">Transportation / Research</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Client</div>
-        <div class="meta-value">Leidos / CARMA Program</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Timeframe</div>
-        <div class="meta-value">Design sprint</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">My Role</div>
-        <div class="meta-value">UI/UX Designer</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Tools</div>
-        <div class="meta-value">Figma</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Methodology</div>
-        <div class="meta-value">Agile Product Delivery</div>
-      </div>
-    </div>
-
-    <div style="padding: 0 5%; max-width: 1260px; margin: 0 auto 40px;">
-      <div class="media-tape">
-        <div class="media-well">
-          <img src="imgs/telematics2.png" alt="Telematics mobile prototype: vehicle status list with alert prioritization, detail view showing GPS and engine data, and simplified navigation for field use" />
+            <p>Research and field teams needed to interpret complex vehicle telemetry in real time, but the legacy workflow depended on dense, spreadsheet-like web layouts that were hard to use in active field conditions. That added navigation friction and delayed time-sensitive decisions.</p>
+            <p>The users are internal Leidos research teams running vehicle studies. They monitor telematics data, check event details and make operational decisions on the road. Before this redesign, all of it required a desktop.</p>
+            <div class="cs-shots one"><figure><img src="imgs/Topicmanagement1.png" alt="The legacy CARMA desktop Topic Management screen with event filters and side-by-side vehicle and infrastructure topic lists" loading="lazy" /><figcaption><b>Before: the legacy desktop tool.</b> Event filters and dense transfer lists built for a desk, not a moving vehicle.</figcaption></figure></div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Overview -->
-    <section class="project-section">
-      <span class="section-tag">Overview</span>
-      <h2>The redesign</h2>
-      <p>
-        This redesign transformed a dense desktop telematics tool into a mobile interface built for field decisions under time pressure.
-      </p>
-      <p>
-        I worked within a compressed agile sprint, using competitive references and heuristic findings to set redesign priorities.
-      </p>
-    </section>
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">02</div><span>Approach</span></div>
+          <div>
+            <h2>Benchmark first, then simplify</h2>
 
-    <!-- Who is this for -->
-    <section class="project-section">
-      <span class="section-tag green">The User</span>
-      <h2>Who is this product for?</h2>
-      <p>
-        Internal Leidos research teams conducting vehicle studies. They monitor telematics data, check event details, and make operational decisions while on the road.
-      </p>
-      <p>
-        Previously, all of this data required a desktop. This redesign brought it to mobile.
-      </p>
-    </section>
-
-    <!-- Goals -->
-    <section class="project-section">
-      <span class="section-tag">Goals</span>
-      <h2>Goals</h2>
-      <ul>
-        <li>Provide mobile-first access to vehicle and event data for on-the-go research teams</li>
-        <li>Support field decision-making with clear information hierarchy and quick actions</li>
-        <li>Reduce navigation friction by simplifying desktop workflows for mobile contexts</li>
-        <li>Maintain terminology consistency with the existing web platform for familiarity</li>
-        <li>Enable quick scanning of vehicle status and event details on small screens</li>
-      </ul>
-      <div class="media-tape green-tape" style="margin-top: 24px;">
-        <div class="media-well">
-          <img src="imgs/Topicmanagement1.png" alt="Side-by-side telematics screens showing the vehicle list grouped by alert severity and the individual vehicle data panel with critical metrics highlighted" />
+            <p>I worked within a compressed agile sprint. I ran a competitive systems analysis of existing telematics platforms to find the mental models people already expect for data visualization, then used it with heuristic findings to set redesign priorities.</p>
+            <ul class="cs-list">
+              <li>Mobile-first access to vehicle and event data for teams on the go</li>
+              <li>Clear information hierarchy and quick actions for field decisions</li>
+              <li>Fewer navigation steps than the desktop workflows</li>
+              <li>Terminology consistent with the existing web platform</li>
+              <li>Quick scanning of vehicle status on small screens</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Why is this needed -->
-    <section class="project-section">
-      <span class="section-tag">The Challenge</span>
-      <h2>Why is this needed?</h2>
-      <p>
-        Research and field teams needed to interpret complex vehicle telemetry
-        in real time, but the legacy workflow depended on dense,
-        spreadsheet-like web layouts that were difficult to use in active field
-        conditions. This increased navigation friction and delayed
-        time-sensitive interpretation tasks.
-      </p>
-    </section>
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">03</div><span>Design decisions</span></div>
+          <div>
+            <h2>Glanceable first, details second</h2>
 
-    <!-- HF Contribution -->
-    <section class="project-section">
-      <span class="section-tag green">Research Methods</span>
-      <h2>HF Contribution (Benchmarking)</h2>
-      <ul>
-        <li>Conducted a <strong>Competitive Systems Analysis</strong> of existing telematics platforms to identify industry-standard mental models for data visualization</li>
-      </ul>
-    </section>
+            <p>I prioritized glanceable telemetry to support situational awareness, with a clear hierarchy for faster interpretation and intervention decisions.</p>
+            <div class="cs-grid2">
+              <div class="cs-card"><h3>Glanceable data hierarchy</h3><p>Safety-critical telemetry markers are visually separated from informational data, so users can assess status at a glance without reading dense tables.</p><span class="cs-why">Situational awareness</span></div>
+              <div class="cs-card"><h3>Simplified navigation</h3><p>Desktop workflows that took 4&ndash;5 taps were condensed into a single contextual action, so researchers make fewer decisions while on the road.</p><span class="cs-why">Fewer steps</span></div>
+              <div class="cs-card"><h3>Consistent terminology</h3><p>All labels stay aligned with the existing web platform, so experienced users learn a new interaction model, not a new vocabulary.</p><span class="cs-why">Familiarity</span></div>
+              <div class="cs-card"><h3>Reused patterns</h3><p>Data cards, status indicators and alert hierarchies were carried over from the web system and adapted for mobile instead of rebuilt.</p><span class="cs-why">Low learning curve</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- HSI Design -->
-    <section class="project-section">
-      <span class="section-tag">Design</span>
-      <h2>The Human-System Interface (HSI)</h2>
-      <p>
-        Prioritized glanceable telemetry data to support situational awareness
-        for researchers in the field, with clear hierarchy for faster
-        interpretation and intervention decisions.
-      </p>
+      <section class="cs-sec">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">04</div><span>Team</span></div>
+          <div>
+            <h2>Who I worked with</h2>
 
-      <div class="design-decision">
-        <h3>Glanceable data hierarchy</h3>
-        <p>Safety-critical telemetry markers are visually separated from informational data so field users can assess status at a glance without reading through dense tables.</p>
-      </div>
-      <div class="design-decision">
-        <h3>Simplified navigation for mobile</h3>
-        <p>Desktop workflows that required 4–5 taps were condensed into a single contextual action, reducing the number of decisions a researcher needs to make while on-the-road.</p>
-      </div>
-      <div class="design-decision">
-        <h3>Terminology consistency</h3>
-        <p>Kept all labels and terminology aligned with the existing web platform so experienced users don't have to re-learn the system, just the interaction model.</p>
-      </div>
+            <p>I worked with product stakeholders and engineering to define scope and feasibility. Direct primary research was limited in this phase, so competitive references and heuristic findings drove the redesign priorities.</p>
+          </div>
+        </div>
+      </section>
 
-      <div class="design-decision">
-        <h3>Pattern reuse from the legacy platform</h3>
-        <p>I carried over established patterns from the existing web system: data cards, status indicators, and alert hierarchies. I adapted them for mobile rather than rebuilding from scratch.</p>
-        <p>This kept the learning curve low for teams already familiar with the desktop tool.</p>
-      </div>
-    </section>
+      <section class="cs-sec" style="border-bottom:0">
+        <div class="cs-wrap">
+          <div class="cs-label"><div class="cs-num">05</div><span>Outcome</span></div>
+          <div>
+            <h2>A foundation for field use</h2>
 
-    <!-- Team -->
-    <section class="project-section">
-      <span class="section-tag green">The Team</span>
-      <h2>Who'd I work with?</h2>
-      <p>
-        I collaborated with product stakeholders and engineering to define
-        scope and feasibility, then used competitive references and heuristic
-        findings to drive redesign priorities where direct primary research was
-        limited in this phase.
-      </p>
-    </section>
-
-    <!-- Impact -->
-    <section class="project-section">
-      <span class="section-tag">The Outcome</span>
-      <h2>Impact</h2>
-      <p>
-        Produced a mobile-first decision support tool with clearer telemetry hierarchy and safer field usage.
-      </p>
-      <p>
-        The redesign provides a practical foundation for future implementation focused on operator performance in live research contexts.
-      </p>
-
-      <div class="case-nav" style="margin-top: 28px;">
-        <a class="secondary" href="index.html">← Back to work</a>
-        <a class="secondary" href="pcis-dashboard.html">← PCIS Platform</a>
-      </div>
-    </section>
-
+            <p>The sprint produced a mobile-first decision-support prototype with a clearer telemetry hierarchy, designed so researchers can check vehicle data and act without a crowded screen.</p>
+            <p>It gives the team a practical foundation for future implementation focused on operator performance in live research contexts.</p>
+            <div class="cs-nav"><a class="secondary" href="index.html">&larr; Back to work</a><a class="secondary" href="pcis-dashboard.html">&larr; PCIS Platform</a><a class="primary" href="studio88.html">Next: Studio88 Keys &rarr;</a></div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
